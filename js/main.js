@@ -5,6 +5,10 @@
 (function () {
   "use strict";
 
+  // Progressive enhancement flag: CSS only hides .reveal content when JS runs,
+  // so a blocked/failed script can never leave the hero permanently invisible.
+  document.documentElement.classList.add("js");
+
   var LANGS = window.MOOSE_LANGS;
   var DICT = window.MOOSE_I18N;
   var INFO = window.MOOSE_INFO;
@@ -14,12 +18,23 @@
   var HOURS = window.MOOSE_HOURS;
   var STORAGE_KEY = "moose-lang";
   var OG_LOCALE = { nl: "nl_NL", en: "en_GB", de: "de_DE" };
+  var SITE_BASE = "https://www.restaurantmoose.nl/";
+  var LANG_ANNOUNCE = {
+    nl: "Taal gewijzigd naar Nederlands",
+    en: "Language changed to English",
+    de: "Sprache geändert auf Deutsch",
+  };
+  var currentLang = window.MOOSE_DEFAULT_LANG;
 
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
 
   /* --------------------------- Language handling --------------------------- */
   function detectLang() {
+    try {
+      var q = new URLSearchParams(window.location.search).get("lang");
+      if (q && LANGS.indexOf(q) !== -1) return q;
+    } catch (e) {}
     try {
       var stored = localStorage.getItem(STORAGE_KEY);
       if (stored && LANGS.indexOf(stored) !== -1) return stored;
@@ -33,8 +48,9 @@
     return d[key] != null ? d[key] : (DICT[window.MOOSE_DEFAULT_LANG][key] || "");
   }
 
-  function applyLang(lang) {
+  function applyLang(lang, announce) {
     if (LANGS.indexOf(lang) === -1) lang = window.MOOSE_DEFAULT_LANG;
+    currentLang = lang;
     document.documentElement.lang = lang;
 
     // Text + attribute bindings
@@ -45,21 +61,41 @@
       else el.textContent = val;
     });
 
-    // og:locale
     var ogLoc = $('meta[property="og:locale"]');
     if (ogLoc) ogLoc.setAttribute("content", OG_LOCALE[lang] || "nl_NL");
 
-    // Active state on both language switchers
+    // Active language: mark current with aria-current, remove from the rest
+    // (the idiomatic "not current" state is an absent attribute).
     $$(".lang-btn").forEach(function (b) {
-      var on = b.getAttribute("data-lang") === lang;
-      b.setAttribute("aria-current", on ? "true" : "false");
+      if (b.getAttribute("data-lang") === lang) b.setAttribute("aria-current", "true");
+      else b.removeAttribute("aria-current");
     });
 
+    updateUrlAndCanonical(lang);
     renderMenu(lang);
     renderHours(lang);
     wireDynamicLinks(lang);
 
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+
+    if (announce) {
+      var status = $("#langStatus");
+      if (status) status.textContent = LANG_ANNOUNCE[lang] || "";
+    }
+  }
+
+  // Each language has a crawlable URL (?lang=en / ?lang=de; nl is the bare root),
+  // matching the hreflang alternates in <head>. Reflect it without reloading.
+  function updateUrlAndCanonical(lang) {
+    var canonical = lang === window.MOOSE_DEFAULT_LANG ? SITE_BASE : SITE_BASE + "?lang=" + lang;
+    var c = $("#canonicalLink"); if (c) c.setAttribute("href", canonical);
+    var og = $("#ogUrl"); if (og) og.setAttribute("content", canonical);
+    try {
+      var url = new URL(window.location.href);
+      if (lang === window.MOOSE_DEFAULT_LANG) url.searchParams.delete("lang");
+      else url.searchParams.set("lang", lang);
+      window.history.replaceState(null, "", url.toString());
+    } catch (e) {}
   }
 
   /* ------------------------------ Menu render ------------------------------ */
@@ -156,16 +192,19 @@
     var drawer = $("#mobileNav");
     var scrim = $("#navScrim");
     if (!toggle || !drawer || !scrim) return;
+    var srLabel = toggle.querySelector(".sr-only");
 
     function open() {
       drawer.hidden = false; scrim.hidden = false;
       requestAnimationFrame(function () { drawer.setAttribute("data-open", "true"); });
       toggle.setAttribute("aria-expanded", "true");
+      if (srLabel) srLabel.textContent = t(currentLang, "nav.close");
       document.body.style.overflow = "hidden";
     }
     function close() {
       drawer.removeAttribute("data-open");
       toggle.setAttribute("aria-expanded", "false");
+      if (srLabel) srLabel.textContent = t(currentLang, "nav.open");
       document.body.style.overflow = "";
       window.setTimeout(function () { drawer.hidden = true; scrim.hidden = true; }, 400);
     }
@@ -180,6 +219,18 @@
   }
 
   /* ------------------------------ Reserve modal ---------------------------- */
+  // Top-level regions made inert while the dialog is open, so keyboard and
+  // screen-reader users cannot reach the page behind it.
+  var BG_REGIONS = ["#siteHeader", "#mobileNav", "#navScrim", "#main", ".site-footer"];
+  function setBackgroundInert(on) {
+    BG_REGIONS.forEach(function (sel) {
+      var el = $(sel);
+      if (!el) return;
+      if (on) { el.setAttribute("aria-hidden", "true"); try { el.inert = true; } catch (e) {} }
+      else { el.removeAttribute("aria-hidden"); try { el.inert = false; } catch (e) {} }
+    });
+  }
+
   function initModal() {
     var modal = $("#reserveModal");
     if (!modal) return;
@@ -196,13 +247,20 @@
 
     function open() {
       lastFocus = document.activeElement;
+      // The trigger may live inside the mobile drawer that is closing — restore
+      // focus to the hamburger instead of a soon-to-be-hidden element.
+      if (lastFocus && lastFocus.closest && lastFocus.closest("#mobileNav")) {
+        lastFocus = $("#navToggle") || lastFocus;
+      }
       modal.hidden = false;
+      setBackgroundInert(true);
       document.body.style.overflow = "hidden";
-      var focusable = dialog.querySelector("a[href], button:not([disabled]), input");
-      if (focusable) focusable.focus();
+      // Focus the dialog itself so its accessible name (aria-labelledby) is read.
+      dialog.focus();
     }
     function close() {
       modal.hidden = true;
+      setBackgroundInert(false);
       document.body.style.overflow = "";
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
@@ -220,9 +278,11 @@
   }
 
   function trapFocus(e, container) {
-    var f = container.querySelectorAll('a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])');
+    var f = $$('a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])', container);
     if (!f.length) return;
     var first = f[0], last = f[f.length - 1];
+    // If focus somehow escaped the dialog, pull it back in.
+    if (!container.contains(document.activeElement)) { e.preventDefault(); first.focus(); return; }
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
@@ -237,7 +297,7 @@
       var success = $("#newsSuccess");
       if (!input.value || !input.checkValidity()) { input.focus(); input.reportValidity && input.reportValidity(); return; }
       // No backend yet — this is where a signup endpoint / mailing-list embed connects.
-      if (success) success.hidden = false;
+      if (success) success.textContent = t(currentLang, "news.success");
       input.value = "";
     });
   }
@@ -257,7 +317,7 @@
   /* ------------------------------ Language buttons ------------------------- */
   function initLangButtons() {
     $$(".lang-btn").forEach(function (btn) {
-      btn.addEventListener("click", function () { applyLang(btn.getAttribute("data-lang")); });
+      btn.addEventListener("click", function () { applyLang(btn.getAttribute("data-lang"), true); });
     });
   }
 
@@ -265,7 +325,7 @@
   function init() {
     var yr = $("#year"); if (yr) yr.textContent = new Date().getFullYear();
     initLangButtons();
-    applyLang(detectLang());
+    applyLang(detectLang(), false);
     initHeader();
     initMobileNav();
     initModal();

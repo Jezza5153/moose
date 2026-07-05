@@ -65,9 +65,11 @@ point — wire it to your mailing-list endpoint where the comment marks it.
 
 ## Notes
 
-- **SEO**: JSON-LD `Restaurant` schema, Open Graph tags, and semantic markup are
-  in place. Set the real production domain in the `<link rel="canonical">` and
-  `og:image` URLs before launch, and add `sitemap.xml` / `robots.txt`.
+- **SEO / GEO**: JSON-LD `Restaurant` schema (incl. the full menu with prices,
+  hours, geo, `sameAs`), Open Graph + Twitter cards with absolute image URLs,
+  `hreflang` alternates for NL/EN/DE (each language is crawlable via `?lang=`),
+  plus `robots.txt` and a multilingual `sitemap.xml`. All absolute URLs point at
+  `https://www.restaurantmoose.nl/` — update them if you deploy to another domain.
 - **Accessibility**: keyboard-navigable, focus-trapped modal, skip link,
   reduced-motion support, labelled controls.
 - **Language default** is Dutch; the visitor's browser language (EN/DE) is used

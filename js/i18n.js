@@ -312,7 +312,7 @@ window.MOOSE_I18N = {
     "nav.open": "Open menu",
     "nav.close": "Close menu",
 
-    "hero.eyebrow": "Neighbourhood restaurant · Woodfired · The Hague",
+    "hero.eyebrow": "Neighbourhood restaurant · Wood-fired · The Hague",
     "hero.title": "Fresh seasonal cooking, straight from the fire",
     "hero.subtitle":
       "A modern European restaurant in the heart of The Hague. Simple, seasonal and with a distinctive wine list — in a relaxed setting.",
@@ -393,7 +393,7 @@ window.MOOSE_I18N = {
     "reserve.mail_subject": "Reservation",
     "reserve.close": "Close",
 
-    "footer.tagline": "Neighbourhood restaurant · Woodfired · The Hague",
+    "footer.tagline": "Neighbourhood restaurant · Wood-fired · The Hague",
     "footer.explore": "Explore",
     "footer.visit": "Visit",
     "footer.follow": "Follow us",
@@ -444,7 +444,7 @@ window.MOOSE_I18N = {
     "menu.tag": "Wechselt mit den Jahreszeiten",
     "menu.intro":
       "Ein Einblick in unsere aktuelle Karte. Alles ist saisonal und wechselt regelmäßig — fragen Sie uns gern nach den passenden Weinen.",
-    "menu.chef_label": "Chef’s Menü",
+    "menu.chef_label": "Küchenchef-Menü",
     "menu.chef_desc": "Vier Gänge, zusammengestellt von der Küche",
     "menu.chef_pairing": "Weinbegleitung +€30",
     "menu.per_dish": "pro Gericht",
