@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#144215" />
+
+    <title data-i18n="meta.title">Restaurant Moose · Modern Europees restaurant in Den Haag</title>
+    <meta name="description" data-i18n="meta.description" data-i18n-attr="content"
+      content="Moose is een modern Europees buurtrestaurant in hartje Den Haag. Verse seizoenskeuken uit de houtoven en een bijzondere wijnkaart." />
+    <link rel="canonical" href="https://www.restaurantmoose.nl/" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:site_name" content="Restaurant Moose" />
+    <meta property="og:title" data-i18n="meta.title" data-i18n-attr="content" content="Restaurant Moose · Den Haag" />
+    <meta property="og:description" data-i18n="meta.description" data-i18n-attr="content" content="" />
+    <meta property="og:image" content="assets/img/hero-interior.jpg" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon (the moose mark) -->
+    <link rel="icon" type="image/png" href="assets/img/moose-head.png" />
+    <link rel="apple-touch-icon" href="assets/img/moose-head.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Structured data — helps Google & AI answer engines understand the restaurant -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Moose",
+        "description": "Modern European neighbourhood restaurant in the heart of The Hague. Fresh seasonal cooking from a wood-fired oven and a distinctive wine list.",
+        "servesCuisine": ["Modern European", "Seasonal"],
+        "priceRange": "€€",
+        "url": "https://www.restaurantmoose.nl/",
+        "telephone": "+31642461104",
+        "email": "info@restaurantmoose.nl",
+        "image": "https://www.restaurantmoose.nl/assets/img/hero-interior.jpg",
+        "acceptsReservations": "True",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kazernestraat 62",
+          "postalCode": "2514 CV",
+          "addressLocality": "Den Haag",
+          "addressCountry": "NL"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 52.0827, "longitude": 4.3149 },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "17:00",
+            "closes": "23:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/restaurant.moose/",
+          "https://www.facebook.com/profile.php?id=61554885102522"
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip.link">Naar hoofdinhoud</a>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header" id="siteHeader" data-state="top">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Restaurant Moose">
+          <img class="brand-mark" src="assets/img/moose-head.png" alt="" width="44" height="44" />
+          <span class="brand-name">Moose</span>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Primair">
+          <a href="#about" data-i18n="nav.about">Verhaal</a>
+          <a href="#menu" data-i18n="nav.menu">Menu</a>
+          <a href="#groups" data-i18n="nav.groups">Groepen</a>
+          <a href="#visit" data-i18n="nav.visit">Bezoek</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-switch" role="group" aria-label="Taal / Language">
+            <button type="button" class="lang-btn" data-lang="nl">NL</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="de">DE</button>
+          </div>
+          <button type="button" class="btn btn-primary btn-reserve" data-reserve data-i18n="nav.reserve">
+            Reserveren
+          </button>
+          <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="sr-only" data-i18n="nav.open">Menu openen</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <nav aria-label="Mobiel">
+        <a href="#about" data-i18n="nav.about" data-nav-close>Verhaal</a>
+        <a href="#menu" data-i18n="nav.menu" data-nav-close>Menu</a>
+        <a href="#groups" data-i18n="nav.groups" data-nav-close>Groepen</a>
+        <a href="#visit" data-i18n="nav.visit" data-nav-close>Bezoek</a>
+      </nav>
+      <div class="mobile-nav-foot">
+        <div class="lang-switch" role="group" aria-label="Taal / Language">
+          <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="de">DE</button>
+        </div>
+        <button type="button" class="btn btn-primary" data-reserve data-nav-close data-i18n="nav.reserve">Reserveren</button>
+      </div>
+    </div>
+    <div class="nav-scrim" id="navScrim" hidden></div>
+
+    <span id="top"></span>
+
+    <main id="main">
+      <!-- ===================== HERO ===================== -->
+      <section class="hero" id="hero">
+        <div class="hero-media">
+          <img src="assets/img/hero-interior.jpg" alt="Het interieur van Restaurant Moose in Den Haag" fetchpriority="high" />
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content reveal">
+          <p class="eyebrow eyebrow-light" data-i18n="hero.eyebrow">Buurtrestaurant · Houtoven · Den Haag</p>
+          <h1 class="hero-title" data-i18n="hero.title">Verse seizoenskeuken, recht uit de houtoven</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            Een modern Europees restaurant in hartje Den Haag.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary btn-lg" data-reserve data-i18n="hero.cta_reserve">Reserveren</button>
+            <a class="btn btn-ghost btn-lg" href="#menu" data-i18n="hero.cta_menu">Bekijk het menu</a>
+          </div>
+          <p class="hero-hours"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.hours">Wo–Zo · 17:00–23:00</span></p>
+        </div>
+        <a class="scroll-cue" href="#about" aria-hidden="true" tabindex="-1"></a>
+      </section>
+
+      <!-- ===================== ABOUT ===================== -->
+      <section class="section about" id="about">
+        <div class="container about-grid">
+          <div class="about-copy reveal">
+            <p class="eyebrow" data-i18n="about.eyebrow">Ons verhaal</p>
+            <h2 class="section-title" data-i18n="about.title">Een buurtrestaurant, simpel gehouden</h2>
+            <p class="lead" data-i18n="about.body1"></p>
+            <p data-i18n="about.body2"></p>
+            <ul class="feature-list">
+              <li class="feature">
+                <span class="feature-ic" aria-hidden="true">&#128293;</span>
+                <span>
+                  <strong data-i18n="about.f1_title">Uit de houtoven</strong>
+                  <span data-i18n="about.f1_body"></span>
+                </span>
+              </li>
+              <li class="feature">
+                <span class="feature-ic" aria-hidden="true">&#127807;</span>
+                <span>
+                  <strong data-i18n="about.f2_title">Seizoensgericht</strong>
+                  <span data-i18n="about.f2_body"></span>
+                </span>
+              </li>
+              <li class="feature">
+                <span class="feature-ic" aria-hidden="true">&#127863;</span>
+                <span>
+                  <strong data-i18n="about.f3_title">Bijzondere wijnen</strong>
+                  <span data-i18n="about.f3_body"></span>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="about-media reveal">
+            <img src="assets/img/gallery-2.jpg" alt="Gerecht uit de houtoven bij Moose" loading="lazy" />
+            <img class="about-media-2" src="assets/img/moose-head.png" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== MENU ===================== -->
+      <section class="section menu" id="menu">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow" data-i18n="menu.eyebrow">Onze kaart</p>
+            <h2 class="section-title"><span data-i18n="menu.title">Het seizoensmenu</span>
+              <span class="menu-tag" data-i18n="menu.tag">Wisselt met de seizoenen</span>
+            </h2>
+            <p class="section-intro" data-i18n="menu.intro"></p>
+          </div>
+
+          <div class="chef-card reveal">
+            <div class="chef-card-main">
+              <p class="chef-label" data-i18n="menu.chef_label">Chef’s menu</p>
+              <p class="chef-desc" data-i18n="menu.chef_desc">Vier gangen, samengesteld door de keuken</p>
+              <p class="chef-pairing" data-i18n="menu.chef_pairing">Wijnarrangement +€30</p>
+            </div>
+            <div class="chef-price"><span class="chef-courses" id="chefCourses">4</span><span class="chef-amount">€59</span></div>
+          </div>
+
+          <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+
+          <p class="menu-allergy reveal" data-i18n="menu.allergy"></p>
+        </div>
+      </section>
+
+      <!-- ===================== GROUPS ===================== -->
+      <section class="section groups" id="groups">
+        <div class="container groups-grid">
+          <div class="groups-media reveal">
+            <img src="assets/img/gallery-3.jpg" alt="Groepstafel bij Restaurant Moose" loading="lazy" />
+          </div>
+          <div class="groups-copy reveal">
+            <p class="eyebrow" data-i18n="groups.eyebrow">Groepen &amp; privé</p>
+            <h2 class="section-title" data-i18n="groups.title">Samen aan tafel</h2>
+            <p class="lead" data-i18n="groups.body"></p>
+            <ul class="chip-row">
+              <li class="chip chip-strong" data-i18n="groups.capacity">Tot 35 gasten</li>
+              <li class="chip" data-i18n="groups.use1">Groepsdiner</li>
+              <li class="chip" data-i18n="groups.use2">Zakenlunch</li>
+              <li class="chip" data-i18n="groups.use3">Borrel &amp; theater</li>
+              <li class="chip" data-i18n="groups.use4">Privédiner</li>
+            </ul>
+            <div class="groups-private">
+              <h3 data-i18n="groups.private_title">Privé dineren</h3>
+              <p data-i18n="groups.private_body"></p>
+              <p class="muted" data-i18n="groups.location"></p>
+            </div>
+            <a class="btn btn-primary" id="groupsCta" href="#" data-i18n="groups.cta">Vraag een offerte aan</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== GALLERY ===================== -->
+      <section class="section gallery" id="gallery">
+        <div class="container">
+          <div class="section-head center reveal">
+            <p class="eyebrow" data-i18n="gallery.eyebrow">Sfeer</p>
+            <h2 class="section-title" data-i18n="gallery.title">Proef de sfeer</h2>
+          </div>
+          <div class="gallery-grid reveal">
+            <figure class="g-item g-tall"><img src="assets/img/gallery-1.jpg" alt="Seizoensgerecht bij Moose" loading="lazy" /></figure>
+            <figure class="g-item"><img src="assets/img/hero-interior.jpg" alt="Het interieur van Moose met open keuken" loading="lazy" /></figure>
+            <figure class="g-item"><img src="assets/img/gallery-4.jpg" alt="Gerecht van de houtoven" loading="lazy" /></figure>
+            <figure class="g-item g-wide"><img src="assets/img/gallery-3.jpg" alt="Gedekte tafel bij Moose" loading="lazy" /></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== VISIT ===================== -->
+      <section class="section visit" id="visit">
+        <div class="container visit-grid">
+          <div class="visit-copy reveal">
+            <p class="eyebrow" data-i18n="visit.eyebrow">Bezoek ons</p>
+            <h2 class="section-title" data-i18n="visit.title">Tot snel bij Moose</h2>
+
+            <div class="visit-block">
+              <h3 data-i18n="visit.address_label">Adres</h3>
+              <p class="visit-address">
+                Kazernestraat 62<br />2514 CV Den Haag
+              </p>
+              <p class="muted" data-i18n="visit.transport"></p>
+              <a class="link-arrow" id="directionsLink" href="#" target="_blank" rel="noopener">
+                <span data-i18n="visit.directions">Route</span> &rarr;
+              </a>
+            </div>
+
+            <div class="visit-block">
+              <h3 data-i18n="visit.contact_label">Contact</h3>
+              <p>
+                <a id="telLink" href="tel:+31642461104">06 42461104</a><br />
+                <a id="mailLink" href="mailto:info@restaurantmoose.nl">info@restaurantmoose.nl</a>
+              </p>
+              <div class="social-row">
+                <a id="igLink" href="#" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+                <a id="fbLink" href="#" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="visit-hours-card reveal">
+            <h3 data-i18n="visit.hours_label">Openingstijden</h3>
+            <table class="hours-table" id="hoursTable"><tbody></tbody></table>
+            <p class="lunch-note"><span class="dot" aria-hidden="true"></span><span data-i18n="visit.lunch">Lunch op aanvraag</span></p>
+            <button type="button" class="btn btn-primary btn-block" data-reserve data-i18n="visit.reserve">Reserveren</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== NEWSLETTER ===================== -->
+      <section class="section newsletter" id="newsletter">
+        <div class="container newsletter-inner reveal">
+          <div class="newsletter-copy">
+            <h2 data-i18n="news.title">Blijf op de hoogte</h2>
+            <p data-i18n="news.body"></p>
+          </div>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <label class="sr-only" for="newsEmail" data-i18n="news.placeholder">Je e-mailadres</label>
+            <input type="email" id="newsEmail" name="email" required data-i18n="news.placeholder" data-i18n-attr="placeholder" placeholder="Je e-mailadres" />
+            <button type="submit" class="btn btn-dark" data-i18n="news.button">Inschrijven</button>
+            <p class="news-success" id="newsSuccess" role="status" hidden data-i18n="news.success"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand-footer" href="#top" aria-label="Restaurant Moose">
+            <img class="brand-mark" src="assets/img/moose-head.png" alt="" width="52" height="52" />
+            <span class="brand-name">Moose</span>
+          </a>
+          <p class="footer-tagline" data-i18n="footer.tagline">Buurtrestaurant · Houtoven · Den Haag</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer.explore">Ontdek</h4>
+          <a href="#about" data-i18n="nav.about">Verhaal</a>
+          <a href="#menu" data-i18n="nav.menu">Menu</a>
+          <a href="#groups" data-i18n="nav.groups">Groepen</a>
+          <a id="giftcardLink" href="#" target="_blank" rel="noopener" data-i18n="footer.giftcard">Cadeaubon</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer.visit">Bezoek</h4>
+          <p>Kazernestraat 62<br />2514 CV Den Haag</p>
+          <a href="tel:+31642461104">06 42461104</a>
+          <a href="mailto:info@restaurantmoose.nl">info@restaurantmoose.nl</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer.follow">Volg ons</h4>
+          <a id="igLinkF" href="#" target="_blank" rel="noopener">Instagram</a>
+          <a id="fbLinkF" href="#" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div class="footer-bar container">
+        <p>&copy; <span id="year">2026</span> Restaurant Moose. <span data-i18n="footer.rights">Alle rechten voorbehouden.</span></p>
+        <a class="to-top" href="#top" data-i18n="footer.top">Naar boven ↑</a>
+      </div>
+    </footer>
+
+    <!-- ===================== RESERVE MODAL ===================== -->
+    <div class="modal" id="reserveModal" hidden>
+      <div class="modal-scrim" data-modal-close></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="reserveTitle">
+        <button type="button" class="modal-close" data-modal-close aria-label="Sluiten">&times;</button>
+        <img class="modal-mark" src="assets/img/moose-head.png" alt="" width="56" height="56" />
+        <h2 id="reserveTitle" data-i18n="reserve.title">Reserveren</h2>
+
+        <!-- Reservation widget mounts here once connected.
+             Drop the booking app's embed/iframe inside #reservation-widget and it
+             will show instead of the fallback below (see main.js: hasWidget check). -->
+        <div id="reservation-widget" data-widget-empty="true"></div>
+
+        <div class="reserve-fallback" id="reserveFallback">
+          <p data-i18n="reserve.body"></p>
+          <div class="reserve-actions">
+            <a class="btn btn-primary btn-block" id="modalCall" href="tel:+31642461104" data-i18n="reserve.call">Bel 06 42461104</a>
+            <a class="btn btn-ghost-dark btn-block" id="modalMail" href="mailto:info@restaurantmoose.nl" data-i18n="reserve.email">E-mail ons</a>
+          </div>
+          <p class="reserve-hours"><span class="dot" aria-hidden="true"></span><span data-i18n="reserve.hours_note">Woensdag t/m zondag · 17:00–23:00</span></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
