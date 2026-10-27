@@ -197,6 +197,9 @@ section[id]{scroll-margin-top:78px}
 /* cream "paper" inside a frame */
 .paper{background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0) 30%),radial-gradient(ellipse at 30% 20%,#f4ecda,#ece2cb 70%,#e2d5b8);color:var(--ink)}
 .paper::after{box-shadow:inset 0 0 22px rgba(90,60,20,.28)}
+.paper{--focus:var(--wine)}
+.brass{--focus:#2e1d08}
+.lb-wrap .x{--focus:var(--gold-hi)}
 .velvet{background:radial-gradient(ellipse at 50% 30%,#4a1720,#2a0a10 80%);color:var(--cream)}
 
 /* =====================================================================
@@ -639,7 +642,7 @@ dialog[open]{animation:fadein .35s ease}
         <div class="hang"><div class="frame"><span class="lamp" aria-hidden="true"></span><div class="art ph-4x5">
           <button class="zoom" type="button" data-full="assets/img/table-saxophone.jpg" data-title="Gouden saxofoon" data-cap="Gedekte tafel met wijnglazen naast een gouden saxofoon."><img src="assets/img/table-saxophone.jpg" alt="Gedekte tafel met wijnglazen naast een gouden saxofoon" width="1024" height="683" style="object-position:30% 50%"><span class="hint" aria-hidden="true">Bekijk groter</span></button>
         </div><span class="glow" aria-hidden="true"></span></div></div>
-        <figcaption class="label"><b>Gouden saxofoon</b>in het restaurant</figcaption>
+        <figcaption class="label"><b>Gouden saxofoon</b>naast een gedekte tafel</figcaption>
       </figure>
       <figure class="piece wired p-d2"><div class="hang"><div class="frame frame--black"><div class="art paper card-art" id="d2"></div></div></div><figcaption class="label"><b>Wist u dat? · II</b>de toiletdeuren</figcaption></figure>
       <figure class="piece wired p-quote2">
@@ -820,7 +823,7 @@ dialog[open]{animation:fadein .35s ease}
         <p class="sc">Lazy Louis · Reserveren</p>
         <h2 id="rd-title" tabindex="-1">Reserveer uw <em>tafel</em></h2>
         <ul id="rd-lines"></ul>
-        <a class="btn btn-brass" id="rd-fork" href="#" target="_blank" rel="noopener">Reserveer via TheFork ↗</a>
+        <a class="btn btn-brass" id="rd-fork" href="https://widget.thefork.com/63a9c0f2-62b5-449c-ae05-ae6fbbe3f000" target="_blank" rel="noopener">Reserveer via TheFork ↗</a>
         <p class="phone">Liever even bellen? <a id="rd-phone" href="tel:+31334613638">033 – 461 36 38</a></p>
         <p class="confirm" id="rd-confirm"></p>
         <p class="demo">Op de echte site komt hier direct de reserveringsmodule.</p>
