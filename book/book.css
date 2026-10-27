@@ -1,0 +1,97 @@
+/* Het Ontwerpboek — floating page-flip bar. Neutral graphite so it sits on any design. */
+.llbook, .llbook-pill {
+  --llb-bg: rgba(22, 22, 24, 0.9);
+  --llb-fg: #f4f2ee;
+  --llb-muted: #a9a6a0;
+  --llb-line: rgba(255, 255, 255, 0.14);
+  --llb-hover: rgba(255, 255, 255, 0.1);
+  --llb-red: #e0334a;
+  --llb-heart-fill: transparent;
+  position: fixed;
+  z-index: 2147483000;
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  font: 500 14px/1.2 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--llb-fg);
+  background: var(--llb-bg);
+  border: 1px solid var(--llb-line);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(140%);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.llbook {
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  max-width: calc(100vw - 24px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
+}
+.llbook[hidden], .llbook-pill[hidden] { display: none !important; }
+.llbook a, .llbook button { color: inherit; text-decoration: none; font: inherit; }
+.llbook-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.llbook-btn svg { width: 20px; height: 20px; display: block; }
+.llbook-btn:hover { background: var(--llb-hover); }
+.llbook-btn:active { transform: scale(0.94); }
+.llbook-arrow { background: rgba(255, 255, 255, 0.06); }
+.llbook-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+  padding: 0 12px;
+  height: 40px;
+  align-items: center;
+  border-radius: 999px;
+}
+.llbook-title:hover { background: var(--llb-hover); }
+.llbook-num { font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: 0.02em; }
+.llbook-num span { color: var(--llb-muted); font-weight: 500; }
+.llbook-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 22ch; }
+.llbook-fav.is-on { color: var(--llb-red); --llb-heart-fill: var(--llb-red); }
+.llbook-fav.pop svg { animation: llb-pop 0.35s ease; }
+.llbook-min { width: 32px; color: var(--llb-muted); }
+.llbook-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.llbook-pill {
+  right: calc(12px + env(safe-area-inset-right, 0px));
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px 0 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+}
+.llbook-pill svg { width: 20px; height: 20px; }
+.llbook a:focus-visible, .llbook button:focus-visible, .llbook-pill:focus-visible {
+  outline: 2px solid #ffd479;
+  outline-offset: 2px;
+}
+.llbook-spacer { height: 76px; }
+@keyframes llb-pop { 0% { transform: scale(1); } 45% { transform: scale(1.35); } 100% { transform: scale(1); } }
+@media (max-width: 480px) {
+  .llbook { width: calc(100vw - 24px); justify-content: space-between; }
+  .llbook-title { padding: 0 6px; flex: 1 1 auto; justify-content: center; }
+  .llbook-name { max-width: 11ch; }
+  .llbook-btn { width: 38px; height: 38px; }
+  .llbook-min { width: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .llbook-btn, .llbook-fav.pop svg { transition: none; animation: none; }
+}
+@media print { .llbook, .llbook-pill, .llbook-spacer { display: none; } }

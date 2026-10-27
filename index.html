@@ -1,446 +1,408 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#144215" />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lazy Louis Ontwerpboek</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Tien klikbare website-ontwerpen voor Lazy Louis Jazzcafé & Eethuys in Amersfoort.">
+<link rel="icon" href="assets/brand/trumpet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a book's table of contents — title page, how-to, then ten chapters as large preview cards. */
+:root {
+  --bg: #f5f3ef;
+  --surface: #ffffff;
+  --fg: #1b1a19;
+  --muted: #6b6762;
+  --line: #e2ded7;
+  --accent: #b2162a;
+  --accent-ink: #ffffff;
+  --accent-soft: #f7e4e6;
+  --shadow: 0 1px 2px rgba(27, 26, 25, .06), 0 12px 32px -12px rgba(27, 26, 25, .22);
+  --font-display: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "Familjen Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151413; --surface: #1f1d1b; --fg: #efebe5; --muted: #a39d95; --line: #34312d;
+    --accent: #e2475b; --accent-ink: #1a0b0d; --accent-soft: #3a1b1f;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 16px 40px -16px rgba(0, 0, 0, .7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151413; --surface: #1f1d1b; --fg: #efebe5; --muted: #a39d95; --line: #34312d;
+  --accent: #e2475b; --accent-ink: #1a0b0d; --accent-soft: #3a1b1f;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 16px 40px -16px rgba(0, 0, 0, .7);
+  color-scheme: dark;
+}
 
-    <title data-i18n="meta.title">Restaurant Moose · Modern Europees restaurant in Den Haag</title>
-    <meta name="description" data-i18n="meta.description" data-i18n-attr="content"
-      content="Moose is een modern Europees buurtrestaurant in hartje Den Haag. Verse seizoenskeuken uit de houtoven en een bijzondere wijnkaart." />
-    <link rel="canonical" href="https://www.restaurantmoose.nl/" id="canonicalLink" />
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 17px/1.55 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
-    <!-- Language alternates — each language is crawlable via ?lang= -->
-    <link rel="alternate" hreflang="nl" href="https://www.restaurantmoose.nl/" />
-    <link rel="alternate" hreflang="en" href="https://www.restaurantmoose.nl/?lang=en" />
-    <link rel="alternate" hreflang="de" href="https://www.restaurantmoose.nl/?lang=de" />
-    <link rel="alternate" hreflang="x-default" href="https://www.restaurantmoose.nl/" />
+.wrap { max-width: 1240px; margin: 0 auto; }
 
-    <!-- Open Graph / social — static defaults (crawlers don't run JS) -->
-    <meta property="og:type" content="restaurant" />
-    <meta property="og:site_name" content="Restaurant Moose" />
-    <meta property="og:url" content="https://www.restaurantmoose.nl/" id="ogUrl" />
-    <meta property="og:title" data-i18n="meta.title" data-i18n-attr="content" content="Restaurant Moose · Modern Europees restaurant in Den Haag" />
-    <meta property="og:description" data-i18n="meta.description" data-i18n-attr="content" content="Modern Europees buurtrestaurant in hartje Den Haag. Verse seizoenskeuken uit de houtoven en een bijzondere wijnkaart." />
-    <meta property="og:image" content="https://www.restaurantmoose.nl/assets/img/hero-interior.jpg" />
-    <meta property="og:image:alt" content="Het interieur van Restaurant Moose in Den Haag" />
-    <meta property="og:locale" content="nl_NL" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Restaurant Moose · Modern Europees restaurant in Den Haag" />
-    <meta name="twitter:description" content="Verse seizoenskeuken uit de houtoven en een bijzondere wijnkaart, in hartje Den Haag." />
-    <meta name="twitter:image" content="https://www.restaurantmoose.nl/assets/img/hero-interior.jpg" />
+/* ---------- Title page ---------- */
+.title-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: end;
+  padding-block: clamp(36px, 7vw, 96px) clamp(28px, 4vw, 48px);
+  border-bottom: 1px solid var(--line);
+}
+.mark { display: flex; align-items: center; gap: 12px; margin-bottom: clamp(24px, 4vw, 44px); }
+.mark-icon {
+  width: 46px; height: 28px; flex: none;
+  background: var(--accent);
+  -webkit-mask: url(assets/brand/trumpet.png) center / contain no-repeat;
+  mask: url(assets/brand/trumpet.png) center / contain no-repeat;
+}
+.eyebrow {
+  font: 500 12px/1.3 var(--font-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+h1 {
+  font: 400 clamp(46px, 8.4vw, 112px)/.92 var(--font-display);
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+h1 em { font-style: italic; color: var(--accent); }
+.lede { max-width: 46ch; margin: 0; color: var(--fg); font-size: 18px; }
+.lede + .lede { margin-top: 12px; color: var(--muted); font-size: 16px; }
+.title-aside { display: grid; gap: 22px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 48px; padding: 0 22px;
+  border-radius: 999px;
+  font: 600 16px/1 var(--font-body);
+  text-decoration: none;
+  border: 1px solid var(--fg);
+  background: transparent; color: var(--fg);
+  cursor: pointer;
+  transition: transform .15s ease, background-color .15s ease, color .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--fg); color: var(--bg); }
+.btn svg { width: 18px; height: 18px; }
 
-    <!-- Favicon (the moose mark) -->
-    <link rel="icon" type="image/png" href="assets/img/moose-head.png" />
-    <link rel="apple-touch-icon" href="assets/img/moose-head.png" />
+/* ---------- How it works ---------- */
+.how {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 40px);
+  padding-block: 28px;
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+  margin: 0;
+  padding-left: 0; padding-right: 0;
+  counter-reset: step;
+}
+.how li { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; counter-increment: step; }
+.how li::before {
+  content: counter(step);
+  font: italic 400 34px/1 var(--font-display);
+  color: var(--accent);
+  min-width: 1ch;
+}
+.how strong { display: block; font-weight: 600; margin-bottom: 2px; }
+.how span { color: var(--muted); font-size: 15px; }
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet" />
+/* ---------- Chapters ---------- */
+.chapters-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px;
+  padding-block: clamp(32px, 5vw, 56px) 20px;
+}
+h2 { font: 400 clamp(32px, 4.4vw, 52px)/1 var(--font-display); margin: 0; letter-spacing: -0.01em; }
+.chapters-head p { margin: 0; color: var(--muted); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px) clamp(20px, 3vw, 36px);
+  padding-bottom: clamp(40px, 6vw, 72px);
+}
+.card { position: relative; display: grid; gap: 16px; min-width: 0; }
+.shot {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  max-width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--sw-0, #333);
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
+.shot-desk { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+.shot-phone {
+  position: absolute; right: 4%; bottom: -14%;
+  width: 19%; aspect-ratio: 390 / 844;
+  border-radius: 14px;
+  border: 4px solid #111;
+  background: #111;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .45);
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+.shot-phone img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.shot-fallback {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font: 400 clamp(28px, 4vw, 44px)/1 var(--font-display); color: #fff;
+  background: linear-gradient(135deg, var(--sw-0), var(--sw-1) 55%, var(--sw-2));
+}
+.shot:hover .shot-desk, .shot:focus-visible .shot-desk { transform: scale(1.03); }
+.shot:hover .shot-phone, .shot:focus-visible .shot-phone { transform: translateY(-10%); }
+.shot-open {
+  position: absolute; left: 14px; top: 14px; z-index: 2;
+  font: 600 13px/1 var(--font-body);
+  padding: 9px 13px; border-radius: 999px;
+  background: rgba(15, 15, 15, .78); color: #fff;
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  opacity: 0; transform: translateY(-4px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.shot:hover .shot-open, .shot:focus-visible .shot-open { opacity: 1; transform: none; }
+@media (hover: none) { .shot-open { opacity: 1; transform: none; } }
 
-    <link rel="stylesheet" href="css/styles.css" />
+.meta { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 4px 16px; align-items: start; }
+.num { font: italic 400 44px/.9 var(--font-display); color: var(--accent); font-variant-numeric: tabular-nums; min-width: 2ch; }
+.meta h3 { margin: 0; font: 600 21px/1.2 var(--font-body); letter-spacing: -0.01em; }
+.meta h3 a { text-decoration: none; }
+.meta h3 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.mood { display: block; margin-top: 4px; }
+.desc { grid-column: 2 / 3; margin: 6px 0 0; color: var(--muted); font-size: 15.5px; max-width: 52ch; }
+.swatches { grid-column: 2 / 3; display: flex; gap: 6px; margin-top: 10px; }
+.swatches i { width: 18px; height: 18px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(127, 127, 127, .35); }
+.fav {
+  grid-column: 3; grid-row: 1 / span 2;
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 42px; padding: 0 14px 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--fg);
+  font: 600 14px/1 var(--font-body);
+  cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease, color .15s ease;
+}
+.fav svg { width: 18px; height: 18px; }
+.fav svg path { fill: transparent; stroke: currentColor; stroke-width: 1.9; stroke-linejoin: round; transition: fill .15s ease; }
+.fav:hover { border-color: var(--accent); }
+.fav[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.fav[aria-pressed="true"] svg path { fill: currentColor; }
+.fav.pop svg { animation: pop .35s ease; }
+@keyframes pop { 45% { transform: scale(1.35); } }
 
-    <!-- Structured data — helps Google & AI answer engines understand the restaurant -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        "name": "Restaurant Moose",
-        "description": "Modern European neighbourhood restaurant in the heart of The Hague. Fresh seasonal cooking from a wood-fired oven and a distinctive wine list.",
-        "servesCuisine": ["Modern European", "Seasonal"],
-        "priceRange": "€€",
-        "url": "https://www.restaurantmoose.nl/",
-        "telephone": "+31642461104",
-        "email": "info@restaurantmoose.nl",
-        "image": "https://www.restaurantmoose.nl/assets/img/hero-interior.jpg",
-        "acceptsReservations": true,
-        "currenciesAccepted": "EUR",
-        "areaServed": "Den Haag",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Kazernestraat 62",
-          "postalCode": "2514 CV",
-          "addressLocality": "Den Haag",
-          "addressCountry": "NL"
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": 52.0837, "longitude": 4.3121 },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            "opens": "17:00",
-            "closes": "23:00"
-          }
-        ],
-        "hasMenu": {
-          "@type": "Menu",
-          "inLanguage": "nl",
-          "hasMenuSection": [
-            {
-              "@type": "MenuSection",
-              "name": "Chef's menu",
-              "description": "Four courses, composed by the kitchen. Wine pairing +€30.",
-              "hasMenuItem": [
-                { "@type": "MenuItem", "name": "Chef's menu (4 courses)", "offers": { "@type": "Offer", "price": "59", "priceCurrency": "EUR" } }
-              ]
-            },
-            {
-              "@type": "MenuSection",
-              "name": "Starters",
-              "hasMenuItem": [
-                { "@type": "MenuItem", "name": "Asparagus", "description": "White asparagus, tofu cream, wild garlic", "offers": { "@type": "Offer", "price": "13", "priceCurrency": "EUR" } },
-                { "@type": "MenuItem", "name": "Pork", "description": "Thinly sliced pork, gribiche, fennel", "offers": { "@type": "Offer", "price": "13", "priceCurrency": "EUR" } },
-                { "@type": "MenuItem", "name": "Redfish", "description": "Redfish, kohlrabi, cucumber", "offers": { "@type": "Offer", "price": "13", "priceCurrency": "EUR" } }
-              ]
-            },
-            {
-              "@type": "MenuSection",
-              "name": "Mid-courses",
-              "hasMenuItem": [
-                { "@type": "MenuItem", "name": "Peas", "description": "Peas, chanterelle, courgette fritter", "offers": { "@type": "Offer", "price": "15", "priceCurrency": "EUR" } },
-                { "@type": "MenuItem", "name": "Guinea fowl", "description": "Guinea fowl fillet, corn cream, chard", "offers": { "@type": "Offer", "price": "15", "priceCurrency": "EUR" } },
-                { "@type": "MenuItem", "name": "Mackerel", "description": "Mackerel, dashi, pak choi", "offers": { "@type": "Offer", "price": "15", "priceCurrency": "EUR" } }
-              ]
-            },
-            {
-              "@type": "MenuSection",
-              "name": "Mains",
-              "hasMenuItem": [
-                { "@type": "MenuItem", "name": "Beetroot", "description": "Beetroot, roasted Jerusalem artichoke, raspberry", "offers": { "@type": "Offer", "price": "20", "priceCurrency": "EUR" } },
-                { "@type": "MenuItem", "name": "Lamb", "description": "Lamb fillet, potato, dill sauce", "offers": { "@type": "Offer", "price": "20", "priceCurrency": "EUR" } },
-                { "@type": "MenuItem", "name": "Ling", "description": "Ling fillet, stuffed cabbage, saffron sauce", "offers": { "@type": "Offer", "price": "20", "priceCurrency": "EUR" } }
-              ]
-            },
-            {
-              "@type": "MenuSection",
-              "name": "Desserts",
-              "hasMenuItem": [
-                { "@type": "MenuItem", "name": "Dutch cheeses", "offers": { "@type": "Offer", "price": "12", "priceCurrency": "EUR" } },
-                { "@type": "MenuItem", "name": "Chocolate", "description": "Chocolate mousse, peanut cream, sea buckthorn", "offers": { "@type": "Offer", "price": "12", "priceCurrency": "EUR" } },
-                { "@type": "MenuItem", "name": "Strawberry", "description": "Strawberry, rhubarb, panna cotta", "offers": { "@type": "Offer", "price": "12", "priceCurrency": "EUR" } }
-              ]
-            }
-          ]
-        },
-        "sameAs": [
-          "https://www.instagram.com/restaurant.moose/",
-          "https://www.facebook.com/profile.php?id=61554885102522"
-        ]
-      }
-    </script>
-  </head>
+/* ---------- Your choice ---------- */
+.choice {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px 32px;
+  align-items: center;
+  padding: clamp(22px, 3vw, 34px);
+  margin-bottom: clamp(36px, 5vw, 64px);
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.choice h2 { font-size: clamp(28px, 3.4vw, 40px); }
+.choice-list { margin: 10px 0 0; color: var(--muted); }
+.choice-list b { color: var(--fg); font-weight: 600; }
+.choice .actions { justify-content: flex-end; }
+.btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.copy-status { min-height: 1.4em; margin: 6px 0 0; font-size: 14px; color: var(--muted); }
 
-  <body>
-    <a class="skip-link" href="#main" data-i18n="skip.link">Naar hoofdinhoud</a>
+footer {
+  border-top: 1px solid var(--line);
+  padding-block: 24px 40px;
+  color: var(--muted);
+  font-size: 14px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+}
+footer p { margin: 0; max-width: 70ch; }
 
-    <!-- ===================== HEADER ===================== -->
-    <header class="site-header" id="siteHeader" data-state="top">
-      <div class="header-inner">
-        <a class="brand" href="#top" aria-label="Restaurant Moose">
-          <img class="brand-mark" src="assets/img/moose-head.png" alt="" width="44" height="44" />
-          <span class="brand-name">Moose</span>
+@media (max-width: 860px) {
+  .title-page { grid-template-columns: 1fr; align-items: start; }
+  .grid { grid-template-columns: 1fr; }
+  .how { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .meta { grid-template-columns: auto minmax(0, 1fr); }
+  .fav { grid-column: 1 / -1; grid-row: auto; justify-self: start; }
+  .desc, .swatches { grid-column: 1 / -1; }
+  .choice { grid-template-columns: 1fr; }
+  .choice .actions { justify-content: flex-start; }
+  .shot-phone { width: 22%; border-width: 3px; border-radius: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="title-page">
+    <div>
+      <div class="mark">
+        <span class="mark-icon" aria-hidden="true"></span>
+        <span class="eyebrow">Ontwerpboek · Lazy Louis Jazzcafé &amp; Eethuys</span>
+      </div>
+      <h1>Tien websites voor <em>Lazy&nbsp;Louis</em></h1>
+    </div>
+    <div class="title-aside">
+      <p class="lede">Elk ontwerp is een echte, werkende website met uw eigen kaart, openingstijden en foto’s. Klik er gerust doorheen: open het menu, probeer de reserveerknop, kijk op uw telefoon.</p>
+      <p class="lede">Zet een hartje bij de ontwerpen die u aanspreken. Onderaan deze pagina ziet u uw keuze en kunt u die direct doorsturen.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="01-gouden-letters.html">
+          Begin met bladeren
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-
-        <nav class="nav-desktop" aria-label="Primair">
-          <a href="#about" data-i18n="nav.about">Verhaal</a>
-          <a href="#menu" data-i18n="nav.menu">Menu</a>
-          <a href="#groups" data-i18n="nav.groups">Groepen</a>
-          <a href="#visit" data-i18n="nav.visit">Bezoek</a>
-        </nav>
-
-        <div class="header-actions">
-          <div class="lang-switch" role="group" aria-label="Taal / Language">
-            <button type="button" class="lang-btn" data-lang="nl" aria-label="Nederlands" lang="nl">NL</button>
-            <button type="button" class="lang-btn" data-lang="en" aria-label="English" lang="en">EN</button>
-            <button type="button" class="lang-btn" data-lang="de" aria-label="Deutsch" lang="de">DE</button>
-          </div>
-          <button type="button" class="btn btn-primary btn-reserve" data-reserve data-i18n="nav.reserve">
-            Reserveren
-          </button>
-          <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav">
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-            <span class="sr-only" data-i18n="nav.open">Menu openen</span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Mobile drawer -->
-    <div class="mobile-nav" id="mobileNav" hidden>
-      <nav aria-label="Mobiel">
-        <a href="#about" data-i18n="nav.about" data-nav-close>Verhaal</a>
-        <a href="#menu" data-i18n="nav.menu" data-nav-close>Menu</a>
-        <a href="#groups" data-i18n="nav.groups" data-nav-close>Groepen</a>
-        <a href="#visit" data-i18n="nav.visit" data-nav-close>Bezoek</a>
-      </nav>
-      <div class="mobile-nav-foot">
-        <div class="lang-switch" role="group" aria-label="Taal / Language">
-          <button type="button" class="lang-btn" data-lang="nl">NL</button>
-          <button type="button" class="lang-btn" data-lang="en">EN</button>
-          <button type="button" class="lang-btn" data-lang="de">DE</button>
-        </div>
-        <button type="button" class="btn btn-primary" data-reserve data-nav-close data-i18n="nav.reserve">Reserveren</button>
+        <a class="btn" href="#keuze">Naar mijn keuze</a>
       </div>
     </div>
-    <div class="nav-scrim" id="navScrim" hidden></div>
+  </header>
 
-    <span id="top"></span>
+  <ol class="how" aria-label="Zo werkt het">
+    <li><div><strong>Open een ontwerp</strong><span>Klik op een afbeelding. Het ontwerp opent als echte website.</span></div></li>
+    <li><div><strong>Blader verder</strong><span>Met de pijltjes in de balk onderin, of met ← en → op het toetsenbord.</span></div></li>
+    <li><div><strong>Geef een hartje</strong><span>Bij elk ontwerp dat u bevalt. Combineren mag ook: dit kleur, dat menu.</span></div></li>
+  </ol>
 
-    <main id="main">
-      <p id="langStatus" class="sr-only" role="status" aria-live="polite"></p>
-      <!-- ===================== HERO ===================== -->
-      <section class="hero" id="hero">
-        <div class="hero-media">
-          <img src="assets/img/hero-interior.jpg" alt="Het interieur van Restaurant Moose in Den Haag" fetchpriority="high" />
-          <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-          <p class="eyebrow eyebrow-light" data-i18n="hero.eyebrow">Buurtrestaurant · Houtoven · Den Haag</p>
-          <h1 class="hero-title" data-i18n="hero.title">Verse seizoenskeuken, recht uit de houtoven</h1>
-          <p class="hero-subtitle" data-i18n="hero.subtitle">
-            Een modern Europees restaurant in hartje Den Haag.
-          </p>
-          <div class="hero-actions">
-            <button type="button" class="btn btn-primary btn-lg" data-reserve data-i18n="hero.cta_reserve">Reserveren</button>
-            <a class="btn btn-ghost btn-lg" href="#menu" data-i18n="hero.cta_menu">Bekijk het menu</a>
-          </div>
-          <p class="hero-hours"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.hours">Wo–Zo · 17:00–23:00</span></p>
-        </div>
-        <a class="scroll-cue" href="#about" aria-hidden="true" tabindex="-1"></a>
-      </section>
-
-      <!-- ===================== ABOUT ===================== -->
-      <section class="section about" id="about">
-        <div class="container about-grid">
-          <div class="about-copy reveal">
-            <p class="eyebrow" data-i18n="about.eyebrow">Ons verhaal</p>
-            <h2 class="section-title" data-i18n="about.title">Een buurtrestaurant, simpel gehouden</h2>
-            <p class="lead" data-i18n="about.body1"></p>
-            <p data-i18n="about.body2"></p>
-            <ul class="feature-list">
-              <li class="feature">
-                <span class="feature-ic" aria-hidden="true">&#128293;</span>
-                <span>
-                  <strong data-i18n="about.f1_title">Uit de houtoven</strong>
-                  <span data-i18n="about.f1_body"></span>
-                </span>
-              </li>
-              <li class="feature">
-                <span class="feature-ic" aria-hidden="true">&#127807;</span>
-                <span>
-                  <strong data-i18n="about.f2_title">Seizoensgericht</strong>
-                  <span data-i18n="about.f2_body"></span>
-                </span>
-              </li>
-              <li class="feature">
-                <span class="feature-ic" aria-hidden="true">&#127863;</span>
-                <span>
-                  <strong data-i18n="about.f3_title">Bijzondere wijnen</strong>
-                  <span data-i18n="about.f3_body"></span>
-                </span>
-              </li>
-            </ul>
-          </div>
-          <div class="about-media reveal">
-            <img src="assets/img/gallery-2.jpg" alt="Gerecht uit de houtoven bij Moose" loading="lazy" />
-            <img class="about-media-2" src="assets/img/moose-head.png" alt="" aria-hidden="true" />
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== MENU ===================== -->
-      <section class="section menu" id="menu">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow" data-i18n="menu.eyebrow">Onze kaart</p>
-            <h2 class="section-title"><span data-i18n="menu.title">Het seizoensmenu</span>
-              <span class="menu-tag" data-i18n="menu.tag">Wisselt met de seizoenen</span>
-            </h2>
-            <p class="section-intro" data-i18n="menu.intro"></p>
-          </div>
-
-          <div class="chef-card reveal">
-            <div class="chef-card-main">
-              <p class="chef-label" data-i18n="menu.chef_label">Chef’s menu</p>
-              <p class="chef-desc" data-i18n="menu.chef_desc">Vier gangen, samengesteld door de keuken</p>
-              <p class="chef-pairing" data-i18n="menu.chef_pairing">Wijnarrangement +€30</p>
-            </div>
-            <div class="chef-price"><span class="chef-courses" id="chefCourses">4</span><span class="chef-amount">€59</span></div>
-          </div>
-
-          <div class="menu-grid" id="menuGrid"></div>
-
-          <p class="menu-allergy reveal" data-i18n="menu.allergy"></p>
-        </div>
-      </section>
-
-      <!-- ===================== GROUPS ===================== -->
-      <section class="section groups" id="groups">
-        <div class="container groups-grid">
-          <div class="groups-media reveal">
-            <img src="assets/img/gallery-3.jpg" alt="Groepstafel bij Restaurant Moose" loading="lazy" />
-          </div>
-          <div class="groups-copy reveal">
-            <p class="eyebrow" data-i18n="groups.eyebrow">Groepen &amp; privé</p>
-            <h2 class="section-title" data-i18n="groups.title">Samen aan tafel</h2>
-            <p class="lead" data-i18n="groups.body"></p>
-            <ul class="chip-row">
-              <li class="chip chip-strong" data-i18n="groups.capacity">Tot 35 gasten</li>
-              <li class="chip" data-i18n="groups.use1">Groepsdiner</li>
-              <li class="chip" data-i18n="groups.use2">Zakenlunch</li>
-              <li class="chip" data-i18n="groups.use3">Borrel &amp; theater</li>
-              <li class="chip" data-i18n="groups.use4">Privédiner</li>
-            </ul>
-            <div class="groups-private">
-              <h3 data-i18n="groups.private_title">Privé dineren</h3>
-              <p data-i18n="groups.private_body"></p>
-              <p class="muted" data-i18n="groups.location"></p>
-            </div>
-            <a class="btn btn-primary" id="groupsCta" href="#" data-i18n="groups.cta">Vraag een offerte aan</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== GALLERY ===================== -->
-      <section class="section gallery" id="gallery">
-        <div class="container">
-          <div class="section-head center reveal">
-            <p class="eyebrow" data-i18n="gallery.eyebrow">Sfeer</p>
-            <h2 class="section-title" data-i18n="gallery.title">Proef de sfeer</h2>
-          </div>
-          <div class="gallery-grid reveal">
-            <figure class="g-item g-tall"><img src="assets/img/gallery-1.jpg" alt="Seizoensgerecht bij Moose" loading="lazy" /></figure>
-            <figure class="g-item"><img src="assets/img/hero-interior.jpg" alt="Het interieur van Moose met open keuken" loading="lazy" /></figure>
-            <figure class="g-item"><img src="assets/img/gallery-4.jpg" alt="Gerecht van de houtoven" loading="lazy" /></figure>
-            <figure class="g-item g-wide"><img src="assets/img/gallery-3.jpg" alt="Gedekte tafel bij Moose" loading="lazy" /></figure>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== VISIT ===================== -->
-      <section class="section visit" id="visit">
-        <div class="container visit-grid">
-          <div class="visit-copy reveal">
-            <p class="eyebrow" data-i18n="visit.eyebrow">Bezoek ons</p>
-            <h2 class="section-title" data-i18n="visit.title">Tot snel bij Moose</h2>
-
-            <div class="visit-block">
-              <h3 data-i18n="visit.address_label">Adres</h3>
-              <p class="visit-address">
-                Kazernestraat 62<br />2514 CV Den Haag
-              </p>
-              <p class="muted" data-i18n="visit.transport"></p>
-              <a class="link-arrow" id="directionsLink" href="#" target="_blank" rel="noopener">
-                <span data-i18n="visit.directions">Route</span> &rarr;
-              </a>
-            </div>
-
-            <div class="visit-block">
-              <h3 data-i18n="visit.contact_label">Contact</h3>
-              <p>
-                <a id="telLink" href="tel:+31642461104">06 42461104</a><br />
-                <a id="mailLink" href="mailto:info@restaurantmoose.nl">info@restaurantmoose.nl</a>
-              </p>
-              <div class="social-row">
-                <a id="igLink" href="#" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
-                <a id="fbLink" href="#" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="visit-hours-card reveal">
-            <h3 data-i18n="visit.hours_label">Openingstijden</h3>
-            <table class="hours-table" id="hoursTable"><tbody></tbody></table>
-            <p class="lunch-note"><span class="dot" aria-hidden="true"></span><span data-i18n="visit.lunch">Lunch op aanvraag</span></p>
-            <button type="button" class="btn btn-primary btn-block" data-reserve data-i18n="visit.reserve">Reserveren</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== NEWSLETTER ===================== -->
-      <section class="section newsletter" id="newsletter">
-        <div class="container newsletter-inner reveal">
-          <div class="newsletter-copy">
-            <h2 data-i18n="news.title">Blijf op de hoogte</h2>
-            <p data-i18n="news.body"></p>
-          </div>
-          <form class="newsletter-form" id="newsletterForm" novalidate>
-            <label class="sr-only" for="newsEmail" data-i18n="news.placeholder">Je e-mailadres</label>
-            <input type="email" id="newsEmail" name="email" required data-i18n="news.placeholder" data-i18n-attr="placeholder" placeholder="Je e-mailadres" />
-            <button type="submit" class="btn btn-dark" data-i18n="news.button">Inschrijven</button>
-            <p class="news-success" id="newsSuccess" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <!-- ===================== FOOTER ===================== -->
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <a class="brand brand-footer" href="#top" aria-label="Restaurant Moose">
-            <img class="brand-mark" src="assets/img/moose-head.png" alt="" width="52" height="52" />
-            <span class="brand-name">Moose</span>
-          </a>
-          <p class="footer-tagline" data-i18n="footer.tagline">Buurtrestaurant · Houtoven · Den Haag</p>
-        </div>
-
-        <div class="footer-col">
-          <h3 data-i18n="footer.explore">Ontdek</h3>
-          <a href="#about" data-i18n="nav.about">Verhaal</a>
-          <a href="#menu" data-i18n="nav.menu">Menu</a>
-          <a href="#groups" data-i18n="nav.groups">Groepen</a>
-          <a id="giftcardLink" href="#" target="_blank" rel="noopener" data-i18n="footer.giftcard">Cadeaubon</a>
-        </div>
-
-        <div class="footer-col">
-          <h3 data-i18n="footer.visit">Bezoek</h3>
-          <p>Kazernestraat 62<br />2514 CV Den Haag</p>
-          <a href="tel:+31642461104">06 42461104</a>
-          <a href="mailto:info@restaurantmoose.nl">info@restaurantmoose.nl</a>
-        </div>
-
-        <div class="footer-col">
-          <h3 data-i18n="footer.follow">Volg ons</h3>
-          <a id="igLinkF" href="#" target="_blank" rel="noopener">Instagram</a>
-          <a id="fbLinkF" href="#" target="_blank" rel="noopener">Facebook</a>
-        </div>
-      </div>
-      <div class="footer-bar container">
-        <p>&copy; <span id="year">2026</span> Restaurant Moose. <span data-i18n="footer.rights">Alle rechten voorbehouden.</span></p>
-        <a class="to-top" href="#top" data-i18n="footer.top">Naar boven ↑</a>
-      </div>
-    </footer>
-
-    <!-- ===================== RESERVE MODAL ===================== -->
-    <div class="modal" id="reserveModal" hidden>
-      <div class="modal-scrim" data-modal-close></div>
-      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="reserveTitle" tabindex="-1">
-        <button type="button" class="modal-close" data-modal-close aria-label="Sluiten">&times;</button>
-        <img class="modal-mark" src="assets/img/moose-head.png" alt="" width="56" height="56" />
-        <h2 id="reserveTitle" data-i18n="reserve.title">Reserveren</h2>
-
-        <!-- Reservation widget mounts here once connected.
-             Drop the booking app's embed/iframe inside #reservation-widget and it
-             will show instead of the fallback below (see main.js: hasWidget check). -->
-        <div id="reservation-widget" data-widget-empty="true"></div>
-
-        <div class="reserve-fallback" id="reserveFallback">
-          <p data-i18n="reserve.body"></p>
-          <div class="reserve-actions">
-            <a class="btn btn-primary btn-block" id="modalCall" href="tel:+31642461104" data-i18n="reserve.call">Bel 06 42461104</a>
-            <a class="btn btn-ghost-dark btn-block" id="modalMail" href="mailto:info@restaurantmoose.nl" data-i18n="reserve.email">E-mail ons</a>
-          </div>
-          <p class="reserve-hours"><span class="dot" aria-hidden="true"></span><span data-i18n="reserve.hours_note">Woensdag t/m zondag · 17:00–23:00</span></p>
-        </div>
-      </div>
+  <section aria-labelledby="ontwerpen-titel">
+    <div class="chapters-head">
+      <h2 id="ontwerpen-titel">De ontwerpen</h2>
+      <p>Van klassiek bruin café tot zonnig terras.</p>
     </div>
+    <div class="grid" id="grid"></div>
+  </section>
 
-    <script src="js/i18n.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <section class="choice" id="keuze" aria-labelledby="keuze-titel">
+    <div>
+      <h2 id="keuze-titel">Uw keuze</h2>
+      <p class="choice-list" id="choiceList">U heeft nog geen hartjes gegeven. Klik op het hartje bij een ontwerp om het hier te bewaren.</p>
+      <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" id="shareWa" href="#keuze" target="_blank" rel="noopener" aria-disabled="true">Stuur via WhatsApp</a>
+      <button class="btn" type="button" id="copyBtn" aria-disabled="true">Kopieer keuze</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Alle tien de ontwerpen gebruiken de echte menukaart, prijzen, openingstijden en foto’s van Lazy Louis. Teksten, kleuren en indeling zijn voorstellen en kunnen nog alle kanten op.</p>
+    <p>Oktober 2026</p>
+  </footer>
+</div>
+
+<script src="book/book.js"></script>
+<script>
+(function () {
+  "use strict";
+  var BOOK = window.LL_BOOK;
+  var grid = document.getElementById("grid");
+  if (!BOOK || !grid) return;
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  var HEART = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.6 7.6 3.9 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.3 0 5.6 3.1 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg>';
+
+  grid.innerHTML = BOOK.designs.map(function (d) {
+    var sw = d.palette.map(function (c, i) { return "--sw-" + i + ":" + c; }).join(";");
+    return '<article class="card" style="' + sw + '">' +
+      '<a class="shot" href="' + d.file + '" aria-label="Open ontwerp ' + pad(d.n) + ': ' + esc(d.name) + '">' +
+        '<span class="shot-fallback" aria-hidden="true">' + esc(d.name) + '</span>' +
+        '<img class="shot-desk" src="book/thumbs/' + pad(d.n) + '.jpg" alt="" loading="lazy" onerror="this.remove()">' +
+        '<span class="shot-phone" aria-hidden="true"><img src="book/thumbs/' + pad(d.n) + '-m.jpg" alt="" loading="lazy" onerror="this.parentNode.remove()"></span>' +
+        '<span class="shot-open" aria-hidden="true">Open ontwerp →</span>' +
+      '</a>' +
+      '<div class="meta">' +
+        '<span class="num" aria-hidden="true">' + pad(d.n) + '</span>' +
+        '<div><h3><a href="' + d.file + '">' + esc(d.name) + '</a></h3><span class="mood eyebrow">' + esc(d.mood) + '</span></div>' +
+        '<button type="button" class="fav" data-n="' + d.n + '" aria-pressed="false">' + HEART + '<span>Favoriet</span></button>' +
+        '<p class="desc">' + esc(d.desc) + '</p>' +
+        '<div class="swatches" aria-hidden="true">' + d.palette.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join("") + '</div>' +
+      '</div>' +
+    '</article>';
+  }).join("");
+
+  var list = document.getElementById("choiceList");
+  var wa = document.getElementById("shareWa");
+  var copyBtn = document.getElementById("copyBtn");
+  var status = document.getElementById("copyStatus");
+
+  function choiceText() {
+    var favs = BOOK.favs();
+    var names = BOOK.designs.filter(function (d) { return favs.indexOf(d.n) !== -1; }).map(function (d) { return pad(d.n) + " " + d.name; });
+    return names.length ? "Mijn favoriete ontwerpen voor de Lazy Louis website: " + names.join(", ") + "." : "";
+  }
+
+  function paint() {
+    var favs = BOOK.favs();
+    grid.querySelectorAll(".fav").forEach(function (b) {
+      var on = favs.indexOf(+b.getAttribute("data-n")) !== -1;
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.querySelector("span").textContent = on ? "Gekozen" : "Favoriet";
+    });
+    var chosen = BOOK.designs.filter(function (d) { return favs.indexOf(d.n) !== -1; });
+    if (chosen.length) {
+      list.innerHTML = "U heeft " + chosen.length + (chosen.length === 1 ? " favoriet" : " favorieten") + ": " +
+        chosen.map(function (d) { return "<b>" + pad(d.n) + " " + esc(d.name) + "</b>"; }).join(", ") + ".";
+      wa.href = "https://wa.me/?text=" + encodeURIComponent(choiceText());
+      wa.removeAttribute("aria-disabled");
+      copyBtn.removeAttribute("aria-disabled");
+    } else {
+      list.textContent = "U heeft nog geen hartjes gegeven. Klik op het hartje bij een ontwerp om het hier te bewaren.";
+      wa.href = "#keuze";
+      wa.setAttribute("aria-disabled", "true");
+      copyBtn.setAttribute("aria-disabled", "true");
+    }
+  }
+
+  grid.addEventListener("click", function (e) {
+    var b = e.target.closest(".fav");
+    if (!b) return;
+    BOOK.toggleFav(+b.getAttribute("data-n"));
+    b.classList.remove("pop"); void b.offsetWidth; b.classList.add("pop");
+    paint();
+  });
+
+  copyBtn.addEventListener("click", function () {
+    var text = choiceText();
+    if (!text) return;
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(list);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      status.textContent = "De tekst is geselecteerd. Kopieer hem met Ctrl+C of Cmd+C.";
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Gekopieerd. Plak het in een mail of bericht."; }, fallback);
+    } catch (err) { fallback(); }
+  });
+
+  document.addEventListener("llbook:favs", paint);
+  paint();
+})();
+</script>
+</body>
 </html>
