@@ -344,7 +344,7 @@ em { font-style: italic; }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-@media (max-width: 1079px) {
+@media (max-width: 959px) {
   .hero { --D: clamp(220px, 58vw, 360px); --photo-w: 60vw; }
   .hero-inner { display: block; min-height: 0; }
   .hero-copy { max-width: 640px; padding: 34px 0 30px; }
@@ -355,10 +355,12 @@ em { font-style: italic; }
   .hero-photo figcaption { right: 12px; bottom: 10px; font-size: 12px; }
   .playing { margin-top: 28px; }
 }
-@media (max-width: 520px) {
+@media (max-width: 1279px) {
   .kicker { display: block; }
   .kicker .sep { display: none; }
   .kicker #clock { display: block; margin-top: 2px; }
+}
+@media (max-width: 520px) {
   .greet { font-size: 22px; }
   .headline { font-size: clamp(46px, 13vw, 60px); }
   .lede { font-size: 17px; }
@@ -691,8 +693,10 @@ abbr.veg { cursor: help; }
 @media (max-width: 520px) { .contact-list li { grid-template-columns: 92px minmax(0, 1fr); } }
 
 /* Footer ----------------------------------------------------------------- */
-.site-foot { background: var(--ink); color: var(--bg); padding: 56px 0 40px; }
+.site-foot { background: var(--ink); color: var(--bg); padding: clamp(64px, 8vw, 110px) 0 40px; }
 .site-foot ::selection { background: var(--bg); color: var(--ink); }
+.foot-sign { font: 400 clamp(44px, 6vw, 88px)/1 var(--serif); letter-spacing: -.01em; padding-bottom: clamp(36px, 5vw, 64px); margin-bottom: 36px; border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent); }
+.foot-sign em { font-style: italic; }
 .foot-grid { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 28px; }
 .site-foot .logo { height: 76px; }
 .site-foot .logo-word { background: var(--bg); }
@@ -975,6 +979,9 @@ dialog.reserve[open] { animation: dlg-in .45s var(--ease); }
 </main>
 
 <footer class="site-foot">
+  <div class="wrap">
+    <p class="foot-sign">Tot straks, <em>aan de lange bar.</em></p>
+  </div>
   <div class="wrap foot-grid">
     <a class="brand" href="#top" aria-label="Lazy Louis, naar boven"><span class="logo" aria-hidden="true"><span class="logo-word"></span><span class="logo-trumpet"></span></span></a>
     <div class="foot-meta">
