@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lazy Louis · Gouden Letters</title>
+<meta name="description" content="Lazy Louis Jazzcafé &amp; Eethuys: sinds 1991 jazz, goed eten en speciaalbier in twee monumentale panden uit 1895 aan de Arnhemsestraat in Amersfoort.">
+<meta name="theme-color" content="#140d09">
+<link rel="icon" href="assets/brand/trumpet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap">
+<link rel="stylesheet" href="book/book.css">
+<style>
+:root{
+  color-scheme: dark;
+  --glass:#140d09;
+  --glass-2:#1b110b;
+  --facade:#190f0a;
+  --wood:#3b1f14;
+  --wood-deep:#2a150d;
+  --gold-lo:#8a6a2a;
+  --gold-hi:#e7c873;
+  --gold-mid:#a77f32;
+  --gold:#d2ad5c;
+  --gold-line:rgba(214,178,94,.5);
+  --gold-faint:rgba(214,178,94,.26);
+  --cream:#efe3c8;
+  --cream-dim:#c4b38f;
+  --paper:#f0e4c9;
+  --ink:#2b1a10;
+  --ink-soft:#5a4330;
+  --gold-ink:#76561b;
+  --red:#b2162a;
+  --leaf:linear-gradient(180deg,#f6e3a2 0%,#e7c873 36%,#b78d3b 50%,#cfa54f 62%,#8a6a2a 100%);
+  --brass:linear-gradient(170deg,#f3dc93 0%,#d9b45c 30%,#b88d3e 52%,#e0bf6c 74%,#a77f32 100%);
+  --f-display:"Playfair Display SC","Bodoni 72","Didot","Bodoni MT",Georgia,serif;
+  --f-text:"EB Garamond",Garamond,"Hoefler Text","Times New Roman",serif;
+  --f-script:"Pinyon Script","Snell Roundhand","Apple Chancery","URW Chancery L",cursive;
+  --gutter:clamp(16px,4vw,56px);
+  --maxw:1240px;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.003 0.11' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.02 0 0 0 0 0.01 0 0 0 0.9 -0.32'/%3E%3C/filter%3E%3Crect width='520' height='520' filter='url(%23g)'/%3E%3C/svg%3E");
+  --paper-noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.24 0 0 0 0 0.1 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23p)'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:92px;background:var(--glass)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+html:has(dialog[open]){overflow:hidden}
+body{margin:0;background:var(--glass);color:var(--cream);font:400 1.2rem/1.62 var(--f-text);font-variant-numeric:oldstyle-nums;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0 0 1em}
+h1,h2,h3,h4{margin:0;font-weight:700}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid #f5df9c;outline-offset:3px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;padding:.6em 1em;background:var(--paper);color:var(--ink);font:700 .9rem/1 var(--f-display);letter-spacing:.1em;text-decoration:none}
+.skip:focus{top:12px}
+.wrap{max-width:var(--maxw);margin:0 auto}
+.section{padding:clamp(72px,9vw,132px) var(--gutter)}
+
+/* ---------- gold leaf text ---------- */
+.gilt{background:var(--leaf);background-size:100% 1.08em;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 0 rgba(0,0,0,.6))}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:.6em;min-height:48px;padding:.85em 1.5em .8em;border-radius:2px;font:700 .92rem/1 var(--f-display);letter-spacing:.16em;text-decoration:none;cursor:pointer;border:0;transition:filter .2s,transform .2s,background-color .2s,color .2s}
+.btn-brass{color:#2a1906;background:var(--brass);box-shadow:inset 0 0 0 1px rgba(255,246,214,.55),inset 0 -2px 0 rgba(90,60,15,.35),0 0 0 1px #5e4313,0 3px 0 #070402;text-shadow:0 1px 0 rgba(255,240,196,.6)}
+.btn-brass:hover{filter:brightness(1.07) saturate(1.05)}
+.btn-brass:active{transform:translateY(1px)}
+.btn-line{color:var(--gold-hi);background:rgba(16,10,6,.45);box-shadow:inset 0 0 0 1px var(--gold-line),inset 0 0 0 4px rgba(16,10,6,.6),inset 0 0 0 5px var(--gold-faint)}
+.btn-line:hover{color:#fff1c8;background:rgba(40,26,12,.6)}
+
+/* ---------- ornaments ---------- */
+.orn{display:block;width:240px;max-width:100%;height:18px;color:var(--gold)}
+.orn-c{margin-left:auto;margin-right:auto}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:60;background:rgba(17,10,6,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--gold-line)}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--gold-faint);pointer-events:none}
+.top-in{max-width:1320px;margin:0 auto;padding:0 var(--gutter);height:74px;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto;flex:0 0 auto}
+.brand-mark{width:42px;height:26px;background:var(--red);-webkit-mask:url(assets/brand/trumpet.png) center/contain no-repeat;mask:url(assets/brand/trumpet.png) center/contain no-repeat}
+.brand-name{font:900 1.5rem/1 var(--f-display);letter-spacing:.07em;padding-top:2px}
+.nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.nav a{position:relative;display:block;padding:12px 13px;font:400 .95rem/1 var(--f-display);letter-spacing:.16em;color:var(--cream);text-decoration:none;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:13px;right:13px;bottom:5px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .35s ease}
+.nav a:hover{color:var(--gold-hi)}
+.nav a:hover::after{transform:scaleX(1)}
+.nav .nav-cta{display:none}
+.top .btn{min-height:42px;padding:.75em 1.2em .7em;font-size:.84rem}
+.nav-toggle{display:none;align-items:center;gap:10px;height:44px;padding:0 14px;background:transparent;border:1px solid var(--gold-line);border-radius:2px;color:var(--gold-hi);font:400 .9rem/1 var(--f-display);letter-spacing:.16em;cursor:pointer}
+.nav-toggle .bars{position:relative;width:18px;height:12px}
+.nav-toggle .bars::before,.nav-toggle .bars::after,.nav-toggle .bars i{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .25s,opacity .2s}
+.nav-toggle .bars::before{top:0}.nav-toggle .bars i{top:5px}.nav-toggle .bars::after{top:10px}
+.nav-toggle[aria-expanded="true"] .bars::before{transform:translateY(5px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .bars::after{transform:translateY(-5px) rotate(-45deg)}
+.nav-toggle[aria-expanded="true"] .bars i{opacity:0}
+
+@media (max-width:1100px){
+  .nav-toggle{display:inline-flex}
+  .top .head-cta{display:none}
+  .nav{position:absolute;left:0;right:0;top:100%;background:#120b07;border-bottom:1px solid var(--gold-line);box-shadow:0 30px 60px rgba(0,0,0,.6);padding:12px var(--gutter) 28px;display:none}
+  .nav.is-open{display:block}
+  .nav ul{flex-direction:column;gap:0}
+  .nav li{border-bottom:1px solid var(--gold-faint)}
+  .nav a{padding:18px 0;font-size:1.25rem;letter-spacing:.14em}
+  .nav a::after{display:none}
+  .nav .nav-cta{display:flex;margin-top:22px;width:100%}
+}
+@media (max-width:420px){.brand-name{font-size:1.3rem}.brand-mark{width:36px}}
+
+/* ---------- hero: the shop window ---------- */
+.hero{position:relative;padding:clamp(28px,3.4vw,44px) var(--gutter) 0;background:
+  radial-gradient(58% 60% at 50% 38%,rgba(231,200,115,.12),transparent 72%),
+  linear-gradient(90deg,rgba(0,0,0,.45),transparent 22%,transparent 78%,rgba(0,0,0,.45)),
+  repeating-linear-gradient(90deg,transparent 0 46px,rgba(0,0,0,.28) 46px 47px,rgba(255,226,170,.03) 47px 48px),
+  var(--facade)}
+.window-wrap{container-type:inline-size;max-width:1010px;margin:0 auto;padding:0 13px}
+.window{position:relative;overflow:hidden;isolation:isolate;text-align:center;border-radius:50% 50% 3px 3px / 27cqw 27cqw 3px 3px;box-shadow:0 0 0 2px #c9a14a,0 0 0 11px #26150c,0 0 0 12px rgba(214,178,94,.55),0 40px 90px rgba(0,0,0,.7)}
+.window-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.window::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(112deg,transparent 0 30%,rgba(255,243,214,.035) 36%,transparent 42%,transparent 44%,rgba(255,243,214,.025) 45%,transparent 47%),
+  radial-gradient(80% 60% at 50% 22%,rgba(16,10,6,.55),rgba(16,10,6,.82) 70%),
+  linear-gradient(180deg,rgba(16,10,6,.35),rgba(16,10,6,.55) 40%,rgba(16,10,6,.82))}
+.window::after,.window .pin{content:"";position:absolute;pointer-events:none}
+.window::after{inset:14px;border:1.5px solid rgba(231,200,115,.85);border-radius:50% 50% 2px 2px / calc(27cqw - 14px) calc(27cqw - 14px) 2px 2px}
+.window .pin{inset:21px;border:1px solid rgba(231,200,115,.38);border-radius:50% 50% 1px 1px / calc(27cqw - 21px) calc(27cqw - 21px) 1px 1px}
+.arch-h1{margin:0;font-size:1rem}
+.arch{display:block;width:100%;height:auto;overflow:visible}
+.sheen{animation:sheen 2.6s cubic-bezier(.45,.05,.2,1) .8s both}
+@keyframes sheen{from{transform:translateX(0)}to{transform:translateX(1560px)}}
+.window-body{position:relative;padding:0 clamp(20px,7cqw,88px) clamp(40px,6cqw,64px)}
+.anno{display:flex;align-items:center;justify-content:center;gap:18px;margin:clamp(6px,1.4cqw,16px) 0 clamp(16px,2.2cqw,24px);font:400 .95rem/1 var(--f-display);letter-spacing:.34em;color:var(--gold-hi)}
+.anno::before,.anno::after{content:"";width:clamp(36px,9cqw,92px);height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.anno::after{background:linear-gradient(270deg,transparent,var(--gold))}
+.lede{max-width:56ch;margin:0 auto 1.2em;font-size:clamp(1.12rem,1.45vw,1.3rem);line-height:1.55;color:var(--cream);text-wrap:balance}
+.live{display:inline-flex;align-items:center;gap:.7em;margin:0 0 1.3em;font:400 .88rem/1.2 var(--f-display);letter-spacing:.14em;color:var(--cream-dim)}
+.live::before{content:"";flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:#6f6350;box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}
+.live.is-open{color:var(--gold-hi)}
+.live.is-open::before{background:radial-gradient(circle at 40% 35%,#fff4c8,#e7c873 45%,#a77f32);box-shadow:0 0 10px 2px rgba(231,200,115,.55)}
+.cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.sill{max-width:1066px;margin:0 auto;padding:26px 0 clamp(30px,4vw,44px);text-align:center;position:relative}
+.sill::before{content:"";position:absolute;left:0;right:0;top:12px;height:10px;background:linear-gradient(180deg,#3a2213,#1d110a);box-shadow:0 -1px 0 #c9a14a,0 1px 0 rgba(0,0,0,.6);border-radius:1px}
+.sill-line{text-wrap:balance;margin:22px 0 .35em;font:700 clamp(.82rem,1.3vw,1.02rem)/1.4 var(--f-display);letter-spacing:.3em;color:var(--gold-hi)}
+.sill-line i{display:inline-block;width:6px;height:6px;margin:0 .9em .18em;background:var(--gold);transform:rotate(45deg)}
+.sill-addr{margin:0;font-style:italic;font-size:1.05rem;color:var(--cream-dim)}
+.hero-edge{height:10px;border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-faint);background:#120b07}
+
+/* ---------- section heads ---------- */
+.head{margin-bottom:clamp(36px,5vw,56px)}
+.kicker{margin:0 0 .15em;font:400 clamp(1.7rem,2.6vw,2.3rem)/1.1 var(--f-script);color:var(--gold-hi)}
+.h2{font:700 clamp(2.35rem,4.8vw,4rem)/1.08 var(--f-display);letter-spacing:.02em;text-wrap:balance}
+.h3{font:700 clamp(1.7rem,2.8vw,2.4rem)/1.1 var(--f-display);letter-spacing:.03em}
+.head .orn{margin-top:20px}
+.head-c{text-align:center}
+.head-c .orn{margin-left:auto;margin-right:auto}
+
+/* ---------- verhaal ---------- */
+.wood{background:radial-gradient(120% 70% at 50% 0,rgba(255,196,130,.07),transparent 60%),var(--grain),var(--wood);background-size:auto,520px 520px,auto}
+.story-top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,7vw,104px);align-items:center}
+.intro p{max-width:60ch}
+.intro p:first-child::first-letter{float:left;margin:.08em .12em 0 0;font:900 4.5em/.76 var(--f-display);color:var(--gold-hi);text-shadow:0 2px 0 rgba(0,0,0,.55)}
+.gframe{position:relative;padding:13px;background:linear-gradient(135deg,#8a6a2a 0%,#e7c873 20%,#a77f32 42%,#f2d78c 60%,#8a6a2a 82%,#c9a14a 100%);box-shadow:0 0 0 1px #2e1d08,inset 0 0 0 1px rgba(255,240,200,.55),0 28px 60px rgba(0,0,0,.55)}
+.gframe::before{content:"";position:absolute;inset:6px;border:1px solid rgba(58,36,8,.55);pointer-events:none}
+.gframe img{width:100%;box-shadow:0 0 0 2px #2a170a}
+.plate{display:table;margin:20px auto 0;padding:.55em 1.2em .5em;background:var(--brass);color:#2a1906;font:400 .76rem/1.35 var(--f-display);letter-spacing:.14em;text-align:center;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(255,246,214,.5),0 0 0 1px #5e4313,0 3px 8px rgba(0,0,0,.5);text-shadow:0 1px 0 rgba(255,240,196,.5);max-width:100%}
+.quotes{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;margin:clamp(80px,10vw,140px) 0 0;padding:clamp(40px,5vw,60px) 0;border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);position:relative}
+.quotes::before,.quotes::after{content:"";position:absolute;left:0;right:0;height:1px;background:var(--gold-faint)}
+.quotes::before{top:4px}.quotes::after{bottom:4px}
+.oval{width:clamp(170px,17vw,230px);aspect-ratio:4/5;border-radius:50%;padding:11px;background:linear-gradient(140deg,#8a6a2a,#f0d58a 28%,#a77f32 52%,#e7c873 74%,#8a6a2a);box-shadow:0 0 0 1px #2e1d08,0 20px 50px rgba(0,0,0,.55)}
+.oval img{width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 0 0 2px #2a170a}
+.quote{margin:0;position:relative;padding-top:42px}
+.quote::before{content:"\201C";position:absolute;top:-18px;left:-4px;font:900 6rem/1 var(--f-display);color:var(--gold);opacity:.9}
+.quote p{margin:0 0 .7em;font:italic 500 clamp(1.45rem,2.2vw,1.95rem)/1.3 var(--f-text);color:var(--cream);text-wrap:balance}
+.quote footer{font:400 .8rem/1.4 var(--f-display);letter-spacing:.16em;color:var(--gold)}
+.chron-wrap{margin-top:clamp(80px,10vw,140px)}
+.chron{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+.chron::before{content:"";position:absolute;left:0;right:0;top:calc(2.6rem + 7px);height:1px;background:linear-gradient(90deg,var(--gold),var(--gold) 92%,transparent)}
+.chron li{padding-right:clamp(16px,2.4vw,36px)}
+.chron-year{display:block;height:2.6rem;font:700 clamp(1.5rem,2.1vw,1.95rem)/2.6rem var(--f-display);white-space:nowrap}
+.chron-mark{display:block;width:13px;height:13px;margin:1px 0 22px;background:var(--gold-hi);transform:rotate(45deg);box-shadow:0 0 0 5px var(--wood),0 0 0 6px var(--gold-faint)}
+.chron h4{margin:0 0 .45em;font:700 1.02rem/1.3 var(--f-display);letter-spacing:.06em;color:var(--cream)}
+.chron p{margin:0;font-size:1.04rem;line-height:1.52;color:var(--cream-dim)}
+.curio{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(44px,7vw,104px);align-items:center;margin-top:clamp(80px,10vw,140px)}
+.brood{position:relative;padding:20px;background:linear-gradient(135deg,#7c5d22,#e7c873 18%,#a77f32 36%,#f4dc95 52%,#93702b 70%,#d9b45c 86%,#7c5d22);box-shadow:0 0 0 1px #2e1d08,inset 0 0 0 1px rgba(255,240,200,.6),inset 0 0 0 7px rgba(120,86,30,.35),0 34px 70px rgba(0,0,0,.6)}
+.brood-mat{position:relative;padding:clamp(34px,5vw,58px) clamp(24px,4vw,48px);text-align:center;color:var(--ink);background:var(--paper-noise),var(--paper);box-shadow:inset 0 0 0 1px rgba(60,38,10,.55),inset 0 8px 20px rgba(60,38,10,.22)}
+.brood-mat::before{content:"";position:absolute;inset:12px;border:1px solid rgba(118,86,27,.45);pointer-events:none}
+.brood-label{margin:0 0 .9em;font:400 .78rem/1.3 var(--f-display);letter-spacing:.22em;color:var(--gold-ink)}
+.brood h3{font:italic 700 clamp(1.9rem,3vw,2.6rem)/1.1 var(--f-display);color:var(--ink);letter-spacing:.01em}
+.brood .orn{color:var(--gold-ink);margin:18px auto 20px;width:200px}
+.brood p.txt{max-width:34ch;margin:0 auto 1em;font-size:1.18rem;line-height:1.55}
+.brood .by{margin:0;font:400 .78rem/1.4 var(--f-display);letter-spacing:.16em;color:var(--ink-soft)}
+.corner{position:absolute;width:40px;height:40px;color:var(--gold-ink);pointer-events:none}
+.corner.tl{top:18px;left:18px}.corner.tr{top:18px;right:18px;transform:scaleX(-1)}.corner.bl{bottom:18px;left:18px;transform:scaleY(-1)}.corner.br{bottom:18px;right:18px;transform:scale(-1,-1)}
+.details{list-style:none;margin:28px 0 0;padding:0}
+.details li{display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:8px 18px;padding:22px 0;border-top:1px solid var(--gold-faint)}
+.details li:last-child{border-bottom:1px solid var(--gold-faint)}
+.details .num{font:900 1.6rem/1.15 var(--f-display);text-align:right}
+.details h4{margin:0 0 .25em;font:700 1.15rem/1.3 var(--f-display);letter-spacing:.06em;color:var(--gold-hi)}
+.details p{margin:0;font-size:1.1rem;line-height:1.55;color:var(--cream)}
+
+/* ---------- de kaart ---------- */
+.kaart{background:radial-gradient(70% 34% at 50% 0,rgba(231,200,115,.09),transparent 70%),var(--glass)}
+.kaart .lede-c{max-width:46ch;margin:18px auto 0;text-align:center;color:var(--cream-dim);font-style:italic;font-size:1.22rem}
+.plates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:1120px;margin:-8px auto 0}
+.plates img{width:100%;aspect-ratio:3/2;object-fit:cover;-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%)}
+.ptabs{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:18px 0 44px}
+.ptab{position:relative;min-width:156px;padding:16px 30px 15px;border:0;border-radius:3px;cursor:pointer;font:700 1rem/1 var(--f-display);letter-spacing:.22em;color:var(--gold-hi);background:linear-gradient(180deg,#4b3818,#2c2010);box-shadow:inset 0 0 0 1px rgba(231,200,115,.34),inset 0 1px 0 rgba(255,230,160,.16),0 0 0 1px #090503,0 3px 0 #050302;transition:filter .2s,transform .2s}
+.ptab::before,.ptab::after{content:"";position:absolute;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f6e2a6,#7a5b20 75%);box-shadow:0 1px 0 rgba(0,0,0,.45)}
+.ptab::before{left:10px}.ptab::after{right:10px}
+.ptab:hover{filter:brightness(1.18)}
+.ptab[aria-selected="true"]{color:#2a1906;background:var(--brass);box-shadow:inset 0 0 0 1px rgba(255,246,214,.6),inset 0 -2px 0 rgba(90,60,15,.3),0 0 0 1px #5e4313,0 3px 0 #050302,0 10px 30px rgba(231,200,115,.18);text-shadow:0 1px 0 rgba(255,240,196,.6)}
+.ptab[aria-selected="true"]:hover{filter:brightness(1.05)}
+.carte{position:relative;max-width:1120px;margin:0 auto;padding:clamp(40px,6vw,84px) clamp(22px,6vw,84px) clamp(36px,5vw,64px);background:var(--paper-noise),var(--paper);color:var(--ink);box-shadow:0 0 0 1px #2e1d08,0 40px 90px rgba(0,0,0,.65)}
+.carte::before,.carte::after{content:"";position:absolute;pointer-events:none}
+.carte::before{inset:14px;border:1.5px solid rgba(118,86,27,.7)}
+.carte::after{inset:20px;border:.75px solid rgba(118,86,27,.45)}
+.carte .corner{width:46px;height:46px;color:var(--gold-ink)}
+.carte .corner.tl{top:26px;left:26px}.carte .corner.tr{top:26px;right:26px}.carte .corner.bl{bottom:26px;left:26px}.carte .corner.br{bottom:26px;right:26px}
+.carte-panel[hidden]{display:none}
+.carte-head{text-align:center;margin:0 0 clamp(32px,4.5vw,52px)}
+.carte-title{font:900 clamp(2.6rem,5.4vw,4rem)/1 var(--f-display);letter-spacing:.1em;color:var(--ink)}
+.carte-served{margin:.55em 0 0;font-style:italic;font-size:1.15rem;color:var(--ink-soft)}
+.carte-head .orn{color:var(--gold-ink);margin:16px auto 14px}
+.legend{margin:0;font:400 .78rem/1.6 var(--f-display);letter-spacing:.12em;color:var(--gold-ink)}
+.legend .lg{display:inline-block;margin:0 .7em}
+.legend .lz{margin:0 .5em .12em 0}
+.carte-cols{columns:2 330px;column-gap:clamp(40px,6vw,88px);column-rule:1px solid rgba(118,86,27,.28)}
+.course{margin:0 0 36px;break-inside:avoid}
+.course-title{display:flex;align-items:center;gap:14px;margin:0 0 12px;font:700 1.16rem/1.25 var(--f-display);letter-spacing:.16em;color:var(--gold-ink);text-align:center;break-after:avoid}
+.course-title::before,.course-title::after{content:"";flex:1 1 20px;height:1px;background:currentColor;opacity:.45}
+.course-intro{margin:-4px 0 10px;text-align:center;font-style:italic;font-size:1.02rem;color:var(--ink-soft);break-after:avoid}
+.dishes{list-style:none;margin:0;padding:0}
+.dish{padding:8px 0 10px;break-inside:avoid}
+.dish-line,.extra{display:flex;align-items:baseline}
+.dish-name{font:600 1.13rem/1.32 var(--f-text);color:var(--ink)}
+.veg{margin-left:.15em;font-weight:600;color:var(--gold-ink)}
+.leader{flex:1 1 28px;min-width:28px;margin:0 .5em;border-bottom:2px dotted rgba(90,67,48,.5);transform:translateY(-.3em)}
+.dish-price{font:500 1.13rem/1.32 var(--f-text);white-space:nowrap;font-variant-numeric:oldstyle-nums tabular-nums}
+.lz{display:inline-block;width:.42em;height:.42em;margin:0 .55em .12em 0;background:var(--gold-ink);transform:rotate(45deg);vertical-align:middle}
+.dish-tag,.for2{display:block;margin:.2em 0 0;font:italic 400 .86rem/1.35 var(--f-display);letter-spacing:.05em;color:var(--gold-ink)}
+.dish-desc{margin:.18em 0 0;max-width:46ch;font-style:italic;font-size:1.02rem;line-height:1.45;color:var(--ink-soft)}
+.extras{list-style:none;margin:.3em 0 0;padding:0 0 0 1.1em}
+.extra{font-style:italic;font-size:1.02rem;color:var(--ink-soft)}
+.extra .leader{border-bottom-width:1.5px}
+.extra span:last-child{font-style:normal;font-variant-numeric:oldstyle-nums tabular-nums;color:var(--ink)}
+.carte-notes{margin-top:12px;padding-top:30px;border-top:1px solid rgba(118,86,27,.32);text-align:center}
+.carte-notes p{max-width:62ch;margin:0 auto .35em;font-style:italic;font-size:1.02rem;line-height:1.5;color:var(--ink-soft)}
+
+/* ---------- reserveren + openingstijden ---------- */
+.res-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(44px,7vw,104px);align-items:center}
+.res-lines{list-style:none;margin:0 0 34px;padding:0}
+.res-lines li{position:relative;padding:0 0 0 30px;margin:0 0 .65em;max-width:46ch}
+.res-lines li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+.res-phone{margin:22px 0 0;font-style:italic;color:var(--cream-dim)}
+.res-phone a{font-style:normal;color:var(--gold-hi);text-decoration-color:var(--gold-line);text-underline-offset:.2em;white-space:nowrap}
+.plaque{position:relative;padding:clamp(34px,4vw,48px) clamp(26px,4vw,52px);border-radius:5px;color:#26170a;background:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px),var(--brass);box-shadow:inset 0 0 0 1px rgba(255,246,214,.6),inset 0 0 0 8px rgba(120,86,30,.22),inset 0 0 0 9px rgba(255,240,200,.35),inset 0 2px 1px rgba(255,255,255,.55),0 0 0 1px #4a3410,0 30px 60px rgba(0,0,0,.55),0 3px 0 #120b05}
+.plaque .screw{position:absolute;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff1c4,#b48a3c 55%,#6b4f1c);box-shadow:inset 0 0 0 1px rgba(60,40,10,.5),0 1px 1px rgba(255,255,255,.4)}
+.plaque .screw::after{content:"";position:absolute;left:2px;right:2px;top:50%;height:1.5px;margin-top:-.75px;background:rgba(60,40,10,.75);transform:rotate(35deg)}
+.screw.s1{top:16px;left:16px}.screw.s2{top:16px;right:16px}.screw.s3{bottom:16px;left:16px}.screw.s4{bottom:16px;right:16px}
+.plaque h3{margin:0 0 .35em;text-align:center;font:900 clamp(1.6rem,2.4vw,2rem)/1.1 var(--f-display);letter-spacing:.14em;color:#26170a;text-shadow:0 1px 0 rgba(255,240,196,.6)}
+.plaque-status{display:table;margin:0 auto 22px;padding:.45em 1em .4em;border:1px solid rgba(38,23,10,.55);border-radius:2px;font:700 .8rem/1.3 var(--f-display);letter-spacing:.12em;text-align:center;text-shadow:0 1px 0 rgba(255,240,196,.5)}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:lining-nums tabular-nums;text-shadow:0 1px 0 rgba(255,240,196,.5)}
+.hours th,.hours td{padding:.62em .7em;border-bottom:1px solid rgba(38,23,10,.24);vertical-align:baseline}
+.hours tr:first-child th,.hours tr:first-child td{border-top:1px solid rgba(38,23,10,.24)}
+.hours th{white-space:nowrap;text-align:left;font:700 .92rem/1.3 var(--f-display);letter-spacing:.12em}
+.hours td{text-align:right;font-size:1.1rem;line-height:1.3}
+.hours .is-closed td{font-style:italic}
+.hours-note{display:block;font-style:italic;font-size:.88rem;line-height:1.3;margin-top:.15em}
+.hours .is-today th,.hours .is-today td{background:rgba(38,23,10,.13)}
+.today-tag{display:inline-block;margin-left:.6em;padding:.12em .45em .1em;font:italic 400 .72rem/1.2 var(--f-display);letter-spacing:.08em;border:1px solid rgba(38,23,10,.5);border-radius:2px;vertical-align:.12em}
+.sundays{margin:20px 0 0;text-align:center;font-size:1.06rem;line-height:1.45;text-shadow:0 1px 0 rgba(255,240,196,.5)}
+.sundays strong{font:700 .8rem/1 var(--f-display);letter-spacing:.14em;display:block;margin-bottom:.5em}
+
+/* ---------- agenda ---------- */
+.news{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,1fr)}
+.news article{padding:0 clamp(22px,3vw,48px);border-left:1px solid var(--gold-faint)}
+.news article:first-child{padding-left:0;border-left:0}
+.news article:last-child{padding-right:0}
+.news-kind{margin:0 0 .9em;font:400 .76rem/1 var(--f-display);letter-spacing:.26em;color:var(--gold)}
+.news h3{margin:0 0 .35em;font:700 clamp(1.6rem,2.4vw,2.15rem)/1.12 var(--f-display);letter-spacing:.02em}
+.news .when{margin:0 0 .9em;font-style:italic;font-size:1.1rem;color:var(--gold-hi)}
+.news p.txt{font-size:1.1rem;line-height:1.58;color:var(--cream)}
+.news-next{display:inline-block;margin-top:.4em;padding:.6em 1em .55em;font:400 .78rem/1.4 var(--f-display);letter-spacing:.12em;color:var(--gold-hi);box-shadow:inset 0 0 0 1px var(--gold-line),inset 0 0 0 4px var(--glass),inset 0 0 0 5px var(--gold-faint)}
+.news-next b{display:block;margin-top:.2em;font-weight:700;color:var(--cream)}
+
+/* ---------- vacatures ---------- */
+.jobs{background:linear-gradient(180deg,var(--glass),var(--glass-2))}
+.jobs-intro{max-width:52ch;margin:16px 0 0;color:var(--cream-dim)}
+.jobs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3.5vw,48px)}
+.jobcard{position:relative;padding:clamp(32px,4vw,52px);color:var(--ink);background:var(--paper-noise),var(--paper);box-shadow:0 0 0 1px #2e1d08,0 26px 60px rgba(0,0,0,.55)}
+.jobcard::before{content:"";position:absolute;inset:10px;border:1px solid rgba(118,86,27,.5);pointer-events:none}
+.jobcard .gezocht{margin:0 0 .7em;font:400 .76rem/1 var(--f-display);letter-spacing:.26em;color:var(--gold-ink)}
+.jobcard h3{font:900 clamp(1.6rem,2.4vw,2.1rem)/1.1 var(--f-display);letter-spacing:.03em;color:var(--ink)}
+.jobcard .hrs{margin:.35em 0 1em;font-style:italic;color:var(--gold-ink);font-size:1.12rem}
+.jobcard p.txt{font-size:1.1rem;line-height:1.55}
+.jobcard h4{margin:1.2em 0 .5em;font:700 .82rem/1 var(--f-display);letter-spacing:.18em;color:var(--gold-ink)}
+.jobcard ul{list-style:none;margin:0;padding:0}
+.jobcard li{position:relative;padding-left:22px;margin:0 0 .3em;font-size:1.08rem}
+.jobcard li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;background:var(--gold-ink);transform:rotate(45deg)}
+.apply{margin:clamp(32px,4vw,44px) 0 0;font-size:1.16rem;color:var(--cream)}
+.apply a{color:var(--gold-hi);text-decoration-color:var(--gold-line);text-underline-offset:.2em}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(44px,7vw,104px);align-items:center}
+.addr{margin:0 0 .5em;font:700 clamp(1.8rem,3.4vw,2.8rem)/1.15 var(--f-display);font-style:normal;letter-spacing:.03em}
+.near{margin:0 0 30px;font-style:italic;color:var(--cream-dim)}
+.cdl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:14px 28px;margin:0 0 36px;padding:26px 0;border-top:1px solid var(--gold-faint);border-bottom:1px solid var(--gold-faint)}
+.cdl dt{font:400 .8rem/1.9 var(--f-display);letter-spacing:.2em;color:var(--gold)}
+.cdl dd{margin:0;font-size:1.18rem;overflow-wrap:anywhere}
+.cdl a{text-decoration-color:var(--gold-line);text-underline-offset:.22em;transition:color .2s}
+.cdl a:hover{color:var(--gold-hi)}
+
+/* ---------- footer ---------- */
+.foot{padding:clamp(56px,7vw,88px) var(--gutter) 40px;text-align:center;background:var(--glass);border-top:1px solid var(--gold-line);box-shadow:inset 0 5px 0 -4px var(--gold-faint)}
+.foot-logo{width:220px;margin:0 auto 12px}
+.foot .orn{margin:22px auto 26px}
+.foot-nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 22px;list-style:none;margin:0 0 26px;padding:0}
+.foot-nav a{font:400 .85rem/2 var(--f-display);letter-spacing:.16em;color:var(--cream-dim);text-decoration:none}
+.foot-nav a:hover{color:var(--gold-hi)}
+.foot small{display:block;font-size:1rem;color:var(--cream-dim)}
+
+/* ---------- dialog ---------- */
+.dlg{width:min(580px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:12px;border:0;background:transparent;color:var(--cream);overflow:auto}
+.dlg::backdrop{background:rgba(8,5,3,.74);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.dlg-sheet{position:relative;padding:clamp(34px,6vw,54px) clamp(24px,5vw,50px) clamp(28px,5vw,40px);background:radial-gradient(90% 60% at 50% 0,rgba(231,200,115,.1),transparent 70%),#1a110b;box-shadow:0 0 0 1.5px #c9a14a,0 0 0 9px #24140b,0 0 0 10px rgba(214,178,94,.5),0 30px 80px rgba(0,0,0,.65);margin:10px}
+.dlg-sheet .corner{color:var(--gold);width:34px;height:34px}
+.dlg-sheet .corner.tl{top:12px;left:12px}.dlg-sheet .corner.tr{top:12px;right:12px}.dlg-sheet .corner.bl{bottom:12px;left:12px}.dlg-sheet .corner.br{bottom:12px;right:12px}
+.dlg[open] .dlg-sheet{animation:dlg-in .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes dlg-in{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
+.dlg-x{position:absolute;top:14px;right:14px;z-index:2;display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--gold-line);border-radius:50%;background:#140d09;color:var(--gold-hi);cursor:pointer}
+.dlg-x:hover{background:#2a1a0e}
+.dlg-x svg{width:16px;height:16px}
+.dlg .kicker{text-align:center;font-size:1.8rem}
+.dlg h2{text-align:center;font:700 clamp(2.2rem,6vw,3rem)/1.08 var(--f-display);letter-spacing:.04em}
+.dlg .orn{margin:14px auto 22px;width:200px}
+.dlg-lines{list-style:none;margin:0 0 26px;padding:0}
+.dlg-lines li{position:relative;padding-left:26px;margin:0 0 .55em;font-size:1.12rem;line-height:1.5}
+.dlg-lines li::before{content:"";position:absolute;left:3px;top:.62em;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+.dlg .btn{width:100%}
+.dlg-phone{margin:18px 0 0;text-align:center;font-size:1.12rem;color:var(--cream-dim)}
+.dlg-phone a{display:inline-block;margin-left:.25em;font:700 1.15rem/1.4 var(--f-display);letter-spacing:.06em;color:var(--gold-hi);text-decoration-color:var(--gold-line);text-underline-offset:.2em;font-variant-numeric:lining-nums}
+.dlg-confirm{margin:16px 0 0;text-align:center;font-style:italic;font-size:1.02rem;color:var(--cream-dim)}
+.dlg-note{margin:22px 0 0;padding-top:16px;border-top:1px dashed var(--gold-faint);text-align:center;font:400 .72rem/1.5 var(--f-display);letter-spacing:.12em;color:var(--cream-dim)}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .story-top,.curio,.res-grid,.contact-grid{grid-template-columns:minmax(0,1fr)}
+  .story-top .gframe-col{max-width:560px}
+  .quotes{grid-template-columns:auto minmax(0,1fr);row-gap:40px}
+  .quotes .oval{grid-row:span 2}
+  .chron{grid-template-columns:minmax(0,1fr);padding-left:34px}
+  .chron::before{left:6px;right:auto;top:8px;bottom:8px;width:1px;height:auto;background:var(--gold)}
+  .chron li{position:relative;padding:0 0 30px}
+  .chron-mark{position:absolute;left:-34px;top:.8rem;margin:0}
+  .chron-year{height:auto;line-height:1.2;margin-bottom:.35em}
+  .news{grid-template-columns:minmax(0,1fr)}
+  .news article{padding:32px 0 0;margin-top:32px;border-left:0;border-top:1px solid var(--gold-faint)}
+  .news article:first-child{padding-top:0;margin-top:0;border-top:0}
+  .jobs-grid{grid-template-columns:minmax(0,1fr)}
+  .contact-grid .gframe-col{max-width:560px}
+}
+@media (max-width:600px){
+  body{font-size:1.125rem}
+  .quotes{grid-template-columns:minmax(0,1fr)}
+  .quotes .oval{grid-row:auto;justify-self:center}
+  .plates{margin-top:0}
+  .ptab{min-width:0;flex:1 1 0;padding:15px 12px 14px;font-size:.86rem;letter-spacing:.14em}
+  .ptab::before,.ptab::after{display:none}
+  .carte::before{inset:8px}.carte::after{inset:12px}
+  .carte .corner{width:30px;height:30px}
+  .carte .corner.tl{top:16px;left:16px}.carte .corner.tr{top:16px;right:16px}.carte .corner.bl{bottom:16px;left:16px}.carte .corner.br{bottom:16px;right:16px}
+  .carte-cols{columns:1}
+  .brood{padding:14px}
+  .corner{width:30px;height:30px}
+  .corner.tl{top:12px;left:12px}.corner.tr{top:12px;right:12px}.corner.bl{bottom:12px;left:12px}.corner.br{bottom:12px;right:12px}
+  .cdl{grid-template-columns:minmax(0,1fr);gap:2px}
+  .cdl dd{margin-bottom:12px}
+  .cta .btn{width:100%}
+  .anno{letter-spacing:.24em;font-size:.84rem;gap:12px}
+  .sill-line{letter-spacing:.14em;font-size:.8rem}
+  .sill-line i{width:5px;height:5px;margin:0 .45em .18em}
+  .dlg .btn{letter-spacing:.1em;padding-left:1em;padding-right:1em}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .sheen{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Direct naar de inhoud</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="orn-rule" viewBox="0 0 320 24">
+      <path d="M0 12H112M208 12H320" stroke="currentColor" stroke-width="1"/>
+      <g fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round">
+        <path d="M112 12c9 0 11-7.5 18.5-7.5 5.2 0 7.4 4.3 4.3 6.8-2.2 1.7-5.3.5-5-1.8"/>
+        <path d="M112 12c9 0 11 7.5 18.5 7.5 5.2 0 7.4-4.3 4.3-6.8-2.2-1.7-5.3-.5-5 1.8"/>
+        <path d="M208 12c-9 0-11-7.5-18.5-7.5-5.2 0-7.4 4.3-4.3 6.8 2.2 1.7 5.3.5 5-1.8"/>
+        <path d="M208 12c-9 0-11 7.5-18.5 7.5-5.2 0-7.4-4.3-4.3-6.8 2.2-1.7 5.3-.5 5 1.8"/>
+      </g>
+      <path d="M160 3.5l8.5 8.5-8.5 8.5-8.5-8.5z" fill="currentColor"/>
+      <circle cx="145" cy="12" r="1.7" fill="currentColor"/><circle cx="175" cy="12" r="1.7" fill="currentColor"/>
+    </symbol>
+    <symbol id="orn-corner" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-linecap="round">
+        <path d="M1.5 47V15C1.5 7.5 7.5 1.5 15 1.5h32" stroke-width="1.3"/>
+        <path d="M7.5 47V19c0-6.4 5.1-11.5 11.5-11.5h28" stroke-width=".8"/>
+        <path d="M14 30c0-9 7-16 16-16 3.6 0 6 2.4 6 5.2 0 2.8-2.2 4.6-4.6 4.6-2.2 0-3.6-1.6-3.2-3.4" stroke-width="1.1"/>
+      </g>
+      <circle cx="14" cy="34" r="1.6" fill="currentColor"/><circle cx="34" cy="14" r="1.6" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#main" aria-label="Lazy Louis, naar boven">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name gilt">Lazy Louis</span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Hoofdmenu">
+      <ul>
+        <li><a href="#verhaal">Verhaal</a></li>
+        <li><a href="#menu">De kaart</a></li>
+        <li><a href="#reserveren">Reserveren</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#vacatures">Vacatures</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button type="button" class="btn btn-brass nav-cta" data-reserve>Reserveer een tafel</button>
+    </nav>
+    <button type="button" class="btn btn-brass head-cta" data-reserve>Reserveer</button>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"><i></i></span><span>Menu</span></button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ HERO: het etalageraam ============ -->
+  <section class="hero" aria-label="Welkom">
+    <div class="window-wrap">
+      <div class="window">
+        <img class="window-photo" src="assets/img/bar-beer.jpg" alt="" width="1024" height="683" fetchpriority="high">
+        <span class="pin" aria-hidden="true"></span>
+        <h1 class="arch-h1">
+          <span class="sr-only">Lazy Louis, Jazzcafé &amp; Eethuys, anno 1991</span>
+          <svg class="arch" viewBox="0 0 1000 330" aria-hidden="true" focusable="false">
+            <defs>
+              <path id="arc" d="M-20 313.8A1000 1000 0 0 1 1020 313.8"/>
+              <linearGradient id="leaf" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fbeab0"/>
+                <stop offset=".34" stop-color="#e7c873"/>
+                <stop offset=".5" stop-color="#ad8435"/>
+                <stop offset=".6" stop-color="#d4ab55"/>
+                <stop offset="1" stop-color="#8a6a2a"/>
+              </linearGradient>
+              <linearGradient id="sheen-g" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#fffbe9" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#fffbe9" stop-opacity=".95"/>
+                <stop offset="1" stop-color="#fffbe9" stop-opacity="0"/>
+              </linearGradient>
+              <text id="t-arch" text-anchor="middle" font-family="'Playfair Display SC', Didot, 'Bodoni MT', Georgia, serif" font-weight="900" font-size="106" letter-spacing="4"><textPath href="#arc" startOffset="50%">LAZY LOUIS</textPath></text>
+              <text id="t-script" x="500" y="292" text-anchor="middle" font-family="'Pinyon Script', 'Snell Roundhand', 'Apple Chancery', cursive" font-size="70">Jazzcafé &amp; Eethuys</text>
+              <mask id="letters" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1200" height="600">
+                <use href="#t-arch" fill="#fff"/>
+                <use href="#t-script" fill="#fff"/>
+              </mask>
+            </defs>
+            <g fill="#050302" opacity=".9" transform="translate(4 5)"><use href="#t-arch"/><use href="#t-script"/></g>
+            <g fill="#fff0bd" opacity=".75" transform="translate(-1.2 -1.2)"><use href="#t-arch"/></g>
+            <g fill="url(#leaf)" stroke="#4a300c" stroke-width="1.6" paint-order="stroke"><use href="#t-arch"/></g>
+            <g fill="url(#leaf)"><use href="#t-script"/></g>
+            <g mask="url(#letters)"><g transform="skewX(-22)"><rect class="sheen" x="-420" y="-40" width="210" height="460" fill="url(#sheen-g)"/></g></g>
+          </svg>
+        </h1>
+        <div class="window-body">
+          <p class="anno">Anno 1991</p>
+          <p class="lede">Twee monumentale panden uit 1895, een lange glanzende bar met messing tapkranen en aan de muren saxofoons, jazzportretten en een tekening van Herman Brood. Komt u binnen voor koffie, een goed glas, lunch of diner.</p>
+          <p><span class="live" data-ll="status">Openingstijden laden…</span></p>
+          <div class="cta">
+            <button type="button" class="btn btn-brass" data-reserve>Reserveer een tafel</button>
+            <a class="btn btn-line" href="#menu">Bekijk de kaart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sill">
+      <p class="sill-line">Koffie<i aria-hidden="true"></i>Lunch<i aria-hidden="true"></i>Diner<i aria-hidden="true"></i>Speciaalbieren</p>
+      <p class="sill-addr">Arnhemsestraat 1-3, Amersfoort · op een steenworp van de Onze Lieve Vrouwetoren</p>
+    </div>
+  </section>
+  <div class="hero-edge" aria-hidden="true"></div>
+
+  <!-- ============ VERHAAL ============ -->
+  <section class="section wood" id="verhaal" aria-labelledby="verhaal-title">
+    <div class="wrap">
+      <div class="story-top">
+        <div>
+          <header class="head">
+            <p class="kicker">Sinds 1991</p>
+            <h2 class="h2 gilt" id="verhaal-title">Het verhaal van het huis</h2>
+            <svg class="orn" aria-hidden="true"><use href="#orn-rule"/></svg>
+          </header>
+          <div class="intro" id="intro"></div>
+        </div>
+        <figure class="gframe-col" style="margin:0">
+          <div class="gframe"><img src="assets/img/bar-front.jpg" alt="De lange bar van Lazy Louis met messing tapkranen en een saxofoon aan de muur" width="1024" height="683"></div>
+          <figcaption class="plate">De lange bar · messing, spiegels en een saxofoon</figcaption>
+        </figure>
+      </div>
+
+      <div class="quotes" id="quotes">
+        <div class="oval"><img src="assets/img/bar-gramophone.jpg" alt="Een grammofoon met het hondje van His Master’s Voice op de bar" width="1024" height="683"></div>
+      </div>
+
+      <div class="chron-wrap">
+        <header class="head">
+          <p class="kicker">Van 1895 tot nu</p>
+          <h3 class="h3 gilt">Kroniek</h3>
+        </header>
+        <ol class="chron" id="chron"></ol>
+      </div>
+
+      <div class="curio">
+        <figure class="brood" style="margin:0" aria-labelledby="brood-title">
+          <div class="brood-mat">
+            <svg class="corner tl" aria-hidden="true"><use href="#orn-corner"/></svg>
+            <svg class="corner tr" aria-hidden="true"><use href="#orn-corner"/></svg>
+            <svg class="corner bl" aria-hidden="true"><use href="#orn-corner"/></svg>
+            <svg class="corner br" aria-hidden="true"><use href="#orn-corner"/></svg>
+            <p class="brood-label">Betaald met een tekening</p>
+            <h3 id="brood-title">Lazy Louis stillevend</h3>
+            <svg class="orn" aria-hidden="true"><use href="#orn-rule"/></svg>
+            <p class="txt" id="brood-text"></p>
+            <p class="by">Herman Brood · tekening aan de muur</p>
+          </div>
+        </figure>
+        <div>
+          <header class="head" style="margin-bottom:0">
+            <p class="kicker">Bij ons binnen</p>
+            <h3 class="h3 gilt">Kijkt u gerust even rond</h3>
+          </header>
+          <ol class="details" id="details"></ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DE KAART ============ -->
+  <section class="section kaart" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <header class="head head-c" style="margin-bottom:0">
+        <p class="kicker">Aan tafel</p>
+        <h2 class="h2 gilt" id="menu-title">De kaart</h2>
+        <svg class="orn orn-c" aria-hidden="true"><use href="#orn-rule"/></svg>
+        <p class="lede-c">Een mooie mix van klassieke en moderne gerechten, in het teken van het seizoen.</p>
+      </header>
+      <div class="plates" aria-hidden="true">
+        <img src="assets/img/food-tapas.jpg" alt="" width="1024" height="683">
+        <img src="assets/img/food-sandwich.jpg" alt="" width="1024" height="683">
+        <img src="assets/img/food-dessert.jpg" alt="" width="1024" height="683">
+      </div>
+      <div class="ptabs" role="tablist" aria-label="Kies een kaart" id="ptabs"></div>
+      <div class="carte">
+        <svg class="corner tl" aria-hidden="true"><use href="#orn-corner"/></svg>
+        <svg class="corner tr" aria-hidden="true"><use href="#orn-corner"/></svg>
+        <svg class="corner bl" aria-hidden="true"><use href="#orn-corner"/></svg>
+        <svg class="corner br" aria-hidden="true"><use href="#orn-corner"/></svg>
+        <div id="carte-panels"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESERVEREN + OPENINGSTIJDEN ============ -->
+  <section class="section wood" id="reserveren" aria-labelledby="res-title">
+    <div class="wrap res-grid">
+      <div>
+        <header class="head">
+          <p class="kicker">Een tafel voor u</p>
+          <h2 class="h2 gilt" id="res-title">Reserveren</h2>
+          <svg class="orn" aria-hidden="true"><use href="#orn-rule"/></svg>
+        </header>
+        <ul class="res-lines" id="res-lines"></ul>
+        <button type="button" class="btn btn-brass" data-reserve>Reserveer een tafel</button>
+        <p class="res-phone">Liever even bellen? <a href="tel:+31334613638" data-tel>033 – 461 36 38</a></p>
+      </div>
+      <div class="plaque" id="openingstijden" aria-labelledby="hours-title">
+        <i class="screw s1" aria-hidden="true"></i><i class="screw s2" aria-hidden="true"></i><i class="screw s3" aria-hidden="true"></i><i class="screw s4" aria-hidden="true"></i>
+        <h3 id="hours-title">Openingstijden</h3>
+        <p class="plaque-status" data-ll="status" aria-live="polite">Openingstijden laden…</p>
+        <table class="hours">
+          <caption class="sr-only">Openingstijden per dag</caption>
+          <tbody id="hours"></tbody>
+        </table>
+        <p class="sundays"><strong>Eerstvolgende open zondagen</strong><span id="sundays"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AGENDA ============ -->
+  <section class="section" id="agenda" aria-labelledby="agenda-title" style="background:var(--glass)">
+    <div class="wrap">
+      <header class="head">
+        <p class="kicker">Wat er speelt</p>
+        <h2 class="h2 gilt" id="agenda-title">Agenda &amp; nieuws</h2>
+        <svg class="orn" aria-hidden="true"><use href="#orn-rule"/></svg>
+      </header>
+      <div class="news" id="news"></div>
+    </div>
+  </section>
+
+  <!-- ============ VACATURES ============ -->
+  <section class="section jobs" id="vacatures" aria-labelledby="jobs-title">
+    <div class="wrap">
+      <header class="head">
+        <p class="kicker">Kom je ons team versterken?</p>
+        <h2 class="h2 gilt" id="jobs-title">Personeel gevraagd</h2>
+        <svg class="orn" aria-hidden="true"><use href="#orn-rule"/></svg>
+        <p class="jobs-intro">Overdag en ’s avonds, in het café en in het restaurant: er is altijd iemand nodig die het verschil maakt.</p>
+      </header>
+      <div class="jobs-grid" id="jobs"></div>
+      <p class="apply" id="apply"></p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section wood" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div>
+        <header class="head">
+          <p class="kicker">Tot ziens aan de bar</p>
+          <h2 class="h2 gilt" id="contact-title">Contact &amp; route</h2>
+          <svg class="orn" aria-hidden="true"><use href="#orn-rule"/></svg>
+        </header>
+        <address class="addr gilt"><span id="c-street">Arnhemsestraat 1-3</span><br><span id="c-city">3811 LE Amersfoort</span></address>
+        <p class="near" id="c-near">Op een steenworp van de Onze Lieve Vrouwetoren</p>
+        <dl class="cdl">
+          <dt>Telefoon</dt><dd><a href="tel:+31334613638" data-tel>033 – 461 36 38</a></dd>
+          <dt>E-mail</dt><dd><a href="mailto:info@lazylouis.nl" id="c-mail">info@lazylouis.nl</a></dd>
+          <dt>Instagram</dt><dd><a href="https://www.instagram.com/lazylouis_amersfoort/" id="c-ig" target="_blank" rel="noopener">@lazylouis_amersfoort</a></dd>
+          <dt>Facebook</dt><dd><a href="https://www.facebook.com/lazylouiscafe/" id="c-fb" target="_blank" rel="noopener">facebook.com/lazylouiscafe</a></dd>
+        </dl>
+        <div class="cta" style="justify-content:flex-start">
+          <a class="btn btn-brass" id="c-route" href="https://www.google.com/maps/place/Lazy+Louis/@52.1535815,5.3850157,17z" target="_blank" rel="noopener">Plan uw route</a>
+          <button type="button" class="btn btn-line" data-reserve>Reserveren</button>
+        </div>
+      </div>
+      <figure class="gframe-col" style="margin:0">
+        <div class="gframe"><img src="assets/img/table-wine.jpg" alt="Een fles rode wijn en glazen op een gedekte tafel" width="1024" height="683"></div>
+        <figcaption class="plate">Het restaurant · gedekt en wel</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <img class="foot-logo" src="assets/brand/logo-light.png" alt="Lazy Louis Jazzcafé &amp; Eethuys" width="1147" height="605">
+  <svg class="orn" aria-hidden="true"><use href="#orn-rule"/></svg>
+  <nav class="foot-nav" aria-label="Voettekst">
+    <ul>
+      <li><a href="#verhaal">Verhaal</a></li>
+      <li><a href="#menu">De kaart</a></li>
+      <li><a href="#reserveren">Reserveren</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#vacatures">Vacatures</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <small>© 2026 Lazy Louis Jazzcafé &amp; Eethuys</small>
+</footer>
+
+<dialog class="dlg" id="reserve-dlg" aria-labelledby="dlg-title">
+  <div class="dlg-sheet">
+    <svg class="corner tl" aria-hidden="true"><use href="#orn-corner"/></svg>
+    <svg class="corner bl" aria-hidden="true"><use href="#orn-corner"/></svg>
+    <svg class="corner br" aria-hidden="true"><use href="#orn-corner"/></svg>
+    <button type="button" class="dlg-x" data-close aria-label="Sluiten"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    <p class="kicker">Een tafel voor u</p>
+    <h2 class="gilt" id="dlg-title">Reserveren</h2>
+    <svg class="orn" aria-hidden="true"><use href="#orn-rule"/></svg>
+    <ul class="dlg-lines" id="dlg-lines"></ul>
+    <a class="btn btn-brass" id="dlg-fork" href="https://widget.thefork.com/63a9c0f2-62b5-449c-ae05-ae6fbbe3f000" target="_blank" rel="noopener">Reserveer via TheFork</a>
+    <p class="dlg-phone">Of bel ons:<a href="tel:+31334613638" data-tel>033 – 461 36 38</a></p>
+    <p class="dlg-confirm" id="dlg-confirm"></p>
+    <p class="dlg-note">Op de echte site komt hier direct de reserveringsmodule</p>
+  </div>
+</dialog>
+
+<script src="assets/js/lazylouis-data.js"></script>
+<script src="book/book.js"></script>
+<script>
+(function () {
+  "use strict";
+  var LL = window.LL;
+  if (!LL) return;
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  var ROMAN = ["I", "II", "III", "IV", "V", "VI"];
+
+  /* ---- contact details from the data file ---- */
+  var I = LL.info;
+  $$("[data-tel]").forEach(function (a) { a.href = I.phoneHref; a.textContent = I.phone; });
+  $("#c-street").textContent = I.street;
+  $("#c-city").textContent = I.postcode + " " + I.city;
+  $("#c-near").textContent = I.nearby;
+  var mail = $("#c-mail"); mail.href = "mailto:" + I.email; mail.textContent = I.email;
+  var ig = $("#c-ig"); ig.href = I.instagram; ig.textContent = I.instagramHandle;
+  $("#c-fb").href = I.facebook;
+  $("#c-route").href = I.mapsUrl;
+  $("#dlg-fork").href = I.reserveUrl;
+
+  /* ---- verhaal ---- */
+  $("#intro").innerHTML = LL.intro.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
+  var quotesHTML = LL.story.quotes.map(function (q) {
+    return '<blockquote class="quote"><p>' + esc(q.text) + "</p><footer>" + esc(q.by) + "</footer></blockquote>";
+  }).join("");
+  $("#quotes").insertAdjacentHTML("beforeend", quotesHTML);
+
+  var brood = null;
+  $("#chron").innerHTML = LL.story.timeline.filter(function (t) {
+    if (/Brood/.test(t.year)) { brood = t; return false; }
+    return true;
+  }).map(function (t) {
+    return '<li><span class="chron-year gilt">' + esc(t.year) + '</span><span class="chron-mark" aria-hidden="true"></span><h4>' + esc(t.title) + "</h4><p>" + esc(t.text) + "</p></li>";
+  }).join("");
+  if (brood) $("#brood-text").textContent = brood.text;
+
+  $("#details").innerHTML = LL.story.details.map(function (d, i) {
+    return '<li><span class="num gilt" aria-hidden="true">' + ROMAN[i] + "</span><div><h4>" + esc(d.title) + "</h4><p>" + esc(d.text) + "</p></div></li>";
+  }).join("");
+
+  /* ---- de kaart ---- */
+  var KEYS = ["lunch", "diner", "dranken"];
+  function line(label, price, cls) {
+    return '<div class="' + cls + '"><span>' + label + '</span><span class="leader" aria-hidden="true"></span><span>' + LL.euro(price) + "</span></div>";
+  }
+  function dish(it) {
+    var h = '<li class="dish">';
+    h += '<div class="dish-line"><span class="dish-name">' +
+      (it.signature ? '<span class="lz" aria-hidden="true"></span><span class="sr-only">Specialiteit van het huis: </span>' : "") +
+      esc(it.name) +
+      (it.veg ? '<span class="veg" aria-hidden="true">*</span><span class="sr-only"> (vegetarisch mogelijk)</span>' : "") +
+      '</span><span class="leader" aria-hidden="true"></span><span class="dish-price"><span class="sr-only">€ </span>' + LL.euro(it.price) + "</span></div>";
+    if (it.tag) h += '<span class="dish-tag">' + esc(it.tag) + "</span>";
+    if (it.forTwo) h += '<span class="for2">voor 2 personen</span>';
+    if (it.desc) h += '<p class="dish-desc">' + esc(it.desc) + "</p>";
+    if (it.extras && it.extras.length) {
+      h += '<ul class="extras">' + it.extras.map(function (x) { return "<li>" + line(esc(x.label), x.price, "extra") + "</li>"; }).join("") + "</ul>";
+    }
+    return h + "</li>";
+  }
+  var tabsHTML = "", panelsHTML = "";
+  KEYS.forEach(function (k, i) {
+    var m = LL.menu[k];
+    tabsHTML += '<button type="button" class="ptab" role="tab" id="tab-' + k + '" aria-controls="panel-' + k + '" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '">' + esc(m.title) + "</button>";
+    var p = '<div class="carte-panel" role="tabpanel" id="panel-' + k + '" aria-labelledby="tab-' + k + '" tabindex="0"' + (i === 0 ? "" : " hidden") + ">";
+    p += '<div class="carte-head"><h3 class="carte-title">' + esc(m.title) + '</h3><p class="carte-served">' + esc(m.served) + '</p><svg class="orn" aria-hidden="true"><use href="#orn-rule"/></svg>';
+    p += '<p class="legend"><span class="lg">* vegetarisch of vegetarisch te bereiden</span><span class="lg"><span class="lz" aria-hidden="true"></span>specialiteit van het huis</span><span class="lg">prijzen in euro’s</span></p></div>';
+    p += '<div class="carte-cols">' + m.sections.map(function (s) {
+      return '<section class="course"><h4 class="course-title"><span>' + esc(s.title) + "</span></h4>" +
+        (s.intro ? '<p class="course-intro">' + esc(s.intro) + "</p>" : "") +
+        '<ul class="dishes">' + s.items.map(dish).join("") + "</ul></section>";
+    }).join("") + "</div>";
+    p += '<div class="carte-notes">' + m.notes.map(function (n) { return "<p>" + esc(n) + "</p>"; }).join("") + "</div></div>";
+    panelsHTML += p;
+  });
+  $("#ptabs").innerHTML = tabsHTML;
+  $("#carte-panels").innerHTML = panelsHTML;
+
+  var tabs = $$(".ptab");
+  function select(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      $("#" + t.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { select(t); });
+    t.addEventListener("keydown", function (e) {
+      var n = null;
+      if (e.key === "ArrowRight") n = tabs[(i + 1) % tabs.length];
+      else if (e.key === "ArrowLeft") n = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === "Home") n = tabs[0];
+      else if (e.key === "End") n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); e.stopPropagation(); select(n, true); }
+    });
+  });
+
+  /* ---- reserveren + openingstijden ---- */
+  var lines = LL.reserve.lines.map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("");
+  $("#res-lines").innerHTML = lines;
+  $("#dlg-lines").innerHTML = lines;
+  $("#dlg-confirm").textContent = LL.reserve.confirm;
+
+  function hoursCell(r) {
+    var m = r.sunday && /^(.*zondag)\s+(.+)$/.exec(r.hours);
+    return m ? esc(m[2]) + '<span class="hours-note">' + esc(m[1]) + " van de maand</span>" : esc(r.hours);
+  }
+  function renderHours() {
+    $("#hours").innerHTML = LL.weekRows().map(function (r) {
+      return '<tr class="' + (r.today ? "is-today " : "") + (r.closed ? "is-closed" : "") + '"' + (r.today ? ' aria-current="date"' : "") + '><th scope="row">' + esc(r.day) +
+        (r.today ? '<span class="today-tag">vandaag</span>' : "") + "</th><td>" + hoursCell(r) + "</td></tr>";
+    }).join("");
+    var sun = LL.nextOpenSundays(2);
+    $("#sundays").textContent = sun.length > 1 ? sun[0] + " en " + sun[1] : (sun[0] || "");
+    LL.fillLive();
+  }
+  renderHours();
+  setInterval(renderHours, 60000);
+
+  /* ---- agenda ---- */
+  $("#news").innerHTML = LL.news.map(function (n) {
+    var kind = n.kind === "event" ? "Evenement" : "Goed om te weten";
+    return '<article><p class="news-kind">' + kind + '</p><h3 class="gilt">' + esc(n.title) + '</h3><p class="when">' + esc(n.when) + '</p><p class="txt">' + esc(n.text) + "</p>" +
+      (n.next ? '<p class="news-next">Eerstvolgende: <b>' + esc(n.next) + "</b></p>" : "") + "</article>";
+  }).join("");
+
+  /* ---- vacatures ---- */
+  $("#jobs").innerHTML = LL.jobs.map(function (j) {
+    return '<article class="jobcard"><p class="gezocht">Gezocht</p><h3>' + esc(j.title) + '</h3><p class="hrs">' + esc(j.hours) + '</p><p class="txt">' + esc(j.text) + "</p><h4>Wat wij bieden</h4><ul>" +
+      j.offer.map(function (o) { return "<li>" + esc(o) + "</li>"; }).join("") + "</ul></article>";
+  }).join("");
+  $("#apply").innerHTML = "Interesse? Stuur een berichtje naar " + esc(I.jobsContact) + ': <a href="mailto:' + esc(I.jobsEmail) + '">' + esc(I.jobsEmail) + "</a>";
+
+  /* ---- reserveringsdialoog ---- */
+  var dlg = $("#reserve-dlg"), opener = null;
+  function openDlg(e) {
+    opener = e && e.currentTarget;
+    closeNav();
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+    var first = $("#dlg-fork"); if (first) first.focus();
+  }
+  function closeDlg() {
+    if (typeof dlg.close === "function") dlg.close(); else dlg.removeAttribute("open");
+  }
+  dlg.addEventListener("close", function () { if (opener && document.contains(opener)) opener.focus(); });
+  $$("[data-reserve]").forEach(function (b) { b.addEventListener("click", openDlg); });
+  $$("[data-close]", dlg).forEach(function (b) { b.addEventListener("click", closeDlg); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) closeDlg(); });
+
+  /* ---- mobiel menu ---- */
+  var toggle = $(".nav-toggle"), nav = $("#site-nav");
+  function closeNav() { nav.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); }
+  toggle.addEventListener("click", function () {
+    var open = toggle.getAttribute("aria-expanded") !== "true";
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    nav.classList.toggle("is-open", open);
+    if (open) { var a = $("a", nav); if (a) a.focus(); }
+  });
+  $$("a", nav).forEach(function (a) { a.addEventListener("click", closeNav); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && nav.classList.contains("is-open")) { closeNav(); toggle.focus(); }
+  });
+})();
+</script>
+</body>
+</html>

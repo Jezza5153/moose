@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lazy Louis · Affiche</title>
+<meta name="description" content="Lazy Louis Jazzcafé &amp; Eethuys in Amersfoort: jazz, food &amp; drinks sinds 1991. Bekijk de kaart, de openingstijden en reserveer uw tafel.">
+<meta name="theme-color" content="#151515">
+<link rel="icon" href="assets/brand/trumpet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=League+Gothic&family=Libre+Franklin:ital,wght@0,400..800;1,400..700&display=swap">
+<link rel="stylesheet" href="book/book.css">
+<style>
+/* ==========================================================================
+   04 · AFFICHE — letterpress wood-type posters, edge to edge
+   ========================================================================== */
+:root {
+  color-scheme: light;
+  --mustard: #f2c230;
+  --mustard-2: #e8b622;
+  --red: #b2162a;
+  --red-2: #9c1124;
+  --ink: #151515;
+  --paper: #fff8e2;
+  --paper-2: #f6ecc9;
+  --slab: "Alfa Slab One", "Rockwell Extra Bold", Rockwell, "Roboto Slab", Georgia, serif;
+  --goth: "League Gothic", Oswald, "Arial Narrow", Impact, "Haettenschweiler", sans-serif;
+  --text: "Libre Franklin", "Franklin Gothic Book", "Helvetica Neue", Arial, sans-serif;
+  --max: 1320px;
+  --pad: clamp(26px, 4.6vw, 64px);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .12 0 0 0 0 .09 0 0 0 0 .03 0 0 0 3 -1.75'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  --grain-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .96 0 0 0 0 .86 0 0 0 2.2 -1.25'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  --wear: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3.2 2.75'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--ink); scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ink); color: var(--ink); font: 400 1.0625rem/1.58 var(--text); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+html:has(dialog[open]) { overflow: hidden; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .18em; }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; font-weight: 400; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+button { font: inherit; color: inherit; }
+.sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.on-dark :focus-visible { outline-color: var(--mustard); }
+.skip { position: absolute; left: 12px; top: -80px; z-index: 100; background: var(--mustard); color: var(--ink); padding: 10px 16px; font: 22px/1 var(--goth); text-transform: uppercase; letter-spacing: .06em; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+/* ---------- tiny ornaments ---------- */
+.star { display: inline-block; width: .62em; height: .62em; background: currentColor; clip-path: polygon(50% 0%, 61.8% 35.4%, 100% 35.4%, 69.1% 57.3%, 80.9% 92.7%, 50% 70.8%, 19.1% 92.7%, 30.9% 57.3%, 0% 35.4%, 38.2% 35.4%); vertical-align: .08em; flex: 0 0 auto; }
+.trumpet { display: inline-block; width: 1.65em; height: 1em; background: currentColor; -webkit-mask: url(assets/brand/trumpet.png) center / contain no-repeat; mask: url(assets/brand/trumpet.png) center / contain no-repeat; flex: 0 0 auto; }
+/* worn wood-type ink; padding keeps accents (É) inside the mask box */
+.headliner .reg > span, .jfd .reg > span, .menu-title .reg > span, .addr .reg > span, .jobs-head .reg > span, .res-title .fit-in, .agenda-head h2 .fit-in, .eq-word { -webkit-mask-image: var(--wear); mask-image: var(--wear); -webkit-mask-size: 260px; mask-size: 260px; padding-top: .3em; margin-top: -.3em; }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; gap: .5em; padding: .5em .9em .42em; border: 3px solid var(--ink); font: 400 1.6rem/1 var(--goth); text-transform: uppercase; letter-spacing: .05em; text-decoration: none; cursor: pointer; transition: transform .14s ease, box-shadow .14s ease; }
+.btn-red { background: var(--red); color: var(--paper); box-shadow: 5px 5px 0 var(--ink); }
+.btn-ink { background: var(--ink); color: var(--mustard); box-shadow: 5px 5px 0 var(--red); }
+.btn-paper { background: var(--paper); color: var(--ink); box-shadow: 5px 5px 0 var(--ink); }
+.btn:hover { transform: translate(-2px, -2px); }
+.btn-red:hover, .btn-paper:hover { box-shadow: 7px 7px 0 var(--ink); }
+.btn-ink:hover { box-shadow: 7px 7px 0 var(--red); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+.on-dark .btn { border-color: var(--mustard); }
+.on-dark .btn-red { box-shadow: 5px 5px 0 var(--mustard); }
+.on-dark .btn-red:hover { box-shadow: 7px 7px 0 var(--mustard); }
+.btn .arr { font-family: var(--text); font-weight: 800; font-size: .7em; }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.top { position: sticky; top: 0; z-index: 60; background: var(--ink); color: var(--paper); border-bottom: 4px solid var(--mustard); }
+.top-in { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 8px var(--pad); display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); min-height: 68px; }
+.brand { display: block; flex: 0 0 auto; text-decoration: none; }
+.brand img { height: 50px; width: auto; }
+.nav { margin-left: auto; }
+.nav ul { display: flex; align-items: center; gap: 2px; }
+.nav a { display: block; padding: 10px 11px 8px; font: 400 1.4rem/1 var(--goth); text-transform: uppercase; letter-spacing: .07em; text-decoration: none; color: var(--paper); }
+.nav a:hover { color: var(--mustard); }
+.nav a:hover .n { color: var(--paper); }
+.nav .n { display: none; }
+.top-status { display: inline-flex; align-items: center; gap: 8px; font: 400 1.15rem/1 var(--goth); text-transform: uppercase; letter-spacing: .08em; color: var(--mustard); white-space: nowrap; }
+.top-status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: currentColor; }
+.top-status.is-closed { color: #cfc6ad; }
+.top .btn { font-size: 1.3rem; padding: .48em .8em .4em; border-color: var(--mustard); box-shadow: 4px 4px 0 var(--mustard); }
+.top .btn:hover { box-shadow: 6px 6px 0 var(--mustard); }
+.menu-toggle { display: none; margin-left: auto; align-items: center; gap: 10px; background: transparent; border: 3px solid var(--mustard); color: var(--mustard); padding: 8px 12px 6px; font: 400 1.35rem/1 var(--goth); text-transform: uppercase; letter-spacing: .08em; cursor: pointer; }
+.menu-toggle .bars { position: relative; width: 20px; height: 14px; }
+.menu-toggle .bars::before, .menu-toggle .bars::after { content: ""; position: absolute; left: 0; right: 0; height: 3px; background: currentColor; transition: transform .2s ease, top .2s ease; }
+.menu-toggle .bars::before { top: 1px; }
+.menu-toggle .bars::after { top: 9px; }
+.menu-toggle[aria-expanded="true"] .bars::before { top: 5px; transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .bars::after { top: 5px; transform: rotate(-45deg); }
+
+@media (max-width: 1100px) {
+  .menu-toggle { display: inline-flex; }
+  .top-in { flex-wrap: wrap; }
+  .top-actions .btn { display: none; }
+  .nav { order: 5; flex: 1 0 100%; margin: 0 calc(-1 * var(--pad)) -8px; display: none; background: var(--mustard); color: var(--ink); border-top: 4px solid var(--ink); }
+  .top.is-open .nav { display: block; }
+  .nav ul { display: block; padding: 6px var(--pad) 18px; }
+  .nav li + li { border-top: 2px solid var(--ink); }
+  .nav a { display: flex; align-items: baseline; justify-content: space-between; color: var(--ink); font-size: 2.3rem; padding: 12px 0 8px; letter-spacing: .04em; }
+  .nav a:hover { color: var(--red); }
+  .nav .n { display: inline; font: 400 1.1rem/1 var(--slab); color: var(--red); }
+  .nav :focus-visible { outline-color: var(--ink); }
+}
+@media (max-width: 560px) {
+  .brand img { height: 42px; }
+  .top-status { font-size: 1rem; }
+  .top-in { min-height: 60px; gap: 12px; }
+}
+@media (max-width: 380px) { .top-status { display: none; } }
+
+/* ==========================================================================
+   Poster shell — each section is a printed sheet pasted edge to edge
+   ========================================================================== */
+.poster { position: relative; isolation: isolate; padding: clamp(46px, 6vw, 88px) 0; }
+.poster::before { content: ""; position: absolute; inset: clamp(7px, 1vw, 14px); border: 3px solid currentColor; outline: 1.5px solid currentColor; outline-offset: -9px; pointer-events: none; z-index: 2; opacity: .92; }
+.poster::after { content: ""; position: absolute; inset: 0; background-image: var(--grain); background-size: 320px; mix-blend-mode: multiply; opacity: .42; pointer-events: none; z-index: 3; }
+.poster.on-dark::after { background-image: var(--grain-light); mix-blend-mode: normal; opacity: .32; }
+.wrap { position: relative; z-index: 1; max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
+.p-mustard { background: var(--mustard); color: var(--ink); }
+.p-red { background: var(--red); color: var(--paper); }
+.p-ink { background: var(--ink); color: var(--paper); }
+@media (max-width: 560px) {
+  .poster::before { border-width: 2px; outline-width: 1px; outline-offset: -7px; }
+}
+
+/* fitted poster lines (JS sizes these to the column width) */
+.fit { display: block; line-height: .9; }
+.fit-in { display: inline-block; }
+.fit.is-fit .fit-in { white-space: nowrap; }
+
+/* kicker / label rows */
+.kicker { display: flex; align-items: center; gap: 14px; font: 400 clamp(1.25rem, 2vw, 1.6rem)/1 var(--goth); text-transform: uppercase; letter-spacing: .16em; }
+.kicker::after { content: ""; flex: 1; height: 7px; border-top: 3px solid currentColor; border-bottom: 1.5px solid currentColor; }
+.kicker .star { color: var(--red); }
+.on-dark .kicker .star, .p-red .kicker .star { color: var(--mustard); }
+
+.reg { display: inline-grid; }
+.reg > span { grid-area: 1 / 1; }
+.reg-ink { color: var(--ink); transform: translate(.05em, .045em); }
+.reg-red { color: var(--red); }
+
+/* ==========================================================================
+   HERO — the poster
+   ========================================================================== */
+.hero { padding-top: clamp(40px, 4.6vw, 64px); padding-bottom: clamp(40px, 5vw, 72px); }
+.presents { display: flex; align-items: center; gap: clamp(10px, 1.6vw, 20px); font: 400 clamp(1.2rem, 2.3vw, 2rem)/1 var(--goth); text-transform: uppercase; letter-spacing: .16em; text-align: center; }
+.presents .rule { flex: 1; min-width: 18px; height: 8px; border-top: 3px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+.presents .trumpet { color: var(--red); font-size: 1.15em; }
+.presents .t { padding-top: .08em; }
+
+.headliner { margin-top: clamp(18px, 2.4vw, 30px); font-family: var(--slab); text-transform: uppercase; font-size: clamp(34px, 9vw, 128px); line-height: 1; }
+.lockup { display: inline-flex; align-items: flex-end; gap: .2em; padding-top: .44em; }
+.lockup .w-sate { font-size: 2.31em; line-height: .78; }
+.lockup .stack { display: flex; flex-direction: column; line-height: .8; gap: .1em; padding-bottom: .02em; }
+.lockup .w-lazy { font-size: 1.137em; }
+.lockup .w-louis { font-size: 1em; }
+.lockup .reg-red { color: var(--red); }
+.lockup .stack .reg-red { color: var(--ink); }
+.lockup .stack .reg-ink { color: var(--red); }
+@media (max-width: 720px) {
+  .lockup { flex-direction: column; align-items: stretch; gap: .12em; }
+  .lockup .w-sate { font-size: 2.295em; line-height: .8; }
+  .lockup .stack { flex-direction: row; gap: .3em; }
+  .lockup .w-lazy, .lockup .w-louis { font-size: 1em; }
+}
+
+.tagline { margin-top: clamp(14px, 1.6vw, 22px); padding: .1em 0 .04em; border-top: 6px solid var(--ink); border-bottom: 6px solid var(--ink); font: 400 clamp(30px, 8vw, 120px)/.92 var(--goth); text-transform: uppercase; letter-spacing: .01em; text-align: center; }
+.tagline .fit-in { padding-top: .06em; }
+
+.hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 3.6vw, 56px); margin-top: clamp(28px, 3.4vw, 48px); align-items: start; }
+.hero-photo { position: relative; margin: 0; }
+.hero-photo .ht { aspect-ratio: 4 / 3.3; }
+.hero-photo figcaption { margin-top: 12px; font: italic 500 .95rem/1.4 var(--text); display: flex; gap: 10px; align-items: baseline; }
+.hero-photo figcaption b { font: 400 1.1rem/1 var(--goth); text-transform: uppercase; letter-spacing: .1em; font-style: normal; }
+.stamp { position: absolute; z-index: 4; width: clamp(118px, 13vw, 176px); height: auto; color: var(--red); right: clamp(-18px, -1.4vw, -8px); top: clamp(-34px, -2.4vw, -18px); transform: rotate(-13deg); mix-blend-mode: multiply; -webkit-mask-image: var(--wear); mask-image: var(--wear); -webkit-mask-size: 200px; mask-size: 200px; }
+.stamp text { fill: currentColor; }
+
+/* halftone print: thresholded dot screen, then multiplied onto the paper colour */
+.ht { position: relative; overflow: hidden; mix-blend-mode: multiply; isolation: isolate; border: 3px solid var(--ink); background: #fff; }
+.ht-print { position: absolute; inset: 0; background: #fff; filter: brightness(.56) contrast(60); overflow: hidden; }
+.ht-print img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%); filter: grayscale(1) brightness(var(--b, 1.3)) contrast(var(--c, 1.2)) blur(var(--bl, 1px)); }
+.ht-print::after { content: ""; position: absolute; left: 50%; top: 50%; width: 200%; aspect-ratio: 1; translate: -50% -50%; background: radial-gradient(circle at center, #000 0, #fff 72%) 0 0 / var(--dot, 6px) var(--dot, 6px); transform: rotate(45deg); mix-blend-mode: plus-lighter; }
+.ht--red::after { content: ""; position: absolute; inset: 0; background: var(--red); mix-blend-mode: lighten; pointer-events: none; }
+.p-red .ht, .on-dark .ht { border-color: transparent; }
+
+.bill { display: flex; flex-direction: column; }
+.bill-k { font: 400 1.5rem/1 var(--goth); text-transform: uppercase; letter-spacing: .14em; text-align: center; display: flex; align-items: center; gap: 12px; }
+.bill-k::before, .bill-k::after { content: ""; flex: 1; border-top: 3px solid var(--ink); }
+.acts { margin-top: 14px; text-align: center; }
+.acts li { padding: .16em 0 .1em; }
+.acts li + li { border-top: 2px solid var(--ink); }
+.act-goth { font: 400 clamp(26px, 4vw, 64px)/.92 var(--goth); text-transform: uppercase; letter-spacing: .02em; }
+.act-slab { font: 400 clamp(22px, 3vw, 48px)/.98 var(--slab); text-transform: uppercase; }
+.act-red { color: var(--red); }
+.bill-and { margin: 16px 0 4px; text-align: center; font: italic 600 1.05rem/1 var(--text); }
+.jfd { font: 400 clamp(30px, 5vw, 80px)/.95 var(--slab); text-transform: uppercase; text-align: center; color: var(--red); }
+.jfd .reg-ink { transform: translate(.04em, .04em); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px 18px; margin-top: clamp(22px, 2.6vw, 34px); justify-content: center; }
+
+.hero-foot { margin-top: clamp(28px, 3.6vw, 48px); background: var(--ink); color: var(--mustard); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 24px; padding: 14px 22px 11px; font: 400 clamp(1.15rem, 1.7vw, 1.5rem)/1.1 var(--goth); text-transform: uppercase; letter-spacing: .08em; }
+.hero-foot > span { display: inline-flex; align-items: center; gap: 12px; }
+.hero-foot .star { color: var(--paper); font-size: .8em; }
+.hero-foot [data-ll] { color: var(--paper); }
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-photo .ht { aspect-ratio: 4 / 3.1; }
+}
+@media (max-width: 560px) {
+  .presents .rule { display: none; }
+  .presents { justify-content: center; flex-wrap: wrap; letter-spacing: .1em; row-gap: 8px; }
+  .presents .t { flex-basis: 100%; }
+  .presents .trumpet + .rule, .presents .t + .trumpet { display: none; }
+  .tagline { border-width: 4px; }
+  .hero-foot { flex-direction: column; align-items: flex-start; padding: 14px 16px 11px; }
+  .hero-cta .btn { flex: 1 1 auto; justify-content: center; }
+  .stamp { right: -6px; top: -26px; }
+}
+
+/* ---------- tape strip of dish names ---------- */
+.strip-wrap { position: relative; z-index: 8; overflow: hidden; margin: -26px 0; padding: 18px 0; pointer-events: none; }
+.strip { background: var(--red); color: var(--mustard); transform: rotate(-1.4deg); margin: 0 -2%; border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); box-shadow: 0 6px 0 rgba(21,21,21,.18); }
+.strip-in { display: flex; gap: .8em; align-items: center; white-space: nowrap; padding: .42em 0 .3em; font: 400 clamp(1.3rem, 2.2vw, 2rem)/1 var(--slab); text-transform: uppercase; }
+.strip-in .star { color: var(--paper); font-size: .7em; }
+
+/* ==========================================================================
+   VERHAAL
+   ========================================================================== */
+.story-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(36px, 5vw, 80px); align-items: start; }
+.story h2 { margin-top: 22px; font: 400 clamp(2.4rem, 5.4vw, 4.6rem)/.98 var(--slab); text-transform: uppercase; color: var(--paper); }
+.story h2 em { font-style: normal; color: var(--mustard); }
+.eq { margin-top: clamp(26px, 3vw, 40px); }
+.eq-row { display: grid; grid-template-columns: auto 1fr; gap: 6px clamp(16px, 2vw, 28px); align-items: start; padding: 20px 0 22px; border-top: 3px solid var(--mustard); }
+.eq-row:last-child { border-bottom: 3px solid var(--mustard); }
+.eq-word { font: 400 clamp(3.2rem, 7vw, 6.4rem)/.82 var(--slab); text-transform: uppercase; color: var(--mustard); }
+.eq-def { padding-top: .3em; }
+.eq-def b { display: block; font: 400 clamp(1.7rem, 2.6vw, 2.3rem)/1 var(--goth); text-transform: uppercase; letter-spacing: .05em; color: var(--paper); }
+.eq-def b::before { content: "= "; color: var(--mustard); }
+.eq-def q { display: block; margin-top: 10px; font: italic 500 1.08rem/1.45 var(--text); color: #efe6cb; quotes: "“" "”"; }
+.eq-def cite { display: block; margin-top: 6px; font: normal 400 1.05rem/1 var(--goth); text-transform: uppercase; letter-spacing: .12em; color: var(--mustard); }
+
+.handbill { position: relative; background: var(--paper); color: var(--ink); padding: clamp(28px, 3.4vw, 44px) clamp(22px, 3vw, 42px) clamp(26px, 3vw, 38px); transform: rotate(1.1deg); box-shadow: 10px 12px 0 rgba(0,0,0,.35); margin-top: 18px; }
+.handbill::before { content: ""; position: absolute; inset: 0; background-image: var(--grain); background-size: 320px; mix-blend-mode: multiply; opacity: .4; pointer-events: none; }
+.handbill .tape { position: absolute; top: -16px; left: 50%; width: 130px; height: 32px; transform: translateX(-50%) rotate(-3deg); background: rgba(242, 194, 48, .78); box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+.handbill-k { font: 400 1.15rem/1 var(--goth); text-transform: uppercase; letter-spacing: .18em; color: var(--red); text-align: center; }
+.handbill h3 { margin: 10px 0 6px; text-align: center; font: 400 clamp(1.45rem, 3.4vw, 2.9rem)/1 var(--slab); text-transform: uppercase; overflow-wrap: break-word; }
+.handbill .sub { text-align: center; font: 400 1.35rem/1 var(--goth); text-transform: uppercase; letter-spacing: .1em; padding-bottom: 16px; margin-bottom: 18px; border-bottom: 3px double var(--ink); }
+.handbill p + p { margin-top: .85em; }
+.handbill .intro p { font-size: 1.02rem; }
+.handbill .intro p:first-child::first-letter { float: left; font: 400 4.1em/.8 var(--slab); color: var(--red); margin: .06em .08em 0 0; }
+.houseRule { margin-top: 22px; padding: 16px 18px 14px; border: 3px solid var(--ink); display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: start; }
+.houseRule b { grid-row: span 2; font: 400 2.6rem/.9 var(--slab); color: var(--red); }
+.houseRule strong { font: 400 1.35rem/1 var(--goth); text-transform: uppercase; letter-spacing: .1em; }
+.houseRule span { font-size: .98rem; }
+@media (max-width: 560px) {
+  .eq-row { grid-template-columns: minmax(0, 1fr); padding: 16px 0 18px; }
+  .eq-def { padding-top: 0; }
+}
+@media (max-width: 900px) {
+  .story-grid { grid-template-columns: minmax(0, 1fr); }
+  .handbill { transform: rotate(.6deg); margin-inline: 4px; }
+}
+
+/* ---------- tournee (timeline) ---------- */
+.tour-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(36px, 5vw, 80px); align-items: start; }
+.tour-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 6px 22px; margin-top: 22px; }
+.tour-head h2 { font: 400 clamp(3rem, 7.4vw, 6.6rem)/.86 var(--slab); text-transform: uppercase; }
+.tour-head p { font: 400 clamp(1.6rem, 3vw, 2.6rem)/1 var(--goth); text-transform: uppercase; letter-spacing: .08em; color: var(--mustard); padding-bottom: .12em; }
+.dates { margin-top: clamp(24px, 3vw, 40px); counter-reset: d; }
+.dates li { display: grid; grid-template-columns: clamp(120px, 15vw, 210px) 1fr; gap: 4px clamp(14px, 2vw, 28px); padding: 18px 0 16px; border-top: 2px solid rgba(255, 248, 226, .85); }
+.dates li:last-child { border-bottom: 2px solid rgba(255, 248, 226, .85); }
+.dates .y { font: 400 clamp(2.4rem, 4.4vw, 3.9rem)/.86 var(--slab); color: var(--mustard); }
+.dates .y.is-word { font: 400 clamp(1.9rem, 3vw, 2.6rem)/.92 var(--goth); text-transform: uppercase; letter-spacing: .04em; padding-top: .12em; }
+.dates h3 { font: 400 clamp(1.6rem, 2.4vw, 2.1rem)/1 var(--goth); text-transform: uppercase; letter-spacing: .05em; }
+.dates p { margin-top: 6px; font-size: 1rem; color: #fbeedd; }
+.dates .is-brood { background: var(--ink); margin: 0 calc(-1 * clamp(14px, 1.6vw, 22px)); padding-inline: clamp(14px, 1.6vw, 22px); border-top-color: transparent; }
+.dates .is-brood + li { border-top-color: transparent; }
+
+.also { position: sticky; top: 104px; }
+.also-photo { margin: 0 0 26px; }
+.also-photo .ht { aspect-ratio: 4 / 3; border: 3px solid var(--ink); }
+.also-photo figcaption { margin-top: 10px; font: italic 500 .95rem/1.4 var(--text); color: #fbeedd; }
+.also h3 { font: 400 1.6rem/1 var(--goth); text-transform: uppercase; letter-spacing: .14em; color: var(--mustard); display: flex; gap: 12px; align-items: center; }
+.also h3::after { content: ""; flex: 1; border-top: 3px solid var(--mustard); }
+.also dl { margin: 10px 0 0; }
+.also dt { margin-top: 18px; font: 400 clamp(1.35rem, 2vw, 1.7rem)/1.02 var(--slab); text-transform: uppercase; }
+.also dd { margin: 6px 0 0; font-size: .98rem; color: #fbeedd; }
+@media (max-width: 900px) {
+  .tour-grid { grid-template-columns: minmax(0, 1fr); }
+  .also { position: static; }
+}
+@media (max-width: 560px) {
+  .dates li { grid-template-columns: minmax(0, 1fr); }
+  .dates .y { font-size: 2.8rem; }
+}
+
+/* ==========================================================================
+   DE KAART
+   ========================================================================== */
+.menu-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 40px; align-items: end; margin-top: 22px; }
+.menu-title { font: 400 clamp(3.6rem, 10vw, 9.4rem)/.8 var(--slab); text-transform: uppercase; }
+.menu-title .reg-red { color: var(--ink); }
+.menu-title .reg-ink { color: var(--red); transform: translate(.035em, .035em); }
+.menu-lede { max-width: 30ch; font: 400 clamp(1.5rem, 2.2vw, 2rem)/1.04 var(--goth); text-transform: uppercase; letter-spacing: .04em; text-align: right; }
+.menu-lede span { display: block; margin-top: 8px; font: italic 500 1rem/1.4 var(--text); text-transform: none; letter-spacing: 0; }
+
+.food { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 22px); margin-top: clamp(26px, 3vw, 40px); }
+.food figure { margin: 0; }
+.food img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border: 3px solid var(--ink); filter: saturate(1.08) contrast(1.04); }
+.food figcaption { margin-top: 8px; font: italic 500 .9rem/1.35 var(--text); }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 0; margin-top: clamp(30px, 3.6vw, 48px); border: 3px solid var(--ink); }
+.tab { flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 14px 10px 10px; background: transparent; border: 0; cursor: pointer; color: var(--ink); text-align: center; }
+.tab + .tab { border-left: 3px solid var(--ink); }
+.tab .tl { font: 400 clamp(2.2rem, 4.6vw, 3.8rem)/.86 var(--slab); text-transform: uppercase; }
+.tab .tc { font: 400 1.1rem/1 var(--goth); text-transform: uppercase; letter-spacing: .14em; }
+.tab:hover { background: var(--mustard-2); }
+.tab[aria-selected="true"] { background: var(--ink); color: var(--mustard); }
+.tab[aria-selected="true"] .tc { color: var(--paper); }
+.tab:focus-visible { outline: 4px solid var(--red); outline-offset: -8px; }
+
+.panel { padding-top: clamp(22px, 2.6vw, 34px); }
+.panel:focus-visible { outline: 3px dashed var(--ink); outline-offset: 6px; }
+.served { display: flex; align-items: center; justify-content: center; gap: 12px; font: 400 clamp(1.15rem, 1.8vw, 1.45rem)/1.15 var(--goth); text-transform: uppercase; letter-spacing: .1em; text-align: center; }
+.served .star { color: var(--red); }
+
+.msec { margin-top: clamp(28px, 3.4vw, 46px); }
+.msec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 20px; background: var(--ink); color: var(--mustard); padding: 12px 18px 9px; }
+.msec-head h3 { font: 400 clamp(1.6rem, 3vw, 2.4rem)/1 var(--slab); text-transform: uppercase; }
+.msec-head p { font: italic 500 .98rem/1.3 var(--text); color: var(--paper); }
+.items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(26px, 3.4vw, 52px); }
+.items.is-drinks { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.it { padding: 16px 0 15px; border-bottom: 2px solid var(--ink); display: flex; flex-direction: column; gap: 5px; }
+.it-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.it-name { font: 400 clamp(1.55rem, 2.1vw, 1.95rem)/1 var(--goth); text-transform: uppercase; letter-spacing: .035em; padding-top: .14em; }
+.veg { font: 400 .8em/1 var(--slab); color: var(--red); margin-left: .18em; vertical-align: .2em; }
+.pr { flex: 0 0 auto; display: inline-flex; align-items: flex-start; font: 400 1.95rem/.9 var(--slab); white-space: nowrap; font-variant-numeric: lining-nums; }
+.pr-eur { font: 400 .48em/1 var(--slab); margin: .2em .14em 0 0; }
+.pr-dec { font-size: .5em; line-height: 1; margin-top: .14em; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 2px; }
+.it-desc { font-size: .97rem; line-height: 1.5; max-width: 52ch; }
+.it-meta { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 2px; }
+.lbl { display: inline-block; font: 400 1rem/1 var(--goth); text-transform: uppercase; letter-spacing: .12em; padding: 5px 8px 3px; border: 2px solid var(--ink); }
+.lbl-red { background: var(--red); border-color: var(--red); color: var(--paper); }
+.lbl-ink { background: var(--ink); color: var(--mustard); }
+.it-extras { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+.it-extras li { display: flex; justify-content: space-between; gap: 12px; font: 600 .9rem/1.3 var(--text); padding-top: 4px; border-top: 1px dashed rgba(21,21,21,.55); }
+.it-extras .pr { font-size: 1.15rem; }
+.it.is-sig .it-name { color: var(--red); }
+.it.is-sig .pr { color: var(--red); }
+.it .tag { display: block; width: fit-content; margin-top: 2px; font: 400 1.05rem/1 var(--slab); text-transform: uppercase; color: var(--red); transform: rotate(-1.6deg); border: 3px solid var(--red); padding: 6px 9px 4px; }
+.items.is-drinks .it-name { font-size: 1.45rem; }
+.items.is-drinks .pr { font-size: 1.55rem; }
+.items.is-drinks .it-desc { font: 400 1rem/1 var(--goth); text-transform: uppercase; letter-spacing: .14em; }
+
+.notes { margin-top: clamp(30px, 3.4vw, 46px); background: var(--paper); border: 3px solid var(--ink); padding: 18px 22px 16px; position: relative; display: grid; grid-template-columns: auto 1fr; gap: 6px 22px; align-items: start; box-shadow: 8px 8px 0 var(--ink); }
+.notes::before { content: ""; position: absolute; inset: 0; background-image: var(--grain); background-size: 320px; mix-blend-mode: multiply; opacity: .45; pointer-events: none; }
+.notes h4 { font: 400 1.5rem/1 var(--goth); text-transform: uppercase; letter-spacing: .1em; grid-row: span 2; padding-top: 2px; }
+.notes ul { display: grid; gap: 6px; }
+.notes li { font-size: .97rem; padding-left: 18px; position: relative; }
+.notes li::before { content: ""; position: absolute; left: 0; top: .5em; width: 8px; height: 8px; background: var(--red); clip-path: polygon(50% 0%, 61.8% 35.4%, 100% 35.4%, 69.1% 57.3%, 80.9% 92.7%, 50% 70.8%, 19.1% 92.7%, 30.9% 57.3%, 0% 35.4%, 38.2% 35.4%); }
+@media (max-width: 1000px) { .items.is-drinks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .menu-head { grid-template-columns: minmax(0, 1fr); }
+  .menu-lede { text-align: left; }
+  .items, .items.is-drinks { grid-template-columns: minmax(0, 1fr); }
+  .food { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .food figcaption { display: none; }
+  .notes { grid-template-columns: minmax(0, 1fr); }
+  .notes h4 { grid-row: auto; }
+}
+@media (max-width: 560px) {
+  .tab { padding: 12px 4px 9px; }
+  .tab .tl { font-size: 1.75rem; }
+  .tab .tc { font-size: .9rem; letter-spacing: .08em; }
+  .it-name { font-size: 1.5rem; }
+  .msec-head { padding: 10px 14px 8px; }
+}
+
+/* ==========================================================================
+   RESERVEREN + OPENINGSTIJDEN
+   ========================================================================== */
+.res-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(36px, 5vw, 84px); align-items: start; margin-top: 22px; }
+.res-title { font: 400 clamp(3rem, 9vw, 8rem)/.84 var(--slab); text-transform: uppercase; color: var(--mustard); }
+.res-sub { margin-top: 12px; font: 400 clamp(1.7rem, 3vw, 2.6rem)/1 var(--goth); text-transform: uppercase; letter-spacing: .06em; }
+.res-lines { margin-top: clamp(22px, 2.6vw, 34px); display: grid; gap: 0; }
+.res-lines li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; padding: 12px 0; border-top: 2px solid rgba(255,248,226,.3); font-size: 1.05rem; }
+.res-lines li:last-child { border-bottom: 2px solid rgba(255,248,226,.3); }
+.res-lines .star { color: var(--mustard); margin-top: .35em; font-size: .9rem; }
+.res-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 26px; margin-top: clamp(26px, 3vw, 38px); }
+.res-phone { text-decoration: none; display: inline-flex; flex-direction: column; gap: 4px; }
+.res-phone small { font: 400 1.05rem/1 var(--goth); text-transform: uppercase; letter-spacing: .14em; color: #d8cfb4; }
+.res-phone span { font: 400 clamp(1.7rem, 2.6vw, 2.2rem)/1 var(--slab); color: var(--paper); }
+.res-phone:hover span { color: var(--mustard); }
+.res-confirm { margin-top: 18px; font: italic 500 .95rem/1.45 var(--text); color: #d8cfb4; }
+
+.hours { background: var(--mustard); color: var(--ink); padding: clamp(22px, 2.8vw, 34px); position: relative; box-shadow: 10px 10px 0 var(--red); }
+.hours::before { content: ""; position: absolute; inset: 8px; border: 2px solid var(--ink); pointer-events: none; }
+.hours h3 { font: 400 clamp(1.9rem, 3vw, 2.6rem)/1 var(--slab); text-transform: uppercase; text-align: center; }
+.hours .status { margin: 10px auto 0; display: flex; align-items: center; justify-content: center; gap: 10px; font: 400 1.4rem/1.05 var(--goth); text-transform: uppercase; letter-spacing: .07em; text-align: center; }
+.hours .status::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--red); flex: 0 0 auto; }
+.hours .status.is-open::before { background: #1f7a3a; box-shadow: 0 0 0 3px rgba(31,122,58,.25); }
+.week { margin-top: 16px; border-top: 3px solid var(--ink); }
+.week li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 4px 14px; padding: 10px 6px 8px; border-bottom: 2px solid var(--ink); }
+.week .d { font: 400 1.6rem/1 var(--goth); text-transform: uppercase; letter-spacing: .06em; display: flex; align-items: center; gap: 10px; }
+.week .h { font: 400 1.2rem/1.1 var(--slab); text-align: right; }
+.week .is-closed .h { font: 400 1.35rem/1 var(--goth); text-transform: uppercase; letter-spacing: .1em; }
+.week .is-sunday .h { font: 400 1.35rem/1.05 var(--goth); text-transform: uppercase; letter-spacing: .04em; }
+.week .is-today { background: var(--ink); color: var(--mustard); }
+.week .today { font: 400 .95rem/1 var(--goth); letter-spacing: .12em; background: var(--red); color: var(--paper); padding: 4px 6px 2px; }
+.sundays { margin-top: 16px; font-size: .98rem; text-align: center; }
+.sundays b { font: 400 1.25rem/1 var(--goth); text-transform: uppercase; letter-spacing: .1em; display: block; margin-bottom: 4px; }
+@media (max-width: 900px) { .res-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) {
+  .week li { grid-template-columns: minmax(0, 1fr); padding: 9px 4px 7px; }
+  .week .h { text-align: left; }
+  .hours { box-shadow: 6px 6px 0 var(--red); }
+}
+
+/* ==========================================================================
+   AGENDA — the poster wall
+   ========================================================================== */
+.agenda-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 10px 40px; margin-top: 22px; }
+.agenda-head h2 { font: 400 clamp(3rem, 8vw, 7rem)/.84 var(--slab); text-transform: uppercase; color: var(--mustard); }
+.agenda-head p { font: 400 clamp(1.4rem, 2.4vw, 2rem)/1.05 var(--goth); text-transform: uppercase; letter-spacing: .08em; max-width: 24ch; }
+.wall { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-rows: auto auto; margin-top: clamp(28px, 3.4vw, 46px); }
+.bill-card { position: relative; isolation: isolate; padding: clamp(26px, 3vw, 40px); }
+.bill-card::before { content: ""; position: absolute; inset: 9px; border: 2px solid currentColor; pointer-events: none; }
+.bill-card::after { content: ""; position: absolute; inset: 0; background-image: var(--grain); background-size: 320px; mix-blend-mode: multiply; opacity: .4; pointer-events: none; }
+.bill-card:nth-child(1) { grid-row: span 2; background: var(--red); color: var(--paper); text-align: center; display: flex; flex-direction: column; justify-content: center; }
+.bill-card:nth-child(2) { background: var(--mustard); color: var(--ink); }
+.bill-card:nth-child(3) { background: var(--paper); color: var(--ink); }
+.bc-k { font: 400 1.25rem/1.1 var(--goth); text-transform: uppercase; letter-spacing: .14em; }
+.bill-card h3 { margin-top: 10px; font: 400 clamp(2rem, 3.4vw, 2.9rem)/.95 var(--slab); text-transform: uppercase; overflow-wrap: break-word; }
+.bill-card:nth-child(1) h3 { font-size: clamp(2.6rem, 6vw, 5.4rem); margin-top: 14px; }
+.bill-card:nth-child(1) h3 .fit-in { line-height: .86; }
+.bc-sub { margin-top: 10px; font: 400 clamp(1.6rem, 2.6vw, 2.3rem)/1 var(--goth); text-transform: uppercase; letter-spacing: .08em; color: var(--mustard); }
+.bill-card p.t { margin-top: 12px; font-size: 1rem; }
+.bill-card:nth-child(1) p.t { max-width: 46ch; margin: 18px auto 0; color: #fbeedd; }
+.bc-next { margin-top: 18px; display: inline-flex; flex-direction: column; gap: 6px; }
+.bill-card:nth-child(1) .bc-next { align-self: center; border: 3px solid var(--paper); padding: 14px 22px 10px; margin-top: 26px; }
+.bc-next small { font: 400 1.05rem/1 var(--goth); text-transform: uppercase; letter-spacing: .16em; }
+.bc-next strong { font: 400 clamp(1.5rem, 2.6vw, 2.2rem)/1 var(--slab); text-transform: uppercase; font-weight: 400; }
+.bill-card:nth-child(1) .bc-next strong { color: var(--mustard); }
+.bc-free { margin-top: 18px; font: 400 1.4rem/1 var(--goth); text-transform: uppercase; letter-spacing: .16em; display: inline-flex; gap: 12px; align-items: center; justify-content: center; }
+.bc-free .star { color: var(--mustard); }
+@media (max-width: 860px) {
+  .wall { grid-template-columns: minmax(0, 1fr); }
+  .bill-card:nth-child(1) { grid-row: auto; }
+}
+
+/* ==========================================================================
+   VACATURES — handbills with tear-off strips
+   ========================================================================== */
+.jobs-head { margin-top: 22px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 8px 40px; }
+.jobs-head h2 { font: 400 clamp(3.2rem, 9vw, 8rem)/.84 var(--slab); text-transform: uppercase; }
+.jobs-head h2 .reg-red { color: var(--paper); }
+.jobs-head h2 .reg-ink { color: var(--ink); }
+.jobs-head p { font: 400 clamp(1.5rem, 2.6vw, 2.2rem)/1.05 var(--goth); text-transform: uppercase; letter-spacing: .06em; color: var(--mustard); padding-bottom: .1em; }
+.jobs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 3.6vw, 52px); margin-top: clamp(30px, 3.4vw, 48px); align-items: start; }
+.job { position: relative; background: var(--paper); color: var(--ink); box-shadow: 10px 12px 0 rgba(0,0,0,.3); }
+.job:nth-child(1) { transform: rotate(-.8deg); }
+.job:nth-child(2) { transform: rotate(.9deg); margin-top: 26px; }
+.job::before { content: ""; position: absolute; inset: 0; background-image: var(--grain); background-size: 320px; mix-blend-mode: multiply; opacity: .4; pointer-events: none; }
+.job-body { padding: clamp(24px, 3vw, 38px) clamp(20px, 3vw, 36px) 22px; }
+.job-k { font: 400 1.15rem/1 var(--goth); text-transform: uppercase; letter-spacing: .18em; color: var(--red); }
+.job h3 { margin-top: 8px; font: 400 clamp(1.8rem, 3vw, 2.5rem)/1 var(--slab); text-transform: uppercase; }
+.job .hrs { margin-top: 8px; display: inline-block; font: 400 1.35rem/1 var(--goth); text-transform: uppercase; letter-spacing: .08em; background: var(--ink); color: var(--mustard); padding: 6px 10px 4px; }
+.job p.t { margin-top: 14px; font-size: 1rem; }
+.job h4 { margin-top: 18px; font: 400 1.3rem/1 var(--goth); text-transform: uppercase; letter-spacing: .12em; }
+.job ul { margin-top: 8px; display: grid; gap: 6px; }
+.job li { padding-left: 20px; position: relative; font-size: .98rem; }
+.job li::before { content: ""; position: absolute; left: 0; top: .45em; width: 10px; height: 10px; background: var(--red); clip-path: polygon(50% 0%, 61.8% 35.4%, 100% 35.4%, 69.1% 57.3%, 80.9% 92.7%, 50% 70.8%, 19.1% 92.7%, 30.9% 57.3%, 0% 35.4%, 38.2% 35.4%); }
+.job .apply { margin-top: 18px; padding-top: 14px; border-top: 3px double var(--ink); font-size: .98rem; }
+.job .apply a { font-weight: 700; word-break: break-word; }
+.tabs-tear { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-top: 2px dashed var(--ink); }
+.tabs-tear span { writing-mode: vertical-rl; transform: rotate(180deg); padding: 12px 0; text-align: center; font: 600 .78rem/1 var(--text); letter-spacing: .02em; white-space: nowrap; overflow: hidden; height: 168px; display: flex; align-items: center; justify-content: center; }
+.tabs-tear span + span { border-right: 2px dashed var(--ink); }
+.tabs-tear span:nth-child(3) { transform: rotate(180deg) translateY(-6px) rotate(-4deg); background: var(--paper-2); }
+@media (max-width: 860px) {
+  .jobs { grid-template-columns: minmax(0, 1fr); }
+  .job:nth-child(2) { margin-top: 0; }
+}
+@media (max-width: 560px) {
+  .tabs-tear { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .tabs-tear span:nth-child(n+6) { display: none; }
+  .job:nth-child(1), .job:nth-child(2) { transform: none; }
+}
+
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+.addr { margin-top: 22px; font-family: var(--slab); text-transform: uppercase; font-size: clamp(2.6rem, 9vw, 8rem); }
+.addr .reg-red { color: var(--ink); }
+.addr .reg-ink { color: var(--red); transform: translate(.035em, .035em); }
+.addr-sub { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 26px; margin-top: 14px; padding: 10px 0 8px; border-top: 6px solid var(--ink); border-bottom: 2px solid var(--ink); font: 400 clamp(1.4rem, 2.6vw, 2.2rem)/1.05 var(--goth); text-transform: uppercase; letter-spacing: .07em; }
+.addr-sub .red { color: var(--red); }
+.cgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: clamp(26px, 3vw, 40px); border: 3px solid var(--ink); }
+.cgrid > div { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+.cgrid > div + div { border-left: 3px solid var(--ink); }
+.cgrid h3 { font: 400 1.3rem/1 var(--goth); text-transform: uppercase; letter-spacing: .16em; display: flex; gap: 10px; align-items: center; }
+.cgrid h3 .star { color: var(--red); }
+.cgrid .big { font: 400 clamp(1.25rem, 1.9vw, 1.65rem)/1.12 var(--slab); text-transform: none; word-break: break-word; text-decoration: none; }
+.cgrid a.big:hover { color: var(--red); text-decoration: underline; }
+.cgrid .small { font-size: .95rem; }
+.cgrid .links { display: flex; flex-direction: column; gap: 6px; }
+.cgrid .links a { font: 400 clamp(1.25rem, 1.9vw, 1.6rem)/1.1 var(--slab); text-decoration: none; }
+.cgrid .links a:hover { color: var(--red); text-decoration: underline; }
+.wide-photo { margin: clamp(26px, 3vw, 40px) 0 0; }
+.wide-photo .ht { aspect-ratio: 16 / 5.4; }
+@media (max-width: 1000px) {
+  .cgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cgrid > div:nth-child(3) { border-left: 0; }
+  .cgrid > div:nth-child(n+3) { border-top: 3px solid var(--ink); }
+}
+@media (max-width: 560px) {
+  .cgrid { grid-template-columns: minmax(0, 1fr); }
+  .cgrid > div + div { border-left: 0; border-top: 3px solid var(--ink); }
+  .wide-photo .ht { aspect-ratio: 16 / 9; }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.foot { background: var(--ink); color: var(--paper); padding: clamp(40px, 5vw, 64px) 0 28px; border-top: 4px solid var(--mustard); }
+.foot-in { display: grid; grid-template-columns: auto 1fr auto; gap: 26px 48px; align-items: center; }
+.foot-logo img { height: clamp(84px, 9vw, 120px); width: auto; }
+.foot-tag { font: 400 clamp(1.6rem, 2.8vw, 2.4rem)/1 var(--goth); text-transform: uppercase; letter-spacing: .1em; color: var(--mustard); }
+.foot-tag span { display: block; margin-top: 8px; font: 400 1rem/1.4 var(--text); text-transform: none; letter-spacing: 0; color: #d8cfb4; }
+.foot-nav { display: flex; flex-wrap: wrap; gap: 4px 18px; justify-content: flex-end; }
+.foot-nav a { font: 400 1.2rem/1.4 var(--goth); text-transform: uppercase; letter-spacing: .1em; text-decoration: none; }
+.foot-nav a:hover { color: var(--mustard); }
+.foot-legal { margin-top: 30px; padding-top: 16px; border-top: 2px solid rgba(255,248,226,.2); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; font-size: .9rem; color: #cfc6ad; }
+@media (max-width: 860px) {
+  .foot-in { grid-template-columns: minmax(0, 1fr); }
+  .foot-nav { justify-content: flex-start; }
+}
+
+/* ==========================================================================
+   DIALOG — a ticket
+   ========================================================================== */
+.dlg { padding: 0; border: 0; background: transparent; max-width: min(660px, calc(100vw - 24px)); width: 100%; max-height: calc(100dvh - 24px); overflow: visible; color: var(--ink); }
+.dlg::backdrop { background: rgba(21, 21, 21, .78); }
+.ticket { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 74px; background: var(--paper); border: 3px solid var(--ink); box-shadow: 12px 12px 0 var(--red); max-height: calc(100dvh - 40px); overflow: auto; }
+.ticket::before { content: ""; position: absolute; inset: 0; background-image: var(--grain); background-size: 320px; mix-blend-mode: multiply; opacity: .4; pointer-events: none; }
+.t-main { padding: 30px clamp(20px, 4vw, 38px) 26px; }
+.t-stub { border-left: 3px dashed var(--ink); background: var(--mustard); display: flex; align-items: center; justify-content: center; }
+.t-stub span { writing-mode: vertical-rl; font: 400 1.5rem/1 var(--goth); text-transform: uppercase; letter-spacing: .2em; white-space: nowrap; }
+.t-k { font: 400 1.15rem/1 var(--goth); text-transform: uppercase; letter-spacing: .18em; color: var(--red); display: flex; gap: 10px; align-items: center; }
+.ticket h2 { margin-top: 10px; font: 400 clamp(2rem, 6vw, 3rem)/.95 var(--slab); text-transform: uppercase; outline: none; padding-right: 40px; }
+.t-lines { margin-top: 18px; border-top: 3px solid var(--ink); }
+.t-lines li { padding: 10px 0 9px 24px; border-bottom: 2px solid var(--ink); position: relative; font-size: 1rem; }
+.t-lines li::before { content: ""; position: absolute; left: 2px; top: 1.05em; width: 10px; height: 10px; background: var(--red); clip-path: polygon(50% 0%, 61.8% 35.4%, 100% 35.4%, 69.1% 57.3%, 80.9% 92.7%, 50% 70.8%, 19.1% 92.7%, 30.9% 57.3%, 0% 35.4%, 38.2% 35.4%); }
+.t-actions { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+.t-phone { font-size: 1rem; }
+.t-phone a { font: 400 1.35rem/1 var(--slab); text-decoration: none; display: inline-block; margin-top: 4px; }
+.t-phone a:hover { color: var(--red); text-decoration: underline; }
+.t-confirm { margin-top: 18px; font: italic 500 .92rem/1.45 var(--text); }
+.t-note { margin-top: 14px; padding: 10px 12px 8px; border: 2px dashed var(--ink); font: 400 1.1rem/1.15 var(--goth); text-transform: uppercase; letter-spacing: .08em; }
+.dlg-x { position: absolute; top: 12px; right: 86px; z-index: 2; width: 44px; height: 44px; border: 3px solid var(--ink); background: var(--paper); cursor: pointer; display: grid; place-items: center; font: 400 1.9rem/1 var(--slab); padding: 0 0 4px; }
+.dlg-x:hover { background: var(--ink); color: var(--paper); }
+@media (max-width: 560px) {
+  .ticket { grid-template-columns: minmax(0, 1fr); box-shadow: 7px 7px 0 var(--red); }
+  .t-stub { border-left: 0; border-top: 3px dashed var(--ink); padding: 10px; }
+  .t-stub span { writing-mode: horizontal-tb; font-size: 1.15rem; }
+  .dlg-x { right: 12px; }
+}
+
+/* ---------- late phone overrides (after all base rules) ---------- */
+@media (max-width: 760px) {
+  .tour-head, .agenda-head, .jobs-head { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .tabs { flex-wrap: nowrap; }
+  .tab { flex: 1 1 auto; padding: 12px 6px 9px; }
+  .tab .tl { font-size: 1.25rem; }
+  .bill-card h3 { font-size: clamp(1.45rem, 6.6vw, 2.2rem); }
+}
+
+/* ==========================================================================
+   SIGNATURE — the headline is printed, the red plate drops into register
+   ========================================================================== */
+@keyframes plate-red {
+  0% { transform: translate(-.085em, .06em) rotate(-1.4deg); }
+  58% { transform: translate(.01em, -.006em) rotate(.12deg); }
+  78% { transform: translate(-.004em, .002em); }
+  100% { transform: none; }
+}
+@keyframes plate-ink {
+  0% { transform: translate(.12em, -.02em); }
+  58% { transform: translate(.045em, .05em); }
+  100% { transform: translate(.05em, .045em); }
+}
+@keyframes press { 0%, 52% { opacity: 1; } 56% { opacity: .9; } 62%, 100% { opacity: 1; } }
+.headliner .reg-red { animation: plate-red 1.15s cubic-bezier(.22, .8, .25, 1) .35s both; }
+.headliner .reg-ink { animation: plate-ink 1.15s cubic-bezier(.22, .8, .25, 1) .35s both; }
+.headliner .stack .reg:nth-child(1) > span { animation-delay: .5s; }
+.headliner .stack .reg:nth-child(2) > span { animation-delay: .62s; }
+.jfd .reg-red { animation: plate-red 1s cubic-bezier(.22, .8, .25, 1) .95s both; }
+.jfd .reg-ink { animation: plate-ink 1s cubic-bezier(.22, .8, .25, 1) .95s both; }
+.jfd .reg-ink { animation-name: plate-ink-s; }
+@keyframes plate-ink-s { 0% { transform: translate(.1em, -.02em); } 100% { transform: translate(.04em, .04em); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<header class="top on-dark" id="top-bar">
+  <div class="top-in">
+    <a class="brand" href="#top" aria-label="Lazy Louis Jazzcafé &amp; Eethuys, naar boven"><img src="assets/brand/logo-light.png" alt="Lazy Louis Jazzcafé &amp; Eethuys" width="95" height="50"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span>Menu</span></button>
+    <nav class="nav" id="site-nav" aria-label="Hoofdmenu">
+      <ul>
+        <li><a href="#verhaal">Verhaal <span class="n" aria-hidden="true">01</span></a></li>
+        <li><a href="#menu">De kaart <span class="n" aria-hidden="true">02</span></a></li>
+        <li><a href="#reserveren">Reserveren <span class="n" aria-hidden="true">03</span></a></li>
+        <li><a href="#agenda">Agenda <span class="n" aria-hidden="true">04</span></a></li>
+        <li><a href="#vacatures">Vacatures <span class="n" aria-hidden="true">05</span></a></li>
+        <li><a href="#contact">Contact <span class="n" aria-hidden="true">06</span></a></li>
+      </ul>
+    </nav>
+    <div class="top-actions" style="display:flex;align-items:center;gap:18px">
+      <span class="top-status" data-ll="statusShort" aria-live="polite">Nu open</span>
+      <button class="btn btn-red" type="button" data-open-res>Reserveer</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="poster p-mustard hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap">
+    <p class="presents"><span class="rule" aria-hidden="true"></span><span class="trumpet" aria-hidden="true"></span><span class="t">Lazy Louis Jazzcafé &amp; Eethuys presenteert</span><span class="trumpet" aria-hidden="true" style="transform:scaleX(-1)"></span><span class="rule" aria-hidden="true"></span></p>
+
+    <h1 class="headliner fit" id="hero-title" data-max="150">
+      <span class="sr">Lazy Louis presenteert: Saté Lazy Louis, wereldberoemd in heel Amersfoort</span>
+      <span class="fit-in lockup" aria-hidden="true">
+        <span class="reg w-sate"><span class="reg-ink">Saté</span><span class="reg-red">Saté</span></span>
+        <span class="stack">
+          <span class="reg w-lazy"><span class="reg-ink">Lazy</span><span class="reg-red">Lazy</span></span>
+          <span class="reg w-louis"><span class="reg-ink">Louis</span><span class="reg-red">Louis</span></span>
+        </span>
+      </span>
+    </h1>
+    <p class="tagline fit" data-max="132" aria-hidden="true"><span class="fit-in">Wereldberoemd in heel Amersfoort</span></p>
+
+    <div class="hero-grid">
+      <figure class="hero-photo">
+        <div class="ht" style="--pos:62% 40%;--dot:6px;--b:1.15;--c:1.25">
+          <div class="ht-print"><img src="assets/img/bartender-tap.jpg" alt="Een barman tapt een biertje aan de messing tapinstallatie" width="1024" height="683"></div>
+        </div>
+        <svg class="stamp" viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="stamp-c" d="M100,100 m-71,0 a71,71 0 1,1 142,0 a71,71 0 1,1 -142,0"/></defs>
+          <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" stroke-width="6"/>
+          <circle cx="100" cy="100" r="86" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="100" cy="100" r="54" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <text font-family="League Gothic, Impact, sans-serif" font-size="23" letter-spacing="2"><textPath href="#stamp-c" textLength="440" lengthAdjust="spacing">JAZZCAFÉ • EETHUYS • AMERSFOORT • </textPath></text>
+          <text x="100" y="90" text-anchor="middle" font-family="League Gothic, Impact, sans-serif" font-size="21" letter-spacing="4">SINDS</text>
+          <text x="100" y="127" text-anchor="middle" font-family="Alfa Slab One, Georgia, serif" font-size="35">1991</text>
+        </svg>
+        <figcaption><b>Op de foto</b> Vers getapt aan de messing tap van de lange bar.</figcaption>
+      </figure>
+
+      <div class="bill">
+        <p class="bill-k">Met in het voorprogramma</p>
+        <ul class="acts" aria-label="Met in het voorprogramma">
+          <li class="fit act-goth" data-max="62"><span class="fit-in">Mr. Armstrong’s Spareribs</span></li>
+          <li class="fit act-slab act-red" data-max="78"><span class="fit-in">Simply Red</span></li>
+          <li class="fit act-goth" data-max="80"><span class="fit-in">Wall Street Crash</span></li>
+          <li class="fit act-slab" data-max="58"><span class="fit-in">Is it Rendang?</span></li>
+          <li class="fit act-goth act-red" data-max="86"><span class="fit-in">Holle Bolle Gijt</span></li>
+        </ul>
+        <p class="bill-and">en natuurlijk, de hele dag door</p>
+        <p class="jfd fit" data-max="84"><span class="sr">Jazz, food &amp; drinks</span><span class="fit-in reg" aria-hidden="true"><span class="reg-ink">Jazz · Food · Drinks</span><span class="reg-red">Jazz · Food · Drinks</span></span></p>
+        <div class="hero-cta">
+          <button class="btn btn-red" type="button" data-open-res>Reserveer een tafel</button>
+          <a class="btn btn-ink" href="#menu">Bekijk de kaart <span class="arr" aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="hero-foot">
+      <span>Dinsdag t/m zaterdag vanaf 10.30 uur</span>
+      <span><i class="star" aria-hidden="true"></i>Arnhemsestraat 1-3 · Amersfoort</span>
+      <span><i class="star" aria-hidden="true"></i><span data-ll="status">Nu open</span></span>
+      <span><i class="star" aria-hidden="true"></i>Café: loop gewoon binnen</span>
+    </p>
+  </div>
+</section>
+
+<div class="strip-wrap" aria-hidden="true">
+  <div class="strip"><div class="strip-in" id="strip"></div></div>
+</div>
+
+<!-- ================= VERHAAL ================= -->
+<section class="poster p-ink on-dark story" id="verhaal" aria-labelledby="verhaal-title">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--mustard)"><i class="star" aria-hidden="true"></i>Het verhaal</p>
+    <div class="story-grid">
+      <div>
+        <h2 id="verhaal-title">Wat zit er in <em>een naam?</em></h2>
+        <div class="eq" id="eq"></div>
+      </div>
+      <article class="handbill" aria-labelledby="hb-title">
+        <span class="tape" aria-hidden="true"></span>
+        <p class="handbill-k">Aanplakbiljet · Amersfoort</p>
+        <h3 id="hb-title">Sinds 1991 aan de Arnhemsestraat</h3>
+        <p class="sub">Twee monumentale panden · één lange bar</p>
+        <div class="intro" id="intro"></div>
+        <p class="houseRule"><b aria-hidden="true">!</b><strong>Huisregel</strong><span>Geen Top 40 achter de bar. Wordt een gezelschap al te luidruchtig, dan gaat er stevige jazz op. Meestal is het binnen tien minuten weer heerlijk rustig.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TOURNEE ================= -->
+<section class="poster p-red on-dark" id="tournee" aria-labelledby="tour-title">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--paper)"><i class="star" aria-hidden="true"></i>Van 1895 tot nu</p>
+    <div class="tour-grid">
+      <div>
+        <div class="tour-head"><h2 id="tour-title" class="fit" data-max="104"><span class="fit-in">De tournee</span></h2><p>1895 — 2026</p></div>
+        <ol class="dates" id="dates"></ol>
+      </div>
+      <aside class="also" aria-labelledby="also-title">
+        <figure class="also-photo">
+          <div class="ht" style="--pos:60% 60%;--dot:5px;--b:1.55;--c:1.1"><div class="ht-print"><img src="assets/img/bar-gramophone.jpg" alt="Een grammofoon met het hondje van His Master’s Voice op de bar" width="1024" height="683" loading="lazy"></div></div>
+          <figcaption>Het hondje van His Master’s Voice luistert mee vanaf de bar.</figcaption>
+        </figure>
+        <h3 id="also-title">Ook te zien</h3>
+        <dl id="details"></dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MENU ================= -->
+<section class="poster p-mustard" id="menu" aria-labelledby="menu-title">
+  <div class="wrap">
+    <p class="kicker"><i class="star" aria-hidden="true"></i>Het complete programma</p>
+    <div class="menu-head">
+      <h2 class="menu-title fit" id="menu-title" data-max="150"><span class="fit-in reg"><span class="reg-ink" aria-hidden="true">De kaart</span><span class="reg-red">De kaart</span></span></h2>
+      <p class="menu-lede">Lunch, diner &amp; dranken<span>Een mooie mix van klassieke en moderne gerechten, in het teken van het seizoen.</span></p>
+    </div>
+
+    <div class="food">
+      <figure><img src="assets/img/food-tapas.jpg" alt="Tapasplank met Parmaham en kroketjes" width="1024" height="683" loading="lazy"><figcaption>Tapas met Parmaham en kroketjes</figcaption></figure>
+      <figure><img src="assets/img/food-sandwich.jpg" alt="Meergranenbroodje met kip, geroosterde paprika en ei" width="1024" height="683" loading="lazy"><figcaption>Meergranenbroodje met kip, paprika en ei</figcaption></figure>
+      <figure><img src="assets/img/food-dessert.jpg" alt="Dessertbord met cake, sinaasappel en verse munt" width="1024" height="683" loading="lazy"><figcaption>Cake met sinaasappel en verse munt</figcaption></figure>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Kaart kiezen" id="tabs"></div>
+    <div id="panels"></div>
+  </div>
+</section>
+
+<!-- ================= RESERVEREN ================= -->
+<section class="poster p-ink on-dark" id="reserveren" aria-labelledby="res-title">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--mustard)"><i class="star" aria-hidden="true"></i>Kaartverkoop aan de deur? Niet nodig.</p>
+    <div class="res-grid">
+      <div>
+        <h2 class="res-title fit" id="res-title" data-max="150"><span class="fit-in">Reserveer</span></h2>
+        <p class="res-sub">uw tafel voor lunch of diner</p>
+        <ul class="res-lines" id="res-lines"></ul>
+        <div class="res-actions">
+          <button class="btn btn-red" type="button" data-open-res>Reserveer een tafel</button>
+          <a class="res-phone" href="tel:+31334613638"><small>Of bel ons</small><span>033 – 461 36 38</span></a>
+        </div>
+        <p class="res-confirm" id="res-confirm"></p>
+      </div>
+      <div class="hours" id="openingstijden" aria-labelledby="hours-title">
+        <h3 id="hours-title">Openingstijden</h3>
+        <p class="status" data-ll="status" aria-live="polite">Nu open</p>
+        <ul class="week" id="week"></ul>
+        <p class="sundays"><b>Eerstvolgende open zondagen</b><span id="sundays"></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AGENDA ================= -->
+<section class="poster p-ink on-dark" id="agenda" aria-labelledby="agenda-title" style="border-top:4px solid var(--mustard)">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--mustard)"><i class="star" aria-hidden="true"></i>Agenda &amp; nieuws</p>
+    <div class="agenda-head">
+      <h2 id="agenda-title" class="fit" data-max="112"><span class="fit-in">Binnenkort</span></h2>
+      <p>Op het affiche bij Lazy Louis</p>
+    </div>
+    <div class="wall" id="wall"></div>
+  </div>
+</section>
+
+<!-- ================= VACATURES ================= -->
+<section class="poster p-red on-dark" id="vacatures" aria-labelledby="jobs-title">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--paper)"><i class="star" aria-hidden="true"></i>Vacatures</p>
+    <div class="jobs-head">
+      <h2 id="jobs-title" class="fit" data-max="128"><span class="fit-in reg"><span class="reg-ink" aria-hidden="true">Gevraagd!</span><span class="reg-red">Gevraagd!</span></span></h2>
+      <p>Kom het team versterken</p>
+    </div>
+    <div class="jobs" id="jobs"></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="poster p-mustard" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <p class="kicker"><i class="star" aria-hidden="true"></i>Hier speelt het zich af</p>
+    <h2 class="sr" id="contact-title">Contact en adres</h2>
+    <p class="addr fit" data-max="160"><span class="fit-in reg"><span class="reg-ink" aria-hidden="true">Arnhemsestraat 1-3</span><span class="reg-red">Arnhemsestraat 1-3</span></span></p>
+    <p class="addr-sub"><span>3811 LE Amersfoort</span><span class="red">Op een steenworp van de Onze Lieve Vrouwetoren</span></p>
+    <div class="cgrid">
+      <div><h3><i class="star" aria-hidden="true"></i>Bel</h3><a class="big" href="tel:+31334613638">033 – 461 36 38</a><p class="small">Voor reserveringen en vragen.</p></div>
+      <div><h3><i class="star" aria-hidden="true"></i>Mail</h3><a class="big" href="mailto:info@lazylouis.nl">info@lazylouis.nl</a><p class="small">Wij antwoorden graag.</p></div>
+      <div><h3><i class="star" aria-hidden="true"></i>Route</h3><a class="big" href="https://www.google.com/maps/place/Lazy+Louis/@52.1535815,5.3850157,17z" target="_blank" rel="noopener">Plan uw route&nbsp;↗</a><p class="small">Google Maps opent in een nieuw venster.</p></div>
+      <div><h3><i class="star" aria-hidden="true"></i>Volg</h3><div class="links"><a href="https://www.instagram.com/lazylouis_amersfoort/" target="_blank" rel="noopener">Instagram&nbsp;↗</a><a href="https://www.facebook.com/lazylouiscafe/" target="_blank" rel="noopener">Facebook&nbsp;↗</a></div><p class="small">@lazylouis_amersfoort</p></div>
+    </div>
+    <figure class="wide-photo" style="margin-bottom:0">
+      <div class="ht" style="--pos:50% 40%;--dot:6px;--b:1.22;--c:1.2"><div class="ht-print"><img src="assets/img/bar-wide.jpg" alt="De bar met flessenwand en spiegels in goud omlijst" width="1024" height="683" loading="lazy"></div></div>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot on-dark">
+  <div class="wrap">
+    <div class="foot-in">
+      <a class="foot-logo" href="#top"><img src="assets/brand/logo-light.png" alt="Lazy Louis Jazzcafé &amp; Eethuys" width="228" height="120" loading="lazy"></a>
+      <p class="foot-tag">Jazz, Food &amp; Drinks Since 1991<span>Arnhemsestraat 1-3 · 3811 LE Amersfoort · 033 – 461 36 38 · info@lazylouis.nl</span></p>
+      <nav class="foot-nav" aria-label="Voettekst">
+        <a href="#verhaal">Verhaal</a><a href="#menu">De kaart</a><a href="#reserveren">Reserveren</a><a href="#agenda">Agenda</a><a href="#vacatures">Vacatures</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="foot-legal"><span>© 2026 Lazy Louis Jazzcafé &amp; Eethuys</span><span>Gedrukt in mosterdgeel, rood en zwart.</span></div>
+  </div>
+</footer>
+
+<dialog class="dlg" id="res-dialog" aria-labelledby="dlg-title">
+  <div class="ticket">
+    <div class="t-main">
+      <button class="dlg-x" type="button" aria-label="Sluiten" data-close>×</button>
+      <p class="t-k"><i class="star" aria-hidden="true"></i>Plaatsbewijs</p>
+      <h2 id="dlg-title" tabindex="-1">Reserveer uw tafel</h2>
+      <ul class="t-lines" id="dlg-lines"></ul>
+      <div class="t-actions">
+        <a class="btn btn-red" id="dlg-fork" href="https://widget.thefork.com/63a9c0f2-62b5-449c-ae05-ae6fbbe3f000" target="_blank" rel="noopener">Reserveer via TheFork <span class="arr" aria-hidden="true">↗</span></a>
+        <p class="t-phone">Liever bellen?<br><a href="tel:+31334613638" id="dlg-phone">033 – 461 36 38</a></p>
+      </div>
+      <p class="t-confirm" id="dlg-confirm"></p>
+      <p class="t-note">Op de echte site komt hier direct de reserveringsmodule</p>
+    </div>
+    <div class="t-stub" aria-hidden="true"><span>Lazy Louis · sinds 1991</span></div>
+  </div>
+</dialog>
+
+<script src="assets/js/lazylouis-data.js"></script>
+<script src="book/book.js"></script>
+<script>
+(function () {
+  "use strict";
+  var LL = window.LL;
+  if (!LL) return;
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  var STAR = '<i class="star" aria-hidden="true"></i>';
+
+  /* ---------- live info from the data file ---------- */
+  var I = LL.info;
+  $$('a[href^="tel:"]').forEach(function (a) { a.href = I.phoneHref; });
+  $("#dlg-fork").href = I.reserveUrl;
+  $("#dlg-phone").textContent = I.phone;
+
+  /* ---------- strip of dish names ---------- */
+  var stripNames = ["Simply Red", "Comme ci, Comme Chèvre", "Salmon Burke", "Mr. Moskowicz", "Big McLazy’s", "¿Qué Pasa!", "Fat Canard", "Holle Bolle Gijt", "Chocoholics", "Wall Street Crash", "Is it Rendang?", "Van Dam’s Delicatesse"];
+  var stripHTML = stripNames.map(function (n) { return "<span>" + esc(n) + "</span>" + STAR; }).join("");
+  $("#strip").innerHTML = stripHTML + stripHTML;
+
+  /* ---------- story ---------- */
+  var q = LL.story.quotes;
+  $("#eq").innerHTML =
+    '<div class="eq-row"><span class="eq-word" aria-hidden="true">Louis</span><p class="eq-def"><span class="sr">Louis staat voor </span><b>Louis Armstrong</b><q>' + esc(q[0].text) + '</q><cite>— ' + esc(q[0].by) + '</cite></p></div>' +
+    '<div class="eq-row"><span class="eq-word" aria-hidden="true">Lazy</span><p class="eq-def"><span class="sr">Lazy staat voor </span><b>De relaxte sfeer</b><q>' + esc(q[1].text) + '</q><cite>— ' + esc(q[1].by) + '</cite></p></div>';
+  $("#intro").innerHTML = LL.intro.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
+
+  $("#dates").innerHTML = LL.story.timeline.map(function (t) {
+    var word = !/^\d{4}$/.test(t.year);
+    var brood = /Brood/.test(t.year);
+    return '<li' + (brood ? ' class="is-brood"' : '') + '><span class="y' + (word ? ' is-word' : '') + '">' + esc(t.year) + '</span><div><h3>' + esc(t.title) + '</h3><p>' + esc(t.text) + '</p></div></li>';
+  }).join("");
+  $("#details").innerHTML = LL.story.details.map(function (d) { return "<dt>" + esc(d.title) + "</dt><dd>" + esc(d.text) + "</dd>"; }).join("");
+
+  /* ---------- menu ---------- */
+  function price(n, cls) {
+    var s = LL.euro(n).split(",");
+    return '<span class="pr' + (cls ? " " + cls : "") + '"><span class="pr-eur">€</span><span class="pr-int">' + s[0] + '</span><span class="pr-dec">' + s[1] + '</span></span>';
+  }
+  function item(it, drinks) {
+    var meta = [];
+    if (it.signature) meta.push('<span class="lbl lbl-red">Huisfavoriet</span>');
+    if (it.forTwo) meta.push('<span class="lbl lbl-ink">Voor 2 personen</span>');
+    return '<li class="it' + (it.signature ? " is-sig" : "") + '">' +
+      '<div class="it-top"><span class="it-name">' + esc(it.name) +
+      (it.veg ? '<span class="veg" aria-hidden="true">*</span><span class="sr"> (vegetarisch of vegetarisch te bereiden)</span>' : "") +
+      '</span>' + price(it.price) + (it.forTwo ? '<span class="sr"> voor 2 personen</span>' : "") + '</div>' +
+      (it.tag ? '<span class="tag">' + esc(it.tag) + '</span>' : "") +
+      (it.desc ? '<p class="it-desc">' + esc(it.desc) + '</p>' : "") +
+      (meta.length ? '<div class="it-meta">' + meta.join("") + '</div>' : "") +
+      (it.extras ? '<ul class="it-extras">' + it.extras.map(function (x) { return "<li><span>" + esc(x.label) + "</span>" + price(x.price) + "</li>"; }).join("") + "</ul>" : "") +
+      "</li>";
+  }
+  var KEYS = ["lunch", "diner", "dranken"];
+  var tabsEl = $("#tabs"), panelsEl = $("#panels");
+  KEYS.forEach(function (k, i) {
+    var m = LL.menu[k], n = 0;
+    m.sections.forEach(function (s) { n += s.items.length; });
+    var drinks = k === "dranken";
+    tabsEl.insertAdjacentHTML("beforeend",
+      '<button class="tab" role="tab" type="button" id="tab-' + k + '" aria-controls="panel-' + k + '" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '">' +
+      '<span class="tl">' + esc(m.title) + '</span><span class="tc">' + n + (drinks ? " dranken" : " gerechten") + '</span></button>');
+    var html = '<div class="panel" role="tabpanel" id="panel-' + k + '" aria-labelledby="tab-' + k + '" tabindex="0"' + (i === 0 ? "" : " hidden") + '>' +
+      '<p class="served">' + STAR + '<span>' + esc(m.served) + '</span>' + STAR + '</p>';
+    m.sections.forEach(function (s) {
+      html += '<section class="msec"><div class="msec-head"><h3>' + esc(s.title) + '</h3>' + (s.intro ? "<p>" + esc(s.intro) + "</p>" : "") + '</div>' +
+        '<ul class="items' + (drinks ? " is-drinks" : "") + '">' + s.items.map(function (it) { return item(it, drinks); }).join("") + "</ul></section>";
+    });
+    html += '<aside class="notes" aria-label="Goed om te weten"><h4>Goed om te weten</h4><ul>' + m.notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + "</ul></aside></div>";
+    panelsEl.insertAdjacentHTML("beforeend", html);
+  });
+  var tabs = $$(".tab", tabsEl);
+  function select(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute("aria-selected", on);
+      t.tabIndex = on ? 0 : -1;
+      $("#" + t.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) tab.focus();
+    fitAll();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { select(t); });
+    t.addEventListener("keydown", function (e) {
+      var j = null;
+      if (e.key === "ArrowRight") j = (i + 1) % tabs.length;
+      else if (e.key === "ArrowLeft") j = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === "Home") j = 0;
+      else if (e.key === "End") j = tabs.length - 1;
+      if (j === null) return;
+      e.preventDefault();
+      select(tabs[j], true);
+    });
+  });
+
+  /* ---------- reservations & hours ---------- */
+  $("#res-lines").innerHTML = LL.reserve.lines.map(function (l) { return "<li>" + STAR + "<span>" + esc(l) + "</span></li>"; }).join("");
+  $("#res-confirm").textContent = LL.reserve.confirm;
+  $("#dlg-lines").innerHTML = LL.reserve.lines.map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("");
+  $("#dlg-confirm").textContent = LL.reserve.confirm;
+  function paintHours() {
+    $("#week").innerHTML = LL.weekRows().map(function (r) {
+      return '<li class="' + (r.today ? "is-today " : "") + (r.closed ? "is-closed " : "") + (r.sunday ? "is-sunday" : "") + '"' + (r.today ? ' aria-current="date"' : "") + '>' +
+        '<span class="d">' + esc(r.day) + (r.today ? '<span class="today">Vandaag</span>' : "") + '</span><span class="h">' + esc(r.hours) + "</span></li>";
+    }).join("");
+    $("#sundays").textContent = LL.nextOpenSundays(2).join(" en ");
+    LL.fillLive();
+  }
+  paintHours();
+  setInterval(paintHours, 60000);
+
+  /* ---------- agenda ---------- */
+  $("#wall").innerHTML = LL.news.map(function (n, i) {
+    if (i === 0) {
+      return '<article class="bill-card"><p class="bc-k">' + esc(n.when) + '</p><h3 class="fit" data-max="96"><span class="fit-in">' + esc(n.title) + '</span></h3>' +
+        '<p class="bc-sub">Voor 55-plussers</p><p class="t">' + esc(n.text) + '</p>' +
+        (n.next ? '<p class="bc-next"><small>Eerstvolgende editie</small><strong>' + esc(n.next) + '</strong></p>' : "") +
+        '<p class="bc-free">' + STAR + 'Toegang gratis' + STAR + '</p></article>';
+    }
+    return '<article class="bill-card"><p class="bc-k">' + esc(n.when) + '</p><h3>' + esc(n.title) + '</h3><p class="t">' + esc(n.text) + '</p>' +
+      (n.next ? '<p class="bc-next"><small>Eerstvolgende</small><strong>' + esc(n.next) + '</strong></p>' : "") + "</article>";
+  }).join("");
+
+  /* ---------- vacatures ---------- */
+  $("#jobs").innerHTML = LL.jobs.map(function (j) {
+    var tear = "";
+    for (var k = 0; k < 7; k++) tear += "<span>" + esc(I.jobsEmail) + "</span>";
+    return '<article class="job"><div class="job-body"><p class="job-k">Gevraagd</p><h3>' + esc(j.title) + '</h3><p class="hrs">' + esc(j.hours) + '</p>' +
+      '<p class="t">' + esc(j.text) + '</p><h4>Wat wij bieden</h4><ul>' + j.offer.map(function (o) { return "<li>" + esc(o) + "</li>"; }).join("") + '</ul>' +
+      '<p class="apply">Zin om aan te schuiven? Mail ' + esc(I.jobsContact) + ': <a href="mailto:' + esc(I.jobsEmail) + '">' + esc(I.jobsEmail) + '</a></p></div>' +
+      '<div class="tabs-tear" aria-hidden="true">' + tear + "</div></article>";
+  }).join("");
+
+  /* ---------- fitted poster lines ---------- */
+  var fitEls = [];
+  function fitAll() {
+    fitEls = $$(".fit");
+    fitEls.forEach(function (el) {
+      var inner = el.querySelector(".fit-in");
+      if (!inner || !el.offsetParent) return;
+      el.classList.add("is-fit");
+      el.style.fontSize = "100px";
+      var w = inner.getBoundingClientRect().width;
+      var cs = getComputedStyle(el);
+      var avail = el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      if (!w || !avail) { el.style.fontSize = ""; return; }
+      var max = parseFloat(el.getAttribute("data-max")) || 400;
+      el.style.fontSize = Math.min(max, 100 * avail / w * 0.985).toFixed(2) + "px";
+    });
+  }
+  fitAll();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+  if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", fitAll);
+  var rz;
+  window.addEventListener("resize", function () { cancelAnimationFrame(rz); rz = requestAnimationFrame(fitAll); });
+
+  /* ---------- mobile nav ---------- */
+  var bar = $("#top-bar"), toggle = $(".menu-toggle", bar);
+  function setNav(open) { bar.classList.toggle("is-open", open); toggle.setAttribute("aria-expanded", open); }
+  toggle.addEventListener("click", function () { setNav(toggle.getAttribute("aria-expanded") !== "true"); });
+  $$("#site-nav a").forEach(function (a) { a.addEventListener("click", function () { setNav(false); }); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { setNav(false); toggle.focus(); }
+  });
+
+  /* ---------- reservation dialog ---------- */
+  var dlg = $("#res-dialog"), opener = null;
+  $$("[data-open-res]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      opener = b;
+      setNav(false);
+      if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+      $("#dlg-title").focus();
+    });
+  });
+  function closeDlg() { if (dlg.open) dlg.close(); }
+  $$("[data-close]", dlg).forEach(function (b) { b.addEventListener("click", closeDlg); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) closeDlg(); });
+  dlg.addEventListener("close", function () { if (opener) opener.focus(); });
+})();
+</script>
+</body>
+</html>

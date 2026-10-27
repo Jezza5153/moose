@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lazy Louis · Fris &amp; Modern</title>
+<meta name="description" content="Lazy Louis Jazzcafé &amp; Eethuys in Amersfoort: jazz, food &amp; drinks sinds 1991. Live openingstijden, de complete kaart en direct reserveren.">
+<meta name="theme-color" content="#ecebe7">
+<link rel="icon" href="assets/brand/trumpet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="book/book.css">
+<style>
+:root{
+  color-scheme: light;
+  --stone:#ecebe7;
+  --stone-2:#e2e1db;
+  --tile:#ffffff;
+  --ink:#1e1e1c;
+  --ink-2:#45443f;
+  --muted:#686761;
+  --grey:#9b9b9b;
+  --line:#e4e3de;
+  --line-2:#d3d2cc;
+  --red:#b2162a;
+  --red-deep:#8e0f20;
+  --red-tint:#f7e6e8;
+  --open:#1d7f45;
+  --f-display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --f-text:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --r:24px;
+  --r-sm:14px;
+  --gap:14px;
+  --pad:clamp(16px,2.6vw,40px);
+  --hdr:68px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--stone);scroll-padding-top:calc(var(--hdr) + 16px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+html:has(dialog[open]){overflow:hidden}
+body{margin:0;background:var(--stone);color:var(--ink);font:400 1.0625rem/1.55 var(--f-text);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3,h4{margin:0}
+button{font:inherit;color:inherit}
+ul,ol{margin:0;padding:0;list-style:none}
+svg.i{width:18px;height:18px;flex:0 0 auto}
+:focus-visible{outline:2.5px solid var(--red);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;padding:10px 16px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+.container{max-width:1392px;margin:0 auto;padding:0 var(--pad)}
+
+/* ---------- type ---------- */
+.display{font-family:var(--f-display);font-variation-settings:"wdth" 90,"opsz" 96;font-weight:760;letter-spacing:-.016em;line-height:.96}
+.label{display:inline-flex;align-items:center;gap:8px;font:500 .72rem/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.label::before{content:"";width:7px;height:7px;background:var(--red);border-radius:1.5px}
+.label.plain::before{display:none}
+.h2{font-size:clamp(2.3rem,4.6vw,4.2rem);margin-top:14px}
+.lead{font-size:1.15rem;line-height:1.55;color:var(--ink-2);max-width:46ch}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;border:0;font:600 .98rem/1 var(--f-text);text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,box-shadow .2s,transform .2s var(--ease);white-space:nowrap}
+.btn .i{transition:transform .3s var(--ease)}
+.btn:hover .i{transform:translateX(3px)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#000}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line-2)}
+.btn-line:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-white{background:#fff;color:var(--ink)}
+.btn-sm{min-height:42px;padding:0 18px;font-size:.92rem}
+.btn:active{transform:scale(.98)}
+
+/* ---------- live dot ---------- */
+.dot{position:relative;display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--grey);flex:0 0 auto}
+.is-open .dot{background:var(--open)}
+.is-open .dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--open);animation:ping 2.2s cubic-bezier(0,.6,.4,1) infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.55}80%,100%{transform:scale(3.2);opacity:0}}
+
+/* ---------- header ---------- */
+.hdr{position:sticky;top:0;z-index:60;background:rgba(236,235,231,.84);-webkit-backdrop-filter:saturate(1.5) blur(14px);backdrop-filter:saturate(1.5) blur(14px);border-bottom:1px solid rgba(30,30,28,.07)}
+.hdr-in{height:var(--hdr);display:flex;align-items:center;gap:20px}
+.logo{display:block;flex:0 0 auto;margin-right:auto;border-radius:8px}
+.logo img{height:46px;width:auto}
+.nav ul{display:flex;gap:2px}
+.nav ul a{display:block;padding:10px 14px;border-radius:999px;font:500 .95rem/1 var(--f-text);text-decoration:none;color:var(--ink);transition:background-color .2s,box-shadow .2s}
+.nav ul a:hover{background:rgba(30,30,28,.06)}
+.nav ul a.is-current{background:#fff;box-shadow:0 1px 2px rgba(30,30,28,.08)}
+.nav .nav-extra{display:none}
+.hdr-status{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 14px;border-radius:999px;background:#fff;font:500 .74rem/1 var(--f-mono);letter-spacing:.03em;text-decoration:none;white-space:nowrap}
+.burger{display:none;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:#fff;cursor:pointer}
+.burger span{position:relative;display:block;width:18px;height:12px}
+.burger span::before,.burger span::after,.burger i{content:"";position:absolute;left:0;right:0;height:2px;border-radius:2px;background:var(--ink);transition:transform .3s var(--ease),opacity .2s}
+.burger span::before{top:0}.burger i{top:5px}.burger span::after{top:10px}
+.burger[aria-expanded="true"] span::before{transform:translateY(5px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-5px) rotate(-45deg)}
+.burger[aria-expanded="true"] i{opacity:0}
+@media (max-width:1240px){.hdr-status{display:none}}
+@media (max-width:1020px){
+  .burger{display:grid}
+  .nav{position:absolute;left:0;right:0;top:100%;padding:8px var(--pad) 24px;background:var(--stone);border-bottom:1px solid rgba(30,30,28,.08);box-shadow:0 30px 50px -30px rgba(30,30,28,.35);display:none}
+  .nav.is-open{display:block}
+  .nav ul{flex-direction:column;gap:0;background:#fff;border-radius:var(--r);padding:6px 18px}
+  .nav li+li{border-top:1px solid var(--line)}
+  .nav ul a{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-radius:0;font:700 1.45rem/1 var(--f-display);font-variation-settings:"wdth" 88;letter-spacing:-.02em}
+  .nav ul a::after{content:"";width:9px;height:9px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);transform:rotate(45deg);margin-right:4px}
+  .nav ul a:hover,.nav ul a.is-current{background:none;box-shadow:none}
+  .nav .nav-extra{display:flex;gap:10px;margin-top:14px;align-items:center;flex-wrap:wrap}
+  .nav .nav-extra .hdr-status{display:inline-flex}
+}
+@media (max-width:480px){
+  :root{--hdr:62px}
+  .logo img{height:40px}
+  .hdr-in{gap:10px}
+  .hdr .btn-sm{padding:0 14px}
+}
+
+/* ---------- tiles ---------- */
+.tile{position:relative;display:flex;flex-direction:column;min-width:0;padding:22px;border-radius:var(--r);background:var(--tile);color:var(--ink);overflow:hidden;isolation:isolate}
+a.tile,button.tile{text-decoration:none;cursor:pointer;border:0;text-align:left;font:inherit;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+a.tile:hover,button.tile:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(30,30,28,.38),0 2px 6px rgba(30,30,28,.05)}
+a.tile:active,button.tile:active{transform:translateY(-1px)}
+.tile .go{position:absolute;top:16px;right:16px;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--stone);color:var(--ink);transition:transform .4s var(--ease),background-color .25s,color .25s}
+.tile:hover .go{transform:translate(2px,-2px);background:var(--ink);color:#fff}
+.tile .go .i{width:17px;height:17px}
+.photo-tile{padding:0;background:#2a2622}
+.photo-tile>img{position:absolute;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.photo-tile:hover>img{transform:scale(1.035)}
+.pill{align-self:flex-start;max-width:100%;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px 0 16px;border-radius:999px;background:#fff;color:var(--ink);font:600 .9rem/1 var(--f-text);box-shadow:0 6px 16px -8px rgba(0,0,0,.35)}
+
+/* ---------- bento hero ---------- */
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:minmax(166px,auto);gap:var(--gap);padding-top:18px}
+.t-hero{grid-column:1/8;grid-row:1/4;min-height:528px;padding:clamp(24px,3vw,40px);justify-content:flex-end;color:#fff;background:#2a2622}
+.t-hero>img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.t-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,14,10,.1) 0%,rgba(18,14,10,.18) 28%,rgba(18,14,10,.74) 62%,rgba(18,14,10,.9) 100%),linear-gradient(90deg,rgba(18,14,10,.5),rgba(18,14,10,0) 62%)}
+.t-hero .kicker{position:absolute;top:clamp(20px,2.4vw,28px);left:clamp(20px,2.4vw,28px);display:inline-flex;align-items:center;gap:10px;height:34px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.94);color:var(--ink);font:500 .72rem/1 var(--f-mono);letter-spacing:.05em;text-transform:uppercase}
+.t-hero .kicker i{width:22px;height:13px;background:var(--red);-webkit-mask:url(assets/brand/trumpet.png) center/contain no-repeat;mask:url(assets/brand/trumpet.png) center/contain no-repeat}
+.t-hero h1{font-size:clamp(2.7rem,5.4vw,5.5rem);max-width:9.5ch;letter-spacing:-.026em;text-wrap:balance}
+.t-hero h1 em{font-style:normal;color:#fff;background:linear-gradient(transparent 70%,rgba(178,22,42,.95) 70% 92%,transparent 92%)}
+.t-hero p{max-width:44ch;margin-top:18px;font-size:1.08rem;line-height:1.5;color:rgba(255,255,255,.9)}
+.t-hero .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+
+.t-status{grid-column:8/11;grid-row:1}
+.t-status .status-big{display:block;margin-top:auto;font-size:clamp(2.2rem,3.4vw,3.1rem)}
+.t-status .status-sub{display:block;margin-top:8px;color:var(--ink-2);font-size:.95rem;line-height:1.4;padding-right:8px}
+.t-status .label::before{display:none}
+
+.t-today{grid-column:11/13;grid-row:1}
+.t-today .today-hours{margin-top:auto;padding-top:12px;font:700 1.55rem/1.05 var(--f-display);font-variation-settings:"wdth" 82;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.t-today .today-sub{margin-top:4px;font-size:.84rem;color:var(--muted)}
+.weekbars{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;height:44px;margin:16px 0 7px}
+.weekbars span{position:relative;border-radius:4px;background:var(--stone)}
+.weekbars b{position:absolute;left:0;right:0;border-radius:4px;background:#bdbcb6}
+.weekbars .is-today b{background:var(--red)}
+.weekbars .is-sun b{background:repeating-linear-gradient(180deg,#bdbcb6 0 4px,transparent 4px 7px)}
+.weekbars .is-today.is-sun b{background:repeating-linear-gradient(180deg,var(--red) 0 4px,transparent 4px 7px)}
+.weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;font:500 .62rem/1 var(--f-mono);text-align:center;color:var(--muted);text-transform:uppercase}
+.weekdays .is-today{color:var(--red);font-weight:700}
+
+.t-reserve{grid-column:8/13;grid-row:2;background:var(--red);color:#fff;justify-content:space-between}
+.t-reserve .label{color:rgba(255,255,255,.82)}
+.t-reserve .label::before{background:#fff}
+.t-reserve strong{display:block;font-size:clamp(2rem,3vw,2.8rem);padding-right:56px;text-wrap:balance}
+.t-reserve span.sub{display:block;margin-top:8px;font-size:.95rem;color:rgba(255,255,255,.88)}
+.t-reserve .go{background:#fff;color:var(--red);width:52px;height:52px;top:20px;right:20px}
+.t-reserve:hover .go{background:#fff;color:var(--red-deep)}
+
+.t-food{grid-column:8/10;grid-row:3;justify-content:flex-end;padding:16px;min-height:200px}
+.t-lounge{grid-column:10/13;grid-row:3;background:var(--ink);color:#fff}
+.t-lounge .label{color:rgba(255,255,255,.7)}
+.t-lounge .go{background:rgba(255,255,255,.1);color:#fff}
+.t-lounge:hover .go{background:#fff;color:var(--ink)}
+.t-lounge h2{margin-top:auto;font-size:1.75rem;line-height:1;padding-right:8px}
+.t-lounge p{margin-top:8px;font-size:.92rem;line-height:1.45;color:rgba(255,255,255,.8)}
+.t-lounge .next{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:12px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.1);font:500 .7rem/1.2 var(--f-mono);letter-spacing:.02em}
+.t-lounge .next b{font-weight:500;color:#fff}
+
+.t-loc{grid-column:1/6;grid-row:4}
+.t-loc strong{display:block;margin-top:auto;font-size:clamp(1.8rem,2.6vw,2.4rem)}
+.t-loc .city{margin-top:6px;font-weight:600}
+.t-loc .near{margin-top:4px;font-size:.92rem;color:var(--muted)}
+.t-years{grid-column:6/9;grid-row:4;background:var(--stone-2)}
+.t-years .go{background:#fff}
+.t-years strong{display:flex;align-items:baseline;gap:10px;margin-top:auto;font-size:clamp(3.4rem,5vw,4.6rem);color:var(--red)}
+.t-years strong small{font:600 1rem/1.2 var(--f-text);letter-spacing:0;color:var(--ink)}
+.t-years p{margin-top:8px;color:var(--ink-2);font-size:.92rem}
+.t-insta{grid-column:9/13;grid-row:4;justify-content:flex-end;padding:16px;min-height:200px}
+.t-insta>img{object-position:50% 60%}
+.t-insta .short{display:none}
+
+@media (max-width:1100px){
+  .bento{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .t-hero{grid-column:1/-1;grid-row:auto;min-height:500px}
+  .t-status{grid-column:1/4;grid-row:auto}
+  .t-today{grid-column:4/7;grid-row:auto}
+  .t-reserve{grid-column:1/-1;grid-row:auto;min-height:170px}
+  .t-food{grid-column:1/3;grid-row:auto}
+  .t-lounge{grid-column:3/7;grid-row:auto}
+  .t-loc{grid-column:1/-1;grid-row:auto}
+  .t-years{grid-column:1/4;grid-row:auto}
+  .t-insta{grid-column:4/7;grid-row:auto}
+}
+@media (max-width:640px){
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:10px;padding-top:12px}
+  .tile{padding:18px;border-radius:20px}
+  .t-hero{min-height:470px;padding:22px}
+  .t-hero h1{font-size:clamp(2.5rem,12vw,3.2rem)}
+  .t-hero .hero-cta .btn{flex:1 1 auto}
+  .t-status,.t-today{grid-column:span 1;min-height:178px}
+  .t-today .weekbars{height:44px;gap:3px}
+  .t-today .weekdays{gap:3px;font-size:.56rem}
+  .t-reserve{grid-column:1/-1;min-height:160px}
+  .t-reserve .go{width:46px;height:46px;top:16px;right:16px}
+  .t-food{grid-column:1/-1;min-height:190px}
+  .t-lounge{grid-column:1/-1;min-height:200px}
+  .t-loc{grid-column:1/-1;min-height:178px}
+  .t-years{grid-column:span 1;min-height:178px}
+  .t-years strong{font-size:3rem;flex-direction:column;gap:4px}
+  .t-insta{grid-column:span 1;min-height:178px}
+  .t-insta .pill{font-size:.8rem;padding:0 12px;height:34px}
+  .t-status .status-big{font-size:2rem}
+  .t-years .go{display:none}
+  .t-insta .handle{display:none}
+  .t-insta .short{display:inline}
+  .tile .go{width:38px;height:38px;top:12px;right:12px}
+}
+
+/* ---------- sections ---------- */
+.section{padding:clamp(72px,9vw,128px) 0 0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;margin-bottom:clamp(24px,3vw,36px)}
+.sec-head .lead{margin-top:16px}
+
+/* ---------- menu ---------- */
+.menu-panel{position:relative;background:#fff;border-radius:28px;padding:clamp(18px,3vw,40px)}
+.menu-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px}
+.seg{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:min(420px,100%);padding:5px;border-radius:999px;background:var(--stone)}
+.seg-thumb{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/3);border-radius:999px;background:var(--ink);transform:translateX(calc(var(--i,0) * 100%));transition:transform .5s cubic-bezier(.3,1.2,.4,1);box-shadow:0 6px 14px -6px rgba(30,30,28,.5)}
+.seg button{position:relative;z-index:1;height:48px;border:0;border-radius:999px;background:none;font:600 1rem/1 var(--f-text);color:var(--ink);cursor:pointer;transition:color .35s}
+.seg button[aria-selected="true"]{color:#fff}
+.menu-meta{display:flex;flex-direction:column;gap:6px;align-items:flex-end;text-align:right}
+.served{font:500 .76rem/1.4 var(--f-mono);color:var(--muted)}
+.legend{font-size:.88rem;color:var(--ink-2)}
+.legend b{color:var(--red)}
+.chips-bar{position:sticky;top:var(--hdr);z-index:6;margin:22px calc(-1 * clamp(18px,3vw,40px)) 0;padding:12px clamp(18px,3vw,40px);background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;scroll-behavior:smooth}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 16px;border:1px solid var(--line-2);border-radius:999px;background:#fff;font:500 .92rem/1 var(--f-text);color:var(--ink);cursor:pointer;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s}
+.chip:hover{border-color:var(--ink)}
+.chip .n{font:500 .7rem/1 var(--f-mono);color:var(--muted)}
+.chip.is-active{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip.is-active .n{color:rgba(255,255,255,.7)}
+.mpanel[hidden]{display:none}
+.msec{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:20px 48px;padding:34px 0 30px;border-bottom:1px solid var(--line);scroll-margin-top:calc(var(--hdr) + 84px)}
+.msec-head{align-self:start;position:sticky;top:calc(var(--hdr) + 92px)}
+.msec-head h3{font-size:1.6rem;line-height:1.02;font-variation-settings:"wdth" 88,"opsz" 48;letter-spacing:-.02em}
+.msec-head .count{display:block;margin-top:10px;font:500 .72rem/1 var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.msec-head .intro{margin-top:10px;font-size:.92rem;color:var(--ink-2);line-height:1.45}
+.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:44px}
+.item{padding:16px 0 18px;border-top:1px solid var(--line)}
+.item:nth-child(-n+2){border-top:0;padding-top:0}
+.item-top{display:flex;align-items:baseline;justify-content:space-between;gap:18px}
+.item-name{font-weight:650;font-size:1.06rem;line-height:1.3}
+.veg{margin-left:3px;color:var(--red);font-weight:700}
+.item-price{font:500 .95rem/1.3 var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.item-tag{margin-top:4px;font-weight:600;font-size:.92rem;color:var(--red)}
+.item-desc{margin-top:5px;max-width:54ch;font-size:.95rem;line-height:1.5;color:var(--ink-2)}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.badge{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px;border-radius:999px;background:var(--stone);font:500 .66rem/1 var(--f-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.badge-red{background:var(--red-tint);color:var(--red-deep)}
+.badge-red::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red)}
+.extras{margin-top:8px}
+.extras li{display:flex;justify-content:space-between;gap:16px;padding:6px 0 0;font-size:.92rem;color:var(--ink-2)}
+.extras li span:first-child::before{content:"+ ";color:var(--red);font-weight:700}
+.extras li span:last-child{font:500 .88rem/1.4 var(--f-mono);color:var(--ink);white-space:nowrap}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-top:28px}
+.notes li{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:var(--r-sm);background:var(--stone);font-size:.92rem;line-height:1.45;color:var(--ink-2)}
+.notes .i{color:var(--red);margin-top:1px}
+
+/* ---------- photo strip ---------- */
+.strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--gap)}
+.strip figure{margin:0}
+.strip .ph{overflow:hidden;border-radius:20px;background:#2a2622}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .8s var(--ease)}
+.strip figure:hover img{transform:scale(1.04)}
+.strip figcaption{display:flex;gap:8px;margin-top:10px;font:500 .72rem/1.35 var(--f-mono);color:var(--muted)}
+.strip figcaption b{color:var(--red);font-weight:500}
+
+/* ---------- verhaal ---------- */
+.story-top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 64px;align-items:start}
+.story-top .h2{max-width:12ch}
+.story-text{columns:2 260px;column-gap:40px;font-size:1.04rem;line-height:1.62;color:var(--ink-2)}
+.story-text p{margin:0 0 1em;break-inside:avoid}
+.tl{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:clamp(48px,6vw,72px);border-top:1.5px solid var(--ink)}
+.tl li{position:relative;padding:26px 22px 0 0}
+.tl li::before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--stone);box-shadow:inset 0 0 0 2.5px var(--red)}
+.tl .yr{display:block;font-size:1.55rem;color:var(--ink);white-space:nowrap}
+.tl h3{margin-top:10px;font:650 .98rem/1.3 var(--f-text)}
+.tl p{margin-top:6px;font-size:.9rem;line-height:1.5;color:var(--ink-2)}
+.story-bottom{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--gap);margin-top:clamp(48px,6vw,72px)}
+.quote-tile{padding:clamp(26px,3.5vw,48px);justify-content:space-between;gap:36px}
+.quote-tile blockquote{margin:0}
+.quote-tile blockquote p{font-family:var(--f-display);font-variation-settings:"wdth" 90,"opsz" 60;font-weight:600;font-size:clamp(1.7rem,3vw,2.7rem);line-height:1.08;letter-spacing:-.025em;text-wrap:balance}
+.quote-tile blockquote p::before{content:"“";display:block;height:.5em;margin-bottom:.12em;color:var(--red);font-size:1.7em;line-height:1}
+.quote-tile footer{margin-top:16px;font:500 .74rem/1.4 var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.quote-tile .q2{display:flex;gap:18px;align-items:center;padding-top:22px;border-top:1px solid var(--line)}
+.quote-tile .q2 img{width:88px;height:88px;border-radius:50%;object-fit:cover;flex:0 0 auto}
+.quote-tile .q2 p{font:600 1.15rem/1.35 var(--f-text)}
+.quote-tile .q2 footer{margin-top:6px}
+.details{padding:clamp(22px,3vw,34px)}
+.details ol{counter-reset:d}
+.details li{display:grid;grid-template-columns:44px minmax(0,1fr);padding:18px 0;border-top:1px solid var(--line);counter-increment:d}
+.details li:first-child{border-top:0;padding-top:10px}
+.details li::before{content:"0" counter(d);font:500 .74rem/1.9 var(--f-mono);color:var(--red)}
+.details h3{font:650 1.05rem/1.3 var(--f-text)}
+.details p{margin-top:5px;font-size:.94rem;line-height:1.5;color:var(--ink-2)}
+
+/* ---------- reserveren ---------- */
+.res-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--gap)}
+.res-tile{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:28px;padding:clamp(22px,3vw,36px)}
+.res-tile h3{margin-top:14px;font-size:clamp(1.9rem,3vw,2.6rem)}
+.checks{margin:22px 0 26px}
+.checks li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;font-size:1rem;line-height:1.45;border-top:1px solid var(--line)}
+.checks li:first-child{border-top:0}
+.checks .ck{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--red-tint);color:var(--red);flex:0 0 auto;margin-top:-1px}
+.checks .ck .i{width:13px;height:13px}
+.res-actions{display:flex;flex-wrap:wrap;gap:10px}
+.res-photo{border-radius:18px;overflow:hidden;min-height:260px;background:#2a2622}
+.res-photo img{width:100%;height:100%;object-fit:cover}
+.hours-tile{padding:clamp(22px,3vw,34px)}
+.hours-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.status-chip{display:inline-flex;align-items:center;gap:9px;padding:9px 13px;border-radius:999px;background:var(--stone);font:500 .74rem/1.2 var(--f-mono)}
+.hours{width:100%;border-collapse:collapse}
+.hours th,.hours td{padding:12px 10px;border-top:1px solid var(--line);font-size:.98rem;line-height:1.3;vertical-align:baseline}
+.hours th{text-align:left;font-weight:600}
+.hours td{text-align:right;white-space:nowrap;font:500 .9rem/1.3 var(--f-mono);font-variant-numeric:tabular-nums}
+.hours .is-closed td{color:var(--muted)}
+.hours .is-today th,.hours .is-today td{background:var(--red-tint)}
+.hours .is-today th{border-radius:10px 0 0 10px}
+.hours .is-today td{border-radius:0 10px 10px 0}
+.hours .is-today th::after{content:"Vandaag";margin-left:10px;padding:3px 7px;border-radius:999px;background:var(--red);color:#fff;font:500 .62rem/1 var(--f-mono);text-transform:uppercase;letter-spacing:.04em;vertical-align:2px}
+.hours .note{display:block;margin-top:3px;font:400 .78rem/1.3 var(--f-text);color:var(--muted)}
+.sundays{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.sundays p{font-size:.88rem;color:var(--ink-2)}
+.sundays ul{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.sundays li{padding:8px 12px;border-radius:999px;background:var(--stone);font:500 .74rem/1 var(--f-mono)}
+
+/* ---------- agenda ---------- */
+.news-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:var(--gap)}
+.news{padding:clamp(22px,2.6vw,32px);min-height:320px}
+.news .when{margin-top:14px;font:500 .74rem/1.45 var(--f-mono);color:var(--muted)}
+.news h3{margin-top:auto;padding-top:28px;font-size:clamp(1.7rem,2.4vw,2.2rem)}
+.news p.txt{margin-top:12px;font-size:.96rem;line-height:1.55;color:var(--ink-2)}
+.news .next{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;margin-top:18px;padding:9px 13px;border-radius:999px;background:var(--stone);font:500 .72rem/1.2 var(--f-mono)}
+.news.feature{background:var(--ink);color:#fff}
+.news.feature .label{color:rgba(255,255,255,.7)}
+.news.feature .when{color:rgba(255,255,255,.7)}
+.news.feature p.txt{color:rgba(255,255,255,.82)}
+.news.feature .next{background:var(--red);color:#fff}
+.news.feature h3{font-size:clamp(2.1rem,3.2vw,3rem)}
+
+/* ---------- vacatures ---------- */
+.jobs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.job{padding:clamp(22px,3vw,36px)}
+.job-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px}
+.job h3{font-size:clamp(1.7rem,2.4vw,2.2rem);max-width:14ch}
+.job .hrs{padding:8px 12px;border-radius:999px;background:var(--stone);font:500 .74rem/1 var(--f-mono);white-space:nowrap}
+.job p.txt{margin-top:16px;color:var(--ink-2);line-height:1.58}
+.job h4{margin-top:22px;font:500 .72rem/1 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.job .checks{margin:10px 0 24px}
+.job .apply{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-top:20px;border-top:1px solid var(--line)}
+.job .apply span{font-size:.9rem;color:var(--ink-2)}
+
+/* ---------- contact ---------- */
+.contact-tile{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:0}
+.contact-body{padding:clamp(24px,3.5vw,48px)}
+.contact-body .addr{margin-top:16px;font-style:normal}
+.contact-body .addr strong{display:block;font-size:clamp(2rem,3.4vw,3rem)}
+.contact-body .addr span{display:block;margin-top:8px;font-weight:600;font-size:1.1rem}
+.contact-body .near{margin-top:6px;color:var(--muted)}
+.rows{margin-top:28px;border-top:1px solid var(--line)}
+.rows a{display:grid;grid-template-columns:110px minmax(0,1fr) auto;align-items:center;gap:12px;padding:16px 4px;border-bottom:1px solid var(--line);text-decoration:none;transition:background-color .2s,padding .3s var(--ease)}
+.rows a:hover{background:var(--stone);padding-left:12px;padding-right:12px}
+.rows .k{font:500 .72rem/1 var(--f-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.rows .v{font-weight:600;overflow-wrap:anywhere}
+.rows .i{color:var(--ink)}
+.contact-photo{position:relative;min-height:420px;background:#2a2622}
+.contact-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ---------- footer ---------- */
+.foot{margin-top:clamp(72px,9vw,128px);padding:clamp(48px,6vw,72px) 0 36px;background:var(--ink);color:#f2f1ed}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+.foot-logo{width:190px}
+.foot .tag{margin-top:16px;font:500 .74rem/1.4 var(--f-mono);color:#b9b7b0;text-transform:uppercase;letter-spacing:.04em}
+.foot h3{font:500 .72rem/1 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:#b9b7b0;margin-bottom:14px}
+.foot li{margin:0 0 8px;font-size:.96rem}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline;text-underline-offset:3px}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:.9rem;color:#b9b7b0}
+.foot :focus-visible{outline-color:#fff}
+
+/* ---------- dialog ---------- */
+.dlg{width:min(540px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:28px;background:#fff;color:var(--ink);box-shadow:0 40px 80px -24px rgba(0,0,0,.45);overflow:auto}
+.dlg::backdrop{background:rgba(30,30,28,.42);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+.dlg[open]{animation:dlg-in .45s var(--ease)}
+@keyframes dlg-in{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.dlg-in{padding:clamp(24px,4vw,36px)}
+.dlg-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.dlg-x{display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:var(--stone);cursor:pointer;transition:background-color .2s,transform .3s var(--ease)}
+.dlg-x:hover{background:var(--stone-2);transform:rotate(90deg)}
+.dlg h2{font-size:clamp(2rem,6vw,2.6rem)}
+.dlg .checks{margin:18px 0 22px}
+.dlg-actions{display:grid;gap:10px}
+.dlg-actions .btn{width:100%}
+.dlg-phone{display:block;margin-top:2px;text-align:center;font-size:.92rem;color:var(--ink-2)}
+.dlg-confirm{margin-top:16px;font-size:.88rem;color:var(--muted);text-align:center}
+.dlg-note{display:flex;gap:10px;align-items:center;margin-top:18px;padding:12px 14px;border:1.5px dashed var(--line-2);border-radius:var(--r-sm);font:500 .72rem/1.45 var(--f-mono);color:var(--muted)}
+.dlg-note .i{color:var(--red)}
+@media (max-width:560px){
+  .dlg{width:100vw;max-height:92dvh;margin:auto 0 0;border-radius:24px 24px 0 0}
+  .dlg[open]{animation:sheet-in .45s var(--ease)}
+  @keyframes sheet-in{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
+}
+
+/* ---------- responsive sections ---------- */
+@media (max-width:1100px){
+  .story-top,.story-bottom,.res-grid{grid-template-columns:minmax(0,1fr)}
+  .tl{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:34px;border-top:0}
+  .tl li{border-top:1.5px solid var(--ink)}
+  .news-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .news.feature{grid-column:1/-1;min-height:0}
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .strip{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .strip figure:nth-child(n+4){display:none}
+}
+@media (max-width:860px){
+  .msec{grid-template-columns:minmax(0,1fr);gap:16px}
+  .msec-head{position:static}
+  .items{grid-template-columns:minmax(0,1fr)}
+  .item:nth-child(2){border-top:1px solid var(--line);padding-top:16px}
+  .menu-meta{align-items:flex-start;text-align:left}
+  .contact-tile{grid-template-columns:minmax(0,1fr)}
+  .contact-photo{min-height:260px;order:-1}
+  .jobs-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .res-tile{grid-template-columns:minmax(0,1fr)}
+  .res-photo{min-height:200px;order:-1}
+  .tl{grid-template-columns:minmax(0,1fr);row-gap:0;padding-left:22px;border-left:1.5px solid var(--ink);margin-left:6px}
+  .tl li{border-top:0;padding:0 0 26px 0}
+  .tl li::before{top:8px;left:-29px}
+  .news-grid{grid-template-columns:minmax(0,1fr)}
+  .news{min-height:0}
+  .strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);gap:10px;margin:0 calc(-1 * var(--pad));padding:0 var(--pad) 6px;scrollbar-width:none}
+  .strip::-webkit-scrollbar{display:none}
+  .strip figure,.strip figure:nth-child(n+4){display:block;flex:0 0 64%;scroll-snap-align:start}
+  .rows a{grid-template-columns:84px minmax(0,1fr) auto}
+  .foot-grid{grid-template-columns:minmax(0,1fr)}
+  .seg{width:100%}
+  .quote-tile .q2{align-items:flex-start}
+  .quote-tile .q2 img{width:64px;height:64px}
+  .hours th,.hours td{padding:11px 8px}
+  .job .apply .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .chips{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Direct naar de inhoud</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11.5M11 5.5l4.5 4.5-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 20 20"><path d="M6 14L14 6M7.5 5.5H14.5V12.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 20 20"><path d="M4.5 10.5l3.6 3.5L15.5 6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 20 20"><path d="M6.6 3.5H4.8c-.7 0-1.3.6-1.2 1.3.6 6 5.6 11 11.6 11.6.7.1 1.3-.5 1.3-1.2v-1.8c0-.5-.3-.9-.8-1l-2.4-.7c-.4-.1-.8 0-1.1.3l-1 1c-1.7-.8-3.1-2.2-3.9-3.9l1-1c.3-.3.4-.7.3-1.1L7.6 4.3c-.1-.5-.5-.8-1-.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-info" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 9v4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="6.4" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="10" cy="10" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="14.1" cy="5.9" r="1" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header class="hdr">
+  <div class="container hdr-in">
+    <a class="logo" href="#main"><img src="assets/brand/logo.png" alt="Lazy Louis Jazzcafé &amp; Eethuys" width="1147" height="605"></a>
+    <nav class="nav" id="site-nav" aria-label="Hoofdmenu">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#verhaal">Verhaal</a></li>
+        <li><a href="#reserveren">Reserveren</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#vacatures">Vacatures</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-extra">
+        <a class="hdr-status" href="#reserveren" data-live><span class="dot" aria-hidden="true"></span><span data-ll="status">…</span></a>
+      </div>
+    </nav>
+    <a class="hdr-status" href="#reserveren" data-live><span class="dot" aria-hidden="true"></span><span data-ll="status">…</span></a>
+    <button type="button" class="btn btn-red btn-sm" data-reserve>Reserveer</button>
+    <button type="button" class="burger" aria-expanded="false" aria-controls="site-nav" aria-label="Menu openen"><span aria-hidden="true"><i></i></span></button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ BENTO ============ -->
+  <section class="container" aria-label="In één oogopslag">
+    <div class="bento">
+      <div class="tile t-hero">
+        <img src="assets/img/bar-front.jpg" alt="De lange bar van Lazy Louis met messing tapkranen en een saxofoon aan de muur" width="1024" height="683" fetchpriority="high">
+        <span class="kicker"><i aria-hidden="true"></i>Jazzcafé &amp; Eethuys · Amersfoort</span>
+        <h1 class="display">Jazz, food &amp; drinks <em>sinds 1991</em></h1>
+        <p>Twee monumentale panden uit 1895 in het oude centrum, één lange bar, een ruim assortiment speciaalbieren en een kaart vol klassiekers met een knipoog.</p>
+        <div class="hero-cta">
+          <a class="btn btn-white" href="#menu">Bekijk de kaart <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <a class="tile t-status" href="#reserveren" data-live>
+        <span class="label plain"><span class="dot" aria-hidden="true"></span>Live</span>
+        <strong class="status-big display" data-ll="statusShort">…</strong>
+        <span class="status-sub" data-ll="detail"></span>
+      </a>
+
+      <div class="tile t-today">
+        <span class="label">Vandaag</span>
+        <div class="weekbars" id="weekbars" aria-hidden="true"></div>
+        <div class="weekdays" id="weekdays" aria-hidden="true"></div>
+        <p class="today-hours" id="today-hours">…</p>
+        <p class="today-sub" id="today-sub"></p>
+      </div>
+
+      <button type="button" class="tile t-reserve" data-reserve>
+        <span class="label">Reserveren</span>
+        <span>
+          <strong class="display">Reserveer een tafel</strong>
+          <span class="sub">Lunch en diner · online of telefonisch</span>
+        </span>
+        <span class="go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+      </button>
+
+      <a class="tile photo-tile t-food" href="#menu">
+        <img src="assets/img/food-tapas.jpg" alt="Tapasplank met Parmaham en kroketjes" width="1024" height="683">
+        <span class="pill">De kaart <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <a class="tile t-lounge" href="#agenda">
+        <span class="label">Nieuw sinds 2026 · 55+</span>
+        <span class="go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+        <h2 class="display">Lazy Louis Lounge</h2>
+        <p>Elke 2e woensdag van de maand: pubquiz, meezingen, spelletjes of gedichten.</p>
+        <span class="next">Eerstvolgende · <b data-ll="loungeNext"></b></span>
+      </a>
+
+      <a class="tile t-loc" id="loc-tile" href="https://www.google.com/maps/place/Lazy+Louis/@52.1535815,5.3850157,17z" target="_blank" rel="noopener">
+        <span class="label">Locatie · route plannen</span>
+        <span class="go" aria-hidden="true"><svg class="i"><use href="#i-ext"/></svg></span>
+        <strong class="display" data-info="street">Arnhemsestraat 1-3</strong>
+        <span class="city" data-info="pcity">3811 LE Amersfoort</span>
+        <span class="near" data-info="nearby">Op een steenworp van de Onze Lieve Vrouwetoren</span>
+      </a>
+
+      <a class="tile t-years" href="#verhaal">
+        <span class="label">Ons verhaal</span>
+        <span class="go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+        <strong class="display"><span id="years">35</span><small>jaar Lazy Louis</small></strong>
+        <p>Vernoemd naar Louis Armstrong, sinds 1991 aan de Arnhemsestraat.</p>
+      </a>
+
+      <a class="tile photo-tile t-insta" id="insta-tile" href="https://www.instagram.com/lazylouis_amersfoort/" target="_blank" rel="noopener">
+        <img src="assets/img/bar-beer.jpg" alt="Een vers getapt speciaalbier op de glanzende bar" width="1024" height="683">
+        <span class="pill"><svg class="i" aria-hidden="true"><use href="#i-insta"/></svg><span class="handle" data-info="instagramHandle">@lazylouis_amersfoort</span><span class="short">Instagram</span><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="section" id="menu" aria-labelledby="menu-title">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="label">Menukaart</span>
+          <h2 class="display h2" id="menu-title">Wat mag het zijn?</h2>
+        </div>
+        <p class="lead">Een mooie mix van klassieke en moderne gerechten, in het teken van het seizoen. Van Lazy’s 12-uurtje tot de Carnivore Plateau.</p>
+      </div>
+      <div class="menu-panel">
+        <div class="menu-top">
+          <div class="seg" role="tablist" aria-label="Kies een kaart" id="seg"><span class="seg-thumb" aria-hidden="true"></span></div>
+          <div class="menu-meta">
+            <span class="served" id="served"></span>
+            <span class="legend"><b>*</b> vegetarisch, of op verzoek vegetarisch te bereiden</span>
+          </div>
+        </div>
+        <div class="chips-bar"><div class="chips" id="chips" role="group" aria-label="Spring naar categorie"></div></div>
+        <div id="mpanels"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOTO'S ============ -->
+  <section class="section" aria-label="Binnenkijken">
+    <div class="container">
+      <div class="strip">
+        <figure><div class="ph"><img src="assets/img/bartender-tap.jpg" alt="Een barman tapt een biertje aan de messing tapinstallatie" width="1024" height="683"></div><figcaption><b>01</b> Messing tap</figcaption></figure>
+        <figure><div class="ph"><img src="assets/img/bar-gramophone.jpg" alt="Een grammofoon met het hondje van His Master’s Voice op de bar" width="1024" height="683"></div><figcaption><b>02</b> His Master’s Voice</figcaption></figure>
+        <figure><div class="ph"><img src="assets/img/table-saxophone.jpg" alt="Gedekte tafel met wijnglazen naast een gouden saxofoon" width="1024" height="683"></div><figcaption><b>03</b> Het restaurant</figcaption></figure>
+        <figure><div class="ph"><img src="assets/img/food-sandwich.jpg" alt="Meergranenbroodje met kip, geroosterde paprika en ei" width="1024" height="683"></div><figcaption><b>04</b> Lunch</figcaption></figure>
+        <figure><div class="ph"><img src="assets/img/bar-wide.jpg" alt="De bar met flessenwand en spiegels in goud omlijst" width="1024" height="683"></div><figcaption><b>05</b> De flessenwand</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VERHAAL ============ -->
+  <section class="section" id="verhaal" aria-labelledby="verhaal-title">
+    <div class="container">
+      <div class="story-top">
+        <div>
+          <span class="label">Ons verhaal</span>
+          <h2 class="display h2" id="verhaal-title">Vernoemd naar Louis. Lazy van de sfeer.</h2>
+        </div>
+        <div class="story-text" id="intro"></div>
+      </div>
+      <ol class="tl" id="tl"></ol>
+      <div class="story-bottom">
+        <div class="tile quote-tile" id="quotes"></div>
+        <div class="tile details">
+          <span class="label">Kijkt u gerust rond</span>
+          <ol id="details" style="margin-top:14px"></ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESERVEREN ============ -->
+  <section class="section" id="reserveren" aria-labelledby="res-title">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="label">Reserveren &amp; openingstijden</span>
+          <h2 class="display h2" id="res-title">Schuift u aan?</h2>
+        </div>
+        <p class="lead">Voor lunch en diner reserveert u eenvoudig online. Voor een drankje loopt u gewoon binnen.</p>
+      </div>
+      <div class="res-grid">
+        <div class="tile res-tile">
+          <div>
+            <span class="label">Reserveren</span>
+            <h3 class="display">Een tafel voor lunch of diner</h3>
+            <ul class="checks" id="res-lines"></ul>
+            <div class="res-actions">
+              <button type="button" class="btn btn-red" data-reserve>Reserveer een tafel <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              <a class="btn btn-line" href="tel:+31334613638" data-tel><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span data-info="phone">033 – 461 36 38</span></a>
+            </div>
+          </div>
+          <div class="res-photo"><img src="assets/img/table-wine.jpg" alt="Een fles rode wijn en glazen op een gedekte tafel" width="1024" height="683"></div>
+        </div>
+        <div class="tile hours-tile" id="tijden">
+          <div class="hours-head">
+            <span class="label">Openingstijden</span>
+            <span class="status-chip" data-live><span class="dot" aria-hidden="true"></span><span data-ll="status">…</span></span>
+          </div>
+          <table class="hours">
+            <caption class="sr-only">Openingstijden per dag</caption>
+            <tbody id="hours"></tbody>
+          </table>
+          <div class="sundays">
+            <p>Open op de eerste en laatste zondag van de maand. De eerstvolgende:</p>
+            <ul id="sundays"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AGENDA ============ -->
+  <section class="section" id="agenda" aria-labelledby="agenda-title">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="label">Agenda &amp; nieuws</span>
+          <h2 class="display h2" id="agenda-title">Wat er speelt</h2>
+        </div>
+      </div>
+      <div class="news-grid" id="news"></div>
+    </div>
+  </section>
+
+  <!-- ============ VACATURES ============ -->
+  <section class="section" id="vacatures" aria-labelledby="jobs-title">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="label">Werken bij Lazy Louis</span>
+          <h2 class="display h2" id="jobs-title">Kom je ons team versterken?</h2>
+        </div>
+        <p class="lead">Overdag en ’s avonds, in het café en in het restaurant. Een tijdig bekend rooster, een gezellig team en vaste gasten die je snel leert kennen.</p>
+      </div>
+      <div class="jobs-grid" id="jobs"></div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="tile contact-tile">
+        <div class="contact-body">
+          <span class="label">Contact &amp; route</span>
+          <h2 class="sr-only" id="contact-title">Contact</h2>
+          <address class="addr">
+            <strong class="display" data-info="street">Arnhemsestraat 1-3</strong>
+            <span data-info="pcity">3811 LE Amersfoort</span>
+          </address>
+          <p class="near" data-info="nearby">Op een steenworp van de Onze Lieve Vrouwetoren</p>
+          <div class="rows">
+            <a href="tel:+31334613638" data-tel><span class="k">Telefoon</span><span class="v" data-info="phone">033 – 461 36 38</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a href="mailto:info@lazylouis.nl" id="c-mail"><span class="k">E-mail</span><span class="v" data-info="email">info@lazylouis.nl</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a href="https://www.google.com/maps/place/Lazy+Louis/@52.1535815,5.3850157,17z" id="c-route" target="_blank" rel="noopener"><span class="k">Route</span><span class="v">Open in Google Maps</span><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <a href="https://www.instagram.com/lazylouis_amersfoort/" id="c-ig" target="_blank" rel="noopener"><span class="k">Instagram</span><span class="v" data-info="instagramHandle">@lazylouis_amersfoort</span><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <a href="https://www.facebook.com/lazylouiscafe/" id="c-fb" target="_blank" rel="noopener"><span class="k">Facebook</span><span class="v">facebook.com/lazylouiscafe</span><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a>
+          </div>
+        </div>
+        <div class="contact-photo"><img src="assets/img/table-saxophone.jpg" alt="Gedekte tafel met wijnglazen naast een gouden saxofoon" width="1024" height="683"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <img class="foot-logo" src="assets/brand/logo-light.png" alt="Lazy Louis Jazzcafé &amp; Eethuys" width="1147" height="605">
+        <p class="tag" data-info="tagline">Jazz, Food &amp; Drinks Since 1991</p>
+      </div>
+      <div>
+        <h3>Bezoek</h3>
+        <ul><li data-info="street">Arnhemsestraat 1-3</li><li data-info="pcity">3811 LE Amersfoort</li><li><a href="#reserveren" data-live><span data-ll="status">…</span></a></li></ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul><li><a href="tel:+31334613638" data-tel data-info="phone">033 – 461 36 38</a></li><li><a href="mailto:info@lazylouis.nl" id="f-mail" data-info="email">info@lazylouis.nl</a></li></ul>
+      </div>
+      <div>
+        <h3>Volg ons</h3>
+        <ul><li><a href="https://www.instagram.com/lazylouis_amersfoort/" id="f-ig" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/lazylouiscafe/" id="f-fb" target="_blank" rel="noopener">Facebook</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Lazy Louis Jazzcafé &amp; Eethuys</span>
+      <span>Reserveren via TheFork of telefonisch</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="dlg" id="reserve-dlg" aria-labelledby="dlg-title">
+  <div class="dlg-in">
+    <div class="dlg-top">
+      <span class="label">Reserveren</span>
+      <button type="button" class="dlg-x" data-close aria-label="Sluiten"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <h2 class="display" id="dlg-title">Een tafel bij Lazy Louis</h2>
+    <ul class="checks" id="dlg-lines"></ul>
+    <div class="dlg-actions">
+      <a class="btn btn-red" id="dlg-fork" href="https://widget.thefork.com/63a9c0f2-62b5-449c-ae05-ae6fbbe3f000" target="_blank" rel="noopener">Reserveer via TheFork <svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a>
+      <a class="btn btn-line" href="tel:+31334613638" data-tel><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Bel <span data-info="phone">033 – 461 36 38</span></a>
+    </div>
+    <p class="dlg-confirm" id="dlg-confirm"></p>
+    <p class="dlg-note"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg>Op de echte site komt hier direct de reserveringsmodule</p>
+  </div>
+</dialog>
+
+<script src="assets/js/lazylouis-data.js"></script>
+<script src="book/book.js"></script>
+<script>
+(function () {
+  "use strict";
+  var LL = window.LL;
+  if (!LL) return;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function icon(id, cls) { return '<svg class="i' + (cls ? " " + cls : "") + '" aria-hidden="true"><use href="#' + id + '"/></svg>'; }
+  function check(t) { return '<li><span class="ck">' + icon("i-check") + "</span><span>" + esc(t) + "</span></li>"; }
+
+  /* ---- facts from the data file ---- */
+  var I = LL.info;
+  var INFO = { street: I.street, pcity: I.postcode + " " + I.city, nearby: I.nearby, phone: I.phone, email: I.email, instagramHandle: I.instagramHandle, tagline: I.tagline };
+  $$("[data-info]").forEach(function (el) { var k = el.getAttribute("data-info"); if (INFO[k]) el.textContent = INFO[k]; });
+  $$("[data-tel]").forEach(function (a) { a.href = I.phoneHref; });
+  ["#c-mail", "#f-mail"].forEach(function (s) { $(s).href = "mailto:" + I.email; });
+  ["#c-ig", "#f-ig", "#insta-tile"].forEach(function (s) { $(s).href = I.instagram; });
+  ["#c-fb", "#f-fb"].forEach(function (s) { $(s).href = I.facebook; });
+  ["#c-route", "#loc-tile"].forEach(function (s) { $(s).href = I.mapsUrl; });
+  $("#dlg-fork").href = I.reserveUrl;
+  $("#years").textContent = String(2026 - I.since);
+
+  /* ---- live: status, today, week bars ---- */
+  function toMin(t) { var p = t.split(":"); return +p[0] * 60 + +p[1]; }
+  function renderLive() {
+    var st = LL.status(), rows = LL.weekRows();
+    LL.fillLive();
+    $$("[data-live]").forEach(function (el) { el.classList.toggle("is-open", st.open); });
+    var order = [1, 2, 3, 4, 5, 6, 0], from = 10 * 60, span = 13 * 60, bars = "", days = "";
+    order.forEach(function (d, i) {
+      var w = LL.week[d], r = rows[i], cls = (r.today ? " is-today" : "") + (w.sundayRule ? " is-sun" : "");
+      var b = w.open ? '<b style="top:' + ((toMin(w.open) - from) / span * 100).toFixed(1) + "%;height:" + ((toMin(w.close) - toMin(w.open)) / span * 100).toFixed(1) + '%"></b>' : "";
+      bars += '<span class="' + cls + '">' + b + "</span>";
+      days += '<span class="' + cls + '">' + r.short + "</span>";
+    });
+    $("#weekbars").innerHTML = bars;
+    $("#weekdays").innerHTML = days;
+    var today = rows.filter(function (r) { return r.today; })[0];
+    var hours = $("#today-hours"), sub = $("#today-sub");
+    if (today.closed) { hours.textContent = "Gesloten"; sub.textContent = today.day.toLowerCase() + " · " + (st.label.replace(/^Gesloten · /, "") || ""); }
+    else if (today.sunday) {
+      var openSun = /^Vandaag|^Nu open/.test(st.detail) || st.open;
+      hours.textContent = openSun ? "12.00 – 17.00" : "Gesloten";
+      sub.textContent = openSun ? "Open zondag" : "Alleen 1e & laatste zondag";
+    } else { hours.textContent = today.hours; sub.textContent = today.day.toLowerCase(); }
+
+    $("#hours").innerHTML = rows.map(function (r) {
+      var h = r.hours, note = "";
+      var m = r.sunday && /^(.*zondag)\s+(.+)$/.exec(r.hours);
+      if (m) { h = m[2]; note = '<span class="note">' + esc(m[1]) + " van de maand</span>"; }
+      return '<tr class="' + (r.today ? "is-today " : "") + (r.closed ? "is-closed" : "") + '"' + (r.today ? ' aria-current="date"' : "") + '><th scope="row">' + esc(r.day) + note + "</th><td>" + esc(h) + "</td></tr>";
+    }).join("");
+    $("#sundays").innerHTML = LL.nextOpenSundays(3).map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("");
+  }
+  renderLive();
+  setInterval(renderLive, 60000);
+
+  /* ---- verhaal ---- */
+  $("#intro").innerHTML = LL.intro.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
+  $("#tl").innerHTML = LL.story.timeline.map(function (t) {
+    return '<li><span class="yr display">' + esc(t.year) + "</span><h3>" + esc(t.title) + "</h3><p>" + esc(t.text) + "</p></li>";
+  }).join("");
+  var q = LL.story.quotes;
+  $("#quotes").innerHTML = '<span class="label">Angela Klarenbeek, eigenaar</span>' +
+    '<blockquote><p>' + esc(q[1].text) + "</p><footer>" + esc(q[1].by) + "</footer></blockquote>" +
+    '<div class="q2"><img src="' + LL.photos.gramophone.src + '" alt="' + esc(LL.photos.gramophone.alt) + '" width="1024" height="683"><blockquote><p>“' + esc(q[0].text) + "”</p><footer>" + esc(q[0].by) + "</footer></blockquote></div>";
+  $("#details").innerHTML = LL.story.details.map(function (d) { return "<li><div><h3>" + esc(d.title) + "</h3><p>" + esc(d.text) + "</p></div></li>"; }).join("");
+
+  /* ---- menu ---- */
+  var KEYS = ["lunch", "diner", "dranken"];
+  function item(it) {
+    var b = [];
+    if (it.signature) b.push('<span class="badge badge-red">Huisfavoriet</span>');
+    if (it.forTwo) b.push('<span class="badge">Voor 2 personen</span>');
+    var h = '<li class="item"><div class="item-top"><span class="item-name">' + esc(it.name) +
+      (it.veg ? '<span class="veg" aria-hidden="true">*</span><span class="sr-only"> (vegetarisch mogelijk)</span>' : "") +
+      '</span><span class="item-price">€ ' + LL.euro(it.price) + "</span></div>";
+    if (it.tag) h += '<p class="item-tag">' + esc(it.tag) + "</p>";
+    if (it.desc) h += '<p class="item-desc">' + esc(it.desc) + "</p>";
+    if (it.extras && it.extras.length) h += '<ul class="extras">' + it.extras.map(function (x) { return "<li><span>" + esc(x.label) + "</span><span>€ " + LL.euro(x.price) + "</span></li>"; }).join("") + "</ul>";
+    if (b.length) h += '<div class="badges">' + b.join("") + "</div>";
+    return h + "</li>";
+  }
+  var segHTML = "", panels = "";
+  KEYS.forEach(function (k, i) {
+    var m = LL.menu[k];
+    segHTML += '<button type="button" role="tab" id="tab-' + k + '" aria-controls="panel-' + k + '" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '">' + esc(m.title) + "</button>";
+    panels += '<div class="mpanel" role="tabpanel" id="panel-' + k + '" aria-labelledby="tab-' + k + '" tabindex="-1"' + (i ? " hidden" : "") + ">" +
+      m.sections.map(function (s, j) {
+        var n = s.items.length;
+        return '<section class="msec" id="' + k + "-" + j + '" aria-labelledby="' + k + "-" + j + '-t"><div class="msec-head"><h3 class="display" id="' + k + "-" + j + '-t">' + esc(s.title) + '</h3><span class="count">' + n + (k === "dranken" ? (n === 1 ? " drank" : " dranken") : (n === 1 ? " gerecht" : " gerechten")) + "</span>" +
+          (s.intro ? '<p class="intro">' + esc(s.intro) + "</p>" : "") + '</div><ul class="items">' + s.items.map(item).join("") + "</ul></section>";
+      }).join("") +
+      '<ul class="notes">' + m.notes.map(function (t) { return "<li>" + icon("i-info") + "<span>" + esc(t) + "</span></li>"; }).join("") + "</ul></div>";
+  });
+  $("#seg").insertAdjacentHTML("beforeend", segHTML);
+  $("#mpanels").innerHTML = panels;
+
+  var seg = $("#seg"), tabs = $$("[role=tab]", seg), chips = $("#chips"), current = "lunch";
+  function renderChips(k) {
+    chips.innerHTML = LL.menu[k].sections.map(function (s, j) {
+      return '<button type="button" class="chip' + (j === 0 ? " is-active" : "") + '" data-target="' + k + "-" + j + '">' + esc(s.title) + '<span class="n">' + s.items.length + "</span></button>";
+    }).join("");
+    chips.scrollLeft = 0;
+  }
+  function select(tab, focus) {
+    tabs.forEach(function (t, i) {
+      var on = t === tab;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      $("#" + t.getAttribute("aria-controls")).hidden = !on;
+      if (on) { seg.style.setProperty("--i", i); current = KEYS[i]; }
+    });
+    $("#served").textContent = LL.menu[current].served;
+    renderChips(current);
+    observeSections();
+    if (focus) tab.focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { select(t); });
+    t.addEventListener("keydown", function (e) {
+      var n = null;
+      if (e.key === "ArrowRight") n = tabs[(i + 1) % tabs.length];
+      else if (e.key === "ArrowLeft") n = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === "Home") n = tabs[0];
+      else if (e.key === "End") n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); e.stopPropagation(); select(n, true); }
+    });
+  });
+  function activateChip(id) {
+    $$(".chip", chips).forEach(function (c) {
+      var on = c.getAttribute("data-target") === id;
+      c.classList.toggle("is-active", on);
+      if (on) {
+        var left = c.offsetLeft - (chips.clientWidth - c.offsetWidth) / 2;
+        chips.scrollTo({ left: Math.max(0, left), behavior: reduce ? "auto" : "smooth" });
+      }
+    });
+  }
+  chips.addEventListener("click", function (e) {
+    var c = e.target.closest(".chip"); if (!c) return;
+    var sec = document.getElementById(c.getAttribute("data-target"));
+    activateChip(c.getAttribute("data-target"));
+    lockSpy = Date.now() + 900;
+    sec.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  });
+  var spy = null, lockSpy = 0;
+  function observeSections() {
+    if (!("IntersectionObserver" in window)) return;
+    if (spy) spy.disconnect();
+    spy = new IntersectionObserver(function (entries) {
+      if (Date.now() < lockSpy) return;
+      entries.forEach(function (en) { if (en.isIntersecting) activateChip(en.target.id); });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    $$("#panel-" + current + " .msec").forEach(function (s) { spy.observe(s); });
+  }
+  select(tabs[0]);
+
+  /* ---- reserveren ---- */
+  var lines = LL.reserve.lines.map(check).join("");
+  $("#res-lines").innerHTML = lines;
+  $("#dlg-lines").innerHTML = lines;
+  $("#dlg-confirm").textContent = LL.reserve.confirm;
+
+  /* ---- agenda ---- */
+  $("#news").innerHTML = LL.news.map(function (n, i) {
+    var kind = n.kind === "event" ? "Evenement" : "Nieuws";
+    return '<article class="tile news' + (i === 0 ? " feature" : "") + '"><span class="label">' + kind + '</span><p class="when">' + esc(n.when) + "</p><h3 class=\"display\">" + esc(n.title) + '</h3><p class="txt">' + esc(n.text) + "</p>" +
+      (n.next ? '<span class="next">Eerstvolgende · ' + esc(n.next) + "</span>" : "") + "</article>";
+  }).join("");
+
+  /* ---- vacatures ---- */
+  $("#jobs").innerHTML = LL.jobs.map(function (j) {
+    return '<article class="tile job"><div class="job-top"><h3 class="display">' + esc(j.title) + '</h3><span class="hrs">' + esc(j.hours) + '</span></div><p class="txt">' + esc(j.text) + "</p><h4>Wat wij bieden</h4><ul class=\"checks\">" + j.offer.map(check).join("") + "</ul>" +
+      '<div class="apply"><a class="btn btn-ink btn-sm" href="mailto:' + esc(I.jobsEmail) + "?subject=" + encodeURIComponent("Sollicitatie " + j.title) + '">Mail ' + esc(I.jobsContact.split(" ")[0]) + " " + icon("i-arrow") + "</a><span>" + esc(I.jobsContact) + " · " + esc(I.jobsEmail) + "</span></div></article>";
+  }).join("");
+
+  /* ---- header scroll-spy ---- */
+  var navLinks = $$("#site-nav ul a");
+  if ("IntersectionObserver" in window) {
+    var navSpy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        navLinks.forEach(function (a) { a.classList.toggle("is-current", a.getAttribute("href") === "#" + en.target.id); });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    ["menu", "verhaal", "reserveren", "agenda", "vacatures", "contact"].forEach(function (id) { navSpy.observe(document.getElementById(id)); });
+  }
+
+  /* ---- dialog ---- */
+  var dlg = $("#reserve-dlg"), opener = null;
+  function openDlg(e) {
+    opener = e && e.currentTarget;
+    closeNav();
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+    $("#dlg-fork").focus();
+  }
+  function closeDlg() { if (typeof dlg.close === "function") dlg.close(); else dlg.removeAttribute("open"); }
+  dlg.addEventListener("close", function () { if (opener && document.contains(opener)) opener.focus(); });
+  $$("[data-reserve]").forEach(function (b) { b.addEventListener("click", openDlg); });
+  $$("[data-close]", dlg).forEach(function (b) { b.addEventListener("click", closeDlg); });
+  dlg.addEventListener("click", function (e) {
+    if (e.target !== dlg) return;
+    var r = dlg.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeDlg();
+  });
+
+  /* ---- mobile nav ---- */
+  var burger = $(".burger"), nav = $("#site-nav");
+  function closeNav() { nav.classList.remove("is-open"); burger.setAttribute("aria-expanded", "false"); burger.setAttribute("aria-label", "Menu openen"); }
+  burger.addEventListener("click", function () {
+    var open = burger.getAttribute("aria-expanded") !== "true";
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "Menu sluiten" : "Menu openen");
+    nav.classList.toggle("is-open", open);
+    if (open) { var a = $("a", nav); if (a) a.focus(); }
+  });
+  $$("a", nav).forEach(function (a) { a.addEventListener("click", closeNav); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("is-open")) { closeNav(); burger.focus(); } });
+})();
+</script>
+</body>
+</html>
