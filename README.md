@@ -31,7 +31,6 @@ assets/img/                 # the restaurant's own photos (from lazylouis.nl)
 assets/brand/               # logo in four colourways + the trumpet icon
 book/book.js, book.css      # the page-flip bar on every mock-up (prev/next, favourite, ← →)
 book/thumbs/                # preview screenshots used on the cover page
-archive/restaurant-moose/   # the previous Restaurant Moose site, moved aside
 ```
 
 ## Editing content
@@ -43,3 +42,8 @@ first and last Sunday of the month.
 
 Favourites are stored per browser (localStorage). The cover page can share the choice via WhatsApp
 or copy it as text.
+
+## Live
+
+https://moose-puce.vercel.app (Vercel project `moose`, deploys from `main`).
+The previous Restaurant Moose site is kept on the `restaurant-moose` branch.
