@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lazy Louis · Lazy Days</title>
+<meta name="description" content="Lazy Louis Jazzcafé &amp; Eethuys in Amersfoort: koffie in de ochtend, lunch op het terras en een luie middag bij de Onze Lieve Vrouwetoren.">
+<link rel="icon" href="assets/brand/trumpet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600&family=Caveat:wght@600;700&display=swap">
+<link rel="stylesheet" href="book/book.css">
+<style>
+/* =========================================================================
+   Lazy Days — the sunny side of Lazy Louis.
+   Warm white paper, a sky, a sunflower sun and doodles that draw themselves.
+   ========================================================================= */
+:root {
+  color-scheme: light;
+  --paper: #fbf6e9;
+  --sheet: #fffdf7;
+  --sky: #7fb3d5;
+  --sky-2: #bcd8ea;
+  --sky-3: #dbeaf4;
+  --sun: #f4b63f;
+  --sun-2: #fde7b4;
+  --red: #b2162a;
+  --ink: #1d2a44;
+  --ink-2: #4a5670;
+  --line: rgba(29, 42, 68, .16);
+  --display: "Shrikhand", "Cooper Black", "Georgia", serif;
+  --body: "Nunito", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --hand: "Caveat", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  --gutter: clamp(16px, 4.4vw, 64px);
+  --max: 1280px;
+  --wobble: cubic-bezier(.34, 1.56, .64, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 104px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 17.5px/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .2em; text-decoration-color: var(--sun); }
+a:hover { text-decoration-color: var(--red); }
+button { font: inherit; color: inherit; }
+h1, h2, h3, h4, p, ul, ol, figure, blockquote, address { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+address { font-style: normal; }
+::selection { background: var(--sun); color: var(--ink); }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 6px; }
+.sr-only { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: 999px; font-weight: 800; text-decoration: none; }
+.skip:focus { top: 12px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+.hand { font-family: var(--hand); font-weight: 700; }
+.kick { display: inline-block; font: 700 clamp(24px, 2.4vw, 30px)/1 var(--hand); color: var(--red); transform: rotate(-2deg); margin-bottom: 10px; }
+.h2 { font: 400 clamp(40px, 5.6vw, 76px)/1.02 var(--display); letter-spacing: -.005em; color: var(--ink); }
+.h2 .u { position: relative; white-space: nowrap; }
+.h2 .u::after {
+  content: ""; position: absolute; left: -2%; right: -2%; bottom: -.12em; height: .3em; z-index: -1;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3 13 C 40 4, 70 18, 105 10 S 170 6, 197 12' fill='none' stroke='%23f4b63f' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.lead { font-size: 19px; color: var(--ink-2); max-width: 54ch; }
+
+/* Buttons: stickers ------------------------------------------------------ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 26px;
+  background: var(--sun); color: var(--ink);
+  border: 2.5px solid var(--ink); border-radius: 999px; cursor: pointer;
+  font: 900 16px/1 var(--body); letter-spacing: .01em; text-decoration: none;
+  box-shadow: 3px 4px 0 var(--ink);
+  transition: transform .25s var(--wobble), box-shadow .2s ease;
+}
+.btn:hover { transform: translate(-1px, -2px) rotate(-1.5deg); box-shadow: 5px 6px 0 var(--ink); }
+.btn:active { transform: translate(2px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+.btn-paper { background: var(--sheet); }
+.btn-red { background: var(--red); color: var(--paper); }
+.btn svg { width: 22px; height: 22px; flex: 0 0 auto; }
+
+/* Header with awning ----------------------------------------------------- */
+.site-head { position: sticky; top: 0; z-index: 40; background: var(--paper); }
+.awning-wrap { filter: drop-shadow(0 3px 0 rgba(29, 42, 68, .12)); }
+.awning {
+  height: 26px; position: relative;
+  background: repeating-linear-gradient(90deg, var(--red) 0 36px, #f3e9d2 36px 72px);
+  -webkit-mask: radial-gradient(18px 12px at 18px 14px, #000 98%, transparent) 0 0 / 36px 26px repeat-x, linear-gradient(#000, #000) 0 0 / 100% 14px no-repeat;
+          mask: radial-gradient(18px 12px at 18px 14px, #000 98%, transparent) 0 0 / 36px 26px repeat-x, linear-gradient(#000, #000) 0 0 / 100% 14px no-repeat;
+}
+.head-inner { display: flex; align-items: center; gap: 24px; min-height: 76px; }
+.brand { flex: 0 0 auto; display: block; border-radius: 8px; transition: transform .3s var(--wobble); }
+.brand:hover { transform: rotate(-3deg); }
+.brand img { height: 54px; width: auto; }
+.site-nav { margin-left: auto; }
+.site-nav ul { display: flex; align-items: center; gap: 2px; }
+.site-nav a {
+  display: block; padding: 10px 14px; border-radius: 999px;
+  font-weight: 800; font-size: 16px; text-decoration: none;
+  transition: background-color .2s ease, transform .25s var(--wobble);
+}
+.site-nav a:hover { background: var(--sun-2); transform: rotate(-2deg); }
+.head-cta { flex: 0 0 auto; min-height: 46px; padding: 0 20px; font-size: 15px; }
+.nav-toggle { display: none; }
+.head-shadow { height: 0; border-bottom: 2px dashed transparent; transition: border-color .3s ease; }
+.site-head.is-scrolled .head-shadow { border-bottom-color: var(--line); }
+
+@media (max-width: 1023px) {
+  .head-inner { gap: 10px; min-height: 64px; }
+  .brand img { height: 42px; }
+  .head-cta { margin-left: auto; min-height: 42px; padding: 0 16px; font-size: 14px; box-shadow: 2px 3px 0 var(--ink); }
+  .nav-toggle {
+    display: inline-grid; place-items: center; width: 46px; height: 46px; flex: 0 0 auto;
+    border: 2.5px solid var(--ink); border-radius: 50%; background: var(--sheet); cursor: pointer;
+  }
+  .nav-toggle svg { width: 24px; height: 24px; }
+  .nav-toggle .x { display: none; }
+  .nav-toggle[aria-expanded="true"] .x { display: block; }
+  .nav-toggle[aria-expanded="true"] .bars { display: none; }
+  .site-nav {
+    position: fixed; left: 0; right: 0; top: 90px; bottom: 0; z-index: 39;
+    margin: 0; padding: 18px var(--gutter) 120px; overflow-y: auto;
+    background: var(--sky-3);
+  }
+  .site-nav[hidden] { display: none; }
+  .site-nav ul { flex-direction: column; align-items: stretch; gap: 4px; }
+  .site-nav a { font: 400 34px/1.15 var(--display); padding: 10px 4px; border-radius: 12px; }
+  .site-nav a:hover { transform: none; background: transparent; color: var(--red); }
+  .nav-note { display: block; margin-top: 18px; font: 700 26px/1.2 var(--hand); color: var(--red); transform: rotate(-2deg); }
+}
+@media (min-width: 1024px) {
+  .site-nav[hidden] { display: block; }
+  .nav-note { display: none; }
+}
+
+/* Doodles ---------------------------------------------------------------- */
+.doodle { overflow: visible; }
+.doodle .s { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.doodle .thin { stroke-width: 2.2; }
+.doodle .f-sun { fill: var(--sun); }
+.doodle .f-paper { fill: var(--sheet); }
+.doodle .f-ink { fill: var(--ink); }
+.doodle .f-sky { fill: var(--sky-3); }
+.doodle .f-red { fill: var(--red); }
+.doodle .s-red { stroke: var(--red); }
+.doodle .s-sun { stroke: var(--sun); }
+.doodle .s-sky { stroke: var(--sky); }
+.draw { stroke-dasharray: 1 1; stroke-dashoffset: 0; }
+html.can-draw .draw { animation: draw var(--dur, 1.2s) cubic-bezier(.5, 0, .3, 1) both; animation-delay: var(--d, 0s); }
+html.can-draw .pop { animation: pop .6s var(--wobble) both; animation-delay: var(--d, 0s); }
+@keyframes draw { 0% { stroke-dashoffset: 1; opacity: 0; } 2% { opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 1; } }
+@keyframes pop { 0% { opacity: 0; transform: scale(.6); } 100% { opacity: 1; transform: none; } }
+.pop { transform-box: fill-box; transform-origin: center; }
+
+/* Hero ------------------------------------------------------------------- */
+.hero {
+  position: relative; overflow: clip;
+  background: linear-gradient(180deg, var(--sky) 0%, #9cc5e0 45%, var(--sky-2) 80%, var(--sky-3) 100%);
+  padding-bottom: 70px;
+}
+.hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 10fr); gap: 40px; align-items: center; padding-top: clamp(40px, 6vw, 84px); padding-bottom: clamp(30px, 4vw, 56px); }
+.hero-copy { position: relative; z-index: 3; }
+.hero-kick { font: 700 clamp(25px, 2.4vw, 32px)/1.1 var(--hand); color: var(--ink); transform: rotate(-2deg); display: inline-block; margin-bottom: 14px; }
+.hero h1 { font: 400 clamp(56px, 7vw, 108px)/.95 var(--display); letter-spacing: -.01em; color: var(--ink); }
+.hero h1 .line { display: block; }
+.hero h1 .zon { position: relative; display: inline-block; }
+.hero h1 .zon svg { position: absolute; left: -4%; right: -4%; bottom: -.16em; width: 108%; height: .32em; }
+.hero-lede { margin-top: 26px; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.55; max-width: 34em; color: var(--ink); font-weight: 600; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 16px 18px; align-items: center; margin-top: 30px; }
+.hero-note { position: relative; display: inline-flex; align-items: flex-start; gap: 6px; margin-top: 22px; margin-left: 8px; font: 700 26px/1.1 var(--hand); color: var(--red); transform: rotate(-3deg); }
+.hero-note svg { width: 56px; height: 40px; margin-top: -12px; }
+
+.polaroids { position: relative; height: clamp(400px, 36vw, 500px); margin-right: clamp(0px, 6vw, 90px); }
+.pola {
+  position: absolute; width: 56%; margin: 0;
+  background: var(--sheet); padding: 12px 12px 54px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .05), 0 18px 34px -16px rgba(29, 42, 68, .55);
+  transform: rotate(var(--r, 0deg));
+  transition: transform .45s var(--wobble), box-shadow .3s ease;
+}
+.pola img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #222; }
+.pola figcaption { position: absolute; left: 12px; right: 12px; bottom: 10px; font: 700 27px/1 var(--hand); color: var(--ink); text-align: center; }
+.pola::before {
+  content: ""; position: absolute; left: 50%; top: -14px; width: 92px; height: 28px; margin-left: -46px;
+  background: rgba(244, 182, 63, .78); transform: rotate(calc(var(--r, 0deg) * -1.6 + 2deg));
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .08);
+}
+.pola:hover { transform: rotate(0deg) translateY(-6px) scale(1.02); z-index: 5; box-shadow: 0 26px 40px -16px rgba(29, 42, 68, .6); }
+.pola.p1 { --r: -7deg; left: 0; top: 10%; z-index: 2; width: 52%; }
+.pola.p2 { --r: 5deg; left: 44%; top: 0; z-index: 1; width: 52%; }
+.pola.p3 { --r: -2deg; left: 26%; top: 42%; z-index: 3; width: 48%; }
+.pola.p3 img { object-position: 50% 70%; }
+
+.decor { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.decor .sun { position: absolute; right: max(2vw, calc((100vw - var(--max)) / 2 - 20px)); top: 18px; width: clamp(130px, 14vw, 200px); }
+.decor .tower { position: absolute; right: max(1vw, calc((100vw - var(--max)) / 2 - 70px)); bottom: 56px; height: 86%; width: auto; aspect-ratio: 160 / 520; }
+.decor .cloud-a { position: absolute; left: 47%; top: 14px; width: clamp(110px, 11vw, 170px); }
+.decor .cloud-b { position: absolute; left: 3%; bottom: 120px; width: clamp(100px, 10vw, 150px); opacity: .9; }
+.decor .birds { position: absolute; right: 22%; top: 70px; width: 90px; }
+.hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; height: 72px; width: 100%; z-index: 2; }
+
+@media (max-width: 960px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 26px; }
+  .polaroids { height: clamp(300px, 70vw, 460px); max-width: 560px; }
+  .decor .tower { height: 52%; bottom: 60px; right: 2vw; }
+  .decor .sun { width: 110px; top: 10px; right: 10px; }
+  .decor .cloud-a { left: auto; right: 34%; top: 14px; width: 110px; }
+  .decor .cloud-b { display: none; }
+  .decor .birds { right: 36%; top: 120px; width: 60px; }
+}
+@media (max-width: 520px) {
+  .hero { padding-bottom: 60px; }
+  .hero h1 { font-size: clamp(52px, 15vw, 66px); }
+  .hero-kick { font-size: 24px; max-width: 70%; }
+  .polaroids { height: 300px; margin-right: 8px; }
+  .pola { padding: 8px 8px 38px; }
+  .pola figcaption { font-size: 21px; bottom: 7px; }
+  .pola::before { width: 64px; margin-left: -32px; height: 22px; top: -10px; }
+  .decor .tower { height: 300px; bottom: 58px; right: -18px; }
+  .decor .sun { width: 92px; right: 6px; top: 6px; }
+  .decor .cloud-a { right: 30%; width: 90px; top: 8px; }
+  .decor .birds { display: none; }
+  .hero-note { font-size: 23px; }
+}
+
+/* Vandaag strip ---------------------------------------------------------- */
+.today { position: relative; z-index: 3; margin-top: -34px; }
+.ticket {
+  position: relative;
+  background: var(--sun); color: var(--ink);
+  border-radius: 20px;
+  display: grid; grid-template-columns: auto repeat(3, minmax(0, 1fr)); align-items: stretch;
+  box-shadow: 0 18px 30px -18px rgba(29, 42, 68, .45);
+  border: 2.5px solid var(--ink);
+}
+.ticket > * { padding: 20px 24px; position: relative; }
+.ticket > * + *::before { content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; border-left: 2.5px dashed rgba(29, 42, 68, .45); }
+.t-head { display: flex; flex-direction: column; justify-content: center; }
+.t-head .hand { font-size: 30px; line-height: 1; color: var(--ink); }
+.t-head b { font: 400 26px/1.05 var(--display); }
+.t-item { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 2px 12px; align-items: center; }
+.t-item svg { grid-row: span 2; width: 40px; height: 40px; }
+.t-item .t-lbl { font-size: 12.5px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.t-item .t-val { font-weight: 800; font-size: 16.5px; line-height: 1.3; }
+.t-item .t-val.is-open::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #1f7a4a; box-shadow: 0 0 0 2px var(--sheet); margin-right: 8px; vertical-align: 1px; }
+@media (max-width: 1000px) {
+  .ticket { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .t-head { grid-column: 1 / -1; flex-direction: row; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-bottom: 8px; }
+  .ticket > .t-head + *::before { display: none; }
+  .ticket > :nth-child(4)::before { left: 24px; right: 24px; top: 0; bottom: auto; border-left: 0; border-top: 2.5px dashed rgba(29, 42, 68, .45); }
+  .ticket > :nth-child(3)::before { top: 14px; }
+}
+@media (max-width: 560px) {
+  .ticket { grid-template-columns: 1fr; }
+  .ticket > * { padding: 14px 18px; }
+  .ticket > * + *::before { left: 18px; right: 18px; top: 0; bottom: auto; border-left: 0; border-top: 2.5px dashed rgba(29, 42, 68, .45); }
+  .ticket > .t-head + *::before { display: block; }
+  .ticket > :nth-child(4)::before { left: 18px; right: 18px; }
+}
+
+/* Sections --------------------------------------------------------------- */
+.sec { padding: clamp(72px, 9vw, 124px) 0; position: relative; }
+.sec-head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 18px 48px; align-items: end; margin-bottom: clamp(32px, 4.5vw, 56px); }
+.sec-head .lead { justify-self: end; }
+@media (max-width: 860px) { .sec-head { grid-template-columns: 1fr; } .sec-head .lead { justify-self: start; } }
+
+/* Menu ------------------------------------------------------------------- */
+.menu-title-wrap { position: relative; }
+.menu-doodles { position: absolute; right: -10px; top: -46px; width: 150px; height: 90px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: -2px; position: relative; z-index: 2; padding-left: 22px; }
+.tab {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 24px 14px; border: 2.5px solid var(--ink); border-bottom: 0; border-radius: 22px 22px 0 0;
+  background: var(--sun-2); cursor: pointer; font: 400 24px/1 var(--display); color: var(--ink);
+  transition: transform .25s var(--wobble), background-color .2s ease;
+  transform-origin: bottom center;
+}
+.tab:hover { transform: rotate(-2deg) translateY(-2px); }
+.tab small { font: 800 12.5px/1 var(--body); letter-spacing: .04em; background: var(--sheet); border-radius: 999px; padding: 4px 8px; border: 1.5px solid var(--ink); }
+.tab[aria-selected="true"] { background: var(--sheet); transform: none; padding-bottom: 16px; margin-bottom: -2px; }
+.tab[aria-selected="true"] small { background: var(--sun); }
+.sheet {
+  position: relative; background: var(--sheet); border: 2.5px solid var(--ink); border-radius: 28px;
+  padding: clamp(24px, 4vw, 52px);
+  box-shadow: 8px 10px 0 var(--sky);
+}
+.panel-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 30px; align-items: center; padding-bottom: 22px; margin-bottom: 26px; border-bottom: 2.5px dashed var(--line); }
+.served { font-weight: 800; }
+.served span { font-weight: 600; color: var(--ink-2); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14.5px; font-weight: 700; color: var(--ink-2); }
+.legend > span { display: inline-flex; align-items: center; gap: 6px; }
+.legend .mk { padding: 0 6px; border-radius: 4px; background: var(--sun-2); color: var(--ink); }
+.legend svg { width: 20px; height: 20px; }
+.cols { columns: 2; column-gap: clamp(32px, 5vw, 72px); }
+.msec { break-inside: avoid; margin-bottom: 40px; }
+.msec h3 { display: inline-block; font: 400 30px/1.1 var(--display); color: var(--ink); padding-bottom: 10px; margin-bottom: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 10' preserveAspectRatio='none'%3E%3Cpath d='M2 6 Q 12 1, 22 6 T 42 6 T 62 6 T 82 6 T 102 6 T 118 6' fill='none' stroke='%237fb3d5' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") left bottom / 100% 9px no-repeat; }
+.msec-intro { font-size: 15px; color: var(--ink-2); font-weight: 600; margin-bottom: 4px; }
+.it { padding: 11px 0; }
+.it + .it { border-top: 1.5px dotted rgba(29, 42, 68, .28); }
+.it-row { display: flex; align-items: baseline; gap: 10px; }
+.it-name { font-weight: 800; font-size: 17px; line-height: 1.35; }
+.it-name .nm { padding: 0 3px; margin: 0 -3px; border-radius: 4px; }
+.it.is-day .it-name .nm { background: linear-gradient(100deg, transparent 0 1%, var(--sun-2) 2% 97%, transparent 98%) 0 62% / 100% 70% no-repeat; }
+.it-name .sunmark { display: inline-block; width: 19px; height: 19px; vertical-align: -3px; margin-left: 6px; }
+.it-name .veg { color: var(--red); font-weight: 900; text-decoration: none; margin-left: 2px; }
+.it-sig { font: 700 21px/1 var(--hand); color: var(--red); display: inline-block; transform: rotate(-4deg); margin-left: 8px; white-space: nowrap; }
+.it-fill { flex: 1 1 auto; min-width: 16px; border-bottom: 2px dotted rgba(29, 42, 68, .35); transform: translateY(-5px); }
+.it-price { font-weight: 900; font-size: 17px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.it-two { display: inline-block; font-size: 12px; font-weight: 800; background: var(--sky-3); border-radius: 999px; padding: 2px 8px; margin-left: 6px; vertical-align: 2px; white-space: nowrap; }
+.it-tag { font: 700 23px/1.1 var(--hand); color: var(--red); margin-top: 2px; }
+.it-desc { font-size: 15px; line-height: 1.5; color: var(--ink-2); margin-top: 3px; max-width: 46ch; }
+.it-extras { margin-top: 5px; }
+.it-extras li { display: flex; gap: 10px; align-items: baseline; font-size: 15px; font-weight: 700; color: var(--ink-2); }
+.it-extras li .it-fill { border-bottom-width: 1.5px; }
+.it-extras li b { color: var(--ink); font-weight: 900; font-variant-numeric: tabular-nums; }
+.notes { margin-top: 12px; padding-top: 22px; border-top: 2.5px dashed var(--line); display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px 36px; font-size: 15px; color: var(--ink-2); font-weight: 600; }
+.notes li { position: relative; padding-left: 26px; }
+.notes li::before { content: ""; position: absolute; left: 0; top: .32em; width: 16px; height: 16px; border-radius: 50%; background: var(--sun); box-shadow: inset 0 0 0 2px var(--ink); }
+[role="tabpanel"]:focus-visible { outline-offset: 10px; }
+@media (max-width: 900px) { .cols { columns: 1; } }
+@media (max-width: 520px) {
+  .tabs { padding-left: 10px; gap: 6px; }
+  .tab { font-size: 19px; padding: 10px 13px 12px; gap: 6px; border-radius: 16px 16px 0 0; }
+  .tab small { font-size: 11px; padding: 3px 6px; }
+  .sheet { border-radius: 20px; padding: 22px 16px; box-shadow: 5px 6px 0 var(--sky); }
+  .menu-doodles { display: none; }
+  .it-name { font-size: 16px; }
+}
+
+/* Terras & reserveren ---------------------------------------------------- */
+.terras { background: var(--sky-3); }
+.terras::before, .terras::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 22px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 22' preserveAspectRatio='none'%3E%3Cpath d='M0 22 V12 Q 15 0 30 12 T 60 12 T 90 12 T 120 12 V22 Z' fill='%23dbeaf4'/%3E%3C/svg%3E") 0 0 / 120px 22px repeat-x;
+}
+.terras::before { top: -21px; }
+.terras::after { bottom: -21px; transform: scaleY(-1); }
+.terras-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(36px, 6vw, 96px); align-items: start; }
+.big-note {
+  position: relative; margin: 26px 0 28px; padding: 22px 26px 22px 120px; min-height: 120px;
+  background: var(--sheet); border: 2.5px solid var(--ink); border-radius: 22px; box-shadow: 5px 6px 0 var(--sun);
+  transform: rotate(-1deg);
+}
+.big-note svg { position: absolute; left: 14px; top: 50%; width: 92px; height: 92px; margin-top: -48px; }
+.big-note p { font: 700 clamp(28px, 2.6vw, 34px)/1.05 var(--hand); color: var(--red); }
+.big-note span { display: block; margin-top: 6px; font: 600 15.5px/1.45 var(--body); color: var(--ink-2); }
+.reserve-lines li { position: relative; padding: 9px 0 9px 32px; font-weight: 600; }
+.reserve-lines li svg { position: absolute; left: 0; top: 11px; width: 22px; height: 22px; }
+.terras-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; margin-top: 26px; }
+.terras-cta .phone { font-weight: 800; }
+.hours-card { background: var(--sheet); border: 2.5px solid var(--ink); border-radius: 28px; padding: clamp(22px, 3vw, 36px); box-shadow: 8px 10px 0 var(--sky); }
+.hours-card h3 { font: 400 34px/1.05 var(--display); }
+.status-pill { display: inline-flex; align-items: center; gap: 8px; margin: 12px 0 4px; padding: 6px 14px; border-radius: 999px; background: var(--sun-2); border: 2px solid var(--ink); font-weight: 900; font-size: 15px; }
+.status-pill.is-open::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: #1f7a4a; }
+.status-pill.is-closed::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
+.status-detail { color: var(--ink-2); font-weight: 600; font-size: 15px; margin-bottom: 14px; }
+.hours li { position: relative; display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 10px 12px; border-top: 1.5px dotted rgba(29, 42, 68, .28); }
+.hours li:first-child { border-top: 0; }
+.hours .d { font-weight: 800; }
+.hours .h { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+.hours li.is-closed .h { color: var(--ink-2); font-style: italic; font-weight: 600; }
+.hours li.is-today { background: var(--sun-2); border-radius: 12px; border-top-color: transparent; }
+.hours li.is-today + li { border-top-color: transparent; }
+.hours li.is-today .d::after { content: "vandaag"; font: 700 21px/1 var(--hand); color: var(--red); margin-left: 10px; display: inline-block; transform: rotate(-4deg); }
+.sundays { margin-top: 20px; padding-top: 18px; border-top: 2.5px dashed var(--line); }
+.sundays p { font-weight: 800; }
+.sundays ul { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.sundays li { padding: 6px 14px; border-radius: 999px; background: var(--sky-3); font-weight: 800; font-size: 14.5px; border: 2px solid var(--ink); }
+.sundays li:nth-child(2) { transform: rotate(-2deg); }
+.sundays li:nth-child(3) { transform: rotate(1.5deg); }
+@media (max-width: 900px) { .terras-grid { grid-template-columns: 1fr; } }
+@media (max-width: 520px) {
+  .big-note { padding: 18px 18px 18px 92px; }
+  .big-note svg { width: 70px; height: 70px; left: 10px; margin-top: -36px; }
+  .hours li { padding: 10px 8px; flex-wrap: wrap; }
+  .hours .h { font-size: 15px; }
+}
+
+/* Story ------------------------------------------------------------------ */
+.story-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(40px, 6vw, 90px); align-items: start; }
+.story-text p { margin-bottom: 1em; font-size: 17.5px; }
+.story-text p:first-child { font-size: clamp(20px, 1.7vw, 23px); font-weight: 700; line-height: 1.5; }
+.quote { margin: 34px 0 6px; position: relative; padding-left: 74px; }
+.quote svg { position: absolute; left: 0; top: -6px; width: 58px; height: 58px; }
+.quote blockquote { font: 400 clamp(32px, 3.6vw, 48px)/1.08 var(--display); color: var(--red); }
+.quote p { margin-top: 10px; font: 700 23px/1.1 var(--hand); color: var(--ink); }
+.story-photos { position: relative; min-height: 520px; }
+.story-photos .pola { width: 74%; }
+.story-photos .pola.s1 { --r: 4deg; right: 4%; top: 0; }
+.story-photos .pola.s2 { --r: -5deg; left: 0; top: 46%; }
+.story-photos .trumpet { position: absolute; right: 4%; bottom: 0; width: 110px; height: 67px; background: var(--red); -webkit-mask: url(assets/brand/trumpet.png) center / contain no-repeat; mask: url(assets/brand/trumpet.png) center / contain no-repeat; transform: rotate(-14deg); }
+.timeline { margin-top: clamp(64px, 8vw, 110px); }
+.timeline h3 { font: 400 clamp(32px, 3.2vw, 44px)/1.05 var(--display); margin-bottom: 34px; }
+.tl-wrap { position: relative; }
+.tl { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0 24px; }
+.tl-line { position: absolute; left: 0; right: 0; top: 17px; height: 30px; width: 100%; }
+.tl li { position: relative; z-index: 1; }
+.tl .y {
+  display: inline-grid; place-items: center; min-width: 88px; height: 64px; padding: 0 14px; margin-bottom: 14px;
+  border-radius: 999px; background: var(--sun); border: 2.5px solid var(--ink);
+  font: 400 21px/1 var(--display); transform: rotate(var(--r, -3deg));
+}
+.tl li:nth-child(even) .y { --r: 3deg; background: var(--sky-2); }
+.tl .tt { font-weight: 900; line-height: 1.3; margin-bottom: 6px; }
+.tl .tx { font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.wist { margin-top: clamp(64px, 8vw, 110px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px clamp(28px, 4vw, 60px); }
+.wist svg { width: 74px; height: 74px; margin-bottom: 8px; }
+.wist .k { font: 700 24px/1 var(--hand); color: var(--red); }
+.wist h4 { font: 400 26px/1.1 var(--display); margin: 6px 0 8px; }
+.wist p { font-size: 15.5px; color: var(--ink-2); }
+@media (max-width: 960px) {
+  .story-grid { grid-template-columns: 1fr; }
+  .story-photos { min-height: 0; height: clamp(380px, 90vw, 560px); max-width: 520px; }
+  .tl { grid-template-columns: 1fr 1fr; gap: 30px 24px; }
+  .tl-line { display: none; }
+  .wist { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .quote { padding-left: 0; padding-top: 52px; }
+  .quote svg { width: 46px; height: 46px; top: 0; }
+  .story-photos .trumpet { width: 80px; height: 49px; }
+  .tl .y { min-width: 74px; height: 54px; font-size: 18px; }
+}
+
+/* Agenda ----------------------------------------------------------------- */
+.agenda { background: var(--paper); }
+.agenda-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 28px clamp(32px, 5vw, 72px); align-items: start; }
+.feature {
+  position: relative; background: var(--sky); border: 2.5px solid var(--ink); border-radius: 28px;
+  padding: clamp(26px, 4vw, 48px); padding-right: clamp(26px, 16vw, 230px); overflow: hidden;
+}
+.feature .k { font: 700 26px/1 var(--hand); color: var(--ink); display: inline-block; transform: rotate(-2deg); }
+.feature h3 { font: 400 clamp(36px, 4vw, 56px)/1 var(--display); margin: 10px 0 12px; }
+.feature .when { font-weight: 900; }
+.feature p { font-weight: 600; color: var(--ink); margin-top: 10px; max-width: 46ch; }
+.date-sticker {
+  position: absolute; right: clamp(18px, 3vw, 40px); top: clamp(20px, 3vw, 40px); width: 168px; height: 168px; border-radius: 50%;
+  background: var(--sun); border: 2.5px solid var(--ink); display: grid; place-content: center; text-align: center; padding: 14px;
+  transform: rotate(8deg); box-shadow: 4px 5px 0 var(--ink);
+}
+.date-sticker small { font: 700 21px/1 var(--hand); }
+.date-sticker strong { font: 400 20px/1.1 var(--display); margin-top: 4px; }
+.news-list li { padding: 0 0 24px 56px; position: relative; }
+.news-list li + li { padding-top: 24px; border-top: 2.5px dashed var(--line); }
+.news-list svg { position: absolute; left: 0; width: 42px; height: 42px; top: 0; }
+.news-list li + li svg { top: 24px; }
+.news-list h3 { font: 400 26px/1.1 var(--display); }
+.news-list .when { font-weight: 800; font-size: 14.5px; margin: 6px 0; }
+.news-list p { color: var(--ink-2); font-size: 15.5px; }
+.news-list .next { margin-top: 8px; font: 700 23px/1 var(--hand); color: var(--red); }
+@media (max-width: 900px) { .agenda-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .feature { padding-right: clamp(22px, 5vw, 40px); padding-top: 150px; }
+  .date-sticker { width: 132px; height: 132px; top: 16px; right: 18px; }
+  .date-sticker strong { font-size: 16px; }
+}
+
+/* Jobs ------------------------------------------------------------------- */
+.jobs { background: var(--sun-2); }
+.jobs-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px clamp(28px, 4vw, 56px); }
+.job { background: var(--sheet); border: 2.5px solid var(--ink); border-radius: 26px; padding: clamp(24px, 3vw, 36px); position: relative; }
+.job:nth-child(1) { transform: rotate(-.6deg); }
+.job:nth-child(2) { transform: rotate(.6deg); }
+.job h3 { font: 400 clamp(28px, 2.6vw, 36px)/1.05 var(--display); }
+.job .hrs { display: inline-block; margin: 12px 0 14px; padding: 4px 12px; border-radius: 999px; background: var(--sky-3); font-weight: 900; font-size: 14px; }
+.job p { color: var(--ink-2); font-weight: 600; }
+.job ul { margin: 16px 0 22px; }
+.job li { position: relative; padding: 5px 0 5px 30px; font-weight: 700; }
+.job li svg { position: absolute; left: 0; top: 7px; width: 20px; height: 20px; }
+.apply { margin-top: 30px; font-weight: 700; }
+.apply .hand { font-size: 26px; color: var(--red); display: inline-block; transform: rotate(-2deg); margin-right: 6px; }
+@media (max-width: 860px) { .jobs-grid { grid-template-columns: 1fr; } .job:nth-child(n) { transform: none; } }
+
+/* Contact ---------------------------------------------------------------- */
+.contact-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(36px, 5vw, 80px); align-items: center; }
+.mapbox { background: var(--sheet); border: 2.5px solid var(--ink); border-radius: 28px; padding: 16px; box-shadow: 8px 10px 0 var(--sun); }
+.mapbox svg { width: 100%; height: auto; display: block; }
+.mapbox .map-txt { font: 700 22px var(--hand); fill: var(--ink); }
+.mapbox .map-red { font: 700 26px var(--hand); fill: var(--red); }
+.mapbox .map-small { font: 700 18px var(--hand); fill: var(--ink-2); }
+.mapbox figcaption { font: 700 21px/1.1 var(--hand); color: var(--ink-2); text-align: center; margin-top: 4px; }
+.addr { font: 400 clamp(34px, 3.6vw, 50px)/1.05 var(--display); margin: 8px 0 12px; }
+.nearby { font-weight: 700; color: var(--ink-2); }
+.c-list { margin: 24px 0 26px; }
+.c-list li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; align-items: center; padding: 8px 0; }
+.c-list svg { width: 40px; height: 40px; }
+.c-list .l { display: block; font-size: 12.5px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.c-list a, .c-list span.v { font-weight: 800; font-size: 18px; overflow-wrap: anywhere; }
+.c-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* Footer ----------------------------------------------------------------- */
+.site-foot { position: relative; background: var(--ink); color: var(--paper); padding: 70px 0 40px; margin-top: 40px; }
+.site-foot::before {
+  content: ""; position: absolute; left: 0; right: 0; top: -21px; height: 22px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 22' preserveAspectRatio='none'%3E%3Cpath d='M0 22 V12 Q 15 0 30 12 T 60 12 T 90 12 T 120 12 V22 Z' fill='%231d2a44'/%3E%3C/svg%3E") 0 0 / 120px 22px repeat-x;
+}
+.foot-grid { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 28px; }
+.foot-bye { font: 700 clamp(34px, 4vw, 52px)/1 var(--hand); color: var(--sun); transform: rotate(-3deg); display: inline-block; margin-bottom: 18px; }
+.site-foot img { height: 74px; width: auto; }
+.foot-meta { text-align: right; font-weight: 600; font-size: 14.5px; color: #e9e4d6; }
+.foot-meta a { color: var(--paper); }
+.foot-meta p + p { margin-top: 4px; }
+.site-foot :focus-visible { outline-color: var(--sun); }
+@media (max-width: 620px) { .foot-meta { text-align: left; } }
+
+/* Dialog ----------------------------------------------------------------- */
+dialog.reserve {
+  width: min(540px, calc(100vw - 32px)); max-height: calc(100dvh - 32px);
+  padding: 0; border: 2.5px solid var(--ink); border-radius: 28px;
+  background: var(--sheet); color: var(--ink);
+  box-shadow: 8px 10px 0 var(--sun);
+  overflow: auto;
+}
+dialog.reserve::backdrop { background: rgba(29, 42, 68, .55); }
+dialog.reserve[open] { animation: dlg .5s var(--wobble); }
+@keyframes dlg { from { opacity: 0; transform: translateY(24px) rotate(-2deg) scale(.96); } }
+.dlg { padding: 34px clamp(20px, 5vw, 40px) 30px; position: relative; }
+.dlg .k { font: 700 26px/1 var(--hand); color: var(--red); display: inline-block; transform: rotate(-2deg); }
+.dlg h2 { font: 400 clamp(32px, 6vw, 40px)/1.05 var(--display); margin: 6px 0 16px; padding-right: 40px; }
+.dlg ul { margin-bottom: 22px; }
+.dlg li { position: relative; padding: 7px 0 7px 32px; font-weight: 600; }
+.dlg li svg { position: absolute; left: 0; top: 9px; width: 22px; height: 22px; }
+.dlg .btn { width: 100%; }
+.dlg-phone { text-align: center; margin-top: 18px; font-weight: 700; }
+.dlg-phone a { font-weight: 900; }
+.dlg-confirm { text-align: center; margin-top: 12px; font-size: 14px; color: var(--ink-2); font-weight: 600; }
+.dlg-note { margin-top: 18px; padding: 12px 16px; background: var(--sky-3); border-radius: 14px; font-size: 14px; font-weight: 700; color: var(--ink-2); text-align: center; }
+.dlg-close {
+  position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%;
+  border: 2.5px solid var(--ink); background: var(--sun); cursor: pointer; display: grid; place-items: center;
+  transition: transform .25s var(--wobble);
+}
+.dlg-close:hover { transform: rotate(90deg); }
+.dlg-close svg { width: 20px; height: 20px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+  .draw { stroke-dashoffset: 0 !important; opacity: 1 !important; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-sun" viewBox="0 0 40 40"><circle cx="20" cy="20" r="8.5" fill="#f4b63f" stroke="#1d2a44" stroke-width="2.4"/><path d="M20 3v5M20 32v5M3 20h5M32 20h5M8 8l3.5 3.5M28.5 28.5L32 32M8 32l3.5-3.5M28.5 11.5L32 8" stroke="#1d2a44" stroke-width="2.4" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 40 40"><circle cx="20" cy="21" r="14" fill="#fffdf7" stroke="#1d2a44" stroke-width="2.4"/><path d="M20 13v8l6 4" stroke="#1d2a44" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-chair" viewBox="0 0 40 40"><path d="M6 15 Q20 2 34 15 Q27 12.5 20 15 Q13 12.5 6 15 Z" fill="#b2162a" stroke="#1d2a44" stroke-width="2.2" stroke-linejoin="round"/><path d="M20 8v26M13 26h14M14 26l-3 9M26 26l3 9" stroke="#1d2a44" stroke-width="2.4" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-note" viewBox="0 0 40 40"><path d="M15 29V9l16-3v20" fill="none" stroke="#1d2a44" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="11.5" cy="29.5" rx="5" ry="4" fill="#1d2a44"/><ellipse cx="27.5" cy="26.5" rx="5" ry="4" fill="#1d2a44"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#f4b63f" stroke="#1d2a44" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#1d2a44" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#dbeaf4" stroke="#1d2a44" stroke-width="2.4"/><path d="M14 11.5c-2 1-2.6 3.2-1.4 6 2 4.6 5.4 8 10 10 2.6 1.1 4.8.6 6-1.4l-3.4-3.4-2.6 1.5c-2.2-1.1-4-2.9-5.1-5.1l1.5-2.6z" fill="#fffdf7" stroke="#1d2a44" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#fde7b4" stroke="#1d2a44" stroke-width="2.4"/><rect x="10.5" y="13" width="19" height="14" rx="2" fill="#fffdf7" stroke="#1d2a44" stroke-width="2.2"/><path d="M11 14l9 7 9-7" fill="none" stroke="#1d2a44" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#dbeaf4" stroke="#1d2a44" stroke-width="2.4"/><rect x="11.5" y="11.5" width="17" height="17" rx="5" fill="#fffdf7" stroke="#1d2a44" stroke-width="2.2"/><circle cx="20" cy="20" r="4" fill="none" stroke="#1d2a44" stroke-width="2.2"/><circle cx="25" cy="15" r="1.3" fill="#1d2a44"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#fde7b4" stroke="#1d2a44" stroke-width="2.4"/><path d="M22 31V21h3.4l.6-4H22v-2.4c0-1.2.4-2 2-2h2V9.2c-.6-.1-1.8-.2-3-.2-3 0-5 1.8-5 5.1V17h-3.2v4H18v10" fill="#fffdf7" stroke="#1d2a44" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#fde7b4" stroke="#1d2a44" stroke-width="2.4"/><path d="M20 31s-7-7.2-7-12.2a7 7 0 0114 0C27 23.8 20 31 20 31z" fill="#b2162a" stroke="#1d2a44" stroke-width="2.2" stroke-linejoin="round"/><circle cx="20" cy="18.6" r="2.4" fill="#fffdf7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="#1d2a44" stroke-width="3" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#menu">Direct naar de kaart</a>
+
+<header class="site-head">
+  <div class="awning-wrap" aria-hidden="true"><div class="awning"></div></div>
+  <div class="wrap head-inner">
+    <a class="brand" href="#top"><img src="assets/brand/logo.png" alt="Lazy Louis Jazzcafé &amp; Eethuys" width="1147" height="605"></a>
+    <nav class="site-nav" id="site-nav" aria-label="Hoofdmenu" hidden>
+      <ul>
+        <li><a href="#menu">Menukaart</a></li>
+        <li><a href="#reserveren">Reserveren</a></li>
+        <li><a href="#verhaal">Ons verhaal</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#vacatures">Vacatures</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="nav-note" data-ll="status"></p>
+    </nav>
+    <button class="btn head-cta" type="button" data-open-reserve>Reserveer</button>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <svg class="bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7c5-1.5 11 1 16-.5M4 12.5c6-1 10 .8 16 0M4 18c5-1 11 .8 16-.5" fill="none" stroke="#1d2a44" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <svg class="x" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg>
+      <span class="sr-only">Navigatie openen</span>
+    </button>
+  </div>
+  <div class="head-shadow"></div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="decor" aria-hidden="true">
+      <svg class="doodle cloud-a" viewBox="0 0 220 96">
+        <path class="s thin f-paper draw" pathLength="1" style="--d:.9s" d="M38 84 C 14 86, 6 66, 22 56 C 18 36, 40 28, 54 38 C 60 14, 96 8, 108 30 C 122 12, 154 16, 158 40 C 182 34, 204 50, 194 70 C 206 84, 186 92, 170 86 Z"/>
+      </svg>
+      <svg class="doodle cloud-b" viewBox="0 0 220 96">
+        <path class="s thin f-paper draw" pathLength="1" style="--d:1.2s" d="M34 82 C 10 82, 8 60, 26 56 C 26 36, 52 32, 62 44 C 74 22, 112 22, 118 46 C 140 36, 172 46, 168 66 C 190 64, 196 86, 172 86 Z"/>
+      </svg>
+      <svg class="doodle birds" viewBox="0 0 100 40">
+        <path class="s thin draw" pathLength="1" style="--d:1.8s" d="M4 20 q8 -10 16 0 q8 -10 16 0"/>
+        <path class="s thin draw" pathLength="1" style="--d:2s" d="M54 8 q6 -7 12 0 q6 -7 12 0"/>
+        <path class="s thin draw" pathLength="1" style="--d:2.2s" d="M62 32 q5 -6 10 0 q5 -6 10 0"/>
+      </svg>
+      <svg class="doodle sun" viewBox="0 0 200 200">
+        <circle class="f-sun pop" style="--d:.2s" cx="100" cy="100" r="47"/>
+        <path class="s draw" pathLength="1" style="--d:.3s;--dur:1s" d="M100 53 C 126 52, 148 74, 147 100 C 148 126, 126 148, 100 147 C 74 148, 52 126, 53 100 C 52 74, 76 52, 102 54"/>
+        <path class="s draw" pathLength="1" style="--d:.9s;--dur:1.6s" d="M100 10 V34 M100 166 V190 M10 100 H34 M166 100 H190 M36 36 L53 53 M147 147 L164 164 M36 164 L53 147 M147 53 L164 36 M64 18 L70 34 M136 18 L130 34 M18 64 L34 70 M18 136 L34 130 M182 64 L166 70 M182 136 L166 130 M64 182 L70 166 M136 182 L130 166"/>
+        <path class="f-ink pop" style="--d:1.6s" d="M68 90 H98 Q97 112 83 112 Q68 112 68 90 Z M102 90 H132 Q132 112 117 112 Q103 112 102 90 Z"/>
+        <path class="s draw" pathLength="1" style="--d:1.7s;--dur:.4s" d="M98 93 Q100 89 102 93 M68 91 L58 86 M132 91 L142 86"/>
+        <path class="s draw" pathLength="1" style="--d:1.9s;--dur:.5s" d="M84 127 Q100 138 116 127"/>
+      </svg>
+      <svg class="doodle tower" viewBox="0 0 160 520">
+        <path class="s f-paper draw" pathLength="1" style="--d:.5s;--dur:2.2s" d="M34 520 L35 300 L28 300 L28 288 L132 288 L132 300 L125 300 L126 520 M42 288 L43 190 L36 190 L36 178 L124 178 L124 190 L117 190 L118 288 M52 178 L52 118 L47 118 L47 111 L113 111 L113 118 L108 118 L108 178"/>
+        <path class="s f-sky draw" pathLength="1" style="--d:1.6s;--dur:1s" d="M54 111 C 50 92, 72 84, 80 62 C 88 84, 110 92, 106 111 Z"/>
+        <path class="s draw" pathLength="1" style="--d:2.2s;--dur:.8s" d="M80 62 V14 M80 22 L96 18 L94 26 L80 26"/>
+        <circle class="s f-sun pop" style="--d:2.5s" cx="80" cy="44" r="5"/>
+        <path class="s thin draw" pathLength="1" style="--d:1.4s;--dur:1.6s" d="M54 478 V410 Q62 392 70 410 V478 M90 478 V410 Q98 392 106 410 V478 M58 366 V326 Q66 312 74 326 V366 M86 366 V326 Q94 312 102 326 V366 M66 268 V214 Q80 194 94 214 V268 M72 166 V136 Q80 126 88 136 V166 M67 178 V118 M93 178 V118 M44 178 V190 M58 178 V190 M72 178 V190 M88 178 V190 M102 178 V190 M116 178 V190"/>
+      </svg>
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="hero-kick">Jazzcafé &amp; Eethuys · Amersfoort · sinds 1991</p>
+        <h1 id="hero-title"><span class="sr-only">Lazy Louis: </span><span class="line">Lekker lui</span> <span class="line">in de <span class="zon">zon.<svg class="doodle" viewBox="0 0 220 24" preserveAspectRatio="none" aria-hidden="true"><path class="s s-red draw" pathLength="1" style="--d:1.2s;--dur:.9s;stroke-width:7" d="M6 16 C 46 4, 80 22, 120 12 S 186 6, 214 14"/></svg></span></span></h1>
+        <p class="hero-lede">Koffie in de ochtend, lunch op het terras en een lazy middag met een Texelse Skuumkoppe. Op een steenworp van de Onze Lieve Vrouwetoren.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#menu" data-tab-link="lunch"><svg aria-hidden="true"><use href="#i-sun"/></svg>Bekijk de lunchkaart</a>
+          <button class="btn btn-paper" type="button" data-open-reserve>Reserveer een tafel</button>
+        </div>
+        <p class="hero-note">terras? gewoon aanschuiven!
+          <svg class="doodle" viewBox="0 0 60 44" aria-hidden="true"><path class="s s-red draw" pathLength="1" style="--d:2.4s;--dur:.7s;stroke-width:2.6" d="M4 38 C 20 40, 40 30, 48 10 M38 14 L48 8 L52 20"/></svg>
+        </p>
+      </div>
+      <div class="polaroids" id="polaroids"></div>
+    </div>
+
+    <svg class="hero-wave" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 40 C 160 10, 320 64, 520 40 S 900 8, 1100 36 S 1360 60, 1440 30 V72 H0 Z" fill="#fbf6e9"/>
+      <path class="doodle-wave" d="M0 40 C 160 10, 320 64, 520 40 S 900 8, 1100 36 S 1360 60, 1440 30" fill="none" stroke="#1d2a44" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    </svg>
+  </section>
+
+  <section class="today" aria-label="Vandaag bij Lazy Louis">
+    <div class="wrap">
+      <div class="ticket">
+        <div class="t-head"><span class="hand">Vandaag bij</span><b>Lazy Louis</b></div>
+        <div class="t-item"><svg aria-hidden="true"><use href="#i-clock"/></svg><span class="t-lbl" id="today-day">Vandaag</span><span class="t-val" data-ll="status">Nu open</span></div>
+        <div class="t-item"><svg aria-hidden="true"><use href="#i-chair"/></svg><span class="t-lbl">Terras</span><span class="t-val">Niet reserveerbaar: gewoon aanschuiven</span></div>
+        <div class="t-item"><svg aria-hidden="true"><use href="#i-note"/></svg><span class="t-lbl">Lazy Louis Lounge (55+)</span><span class="t-val" data-ll="loungeNext">binnenkort</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec menu" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="menu-title-wrap">
+          <p class="kick">Lunch staat bovenaan</p>
+          <h2 class="h2" id="menu-title">Wat mag het <span class="u">zijn?</span></h2>
+        </div>
+        <p class="lead">Een mooie mix van klassiek en modern, met namen waar u om moet glimlachen. Wat overdag extra lekker is, hebben we geel gemarkeerd.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Kies een kaart" id="tabs"></div>
+      <div class="sheet" id="panels"></div>
+    </div>
+  </section>
+
+  <section class="sec terras" id="reserveren" aria-labelledby="res-title">
+    <div class="wrap terras-grid">
+      <div>
+        <p class="kick">Reserveren</p>
+        <h2 class="h2" id="res-title">Terras of <span class="u">tafel?</span></h2>
+        <div class="big-note">
+          <svg class="doodle" viewBox="0 0 100 100" aria-hidden="true">
+            <path class="s f-red" d="M8 44 Q50 -2 92 44 Q81 39 71 45 Q61 38 50 45 Q39 38 29 45 Q19 39 8 44 Z"/>
+            <path class="s" d="M50 20 V94 M34 70 H66 M36 70 L30 94 M64 70 L70 94 M26 82 H40 M60 82 H74"/>
+          </svg>
+          <p>Terras niet reserveerbaar: gewoon aanschuiven!</p>
+          <span>Zon? Plek? Dan is hij van u. Voor een drankje in het café loopt u ook gewoon binnen.</span>
+        </div>
+        <ul class="reserve-lines" id="reserve-lines"></ul>
+        <div class="terras-cta">
+          <button class="btn btn-red" type="button" data-open-reserve>Reserveer een tafel</button>
+          <p>of bel <a class="phone" id="res-phone" href="#contact">033 – 461 36 38</a></p>
+        </div>
+      </div>
+      <div class="hours-card">
+        <h3>Openingstijden</h3>
+        <p class="status-pill" data-ll="status">Nu open</p>
+        <p class="status-detail" data-ll="detail"></p>
+        <ul class="hours" id="hours" aria-label="Openingstijden per dag"></ul>
+        <div class="sundays"><p>De volgende open zondagen</p><ul id="sundays"></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec story" id="verhaal" aria-labelledby="story-title">
+    <div class="wrap">
+      <div class="story-grid">
+        <div>
+          <p class="kick">Vernoemd naar Louis Armstrong</p>
+          <h2 class="h2" id="story-title">Sinds 1991 <span class="u">lekker lui</span></h2>
+          <div class="story-text" id="story-text" style="margin-top:28px"></div>
+          <div class="quote" id="quote">
+            <svg class="doodle" viewBox="0 0 60 60" aria-hidden="true"><path class="s f-sun" d="M10 30 q0 -18 18 -20 v8 q-8 2 -8 10 h8 v18 h-18 z M34 30 q0 -18 18 -20 v8 q-8 2 -8 10 h8 v18 h-18 z"/></svg>
+          </div>
+        </div>
+        <div class="story-photos" id="story-photos"><span class="trumpet" aria-hidden="true"></span></div>
+      </div>
+
+      <div class="timeline">
+        <h3>Van 1895 tot nu</h3>
+        <div class="tl-wrap">
+          <svg class="tl-line doodle" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 C 100 0, 200 30, 300 15 S 500 0, 600 15 S 800 30, 900 15 S 1100 0, 1200 15" fill="none" stroke="#1d2a44" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+          <ol class="tl" id="timeline"></ol>
+        </div>
+      </div>
+
+      <div class="wist" id="wist"></div>
+    </div>
+  </section>
+
+  <section class="sec agenda" id="agenda" aria-labelledby="agenda-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kick">Agenda &amp; nieuws</p>
+          <h2 class="h2" id="agenda-title">Wat is er <span class="u">te doen?</span></h2>
+        </div>
+        <p class="lead">Elke maand een gezellige avond voor 55-plussers, twee open zondagen en een bierkaart die met de seizoenen meedraait.</p>
+      </div>
+      <div class="agenda-grid" id="agenda-grid"></div>
+    </div>
+  </section>
+
+  <section class="sec jobs" id="vacatures" aria-labelledby="jobs-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kick">Vacatures</p>
+          <h2 class="h2" id="jobs-title">Kom je ons team <span class="u">versterken?</span></h2>
+        </div>
+        <p class="lead">Overdag gasten op het terras, ’s avonds een vol restaurant. We zoeken collega’s die daar net zo blij van worden als wij.</p>
+      </div>
+      <div class="jobs-grid" id="jobs"></div>
+      <p class="apply" id="apply"></p>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <figure class="mapbox">
+        <svg class="doodle" viewBox="0 0 560 400" role="img" aria-labelledby="map-t">
+          <title id="map-t">Getekend kaartje: Lazy Louis aan de Arnhemsestraat, vlak bij de Onze Lieve Vrouwetoren</title>
+          <rect x="0" y="0" width="560" height="400" rx="16" fill="#fbf6e9"/>
+          <path d="M0 300 C 120 280, 200 330, 300 300 S 470 250, 560 270" fill="none" stroke="#bcd8ea" stroke-width="44" stroke-linecap="round"/>
+          <path class="s thin" d="M0 278 C 120 258, 200 308, 300 278 S 470 228, 560 248 M0 322 C 120 302, 200 352, 300 322 S 470 272, 560 292"/>
+          <path id="street" d="M40 296 C 140 280, 210 322, 300 300 S 460 252, 540 268" fill="none"/>
+          <text class="map-txt"><textPath href="#street" startOffset="8%">Arnhemsestraat</textPath></text>
+          <circle class="s thin" cx="66" cy="90" r="22" fill="#cfe3c4"/><circle class="s thin" cx="100" cy="70" r="16" fill="#cfe3c4"/><circle class="s thin" cx="470" cy="110" r="20" fill="#cfe3c4"/>
+          <g transform="translate(190 40) scale(.36)">
+            <path class="s f-paper" style="stroke-width:7" d="M34 520 L35 300 L28 300 L28 288 L132 288 L132 300 L125 300 L126 520 Z M42 288 L43 190 L36 190 L36 178 L124 178 L124 190 L117 190 L118 288 M52 178 L52 118 L47 118 L47 111 L113 111 L113 118 L108 118 L108 178"/>
+            <path class="s f-sky" style="stroke-width:7" d="M54 111 C 50 92, 72 84, 80 62 C 88 84, 110 92, 106 111 Z"/>
+            <path class="s" style="stroke-width:7" d="M80 62 V14 M54 478 V410 Q62 392 70 410 V478 M90 478 V410 Q98 392 106 410 V478 M66 268 V214 Q80 194 94 214 V268"/>
+          </g>
+          <text class="map-txt" x="250" y="96">Onze Lieve</text>
+          <text class="map-txt" x="250" y="120">Vrouwetoren</text>
+          <path class="s s-red" d="M232 230 C 280 230, 330 240, 352 252" stroke-dasharray="3 10" style="stroke-width:3.5"/>
+          <text class="map-small" x="250" y="214">een steenworp</text>
+          <path d="M380 232 c-16 -18 -26 -30 -26 -44 a26 26 0 0 1 52 0 c0 14 -10 26 -26 44 z" fill="#b2162a" stroke="#1d2a44" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="380" cy="188" r="10" fill="#fffdf7" stroke="#1d2a44" stroke-width="2.5"/>
+          <text class="map-red" x="416" y="186">Lazy Louis</text>
+          <text class="map-small" x="416" y="210">nr. 1-3</text>
+          <g transform="translate(470 330)"><circle r="26" fill="#f4b63f" stroke="#1d2a44" stroke-width="2.5"/><path d="M0 -40 V-32 M0 32 V40 M-40 0 H-32 M32 0 H40 M-28 -28 l6 6 M22 22 l6 6 M-28 28 l6 -6 M22 -22 l6 -6" stroke="#1d2a44" stroke-width="2.5" stroke-linecap="round"/></g>
+        </svg>
+        <figcaption>Niet op schaal, wel met liefde getekend</figcaption>
+      </figure>
+      <div>
+        <p class="kick">Kom langs</p>
+        <h2 class="sr-only" id="contact-title">Contact en route</h2>
+        <address class="addr" id="addr"></address>
+        <p class="nearby" id="nearby"></p>
+        <ul class="c-list" id="c-list"></ul>
+        <div class="c-actions" id="c-actions"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-bye">Tot zo, in de zon!</p>
+      <a href="#top" class="brand" aria-label="Lazy Louis, naar boven"><img src="assets/brand/logo-light.png" alt="Lazy Louis Jazzcafé &amp; Eethuys" width="1147" height="605"></a>
+    </div>
+    <div class="foot-meta">
+      <p>Jazz, Food &amp; Drinks Since 1991 · Arnhemsestraat 1-3, 3811 LE Amersfoort</p>
+      <p>© 2026 Lazy Louis Jazzcafé &amp; Eethuys</p>
+    </div>
+  </div>
+</footer>
+
+<dialog class="reserve" id="reserve" aria-labelledby="dlg-title">
+  <div class="dlg">
+    <button class="dlg-close" type="button" aria-label="Sluiten" data-close><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    <p class="k">Gezellig!</p>
+    <h2 id="dlg-title">Reserveer een tafel</h2>
+    <ul id="dlg-lines"></ul>
+    <a class="btn btn-red" id="dlg-fork" href="#" target="_blank" rel="noopener">Reserveer via TheFork</a>
+    <p class="dlg-phone">Liever bellen? <a id="dlg-phone" href="#contact">033 – 461 36 38</a></p>
+    <p class="dlg-confirm" id="dlg-confirm"></p>
+    <p class="dlg-note">Op de echte site komt hier direct de reserveringsmodule.</p>
+  </div>
+</dialog>
+
+<script src="assets/js/lazylouis-data.js"></script>
+<script src="book/book.js"></script>
+<script>
+(function () {
+  "use strict";
+  var LL = window.LL, I = LL.info;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* doodles draw themselves once, on load */
+  if (!reduced) document.documentElement.classList.add("can-draw");
+
+  var SUN = '<svg class="sunmark" aria-hidden="true"><use href="#i-sun"/></svg>';
+  var CHECK = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
+
+  /* ---------- hero polaroids ---------- */
+  var polas = [
+    { ph: LL.photos.foodSandwich, cap: "lunchtijd!", cls: "p1" },
+    { ph: LL.photos.barBeer, cap: "vers getapt", cls: "p2" },
+    { ph: LL.photos.foodDessert, cap: "en iets zoets?", cls: "p3" }
+  ];
+  $("#polaroids").innerHTML = polas.map(function (p) {
+    return '<figure class="pola ' + p.cls + '"><img src="' + p.ph.src + '" alt="' + esc(p.ph.alt) + '" width="1024" height="683"><figcaption>' + p.cap + '</figcaption></figure>';
+  }).join("");
+
+  /* ---------- today strip ---------- */
+  try {
+    $("#today-day").textContent = new Intl.DateTimeFormat("nl-NL", { timeZone: "Europe/Amsterdam", weekday: "long", day: "numeric", month: "long" }).format(new Date());
+  } catch (e) {}
+
+  /* ---------- menu ---------- */
+  var DAY = ["Lazy’s 12-uurtje", "Simply Red", "Verse munt", "Verse munt & gember", "Verse jus d’orange", "Texelse Skuumkoppe"];
+  var DAY_SECTIONS = ["Tosti’s"];
+  var TABS = ["lunch", "diner", "dranken"];
+  function count(m) { return m.sections.reduce(function (n, s) { return n + s.items.length; }, 0); }
+  $("#tabs").innerHTML = TABS.map(function (k, i) {
+    var m = LL.menu[k];
+    return '<button class="tab" role="tab" type="button" id="tab-' + k + '" aria-controls="panel-' + k + '" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '" data-tab="' + k + '">' + esc(m.title) + ' <small>' + count(m) + '</small></button>';
+  }).join("");
+  function itemHTML(it, secTitle, menuKey) {
+    var day = menuKey !== "diner" && (DAY.indexOf(it.name) !== -1 || DAY_SECTIONS.indexOf(secTitle) !== -1);
+    var h = '<li class="it' + (day ? " is-day" : "") + '"><div class="it-row"><span class="it-name"><span class="nm">' + esc(it.name) + '</span>' +
+      (it.veg ? '<abbr class="veg" title="Vegetarisch, of op verzoek vegetarisch te bereiden">*</abbr>' : "") +
+      (day ? SUN + '<span class="sr-only"> (lekker overdag)</span>' : "") +
+      (it.signature ? '<span class="it-sig">aanrader!</span>' : "") +
+      (it.forTwo ? '<span class="it-two">voor 2 personen</span>' : "") + '</span>' +
+      '<span class="it-fill" aria-hidden="true"></span><span class="it-price"><span class="sr-only">€ </span>' + LL.euro(it.price) + '</span></div>';
+    if (it.tag) h += '<p class="it-tag">' + esc(it.tag) + '</p>';
+    if (it.desc) h += '<p class="it-desc">' + esc(it.desc) + '</p>';
+    if (it.extras) h += '<ul class="it-extras">' + it.extras.map(function (x) {
+      return '<li><span>+ ' + esc(x.label) + '</span><span class="it-fill" aria-hidden="true"></span><b>' + LL.euro(x.price) + '</b></li>';
+    }).join("") + '</ul>';
+    return h + '</li>';
+  }
+  $("#panels").innerHTML = TABS.map(function (k, i) {
+    var m = LL.menu[k];
+    var hasDay = k !== "diner";
+    var h = '<div class="panel" role="tabpanel" id="panel-' + k + '" aria-labelledby="tab-' + k + '" tabindex="0"' + (i === 0 ? "" : " hidden") + '>';
+    h += '<div class="panel-top"><p class="served">' + esc(m.title) + ' <span>· ' + esc(m.served) + ' · prijzen in euro’s</span></p><p class="legend">' +
+      '<span><b class="veg" style="color:#b2162a">*</b> vegetarisch (of op verzoek)</span>' +
+      (hasDay ? '<span><span class="mk">geel</span>' + '<svg aria-hidden="true"><use href="#i-sun"/></svg> lekker overdag</span>' : "") +
+      '<span><span class="it-sig" style="margin:0">aanrader!</span> van het huis</span></p></div>';
+    h += '<div class="cols">' + m.sections.map(function (s) {
+      return '<section class="msec" aria-label="' + esc(s.title) + '"><h3>' + esc(s.title) + '</h3>' +
+        (s.intro ? '<p class="msec-intro">' + esc(s.intro) + '</p>' : "") +
+        '<ul>' + s.items.map(function (it) { return itemHTML(it, s.title, k); }).join("") + '</ul></section>';
+    }).join("") + '</div>';
+    h += '<ul class="notes">' + m.notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + '</ul></div>';
+    return h;
+  }).join("");
+  var tabs = $$(".tab");
+  function selectTab(key, focus) {
+    tabs.forEach(function (b) {
+      var on = b.dataset.tab === key;
+      b.setAttribute("aria-selected", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+      if (on && focus) b.focus();
+    });
+    $$(".panel").forEach(function (p) { p.hidden = p.id !== "panel-" + key; });
+  }
+  $("#tabs").addEventListener("click", function (e) { var b = e.target.closest(".tab"); if (b) selectTab(b.dataset.tab, false); });
+  $("#tabs").addEventListener("keydown", function (e) {
+    var i = tabs.indexOf(document.activeElement); if (i < 0) return;
+    var n = null;
+    if (e.key === "ArrowRight") n = (i + 1) % tabs.length;
+    else if (e.key === "ArrowLeft") n = (i - 1 + tabs.length) % tabs.length;
+    else if (e.key === "Home") n = 0;
+    else if (e.key === "End") n = tabs.length - 1;
+    if (n !== null) { e.preventDefault(); selectTab(tabs[n].dataset.tab, true); }
+  });
+  document.addEventListener("click", function (e) { var a = e.target.closest("[data-tab-link]"); if (a) selectTab(a.dataset.tabLink, false); });
+
+  /* ---------- reservations + hours ---------- */
+  var lines = LL.reserve.lines.map(function (l) { return "<li>" + CHECK + esc(l) + "</li>"; }).join("");
+  $("#reserve-lines").innerHTML = lines;
+  $("#dlg-lines").innerHTML = lines;
+  $("#dlg-confirm").textContent = LL.reserve.confirm;
+  $("#dlg-fork").href = I.reserveUrl;
+  ["#res-phone", "#dlg-phone"].forEach(function (s) { var a = $(s); a.href = I.phoneHref; a.textContent = I.phone; });
+  $("#hours").innerHTML = LL.weekRows().map(function (r) {
+    return '<li class="' + (r.today ? "is-today" : "") + (r.closed ? " is-closed" : "") + '"' + (r.today ? ' aria-current="date"' : "") + '><span class="d">' + r.day + (r.today ? '<span class="sr-only"> (vandaag)</span>' : "") + '</span><span class="h">' + esc(r.hours) + '</span></li>';
+  }).join("");
+  $("#sundays").innerHTML = LL.nextOpenSundays(3).map(function (d) { return "<li>" + esc(d) + "</li>"; }).join("");
+
+  /* ---------- story ---------- */
+  $("#story-text").innerHTML = LL.intro.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
+  var q = LL.story.quotes[1];
+  $("#quote").insertAdjacentHTML("beforeend", "<blockquote>“" + esc(q.text) + "”</blockquote><p>– " + esc(q.by) + "</p>");
+  $("#story-photos").insertAdjacentHTML("afterbegin",
+    '<figure class="pola s1"><img src="' + LL.photos.gramophone.src + '" alt="' + esc(LL.photos.gramophone.alt) + '" width="1024" height="683"><figcaption>de hond luistert mee</figcaption></figure>' +
+    '<figure class="pola s2"><img src="' + LL.photos.tableSax.src + '" alt="' + esc(LL.photos.tableSax.alt) + '" width="1024" height="683"><figcaption>tafeltje bij de sax</figcaption></figure>');
+  $("#timeline").insertAdjacentHTML("beforeend", LL.story.timeline.map(function (t) {
+    return '<li><p class="y">' + esc(t.year) + '</p><p class="tt">' + esc(t.title) + '</p><p class="tx">' + esc(t.text) + '</p></li>';
+  }).join(""));
+  var WIST_ICONS = [
+    '<svg class="doodle" viewBox="0 0 80 80" aria-hidden="true"><path class="s" d="M50 6 L58 10 M54 8 L44 20 L44 52 Q44 72 28 72 Q14 72 15 58 L16 52"/><path class="s f-sun" d="M10 54 Q16 44 24 54 Z"/><circle class="s thin" cx="44" cy="30" r="3"/><circle class="s thin" cx="44" cy="40" r="3"/><circle class="s thin" cx="44" cy="50" r="3"/></svg>',
+    '<svg class="doodle" viewBox="0 0 80 80" aria-hidden="true"><path class="s f-paper" d="M18 74 V16 Q18 8 26 8 H54 Q62 8 62 16 V74 Z"/><rect class="s thin f-sun" x="28" y="20" width="24" height="28" rx="2"/><circle class="s thin" cx="54" cy="56" r="2.5"/><path class="s" d="M8 74 H72"/></svg>',
+    '<svg class="doodle" viewBox="0 0 80 80" aria-hidden="true"><path class="s" d="M28 60 V18 L62 10 V52"/><path class="s" d="M28 28 L62 20"/><ellipse class="f-ink" cx="21" cy="61" rx="8" ry="6"/><ellipse class="f-ink" cx="55" cy="53" rx="8" ry="6"/><path class="s s-red" d="M8 30 q6 -6 12 0 M6 42 q5 -5 10 0"/></svg>'
+  ];
+  $("#wist").innerHTML = LL.story.details.map(function (d, i) {
+    return '<div>' + WIST_ICONS[i % WIST_ICONS.length] + '<p class="k">Wist u dat?</p><h4>' + esc(d.title) + '</h4><p>' + esc(d.text) + '</p></div>';
+  }).join("");
+
+  /* ---------- agenda ---------- */
+  var lounge = LL.news[0], rest = LL.news.slice(1);
+  $("#agenda-grid").innerHTML =
+    '<article class="feature"><p class="k">Elke maand</p><h3>' + esc(lounge.title) + '</h3><p class="when">' + esc(lounge.when) + '</p><p>' + esc(lounge.text) + '</p>' +
+    (lounge.next ? '<p class="date-sticker"><small>de volgende:</small><strong>' + esc(lounge.next) + '</strong></p>' : "") + '</article>' +
+    '<ul class="news-list">' + rest.map(function (n, i) {
+      return '<li><svg aria-hidden="true"><use href="#' + (i === 0 ? "i-sun" : "i-note") + '"/></svg><h3>' + esc(n.title) + '</h3><p class="when">' + esc(n.when) + '</p><p>' + esc(n.text) + '</p>' +
+        (n.next ? '<p class="next">eerstvolgende: ' + esc(n.next) + '</p>' : "") + '</li>';
+    }).join("") + '</ul>';
+
+  /* ---------- jobs ---------- */
+  $("#jobs").innerHTML = LL.jobs.map(function (j) {
+    return '<article class="job"><h3>' + esc(j.title) + '</h3><p class="hrs">' + esc(j.hours) + '</p><p>' + esc(j.text) + '</p><ul>' +
+      j.offer.map(function (o) { return "<li>" + CHECK + esc(o) + "</li>"; }).join("") + '</ul>' +
+      '<a class="btn btn-paper" href="mailto:' + I.jobsEmail + '?subject=' + encodeURIComponent("Sollicitatie " + j.title) + '">Mail ' + esc(I.jobsContact.split(" ")[0]) + '</a></article>';
+  }).join("");
+  $("#apply").innerHTML = '<span class="hand">Vragen?</span> Mail ' + esc(I.jobsContact) + ' via <a href="mailto:' + I.jobsEmail + '">' + I.jobsEmail + '</a>';
+
+  /* ---------- contact ---------- */
+  $("#addr").innerHTML = esc(I.street) + "<br>" + esc(I.postcode) + " " + esc(I.city);
+  $("#nearby").textContent = I.nearby + ".";
+  $("#c-list").innerHTML =
+    '<li><svg aria-hidden="true"><use href="#i-phone"/></svg><span><span class="l">Bel ons</span><a href="' + I.phoneHref + '">' + esc(I.phone) + '</a></span></li>' +
+    '<li><svg aria-hidden="true"><use href="#i-mail"/></svg><span><span class="l">Mail ons</span><a href="mailto:' + I.email + '">' + esc(I.email) + '</a></span></li>' +
+    '<li><svg aria-hidden="true"><use href="#i-insta"/></svg><span><span class="l">Instagram</span><a href="' + I.instagram + '" target="_blank" rel="noopener">' + esc(I.instagramHandle) + '</a></span></li>' +
+    '<li><svg aria-hidden="true"><use href="#i-fb"/></svg><span><span class="l">Facebook</span><a href="' + I.facebook + '" target="_blank" rel="noopener">lazylouiscafe</a></span></li>';
+  $("#c-actions").innerHTML =
+    '<a class="btn" href="' + I.mapsUrl + '" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Route in Google Maps</a>' +
+    '<button class="btn btn-paper" type="button" data-open-reserve>Reserveer</button>';
+
+  LL.fillLive();
+  setInterval(function () { LL.fillLive(); }, 60000);
+
+  /* ---------- dialog ---------- */
+  var dlg = $("#reserve"), opener = null;
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-open-reserve]");
+    if (!t) return;
+    e.preventDefault();
+    opener = t;
+    setNav(false);
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+    $("#dlg-fork").focus();
+  });
+  function closeDlg() { if (dlg.open) dlg.close(); }
+  $("[data-close]", dlg).addEventListener("click", closeDlg);
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) closeDlg(); });
+  dlg.addEventListener("close", function () { if (opener && opener.focus) opener.focus(); });
+
+  /* ---------- mobile nav ---------- */
+  var toggle = $(".nav-toggle"), nav = $("#site-nav"), mq = window.matchMedia("(max-width: 1023px)");
+  function setNav(open) {
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    $(".sr-only", toggle).textContent = open ? "Navigatie sluiten" : "Navigatie openen";
+    if (mq.matches) nav.hidden = !open;
+    document.body.style.overflow = open && mq.matches ? "hidden" : "";
+  }
+  function sync() { if (mq.matches) nav.hidden = toggle.getAttribute("aria-expanded") !== "true"; else { nav.hidden = false; document.body.style.overflow = ""; } }
+  toggle.addEventListener("click", function () { setNav(toggle.getAttribute("aria-expanded") !== "true"); });
+  nav.addEventListener("click", function (e) { if (e.target.closest("a")) setNav(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { setNav(false); toggle.focus(); } });
+  if (mq.addEventListener) mq.addEventListener("change", sync); else mq.addListener(sync);
+  sync();
+
+  var head = $(".site-head");
+  function onScroll() { head.classList.toggle("is-scrolled", window.scrollY > 10); }
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lazy Louis · Groene Gezelligheid</title>
+<meta name="description" content="Lazy Louis Magazine nr. 35: vijfendertig jaar Lazy Louis Jazzcafé &amp; Eethuys in Amersfoort. Het verhaal, de kaart, de openingstijden en reserveren.">
+<meta name="theme-color" content="#0e241b">
+<link rel="icon" href="assets/brand/trumpet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&display=swap">
+<link rel="stylesheet" href="book/book.css">
+<style>
+/* ==========================================================================
+   08 · GROENE GEZELLIGHEID — Lazy Louis Magazine, nr. 35
+   ========================================================================== */
+:root {
+  color-scheme: light;
+  --green: #163a2c;
+  --deep: #0e241b;
+  --brass: #c8a15a;
+  --brass-ink: #7a5a22;
+  --paper: #f1ead9;
+  --paper-2: #e8dfca;
+  --ink: #1a1a17;
+  --ink-2: #4a473d;
+  --on-green: #f1ead9;
+  --on-green-2: #c9c3ae;
+  --rule-paper: rgba(26, 26, 23, .16);
+  --rule-green: rgba(241, 234, 217, .18);
+  --red: #b2162a;
+  --serif: "Newsreader", "Iowan Old Style", "Charter", "Georgia", serif;
+  --mono: "DM Mono", "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --max: 1280px;
+  --pad: clamp(20px, 5vw, 72px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--deep); scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.1875rem/1.62 var(--serif); font-optical-sizing: auto; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-kerning: normal; }
+html:has(dialog[open]) { overflow: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+p, h1, h2, h3, h4, figure, blockquote { margin: 0; }
+h1, h2, h3, h4 { font-weight: 400; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+button { font: inherit; color: inherit; }
+.sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+.dark :focus-visible { outline-color: var(--brass); }
+.skip { position: absolute; left: 12px; top: -80px; z-index: 100; background: var(--brass); color: var(--deep); padding: 10px 16px; font: 500 .8rem/1 var(--mono); text-transform: uppercase; letter-spacing: .12em; text-decoration: none; }
+.skip:focus { top: 12px; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
+.dark { background: var(--green); color: var(--on-green); }
+.deep { background: var(--deep); color: var(--on-green); }
+
+.kicker { font: 500 .78rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: .18em; color: var(--brass-ink); display: flex; align-items: center; gap: 12px; }
+.dark .kicker, .deep .kicker { color: var(--brass); }
+.kicker .no { color: inherit; opacity: .8; }
+.mono { font-family: var(--mono); }
+.trumpet { display: inline-block; width: 1.6em; height: 1em; background: currentColor; -webkit-mask: url(assets/brand/trumpet.png) center / contain no-repeat; mask: url(assets/brand/trumpet.png) center / contain no-repeat; flex: 0 0 auto; }
+
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 15px 22px 14px; border: 1px solid transparent; border-radius: 0; font: 500 .8rem/1 var(--mono); text-transform: uppercase; letter-spacing: .14em; text-decoration: none; cursor: pointer; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+.btn .arr { transition: transform .2s ease; }
+.btn:hover .arr { transform: translateX(3px); }
+.btn-brass { background: var(--brass); color: var(--deep); }
+.btn-brass:hover { background: #d9b46e; }
+.btn-line { border-color: currentColor; background: transparent; }
+.btn-line:hover { background: rgba(200, 161, 90, .14); }
+.btn-green { background: var(--green); color: var(--paper); }
+.btn-green:hover { background: var(--deep); }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.top { position: sticky; top: 0; z-index: 60; background: rgba(14, 36, 27, .97); color: var(--on-green); border-bottom: 1px solid rgba(200, 161, 90, .35); }
+.top-in { display: flex; align-items: center; gap: 22px; min-height: 66px; }
+.brand { display: flex; align-items: center; gap: 16px; text-decoration: none; flex: 0 0 auto; }
+.brand img { height: 40px; width: auto; }
+.brand .issue { font: 400 .72rem/1.25 var(--mono); text-transform: uppercase; letter-spacing: .14em; color: var(--brass); padding-left: 16px; border-left: 1px solid rgba(200, 161, 90, .4); }
+.nav { margin-left: auto; }
+.nav ul { display: flex; gap: 2px; }
+.nav a { display: block; padding: 10px 11px; font: 400 .76rem/1 var(--mono); text-transform: uppercase; letter-spacing: .13em; text-decoration: none; color: var(--on-green); }
+.nav a:hover { color: var(--brass); }
+.nav .pg { display: none; }
+.top .btn { padding: 12px 16px 11px; font-size: .74rem; }
+.menu-toggle { display: none; margin-left: auto; align-items: center; gap: 10px; padding: 10px 12px; background: transparent; border: 1px solid rgba(200, 161, 90, .55); color: var(--on-green); font: 500 .74rem/1 var(--mono); text-transform: uppercase; letter-spacing: .14em; cursor: pointer; }
+.menu-toggle .bars { position: relative; width: 18px; height: 10px; }
+.menu-toggle .bars::before, .menu-toggle .bars::after { content: ""; position: absolute; left: 0; right: 0; height: 1.5px; background: var(--brass); transition: transform .2s ease, top .2s ease; }
+.menu-toggle .bars::before { top: 1px; }
+.menu-toggle .bars::after { top: 8px; }
+.menu-toggle[aria-expanded="true"] .bars::before { top: 4.5px; transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .bars::after { top: 4.5px; transform: rotate(-45deg); }
+@media (max-width: 1120px) {
+  .menu-toggle { display: inline-flex; }
+  .top-in { flex-wrap: wrap; }
+  .top .btn { display: none; }
+  .nav { display: none; order: 5; flex: 1 0 100%; margin: 0 calc(-1 * var(--pad)); background: var(--paper); color: var(--ink); border-top: 1px solid var(--brass); max-height: calc(100dvh - 66px); overflow: auto; }
+  .top.is-open .nav { display: block; }
+  .nav ul { display: block; padding: 10px var(--pad) 26px; }
+  .nav li + li { border-top: 1px solid var(--rule-paper); }
+  .nav a { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 14px 0 12px; color: var(--ink); font: italic 400 clamp(1.7rem, 6vw, 2.3rem)/1.05 var(--serif); text-transform: none; letter-spacing: -.01em; }
+  .nav a:hover { color: var(--green); }
+  .nav .pg { display: inline; font: 400 .78rem/1 var(--mono); font-style: normal; letter-spacing: .1em; color: var(--brass-ink); }
+  .nav :focus-visible { outline-color: var(--green); }
+}
+@media (max-width: 560px) {
+  .brand .issue { display: none; }
+  .brand img { height: 36px; }
+  .top-in { min-height: 60px; }
+}
+
+/* ==========================================================================
+   COVER
+   ========================================================================== */
+.cover { position: relative; overflow: hidden; background: var(--deep); color: var(--on-green); isolation: isolate; }
+.cover-photo { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.cover-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; transform-origin: 70% 45%; will-change: transform; animation: cover-in 2.8s cubic-bezier(.16, .84, .3, 1) both; }
+@keyframes cover-in { from { transform: scale(1.12); filter: brightness(.82) saturate(.9); } to { transform: scale(1); filter: none; } }
+.cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+  linear-gradient(180deg, rgba(14, 36, 27, .9) 0%, rgba(14, 36, 27, .55) 24%, rgba(14, 36, 27, 0) 44%),
+  linear-gradient(0deg, rgba(14, 36, 27, .96) 0%, rgba(14, 36, 27, .78) 26%, rgba(14, 36, 27, 0) 56%),
+  linear-gradient(90deg, rgba(14, 36, 27, .55) 0%, rgba(14, 36, 27, 0) 46%); }
+.cover-in { position: relative; display: flex; flex-direction: column; min-height: clamp(600px, calc(100svh - 120px), 860px); padding-top: clamp(22px, 2.6vw, 34px); padding-bottom: clamp(26px, 3vw, 40px); }
+.mast-row { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; font: 400 .74rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: .18em; color: var(--on-green); padding-bottom: 10px; border-bottom: 1px solid rgba(200, 161, 90, .6); }
+.mast-row b { font-weight: 500; color: var(--brass); }
+.mast { margin-top: clamp(18px, 2.6vw, 38px); font: 500 clamp(5rem, 17.6vw, 16.4rem)/.8 var(--serif); letter-spacing: -.045em; font-variation-settings: "opsz" 72; color: var(--paper); white-space: nowrap; margin-left: -.04em; }
+.mast i { font-style: italic; font-weight: 400; letter-spacing: -.05em; }
+.mast-sub { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 20px; margin-top: clamp(10px, 1.4vw, 18px); }
+.mast-sub .mag { font: 500 .8rem/1 var(--mono); text-transform: uppercase; letter-spacing: .5em; color: var(--brass); }
+.mast-sub .jub { font: italic 400 clamp(1.05rem, 1.6vw, 1.35rem)/1.2 var(--serif); color: var(--on-green); }
+
+.cover-body { margin-top: auto; padding-top: clamp(48px, 9vh, 160px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px 48px; align-items: end; }
+.cl-main { display: block; text-decoration: none; max-width: 660px; }
+.cl-main .k { display: inline-block; font: 500 .74rem/1 var(--mono); text-transform: uppercase; letter-spacing: .2em; color: var(--deep); background: var(--brass); padding: 7px 10px 6px; }
+.cl-main .h { display: block; margin-top: 16px; font: italic 300 clamp(2.5rem, 4.5vw, 4.2rem)/.98 var(--serif); text-wrap: balance; letter-spacing: -.025em; color: var(--paper); }
+.cl-main .s { display: block; margin-top: 14px; font: 400 clamp(1.05rem, 1.5vw, 1.3rem)/1.4 var(--serif); color: #e6dfcb; max-width: 46ch; }
+.cl-main:hover .h { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .12em; text-decoration-color: var(--brass); }
+.cl-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: clamp(24px, 2.6vw, 32px); max-width: 860px; border-top: 1px solid rgba(200, 161, 90, .6); }
+.cl-list li + li { border-left: 1px solid rgba(200, 161, 90, .3); }
+.cl-list a { display: block; padding: 14px 18px 4px 0; text-decoration: none; }
+.cl-list li + li a { padding-left: 18px; }
+.cl-list .k { display: block; font: 500 .7rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: .18em; color: var(--brass); }
+.cl-list .t { display: block; margin-top: 6px; font: 400 1.08rem/1.3 var(--serif); color: var(--paper); }
+.cl-list a:hover .t { text-decoration: underline; text-underline-offset: .18em; text-decoration-color: var(--brass); }
+
+.barcode { width: 214px; background: var(--paper); color: var(--ink); padding: 12px 14px 10px; display: grid; gap: 8px; box-shadow: 0 18px 40px -18px rgba(0, 0, 0, .6); }
+.barcode .bc-top { display: flex; justify-content: space-between; font: 500 .68rem/1 var(--mono); text-transform: uppercase; letter-spacing: .14em; }
+.barcode .bars { height: 46px; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 5px, transparent 5px 8px, var(--ink) 8px 11px, transparent 11px 12px, var(--ink) 12px 13px, transparent 13px 16px, var(--ink) 16px 17px, transparent 17px 19px); }
+.barcode .st { font: 500 .72rem/1.35 var(--mono); letter-spacing: .04em; display: flex; gap: 8px; align-items: baseline; }
+.barcode .st::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--brass-ink); flex: 0 0 auto; transform: translateY(-1px); }
+.barcode .st.is-open::before { background: #2f7d4f; box-shadow: 0 0 0 3px rgba(47, 125, 79, .2); }
+.barcode .num { display: flex; justify-content: space-between; font: 400 .64rem/1 var(--mono); letter-spacing: .3em; }
+@media (max-width: 900px) {
+  .cover-body { grid-template-columns: minmax(0, 1fr); }
+  .barcode { justify-self: start; }
+}
+@media (max-width: 640px) {
+  .cover-in { min-height: 0; }
+  .cover-photo img { object-position: 74% 50%; }
+  .cover::before { background:
+    linear-gradient(180deg, rgba(14, 36, 27, .9) 0%, rgba(14, 36, 27, .4) 22%, rgba(14, 36, 27, 0) 36%),
+    linear-gradient(0deg, rgba(14, 36, 27, 1) 0%, rgba(14, 36, 27, .9) 44%, rgba(14, 36, 27, 0) 66%); }
+  .mast { font-size: 21.2vw; }
+  .mast-sub .mag { letter-spacing: .36em; }
+  .cover-body { padding-top: 220px; }
+  .cl-list { grid-template-columns: minmax(0, 1fr); }
+  .cl-list li + li { border-left: 0; border-top: 1px solid rgba(200, 161, 90, .3); }
+  .cl-list li + li a, .cl-list a { padding: 12px 0 10px; }
+}
+
+/* ==========================================================================
+   Shared chapter furniture
+   ========================================================================== */
+.chapter { position: relative; padding: clamp(64px, 8vw, 128px) 0 0; }
+.chapter + .chapter, .cover + .chapter { box-shadow: 0 -1px 0 rgba(0, 0, 0, .06), 0 -24px 40px -30px rgba(0, 0, 0, .45); }
+.folio { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: clamp(56px, 7vw, 104px); padding: 16px 0 22px; border-top: 1px solid var(--rule-paper); font: 400 .7rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: .16em; color: var(--ink-2); }
+.dark .folio, .deep .folio { border-top-color: var(--rule-green); color: var(--on-green-2); }
+.folio .pg { font-size: .82rem; color: var(--brass-ink); letter-spacing: .08em; }
+.dark .folio .pg, .deep .folio .pg { color: var(--brass); }
+.ch-title { margin-top: 18px; font: 300 clamp(3rem, 7.6vw, 7.2rem)/.94 var(--serif); letter-spacing: -.03em; text-wrap: balance; font-variation-settings: "opsz" 72; }
+.ch-title i { font-weight: 300; }
+.standfirst { margin-top: clamp(18px, 2vw, 28px); max-width: 40ch; text-wrap: pretty; font: italic 300 clamp(1.3rem, 2.1vw, 1.8rem)/1.38 var(--serif); color: var(--ink-2); }
+.dark .standfirst, .deep .standfirst { color: #ddd6c2; }
+.byline { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 6px 22px; font: 400 .74rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: .14em; color: var(--ink-2); }
+.cap { margin-top: 12px; display: flex; gap: 14px; font: 400 .74rem/1.5 var(--mono); letter-spacing: .02em; color: var(--ink-2); }
+.cap b { font-weight: 500; color: var(--brass-ink); flex: 0 0 auto; }
+.dark .cap, .deep .cap { color: var(--on-green-2); }
+.dark .cap b, .deep .cap b { color: var(--brass); }
+
+/* ---------- contents + editorial ---------- */
+.contents-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(40px, 6vw, 112px); align-items: start; }
+.toc h2 { margin-top: 14px; font: italic 300 clamp(3.4rem, 7vw, 6.4rem)/.9 var(--serif); letter-spacing: -.03em; }
+.toc ol { margin-top: clamp(24px, 3vw, 40px); border-top: 1px solid var(--ink); }
+.toc a { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 2px 20px; padding: 16px 0 15px; border-bottom: 1px solid var(--rule-paper); text-decoration: none; transition: background-color .2s ease, padding .2s ease; }
+.toc .pg { grid-row: span 2; font: 300 2.5rem/.9 var(--serif); font-variant-numeric: lining-nums tabular-nums; color: var(--brass-ink); letter-spacing: -.02em; }
+.toc .t { font: 400 clamp(1.25rem, 1.8vw, 1.5rem)/1.2 var(--serif); }
+.toc .d { font: 400 .74rem/1.4 var(--mono); letter-spacing: .04em; color: var(--ink-2); }
+.toc a:hover { background: var(--paper-2); padding-left: 10px; }
+.toc a:hover .t { color: var(--green); }
+.editorial { padding-top: 10px; }
+.editorial .h { margin-top: 16px; font: italic 400 clamp(2rem, 3vw, 2.6rem)/1.05 var(--serif); letter-spacing: -.015em; color: var(--green); }
+.editorial p.t { margin-top: 16px; font-size: 1.12rem; }
+.editorial p.t + p.t { margin-top: .9em; }
+.editorial .sig { margin-top: 18px; font: italic 400 1.1rem/1.2 var(--serif); color: var(--brass-ink); }
+.editorial figure { margin-top: 32px; }
+.editorial img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+@media (max-width: 900px) { .contents-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- coverstory ---------- */
+.story-head { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 24px 56px; align-items: end; }
+.story-head .ch-title { max-width: 11ch; }
+.lead-photo { margin-top: clamp(36px, 4.4vw, 64px); }
+.lead-photo img { width: 100%; aspect-ratio: 16 / 8; object-fit: cover; object-position: 50% 44%; }
+.article { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 7fr) minmax(0, 4fr); gap: 0 clamp(28px, 4vw, 72px); margin-top: clamp(44px, 5vw, 76px); }
+.article-body { grid-column: 2; max-width: 64ch; }
+.article-body p { hyphens: manual; text-wrap: pretty; }
+.llbook-spacer { background: var(--deep); }
+.article-body p + p { margin-top: 1.05em; }
+.article-body .first::first-letter { float: left; font: 400 5.6em/.74 var(--serif); font-variation-settings: "opsz" 72; color: var(--green); margin: .08em .1em 0 -.02em; }
+.article-body h3 { margin: 1.8em 0 .5em; font: italic 400 1.75rem/1.15 var(--serif); color: var(--green); letter-spacing: -.01em; }
+.article-body em.gg { font-style: italic; background: linear-gradient(transparent 62%, rgba(22, 58, 44, .16) 62%); }
+.pull { margin: 1.6em 0 1.5em; padding: 30px 0 26px; border-top: 1px solid var(--green); border-bottom: 1px solid var(--rule-paper); position: relative; }
+.pull::before { content: "“"; position: absolute; top: -.18em; left: -.02em; font: 400 7rem/1 var(--serif); color: var(--brass); }
+.pull p { padding-left: 64px; font: italic 300 clamp(1.9rem, 3vw, 2.7rem)/1.14 var(--serif); letter-spacing: -.015em; color: var(--green); }
+.pull cite { display: block; margin-top: 14px; padding-left: 64px; font: normal 400 .74rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: .14em; color: var(--brass-ink); }
+.pull.wide { margin-left: calc(-1 * clamp(0px, 9vw, 140px)); }
+
+.sidebar { grid-column: 3; display: grid; gap: 22px; align-content: start; padding-top: 6px; }
+.wud { background: var(--green); color: var(--on-green); padding: 24px 24px 22px; position: relative; }
+.wud::before { content: ""; position: absolute; left: 24px; right: 24px; top: 0; height: 3px; background: var(--brass); }
+.wud .kicker { color: var(--brass); }
+.wud .kicker .trumpet { width: 1.8em; height: 1.1em; }
+.wud h4 { margin-top: 10px; font: italic 400 1.55rem/1.15 var(--serif); letter-spacing: -.01em; }
+.wud p { margin-top: 8px; font-size: 1.02rem; line-height: 1.55; color: #e2dbc7; }
+.playlist { border: 1px solid var(--rule-paper); padding: 22px 22px 18px; background: #f6f1e4; }
+.playlist h4 { margin-top: 10px; font: italic 400 1.5rem/1.15 var(--serif); color: var(--green); }
+.playlist ol { margin-top: 12px; }
+.playlist li { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 2px 12px; padding: 10px 0; border-top: 1px solid var(--rule-paper); }
+.playlist .tm { font: 500 .72rem/1.5 var(--mono); letter-spacing: .06em; color: var(--brass-ink); grid-row: span 2; }
+.playlist .pt { font: 500 .72rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--ink-2); }
+.playlist .tr { font: 400 1.02rem/1.35 var(--serif); }
+.playlist .tr i { color: var(--green); }
+@media (max-width: 1100px) {
+  .article { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); }
+  .article-body { grid-column: 1; }
+  .sidebar { grid-column: 2; }
+  .pull.wide { margin-left: 0; }
+}
+@media (max-width: 860px) {
+  .story-head { grid-template-columns: minmax(0, 1fr); }
+  .article { grid-template-columns: minmax(0, 1fr); }
+  .sidebar { grid-column: 1; margin-top: 44px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .lead-photo img { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 560px) {
+  body { font-size: 1.125rem; }
+  .folio span:nth-child(2) { display: none; }
+  .pull p, .pull cite { padding-left: 40px; }
+  .pull::before { font-size: 5rem; }
+}
+
+/* ---------- photo essay ---------- */
+.essay-head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 20px 56px; align-items: end; }
+.essay-grid { margin-top: clamp(40px, 5vw, 72px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(26px, 3vw, 44px) clamp(16px, 2vw, 28px); }
+.essay-grid figure { min-width: 0; }
+.essay-grid img { width: 100%; height: auto; object-fit: cover; }
+.e1 { grid-column: 1 / span 7; } .e1 img { aspect-ratio: 4 / 3; }
+.e2 { grid-column: 8 / span 5; align-self: end; } .e2 img { aspect-ratio: 4 / 5; object-position: 52% 50%; }
+.e3 { grid-column: 2 / span 4; } .e3 img { aspect-ratio: 4 / 5; object-position: 60% 50%; }
+.e4 { grid-column: 6 / span 7; margin-top: clamp(40px, 7vw, 120px); } .e4 img { aspect-ratio: 16 / 10; }
+.e5 { grid-column: 4 / span 6; } .e5 img { aspect-ratio: 16 / 10; object-position: 50% 60%; }
+.essay-quote { grid-column: 1 / span 12; text-align: center; padding: clamp(10px, 2vw, 24px) 0; }
+.essay-quote p { font: italic 300 clamp(1.8rem, 3.6vw, 3.2rem)/1.12 var(--serif); letter-spacing: -.02em; max-width: 30ch; margin: 0 auto; text-wrap: balance; }
+.essay-quote span { display: block; margin-top: 16px; font: 400 .74rem/1 var(--mono); text-transform: uppercase; letter-spacing: .16em; color: var(--brass); }
+@media (max-width: 760px) {
+  .essay-head { grid-template-columns: minmax(0, 1fr); }
+  .essay-grid { grid-template-columns: minmax(0, 1fr); }
+  .e1, .e2, .e3, .e4, .e5, .essay-quote { grid-column: 1; margin-top: 0; }
+  .e2 img, .e3 img { aspect-ratio: 4 / 3; }
+}
+
+/* ---------- timeline ---------- */
+.tl-grid { margin-top: clamp(40px, 5vw, 70px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(24px, 3vw, 48px); }
+.tl-grid li { position: relative; padding: 30px 0 44px; border-top: 1px solid var(--ink); }
+.tl-grid li::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--brass); box-shadow: 0 0 0 3px var(--paper); }
+.tl-grid .yr { font: 300 clamp(3rem, 5vw, 4.6rem)/.9 var(--serif); letter-spacing: -.03em; font-variant-numeric: lining-nums; color: var(--green); font-variation-settings: "opsz" 72; }
+.tl-grid .yr.word { font-style: italic; font-size: clamp(2.3rem, 3.6vw, 3.3rem); }
+.tl-grid h3 { margin-top: 14px; font: 500 1.3rem/1.2 var(--serif); }
+.tl-grid p { margin-top: 8px; font-size: 1.05rem; color: var(--ink-2); max-width: 36ch; }
+@media (max-width: 900px) { .tl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .tl-grid { grid-template-columns: minmax(0, 1fr); } .tl-grid li { padding-bottom: 30px; } }
+
+/* ==========================================================================
+   AAN TAFEL — the menu
+   ========================================================================== */
+.menu-open { padding-bottom: clamp(48px, 6vw, 84px); }
+.menu-open-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 24px clamp(32px, 5vw, 80px); align-items: end; }
+.gg-note { border-left: 1px solid rgba(200, 161, 90, .55); padding: 4px 0 4px 26px; max-width: 46ch; }
+.gg-note p { font: italic 400 1.15rem/1.5 var(--serif); color: #e2dbc7; }
+.gg-note b { font-weight: 500; color: var(--paper); }
+.plates { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); margin-top: clamp(40px, 5vw, 64px); }
+.plates img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.menu-body { background: var(--paper); padding: clamp(48px, 6vw, 88px) 0 0; }
+.tabs { display: flex; gap: clamp(18px, 4vw, 56px); border-bottom: 1px solid var(--ink); flex-wrap: wrap; }
+.tab { position: relative; background: none; border: 0; padding: 0 0 16px; cursor: pointer; text-align: left; color: var(--ink-2); display: flex; align-items: baseline; gap: 12px; }
+.tab .tl { font: italic 300 clamp(2.2rem, 4.6vw, 3.8rem)/1 var(--serif); letter-spacing: -.02em; }
+.tab .tc { font: 400 .72rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--brass-ink); }
+.tab::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 4px; background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--green); }
+.tab[aria-selected="true"]::after { transform: scaleX(1); }
+.tab:focus-visible { outline-offset: 6px; }
+.panel { padding-top: clamp(24px, 3vw, 36px); }
+.panel:focus-visible { outline-offset: 10px; }
+.served { font: 400 .76rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .14em; color: var(--ink-2); display: flex; gap: 12px; align-items: center; }
+.served::before { content: ""; width: 28px; height: 1px; background: var(--brass-ink); }
+.secs { margin-top: clamp(26px, 3vw, 44px); columns: 2; column-gap: clamp(40px, 6vw, 104px); }
+.secs.is-drinks { columns: 3; column-gap: clamp(32px, 4vw, 64px); }
+.msec { break-inside: avoid; padding-bottom: clamp(36px, 4vw, 56px); }
+.msec h3 { font: italic 400 clamp(1.9rem, 2.6vw, 2.4rem)/1.05 var(--serif); letter-spacing: -.015em; color: var(--green); display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--green); }
+.msec h3 small { font: 400 .68rem/1 var(--mono); font-style: normal; letter-spacing: .12em; text-transform: uppercase; color: var(--brass-ink); }
+.msec .intro { margin-top: 10px; font: italic 400 1.02rem/1.4 var(--serif); color: var(--ink-2); }
+.dish { padding: 14px 0 13px; border-bottom: 1px solid var(--rule-paper); break-inside: avoid; }
+.dish:last-child { border-bottom: 0; }
+.d-head { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; }
+.d-name { font: 500 1.16rem/1.3 var(--serif); letter-spacing: -.003em; }
+.veg { color: var(--green); font-weight: 600; margin-left: .15em; }
+.d-price { flex: 0 0 auto; font: 400 1.12rem/1.3 var(--serif); font-variant-numeric: lining-nums tabular-nums; color: var(--ink); }
+.d-desc { margin-top: 4px; font-size: 1rem; line-height: 1.5; color: var(--ink-2); max-width: 54ch; }
+.d-desc .gg { font-style: italic; color: var(--green); background: linear-gradient(transparent 60%, rgba(22, 58, 44, .14) 60%); }
+.d-meta { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 6px 16px; font: 400 .7rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--brass-ink); }
+.d-meta .sig { display: inline-flex; align-items: center; gap: 7px; color: var(--red); }
+.d-meta .sig .trumpet { width: 1.75em; height: 1.05em; }
+.d-tag { margin-top: 5px; font: italic 400 1.04rem/1.35 var(--serif); color: var(--green); }
+.d-tag::before { content: "— "; color: var(--brass-ink); }
+.d-extras { margin-top: 6px; display: grid; gap: 2px; }
+.d-extras li { display: flex; justify-content: space-between; gap: 16px; font: italic 400 .98rem/1.4 var(--serif); color: var(--ink-2); }
+.d-extras li span:last-child { font-style: normal; font-variant-numeric: lining-nums tabular-nums; color: var(--ink); }
+.dish.is-sig .d-name { color: var(--green); }
+.is-drinks .dish { padding: 10px 0 9px; }
+.is-drinks .d-name { font-weight: 400; font-size: 1.08rem; }
+.is-drinks .d-desc { margin-top: 0; font: 400 .7rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--brass-ink); }
+.notes { margin-top: 8px; padding: 22px 0 0; border-top: 1px solid var(--ink); display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 40px; }
+.notes p { font: 400 .76rem/1.6 var(--mono); letter-spacing: .02em; color: var(--ink-2); }
+@media (max-width: 1000px) { .secs.is-drinks { columns: 2; } }
+@media (max-width: 760px) {
+  .menu-open-grid { grid-template-columns: minmax(0, 1fr); }
+  .secs, .secs.is-drinks { columns: 1; }
+  .plates { gap: 10px; }
+}
+@media (max-width: 560px) {
+  .tabs { gap: 20px; flex-wrap: nowrap; }
+  .tab { flex-direction: column; gap: 6px; padding-bottom: 12px; }
+  .tab .tl { font-size: 2rem; }
+  .tab .tc { font-size: .62rem; }
+  .plates { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ==========================================================================
+   RESERVEREN + OPENINGSTIJDEN
+   ========================================================================== */
+.res-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(44px, 6vw, 112px); align-items: start; }
+.res-lines { margin-top: clamp(26px, 3vw, 40px); counter-reset: r; }
+.res-lines li { counter-increment: r; display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 14px; padding: 15px 0; border-top: 1px solid var(--rule-green); font-size: 1.12rem; line-height: 1.5; }
+.res-lines li:last-child { border-bottom: 1px solid var(--rule-green); }
+.res-lines li::before { content: counter(r, decimal-leading-zero); font: 400 .78rem/2 var(--mono); letter-spacing: .1em; color: var(--brass); }
+.res-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 32px; margin-top: clamp(28px, 3vw, 40px); }
+.res-phone { text-decoration: none; display: grid; gap: 4px; }
+.res-phone small { font: 400 .7rem/1 var(--mono); text-transform: uppercase; letter-spacing: .16em; color: var(--on-green-2); }
+.res-phone span { font: 300 clamp(1.7rem, 2.6vw, 2.2rem)/1 var(--serif); letter-spacing: -.01em; color: var(--paper); font-variant-numeric: lining-nums; }
+.res-phone:hover span { color: var(--brass); }
+.res-confirm { margin-top: 20px; font: italic 400 1rem/1.5 var(--serif); color: var(--on-green-2); }
+
+.hours { background: var(--deep); padding: clamp(26px, 3vw, 40px); border: 1px solid rgba(200, 161, 90, .4); }
+.hours h3 { font: italic 300 clamp(2.2rem, 3.4vw, 3rem)/1 var(--serif); letter-spacing: -.02em; }
+.hours .status { margin-top: 14px; display: flex; gap: 10px; align-items: baseline; font: 400 .8rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--brass); }
+.hours .status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--on-green-2); flex: 0 0 auto; transform: translateY(-1px); }
+.hours .status.is-open::before { background: #6fcf97; box-shadow: 0 0 0 4px rgba(111, 207, 151, .18); }
+.week { margin-top: 20px; }
+.week li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 4px 16px; padding: 11px 0; border-top: 1px solid var(--rule-green); }
+.week li:last-child { border-bottom: 1px solid var(--rule-green); }
+.week .d { font: 400 1.12rem/1.3 var(--serif); display: flex; gap: 10px; align-items: baseline; }
+.week .h { font: 400 1.08rem/1.3 var(--serif); font-variant-numeric: lining-nums tabular-nums; text-align: right; }
+.week .is-closed .h, .week .is-closed .d { color: var(--on-green-2); font-style: italic; }
+.week .is-sunday .h { font-size: .98rem; }
+.week .is-today { background: linear-gradient(90deg, rgba(200, 161, 90, .2), rgba(200, 161, 90, .06)); margin: 0 -14px; padding: 11px 14px; border-top-color: transparent; }
+.week .is-today + li { border-top-color: transparent; }
+.week .is-today .d { font-style: italic; color: var(--paper); }
+.week .today { font: 500 .62rem/1 var(--mono); font-style: normal; text-transform: uppercase; letter-spacing: .16em; color: var(--deep); background: var(--brass); padding: 4px 6px 3px; transform: translateY(-2px); }
+.sundays { margin-top: 18px; font: italic 400 1.02rem/1.5 var(--serif); color: var(--on-green-2); }
+.sundays b { display: block; font: 400 .7rem/1.3 var(--mono); font-style: normal; text-transform: uppercase; letter-spacing: .16em; color: var(--brass); margin-bottom: 4px; }
+@media (max-width: 900px) { .res-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) {
+  .week li { grid-template-columns: minmax(0, 1fr); }
+  .week .h { text-align: left; color: var(--on-green-2); }
+}
+
+/* ==========================================================================
+   AGENDA
+   ========================================================================== */
+.ag-grid { margin-top: clamp(36px, 4vw, 60px); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 88px); align-items: start; }
+.lounge { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px clamp(22px, 3vw, 44px); padding-top: 26px; border-top: 1px solid var(--ink); }
+.lounge .date { text-align: center; min-width: 120px; }
+.lounge .date .dn { display: block; font: 300 clamp(6rem, 11vw, 9.6rem)/.8 var(--serif); letter-spacing: -.04em; color: var(--green); font-variant-numeric: lining-nums; font-variation-settings: "opsz" 72; }
+.lounge .date .dm { display: block; margin-top: 10px; font: 400 .74rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: .18em; color: var(--brass-ink); }
+.lounge h3 { font: italic 400 clamp(2.1rem, 3.6vw, 3.2rem)/1 var(--serif); letter-spacing: -.02em; color: var(--green); }
+.lounge .when { margin-top: 10px; font: 400 .74rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--ink-2); }
+.lounge p.t { margin-top: 14px; font-size: 1.1rem; }
+.lounge .free { margin-top: 14px; display: inline-block; font: 500 .7rem/1 var(--mono); text-transform: uppercase; letter-spacing: .16em; color: var(--paper); background: var(--green); padding: 7px 10px 6px; }
+.news-side { display: grid; gap: 0; }
+.news-side article { padding: 24px 0 26px; border-top: 1px solid var(--ink); }
+.news-side article + article { border-top-color: var(--rule-paper); }
+.news-side .when { font: 400 .72rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--brass-ink); }
+.news-side h3 { margin-top: 8px; font: italic 400 1.75rem/1.1 var(--serif); letter-spacing: -.01em; }
+.news-side p.t { margin-top: 8px; font-size: 1.04rem; color: var(--ink-2); }
+.news-side .next { margin-top: 10px; font: 500 1.02rem/1.3 var(--serif); color: var(--green); }
+.news-side .next span { font: 400 .68rem/1 var(--mono); text-transform: uppercase; letter-spacing: .14em; color: var(--brass-ink); margin-right: 8px; }
+@media (max-width: 900px) { .ag-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .lounge { grid-template-columns: minmax(0, 1fr); } .lounge .date { text-align: left; } }
+
+/* ==========================================================================
+   VACATURES
+   ========================================================================== */
+.jobs { margin-top: clamp(36px, 4vw, 60px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+.job { padding: 30px clamp(0px, 3vw, 48px) 10px 0; }
+.job + .job { border-left: 1px solid var(--rule-paper); padding-left: clamp(24px, 3vw, 48px); padding-right: 0; }
+.job .hrs { font: 400 .74rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: .14em; color: var(--brass-ink); }
+.job h3 { margin-top: 10px; font: italic 400 clamp(2rem, 3.2vw, 2.8rem)/1.02 var(--serif); letter-spacing: -.02em; color: var(--green); }
+.job p.t { margin-top: 14px; font-size: 1.08rem; }
+.job h4 { margin-top: 20px; font: 500 .72rem/1 var(--mono); text-transform: uppercase; letter-spacing: .16em; color: var(--ink-2); }
+.job ul { margin-top: 10px; }
+.job li { padding: 8px 0 8px 28px; border-top: 1px solid var(--rule-paper); position: relative; font-size: 1.04rem; }
+.job li::before { content: ""; position: absolute; left: 2px; top: 1.05em; width: 14px; height: 1px; background: var(--brass-ink); }
+.job .apply { margin-top: 20px; font-size: 1.04rem; }
+.job .apply a { color: var(--green); font-weight: 500; word-break: break-word; }
+@media (max-width: 800px) {
+  .jobs { grid-template-columns: minmax(0, 1fr); }
+  .job, .job + .job { padding: 28px 0 10px; border-left: 0; }
+  .job + .job { border-top: 1px solid var(--rule-paper); margin-top: 24px; }
+}
+
+/* ==========================================================================
+   COLOFON
+   ========================================================================== */
+.colofon-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 112px); align-items: start; }
+.colofon .logo img { width: min(320px, 70%); height: auto; }
+.colofon .ident { margin-top: 26px; font: italic 300 clamp(1.5rem, 2.2vw, 1.9rem)/1.3 var(--serif); color: #e2dbc7; max-width: 22ch; }
+.colofon .cta { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+.colo { border-top: 1px solid rgba(200, 161, 90, .6); }
+.colo div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 6px 24px; padding: 15px 0; border-bottom: 1px solid var(--rule-green); align-items: baseline; }
+.colo dt { font: 400 .72rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .16em; color: var(--brass); }
+.colo dd { margin: 0; font: 400 1.18rem/1.4 var(--serif); word-break: break-word; }
+.colo a { text-decoration-color: rgba(200, 161, 90, .7); }
+.colo a:hover { color: var(--brass); }
+.footline { margin-top: clamp(48px, 6vw, 88px); padding: 20px 0 24px; border-top: 1px solid var(--rule-green); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 26px; font: 400 .72rem/1.5 var(--mono); letter-spacing: .08em; color: var(--on-green-2); }
+.footline nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.footline a { text-decoration: none; text-transform: uppercase; letter-spacing: .14em; }
+.footline a:hover { color: var(--brass); }
+@media (max-width: 860px) { .colofon-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { .colo div { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
+
+/* ==========================================================================
+   DIALOG — the reply card
+   ========================================================================== */
+.dlg { padding: 0; border: 0; background: transparent; width: 100%; max-width: min(620px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow: visible; color: var(--ink); }
+.dlg::backdrop { background: rgba(8, 22, 16, .72); backdrop-filter: blur(3px); }
+.card { position: relative; background: var(--paper); max-height: calc(100dvh - 32px); overflow: auto; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .7); }
+.card-band { background: var(--green); color: var(--on-green); padding: 14px 64px 13px 28px; display: flex; justify-content: space-between; gap: 12px; font: 400 .7rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: .16em; }
+.card-band b { color: var(--brass); font-weight: 500; }
+.card-body { padding: 26px clamp(20px, 4vw, 36px) 30px; }
+.card h2 { font: italic 300 clamp(2.3rem, 6vw, 3.2rem)/1 var(--serif); letter-spacing: -.02em; color: var(--green); outline: none; }
+.card ol { margin-top: 18px; counter-reset: c; }
+.card ol li { counter-increment: c; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; padding: 11px 0; border-top: 1px solid var(--rule-paper); font-size: 1.06rem; line-height: 1.45; }
+.card ol li::before { content: counter(c, decimal-leading-zero); font: 400 .74rem/2 var(--mono); color: var(--brass-ink); }
+.card-actions { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.card-phone { font-size: 1rem; color: var(--ink-2); }
+.card-phone a { display: block; font: 400 1.5rem/1.2 var(--serif); color: var(--ink); text-decoration: none; font-variant-numeric: lining-nums; }
+.card-phone a:hover { color: var(--green); text-decoration: underline; }
+.card-confirm { margin-top: 18px; font: italic 400 1rem/1.5 var(--serif); color: var(--ink-2); }
+.card-note { margin-top: 16px; padding-top: 14px; border-top: 1px dashed rgba(26, 26, 23, .35); font: 400 .74rem/1.5 var(--mono); letter-spacing: .04em; color: var(--ink-2); }
+.dlg-x { position: absolute; top: 4px; right: 6px; width: 44px; height: 44px; display: grid; place-items: center; background: transparent; border: 0; color: var(--paper); cursor: pointer; font: 300 2rem/1 var(--serif); }
+.dlg-x:hover { color: var(--brass); }
+.dlg-x:focus-visible { outline-color: var(--brass); outline-offset: -4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .cover-photo img { transform: none !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<header class="top dark" id="top-bar" style="background:rgba(14,36,27,.97)">
+  <div class="wrap top-in">
+    <a class="brand" href="#top" aria-label="Lazy Louis Jazzcafé &amp; Eethuys, naar de cover"><img src="assets/brand/logo-light.png" alt="Lazy Louis Jazzcafé &amp; Eethuys" width="76" height="40"><span class="issue">Magazine<br>Nr. 35</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span>Inhoud</button>
+    <nav class="nav" id="site-nav" aria-label="Hoofdmenu">
+      <ul>
+        <li><a href="#verhaal">Het verhaal <span class="pg" aria-hidden="true">p. 04</span></a></li>
+        <li><a href="#menu">Aan tafel <span class="pg" aria-hidden="true">p. 24</span></a></li>
+        <li><a href="#reserveren">Reserveren <span class="pg" aria-hidden="true">p. 40</span></a></li>
+        <li><a href="#agenda">Agenda <span class="pg" aria-hidden="true">p. 44</span></a></li>
+        <li><a href="#vacatures">Vacatures <span class="pg" aria-hidden="true">p. 46</span></a></li>
+        <li><a href="#contact">Colofon <span class="pg" aria-hidden="true">p. 48</span></a></li>
+      </ul>
+    </nav>
+    <button class="btn btn-brass" type="button" data-open-res>Reserveer</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= COVER ================= -->
+<section class="cover" id="top" aria-labelledby="cover-title">
+  <div class="cover-photo" aria-hidden="false"><img id="cover-img" src="assets/img/bar-beer.jpg" alt="Een vers getapt speciaalbier op de glanzende bar, met bolle lampen en een kaars" width="1024" height="683" fetchpriority="high"></div>
+  <div class="wrap cover-in">
+    <div class="mast-row"><span>Jazzcafé &amp; Eethuys · Amersfoort</span><span><b>Nr. 35</b> · 1991 – 2026</span></div>
+    <h1 class="mast" id="cover-title">Lazy <i>Louis</i></h1>
+    <div class="mast-sub"><span class="mag">Magazine</span><span class="jub">Het jubileumnummer: vijfendertig jaar jazz, food &amp; drinks</span></div>
+
+    <div class="cover-body">
+      <div>
+        <a class="cl-main" href="#verhaal">
+          <span class="k">Coverstory</span>
+          <span class="h">Vijfendertig jaar lekker lui</span>
+          <span class="s">Angela Klarenbeek over Louis Armstrong, stevige jazz en de tekening waarmee Herman Brood zijn rekening betaalde.</span>
+        </a>
+        <ul class="cl-list">
+          <li><a href="#wist-u-dat"><span class="k">Wist u dat?</span><span class="t">De houten saxofonist en de dame met klarinet</span></a></li>
+          <li><a href="#menu"><span class="k">Aan tafel</span><span class="t">Saté Lazy Louis, wereldberoemd in heel Amersfoort</span></a></li>
+          <li><a href="#agenda"><span class="k">Nieuw</span><span class="t">De Lazy Louis Lounge voor 55-plussers</span></a></li>
+        </ul>
+      </div>
+      <div class="barcode" aria-label="Vandaag bij Lazy Louis">
+        <div class="bc-top"><span>Vandaag</span><span>Nr. 35</span></div>
+        <p class="st" data-ll="status" aria-live="polite">Nu open</p>
+        <div class="bars" aria-hidden="true"></div>
+        <div class="num" aria-hidden="true"><span>3811</span><span>LE</span><span>1-3</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INHOUD ================= -->
+<section class="chapter" aria-labelledby="inhoud-title" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="contents-grid">
+      <div class="toc">
+        <p class="kicker">In dit nummer</p>
+        <h2 id="inhoud-title">Inhoud</h2>
+        <ol>
+          <li><a href="#verhaal"><span class="pg">04</span><span class="t">Vijfendertig jaar lekker lui</span><span class="d">Coverstory · Angela, Armstrong en de sfeer</span></a></li>
+          <li><a href="#wist-u-dat"><span class="pg">10</span><span class="t">Wist u dat?</span><span class="d">De houten saxofonist, de toiletdeuren, de muziek</span></a></li>
+          <li><a href="#reportage"><span class="pg">16</span><span class="t">Een middag aan de bar</span><span class="d">Fotoreportage</span></a></li>
+          <li><a href="#tijdlijn"><span class="pg">20</span><span class="t">Van 1895 tot nu</span><span class="d">Tijdlijn</span></a></li>
+          <li><a href="#menu"><span class="pg">24</span><span class="t">Aan tafel</span><span class="d">De complete kaart: lunch, diner &amp; dranken</span></a></li>
+          <li><a href="#reserveren"><span class="pg">40</span><span class="t">Reserveren &amp; openingstijden</span><span class="d">Praktisch</span></a></li>
+          <li><a href="#agenda"><span class="pg">44</span><span class="t">Agenda</span><span class="d">Lounge, open zondagen, seizoensbier</span></a></li>
+          <li><a href="#vacatures"><span class="pg">46</span><span class="t">Vacatures</span><span class="d">Kom het team versterken</span></a></li>
+          <li><a href="#contact"><span class="pg">48</span><span class="t">Colofon</span><span class="d">Adres, telefoon en route</span></a></li>
+        </ol>
+      </div>
+      <aside class="editorial" aria-labelledby="ed-title">
+        <p class="kicker">Van de redactie</p>
+        <h2 class="h" id="ed-title">Groene gezelligheid</h2>
+        <p class="t">Op de kaart van Lazy Louis heet de sla <em>groene gezelligheid</em>. Een mooiere titel voor dit nummer konden we niet bedenken.</p>
+        <p class="t">Want gezellig is het hier al sinds 1991: in twee monumentale panden uit 1895, aan een lange bar met speciaalbier van het vat, met jazz &amp; blues uit de speakers en een keuken die klassiek en modern door elkaar mengt. In nummer 35 nemen we u mee langs de verhalen achter het interieur, en natuurlijk aan tafel.</p>
+        <p class="sig">— De redactie</p>
+        <figure>
+          <img src="assets/img/table-wine.jpg" alt="Een fles rode wijn en glazen op een gedekte tafel" width="1024" height="683">
+          <figcaption class="cap"><b>Fig. 1</b><span>Een goed gevuld glas wijn: daarvoor bent u hier aan het juiste adres.</span></figcaption>
+        </figure>
+      </aside>
+    </div>
+    <p class="folio"><span>Lazy Louis Magazine · Nr. 35</span><span>Inhoud</span><span class="pg">03</span></p>
+  </div>
+</section>
+
+<!-- ================= COVERSTORY ================= -->
+<article class="chapter" id="verhaal" aria-labelledby="story-title" style="background:var(--paper)">
+  <div class="wrap">
+    <p class="kicker"><span class="no">04</span> Coverstory · 35 jaar Lazy Louis</p>
+    <div class="story-head">
+      <h2 class="ch-title" id="story-title">Vijfendertig jaar <i>lekker lui</i></h2>
+      <div>
+        <p class="standfirst" style="margin-top:0">Sinds 1991 schenkt Lazy Louis jazz, speciaalbier en gezelligheid in twee monumentale panden aan de Arnhemsestraat. Een portret van een zaak waar de muziek, de muren en de gasten samen het verhaal vertellen.</p>
+        <p class="byline"><span>Tekst: de redactie</span><span>Leestijd 4 minuten</span></p>
+      </div>
+    </div>
+    <figure class="lead-photo">
+      <img src="assets/img/bar-front.jpg" alt="De lange bar van Lazy Louis met messing tapkranen en een saxofoon aan de muur" width="1024" height="683">
+      <figcaption class="cap"><b>Fig. 2</b><span>De lange bar: messing rails, glazen schappen, Ports &amp; Sherries, Wines &amp; Spirits en een saxofoon aan de muur.</span></figcaption>
+    </figure>
+
+    <div class="article">
+      <div class="article-body">
+        <p class="first">Wie aan de Arnhemsestraat binnenstapt, op een steenworp van de Onze Lieve Vrouwetoren, loopt twee monumentale panden uit 1895 binnen. Aan de ene kant het café, met een lange, glanzende bar, messing tapkranen en een ruim assortiment speciaalbieren. Aan de andere kant het restaurant, comfortabel en fraai ingericht, voor lunch en diner. Samen heten ze sinds 1991 Lazy Louis Jazzcafé &amp; Eethuys.</p>
+        <p>De naam is een eerbetoon aan Louis Armstrong, voor eigenaar Angela Klarenbeek ‘een iconische figuur’. En dat <i>Lazy</i>? Dat staat voor de relaxte sfeer. En verder is het heel eenvoudig, zegt ze zelf:</p>
+        <blockquote class="pull wide"><p id="q-name"></p><cite id="q-name-by"></cite></blockquote>
+        <h3>Een muur vol verhalen</h3>
+        <p>De muren vertellen de rest. Saxofoons en andere instrumenten, spiegels in gouden lijsten, bolle lampen, een oude piano en een grammofoon met het hondje van His Master’s Voice. Na een expositie van een jazzportretschilder kocht het café de meeste schilderijen; veel instrumenten kwamen binnen via ruilen en kleine aankopen.</p>
+        <p>En dan is er die ene tekening. Herman Brood speelde in Amersfoort, streek neer aan de bar en betaalde zijn rekening met een tekening: ‘Lazy Louis stillevend’. Die hangt er nog steeds.</p>
+        <h3>Stevige jazz als huisregel</h3>
+        <p>Sinds 2008 runt Angela de zaak zelf, met een vaste ploeg en vaste gasten. Over de sfeer waakt ze zorgvuldig. Top 40 komt er bij haar niet in, en wordt een gezelschap al te luidruchtig, dan gaat er stevige jazz op. Meestal is het binnen tien minuten weer rustig. Wat ze mist? De wekelijkse livemuziek.</p>
+        <p>De muziek volgt de dag: rustig bij de lunch en het diner, meer tempo bij de borrel, en na tienen gaat het volume omhoog. Van Armstrong en Brubeck tot Etta James, Nina Simone en James Brown, en tegen sluitingstijd soms Hendrix.</p>
+        <blockquote class="pull"><p id="q-arm"></p><cite id="q-arm-by"></cite></blockquote>
+        <h3>Aan tafel en aan de bar</h3>
+        <p>In het eethuys ligt een kaart die een mooie mix is van klassieke en moderne gerechten, in het teken van het seizoen, met namen waar u om moet glimlachen: Wall Street Crash, Simply Red, Holle Bolle Gijt en Is it Rendang? De saté is hier ‘wereldberoemd in heel Amersfoort’. En de sla? Die heet <em class="gg">groene gezelligheid</em>.</p>
+        <p>Sinds 2026 is er bovendien de Lazy Louis Lounge: elke tweede woensdag van de maand een avond voor 55-plussers, met pubquiz, meezingen, spelletjes en gedichten. Zo blijft Lazy Louis, vijfendertig jaar na de opening, precies wat het altijd was: een plek om lekker lui te zijn.</p>
+      </div>
+      <aside class="sidebar" id="wist-u-dat" aria-label="Wist u dat?">
+        <div id="wud"></div>
+        <div class="playlist">
+          <p class="kicker">De soundtrack van de dag</p>
+          <h4>Zo klinkt Lazy Louis</h4>
+          <ol id="playlist"></ol>
+        </div>
+      </aside>
+    </div>
+    <p class="folio"><span>Lazy Louis Magazine · Nr. 35</span><span>Coverstory</span><span class="pg">09</span></p>
+  </div>
+</article>
+
+<!-- ================= FOTOREPORTAGE ================= -->
+<section class="chapter deep" id="reportage" aria-labelledby="essay-title">
+  <div class="wrap">
+    <p class="kicker"><span class="no">16</span> Fotoreportage</p>
+    <div class="essay-head">
+      <h2 class="ch-title" id="essay-title">Een middag <i>aan de bar</i></h2>
+      <p class="standfirst">Messing, glas, donker hout en goud. Een wandeling langs de plekjes die vaste gasten blind kunnen aanwijzen.</p>
+    </div>
+    <div class="essay-grid">
+      <figure class="e1"><img src="assets/img/bar-gramophone.jpg" alt="Een grammofoon met het hondje van His Master’s Voice op de bar" width="1024" height="683"><figcaption class="cap"><b>01</b><span>Het hondje van His Master’s Voice luistert mee, onder een spiegel in een gouden lijst.</span></figcaption></figure>
+      <figure class="e2"><img src="assets/img/table-saxophone.jpg" alt="Gedekte tafel met wijnglazen naast een gouden saxofoon" width="1024" height="683"><figcaption class="cap"><b>02</b><span>Aan tafel, naast een gouden saxofoon.</span></figcaption></figure>
+      <div class="essay-quote"><p id="essay-q"></p><span>Uit het verhaal van Lazy Louis</span></div>
+      <figure class="e3"><img src="assets/img/bartender-tap.jpg" alt="Een barman tapt een biertje aan de messing tapinstallatie" width="1024" height="683"><figcaption class="cap"><b>03</b><span>Vers getapt aan de messing tapinstallatie.</span></figcaption></figure>
+      <figure class="e4"><img src="assets/img/bar-wide.jpg" alt="De bar met flessenwand en spiegels in goud omlijst" width="1024" height="683"><figcaption class="cap"><b>04</b><span>De flessenwand achter de lange bar, met de Bierkaart binnen handbereik.</span></figcaption></figure>
+    </div>
+    <p class="folio"><span>Lazy Louis Magazine · Nr. 35</span><span>Fotoreportage</span><span class="pg">19</span></p>
+  </div>
+</section>
+
+<!-- ================= TIJDLIJN ================= -->
+<section class="chapter" id="tijdlijn" aria-labelledby="tl-title" style="background:var(--paper)">
+  <div class="wrap">
+    <p class="kicker"><span class="no">20</span> Tijdlijn</p>
+    <h2 class="ch-title" id="tl-title">Van 1895 <i>tot nu</i></h2>
+    <ol class="tl-grid" id="timeline"></ol>
+    <p class="folio"><span>Lazy Louis Magazine · Nr. 35</span><span>Tijdlijn</span><span class="pg">23</span></p>
+  </div>
+</section>
+
+<!-- ================= AAN TAFEL ================= -->
+<section class="chapter dark menu-open" id="menu" aria-labelledby="menu-title">
+  <div class="wrap">
+    <p class="kicker"><span class="no">24</span> Aan tafel · de complete kaart</p>
+    <div class="menu-open-grid">
+      <div>
+        <h2 class="ch-title" id="menu-title">Aan <i>tafel</i></h2>
+        <p class="standfirst">Een mooie mix van klassieke en moderne gerechten, met zorg samengesteld en in het teken van het seizoen.</p>
+      </div>
+      <div class="gg-note"><p><b>Groene gezelligheid?</b> Zo heet de sla op de kaart van Lazy Louis. U vindt hem onder meer bij de Ciao Bella en de carpaccio, en hieronder herkent u hem aan het groene accent.</p></div>
+    </div>
+    <div class="plates">
+      <figure><img src="assets/img/food-tapas.jpg" alt="Tapasplank met Parmaham en kroketjes" width="1024" height="683"><figcaption class="cap"><b>A</b><span>Tapas met Parmaham en kroketjes</span></figcaption></figure>
+      <figure><img src="assets/img/food-sandwich.jpg" alt="Meergranenbroodje met kip, geroosterde paprika en ei" width="1024" height="683"><figcaption class="cap"><b>B</b><span>Meergranenbroodje met kip, paprika en ei</span></figcaption></figure>
+      <figure><img src="assets/img/food-dessert.jpg" alt="Dessertbord met cake, sinaasappel en verse munt" width="1024" height="683"><figcaption class="cap"><b>C</b><span>Cake met sinaasappel en verse munt</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+<section class="menu-body" aria-label="De kaart">
+  <div class="wrap">
+    <div class="tabs" role="tablist" aria-label="Kaart kiezen" id="tabs"></div>
+    <div id="panels"></div>
+    <p class="folio"><span>Lazy Louis Magazine · Nr. 35</span><span>Aan tafel</span><span class="pg">39</span></p>
+  </div>
+</section>
+
+<!-- ================= RESERVEREN ================= -->
+<section class="chapter dark" id="reserveren" aria-labelledby="res-title">
+  <div class="wrap">
+    <p class="kicker"><span class="no">40</span> Praktisch</p>
+    <div class="res-grid">
+      <div>
+        <h2 class="ch-title" id="res-title">Reserveer <i>een tafel</i></h2>
+        <ol class="res-lines" id="res-lines"></ol>
+        <div class="res-actions">
+          <button class="btn btn-brass" type="button" data-open-res>Reserveer een tafel <span class="arr" aria-hidden="true">→</span></button>
+          <a class="res-phone" href="tel:+31334613638"><small>Of bel ons</small><span>033 – 461 36 38</span></a>
+        </div>
+        <p class="res-confirm" id="res-confirm"></p>
+      </div>
+      <div class="hours" id="openingstijden" aria-labelledby="hours-title">
+        <h3 id="hours-title">Openingstijden</h3>
+        <p class="status" data-ll="status" aria-live="polite">Nu open</p>
+        <ul class="week" id="week"></ul>
+        <p class="sundays"><b>Eerstvolgende open zondagen</b><span id="sundays"></span></p>
+      </div>
+    </div>
+    <p class="folio"><span>Lazy Louis Magazine · Nr. 35</span><span>Reserveren &amp; openingstijden</span><span class="pg">43</span></p>
+  </div>
+</section>
+
+<!-- ================= AGENDA ================= -->
+<section class="chapter" id="agenda" aria-labelledby="ag-title" style="background:var(--paper)">
+  <div class="wrap">
+    <p class="kicker"><span class="no">44</span> Agenda &amp; nieuws</p>
+    <h2 class="ch-title" id="ag-title">Agenda</h2>
+    <div class="ag-grid" id="agenda-grid"></div>
+    <p class="folio"><span>Lazy Louis Magazine · Nr. 35</span><span>Agenda</span><span class="pg">45</span></p>
+  </div>
+</section>
+
+<!-- ================= VACATURES ================= -->
+<section class="chapter" id="vacatures" aria-labelledby="jobs-title" style="background:var(--paper-2)">
+  <div class="wrap">
+    <p class="kicker"><span class="no">46</span> Werken bij Lazy Louis</p>
+    <h2 class="ch-title" id="jobs-title">Vacatures</h2>
+    <p class="standfirst">Gastvrij, collegiaal en een beetje jazz in je bloed? Er is plek aan de bar én in de keuken.</p>
+    <div class="jobs" id="jobs"></div>
+    <p class="folio"><span>Lazy Louis Magazine · Nr. 35</span><span>Vacatures</span><span class="pg">47</span></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= COLOFON ================= -->
+<footer class="chapter deep colofon" id="contact" aria-labelledby="colo-title">
+  <div class="wrap">
+    <p class="kicker"><span class="no">48</span> Colofon</p>
+    <h2 class="sr" id="colo-title">Colofon en contact</h2>
+    <div class="colofon-grid" style="margin-top:28px">
+      <div>
+        <a class="logo" href="#top"><img src="assets/brand/logo-light.png" alt="Lazy Louis Jazzcafé &amp; Eethuys" width="320" height="169"></a>
+        <p class="ident">Lazy Louis Magazine is een uitgave van Lazy Louis Jazzcafé &amp; Eethuys, Amersfoort.</p>
+        <div class="cta">
+          <a class="btn btn-brass" href="https://www.google.com/maps/place/Lazy+Louis/@52.1535815,5.3850157,17z" target="_blank" rel="noopener" id="route-btn">Plan uw route <span class="arr" aria-hidden="true">↗</span></a>
+          <button class="btn btn-line" type="button" data-open-res style="color:var(--paper)">Reserveer</button>
+        </div>
+      </div>
+      <dl class="colo" id="colo"></dl>
+    </div>
+    <div class="footline">
+      <span>© 2026 Lazy Louis Jazzcafé &amp; Eethuys</span>
+      <nav aria-label="Voettekst"><a href="#verhaal">Verhaal</a><a href="#menu">Aan tafel</a><a href="#reserveren">Reserveren</a><a href="#agenda">Agenda</a><a href="#vacatures">Vacatures</a></nav>
+    </div>
+  </div>
+</footer>
+
+<dialog class="dlg" id="res-dialog" aria-labelledby="dlg-title">
+  <div class="card">
+    <div class="card-band"><span>Lazy Louis Magazine · <b>Antwoordkaart</b></span></div>
+    <button class="dlg-x" type="button" aria-label="Sluiten" data-close>×</button>
+    <div class="card-body">
+      <h2 id="dlg-title" tabindex="-1">Reserveer een tafel</h2>
+      <ol id="dlg-lines"></ol>
+      <div class="card-actions">
+        <a class="btn btn-green" id="dlg-fork" href="https://widget.thefork.com/63a9c0f2-62b5-449c-ae05-ae6fbbe3f000" target="_blank" rel="noopener">Reserveer via TheFork <span class="arr" aria-hidden="true">↗</span></a>
+        <p class="card-phone">Liever bellen?<a href="tel:+31334613638" id="dlg-phone">033 – 461 36 38</a></p>
+      </div>
+      <p class="card-confirm" id="dlg-confirm"></p>
+      <p class="card-note">Op de echte site komt hier direct de reserveringsmodule.</p>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/js/lazylouis-data.js"></script>
+<script src="book/book.js"></script>
+<script>
+(function () {
+  "use strict";
+  var LL = window.LL;
+  if (!LL) return;
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function gg(s) { return esc(s).replace(/groene gezelligheid/g, '<em class="gg">groene gezelligheid</em>'); }
+  var I = LL.info;
+
+  /* ---------- details from the data file ---------- */
+  $$('a[href^="tel:"]').forEach(function (a) { a.href = I.phoneHref; });
+  $("#dlg-fork").href = I.reserveUrl;
+  $("#dlg-phone").textContent = I.phone;
+  $("#route-btn").href = I.mapsUrl;
+
+  /* ---------- coverstory ---------- */
+  var Q = LL.story.quotes;
+  $("#q-name").textContent = Q[1].text; $("#q-name-by").textContent = Q[1].by;
+  $("#q-arm").textContent = Q[0].text; $("#q-arm-by").textContent = Q[0].by;
+  $("#essay-q").textContent = "“" + LL.intro[1].split(". ")[0].replace(/\.$/, "") + ".”";
+  $("#wud").outerHTML = LL.story.details.map(function (d) {
+    return '<div class="wud"><p class="kicker"><span class="trumpet" aria-hidden="true"></span>Wist u dat?</p><h4>' + esc(d.title) + '</h4><p>' + esc(d.text) + '</p></div>';
+  }).join("");
+  $("#playlist").innerHTML = LL.story.playlist.map(function (p) {
+    return '<li><span class="tm">' + esc(p.time) + '</span><span class="pt">' + esc(p.part) + '</span><span class="tr">' + esc(p.artist) + ' · <i>' + esc(p.track) + '</i></span></li>';
+  }).join("");
+  $("#timeline").innerHTML = LL.story.timeline.map(function (t) {
+    var word = !/^\d{4}$/.test(t.year);
+    return '<li><p class="yr' + (word ? " word" : "") + '">' + esc(t.year) + '</p><h3>' + esc(t.title) + '</h3><p>' + esc(t.text) + '</p></li>';
+  }).join("");
+
+  /* ---------- menu ---------- */
+  function dish(it) {
+    var meta = [];
+    if (it.signature) meta.push('<span class="sig"><span class="trumpet" aria-hidden="true"></span>Huisfavoriet</span>');
+    if (it.forTwo) meta.push("<span>Voor 2 personen</span>");
+    return '<li class="dish' + (it.signature ? " is-sig" : "") + '">' +
+      '<div class="d-head"><span class="d-name">' + esc(it.name) +
+      (it.veg ? '<span class="veg" aria-hidden="true">*</span><span class="sr"> (vegetarisch of vegetarisch te bereiden)</span>' : "") +
+      '</span><span class="d-price">' + LL.euro(it.price) + (it.forTwo ? '<span class="sr"> voor 2 personen</span>' : "") + '</span></div>' +
+      (it.tag ? '<p class="d-tag">' + esc(it.tag) + '</p>' : "") +
+      (it.desc ? '<p class="d-desc">' + gg(it.desc) + '</p>' : "") +
+      (it.extras ? '<ul class="d-extras">' + it.extras.map(function (x) { return "<li><span>" + esc(x.label) + "</span><span>" + LL.euro(x.price) + "</span></li>"; }).join("") + "</ul>" : "") +
+      (meta.length ? '<p class="d-meta">' + meta.join("") + "</p>" : "") +
+      "</li>";
+  }
+  var KEYS = ["lunch", "diner", "dranken"];
+  var tabsEl = $("#tabs"), panelsEl = $("#panels");
+  KEYS.forEach(function (k, i) {
+    var m = LL.menu[k], n = 0, drinks = k === "dranken";
+    m.sections.forEach(function (s) { n += s.items.length; });
+    tabsEl.insertAdjacentHTML("beforeend",
+      '<button class="tab" role="tab" type="button" id="tab-' + k + '" aria-controls="panel-' + k + '" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '">' +
+      '<span class="tl">' + esc(m.title) + '</span><span class="tc">' + n + (drinks ? " dranken" : " gerechten") + '</span></button>');
+    var html = '<div class="panel" role="tabpanel" id="panel-' + k + '" aria-labelledby="tab-' + k + '" tabindex="0"' + (i === 0 ? "" : " hidden") + '>' +
+      '<p class="served">' + esc(m.served) + '</p><div class="secs' + (drinks ? " is-drinks" : "") + '">';
+    m.sections.forEach(function (s) {
+      html += '<section class="msec"><h3>' + esc(s.title) + '<small>' + s.items.length + '</small></h3>' + (s.intro ? '<p class="intro">' + esc(s.intro) + '</p>' : "") +
+        '<ul>' + s.items.map(dish).join("") + '</ul></section>';
+    });
+    html += '</div><div class="notes" role="note" aria-label="Goed om te weten">' + m.notes.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") + "</div></div>";
+    panelsEl.insertAdjacentHTML("beforeend", html);
+  });
+  var tabs = $$(".tab", tabsEl);
+  function select(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute("aria-selected", on);
+      t.tabIndex = on ? 0 : -1;
+      $("#" + t.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { select(t); });
+    t.addEventListener("keydown", function (e) {
+      var j = null;
+      if (e.key === "ArrowRight") j = (i + 1) % tabs.length;
+      else if (e.key === "ArrowLeft") j = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === "Home") j = 0;
+      else if (e.key === "End") j = tabs.length - 1;
+      if (j === null) return;
+      e.preventDefault();
+      select(tabs[j], true);
+    });
+  });
+
+  /* ---------- reserveren & openingstijden ---------- */
+  $("#res-lines").innerHTML = LL.reserve.lines.map(function (l) { return "<li><span>" + esc(l) + "</span></li>"; }).join("");
+  $("#res-confirm").textContent = LL.reserve.confirm;
+  $("#dlg-lines").innerHTML = LL.reserve.lines.map(function (l) { return "<li><span>" + esc(l) + "</span></li>"; }).join("");
+  $("#dlg-confirm").textContent = LL.reserve.confirm;
+  function paintHours() {
+    $("#week").innerHTML = LL.weekRows().map(function (r) {
+      return '<li class="' + (r.today ? "is-today " : "") + (r.closed ? "is-closed " : "") + (r.sunday ? "is-sunday" : "") + '"' + (r.today ? ' aria-current="date"' : "") + '>' +
+        '<span class="d">' + esc(r.day) + (r.today ? '<span class="today">Vandaag</span>' : "") + '</span><span class="h">' + esc(r.hours) + "</span></li>";
+    }).join("");
+    $("#sundays").textContent = LL.nextOpenSundays(2).join(" en ");
+    LL.fillLive();
+  }
+  paintHours();
+  setInterval(paintHours, 60000);
+
+  /* ---------- agenda ---------- */
+  var lounge = LL.news[0], rest = LL.news.slice(1);
+  var nl = (lounge.next || "").split(" ");
+  $("#agenda-grid").innerHTML =
+    '<article class="lounge">' +
+      (lounge.next ? '<p class="date" aria-label="Eerstvolgende editie: ' + esc(lounge.next) + '"><span class="dn" aria-hidden="true">' + esc(nl[1] || "") + '</span><span class="dm" aria-hidden="true">' + esc(nl[0] || "") + "<br>" + esc(nl.slice(2).join(" ")) + "</span></p>" : "") +
+      '<div><p class="kicker">Eerstvolgende editie</p><h3 style="margin-top:10px">' + esc(lounge.title) + '</h3><p class="when">' + esc(lounge.when) + '</p><p class="t">' + esc(lounge.text) + '</p><p class="free">Toegang gratis</p></div>' +
+    "</article>" +
+    '<div class="news-side">' + rest.map(function (n) {
+      return '<article><p class="when">' + esc(n.when) + '</p><h3>' + esc(n.title) + '</h3><p class="t">' + esc(n.text) + '</p>' +
+        (n.next ? '<p class="next"><span>Eerstvolgende</span>' + esc(n.next) + "</p>" : "") + "</article>";
+    }).join("") + "</div>";
+
+  /* ---------- vacatures ---------- */
+  $("#jobs").innerHTML = LL.jobs.map(function (j) {
+    return '<article class="job"><p class="hrs">' + esc(j.hours) + '</p><h3>' + esc(j.title) + '</h3><p class="t">' + esc(j.text) + '</p>' +
+      '<h4>Wat wij bieden</h4><ul>' + j.offer.map(function (o) { return "<li>" + esc(o) + "</li>"; }).join("") + "</ul>" +
+      '<p class="apply">Interesse? Mail ' + esc(I.jobsContact) + ' via <a href="mailto:' + esc(I.jobsEmail) + '">' + esc(I.jobsEmail) + "</a>.</p></article>";
+  }).join("");
+
+  /* ---------- colofon ---------- */
+  var rows = [
+    ["Uitgave", esc(I.fullName)],
+    ["Adres", esc(I.street) + "<br>" + esc(I.postcode) + " " + esc(I.city)],
+    ["Ligging", esc(I.nearby)],
+    ["Telefoon", '<a href="' + esc(I.phoneHref) + '">' + esc(I.phone) + "</a>"],
+    ["E-mail", '<a href="mailto:' + esc(I.email) + '">' + esc(I.email) + "</a>"],
+    ["Route", '<a href="' + esc(I.mapsUrl) + '" target="_blank" rel="noopener">Google Maps ↗</a>'],
+    ["Instagram", '<a href="' + esc(I.instagram) + '" target="_blank" rel="noopener">' + esc(I.instagramHandle) + " ↗</a>"],
+    ["Facebook", '<a href="' + esc(I.facebook) + '" target="_blank" rel="noopener">facebook.com/lazylouiscafe ↗</a>'],
+    ["Opgericht", String(I.since)]
+  ];
+  $("#colo").innerHTML = rows.map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("");
+
+  /* ---------- mobile nav ---------- */
+  var bar = $("#top-bar"), toggle = $(".menu-toggle", bar);
+  function setNav(open) { bar.classList.toggle("is-open", open); toggle.setAttribute("aria-expanded", open); }
+  toggle.addEventListener("click", function () { setNav(toggle.getAttribute("aria-expanded") !== "true"); });
+  $$("#site-nav a").forEach(function (a) { a.addEventListener("click", function () { setNav(false); }); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { setNav(false); toggle.focus(); }
+  });
+
+  /* ---------- reservation dialog ---------- */
+  var dlg = $("#res-dialog"), opener = null;
+  $$("[data-open-res]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      opener = b;
+      setNav(false);
+      if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+      $("#dlg-title").focus();
+    });
+  });
+  function closeDlg() { if (dlg.open) dlg.close(); }
+  $$("[data-close]", dlg).forEach(function (b) { b.addEventListener("click", closeDlg); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) closeDlg(); });
+  dlg.addEventListener("close", function () { if (opener) opener.focus(); });
+
+  /* ---------- signature: the cover photo settles, then drifts with the scroll ---------- */
+  var img = $("#cover-img"), cover = $(".cover");
+  var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (img && cover && !calm) {
+    var ticking = false;
+    function drift() {
+      ticking = false;
+      var h = cover.offsetHeight, y = Math.min(window.scrollY, h);
+      if (y > h) return;
+      var k = y / h;
+      img.style.translate = "0 " + (y * 0.28).toFixed(1) + "px";
+      img.style.scale = (1 + k * 0.06).toFixed(4);
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(drift); } }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>
