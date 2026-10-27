@@ -134,6 +134,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .home__copy { display: grid; gap: 22px; align-content: start; }
 .home h1 { font-size: clamp(54px, 7.4vw, 108px); line-height: .86; letter-spacing: -.008em; }
 .home h1 .g { color: var(--grey-display); display: block; }
+.home h1 .l { display: block; }
 .home__lede { font-size: 18px; color: var(--ink-2); max-width: 44ch; }
 .status-card {
   display: flex; align-items: center; gap: 14px;
@@ -481,7 +482,7 @@ mark { background: #fde3e7; color: inherit; border-radius: 2px; box-shadow: inse
 }
 @media (max-width: 1180px) {
   .layout { grid-template-columns: minmax(0, 1fr) 300px; gap: 40px; }
-  .nav a { padding: 0 9px; font-size: 15px; }
+  .nav ul a { padding: 0 9px; font-size: 15px; }
 }
 @media (max-width: 1023px) {
   :root { --head-h: 60px; }
@@ -630,7 +631,7 @@ mark { background: #fde3e7; color: inherit; border-radius: 2px; box-shadow: inse
     <div class="wrap home__grid">
       <div class="home__copy">
         <p class="kicker" id="greeting">Welkom bij Lazy Louis</p>
-        <h1 id="home-title">Jazz, Food &amp; Drinks <span class="g">Since 1991</span></h1>
+        <h1 id="home-title"><span class="l">Jazz, Food</span> <span class="l">&amp; Drinks</span> <span class="g">Since 1991</span></h1>
         <p class="home__lede">Jazzcafé en eethuys in twee monumentale panden in hartje Amersfoort. Bekijk de kaart, reserveer een tafel of loop gewoon binnen.</p>
         <div class="status-card">
           <span class="dot" data-dot aria-hidden="true"></span>

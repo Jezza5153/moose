@@ -256,7 +256,7 @@ a.tile:active,button.tile:active{transform:translateY(-1px)}
 .chip.is-active{background:var(--ink);border-color:var(--ink);color:#fff}
 .chip.is-active .n{color:rgba(255,255,255,.7)}
 .mpanel[hidden]{display:none}
-.msec{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:20px 48px;padding:34px 0 30px;border-bottom:1px solid var(--line);scroll-margin-top:calc(var(--hdr) + 84px)}
+.msec{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:20px 48px;padding:34px 0 30px;border-bottom:1px solid var(--line);scroll-margin-top:72px}
 .msec-head{align-self:start;position:sticky;top:calc(var(--hdr) + 92px)}
 .msec-head h3{font-size:1.6rem;line-height:1.02;font-variation-settings:"wdth" 88,"opsz" 48;letter-spacing:-.02em}
 .msec-head .count{display:block;margin-top:10px;font:500 .72rem/1 var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
@@ -886,6 +886,7 @@ a.tile:active,button.tile:active{transform:translateY(-1px)}
       return '<button type="button" class="chip' + (j === 0 ? " is-active" : "") + '" data-target="' + k + "-" + j + '">' + esc(s.title) + '<span class="n">' + s.items.length + "</span></button>";
     }).join("");
     chips.scrollLeft = 0;
+    activeId = k + "-0";
   }
   function select(tab, focus) {
     tabs.forEach(function (t, i) {
@@ -897,7 +898,6 @@ a.tile:active,button.tile:active{transform:translateY(-1px)}
     });
     $("#served").textContent = LL.menu[current].served;
     renderChips(current);
-    observeSections();
     if (focus) tab.focus();
   }
   tabs.forEach(function (t, i) {
@@ -911,7 +911,10 @@ a.tile:active,button.tile:active{transform:translateY(-1px)}
       if (n) { e.preventDefault(); e.stopPropagation(); select(n, true); }
     });
   });
+  var activeId = null, lockSpy = 0, ticking = false;
   function activateChip(id) {
+    if (id === activeId) return;
+    activeId = id;
     $$(".chip", chips).forEach(function (c) {
       var on = c.getAttribute("data-target") === id;
       c.classList.toggle("is-active", on);
@@ -925,19 +928,21 @@ a.tile:active,button.tile:active{transform:translateY(-1px)}
     var c = e.target.closest(".chip"); if (!c) return;
     var sec = document.getElementById(c.getAttribute("data-target"));
     activateChip(c.getAttribute("data-target"));
-    lockSpy = Date.now() + 900;
+    lockSpy = Date.now() + 1000;
     sec.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
   });
-  var spy = null, lockSpy = 0;
-  function observeSections() {
-    if (!("IntersectionObserver" in window)) return;
-    if (spy) spy.disconnect();
-    spy = new IntersectionObserver(function (entries) {
-      if (Date.now() < lockSpy) return;
-      entries.forEach(function (en) { if (en.isIntersecting) activateChip(en.target.id); });
-    }, { rootMargin: "-30% 0px -60% 0px" });
-    $$("#panel-" + current + " .msec").forEach(function (s) { spy.observe(s); });
+  /* scroll-spy: the last category whose top has passed ~35% of the viewport */
+  function spyNow() {
+    if (Date.now() < lockSpy) return;
+    var secs = $$("#panel-" + current + " .msec"), line = window.innerHeight * 0.35, cur = secs[0];
+    secs.forEach(function (sct) { if (sct.getBoundingClientRect().top <= line) cur = sct; });
+    if (cur) activateChip(cur.id);
   }
+  window.addEventListener("scroll", function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; spyNow(); });
+  }, { passive: true });
   select(tabs[0]);
 
   /* ---- reserveren ---- */
