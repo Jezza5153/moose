@@ -40,8 +40,9 @@
   window.LL_BOOK = { designs: DESIGNS, favs: function () { return memFavs.slice(); }, isFav: isFav, toggleFav: toggleFav };
 
   function currentDesign() {
-    var path = decodeURIComponent(location.pathname.split("/").pop() || "");
-    for (var i = 0; i < DESIGNS.length; i++) if (DESIGNS[i].file === path) return DESIGNS[i];
+    // Match "04-affiche.html" and the clean-URL form "04-affiche" (some hosts drop the extension).
+    var path = decodeURIComponent(location.pathname.split("/").pop() || "").replace(/\.html$/, "");
+    for (var i = 0; i < DESIGNS.length; i++) if (DESIGNS[i].file.replace(/\.html$/, "") === path) return DESIGNS[i];
     var forced = document.documentElement.getAttribute("data-design");
     if (forced) for (var j = 0; j < DESIGNS.length; j++) if (String(DESIGNS[j].n) === forced) return DESIGNS[j];
     return null;
