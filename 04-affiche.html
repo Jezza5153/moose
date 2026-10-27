@@ -35,7 +35,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { background: var(--ink); scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+html { background: var(--ink); scroll-behavior: smooth; scroll-padding-top: 70px; -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--ink); color: var(--ink); font: 400 1.0625rem/1.58 var(--text); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
 html:has(dialog[open]) { overflow: hidden; }
 img { display: block; max-width: 100%; }
@@ -115,6 +115,7 @@ button { font: inherit; color: inherit; }
   .top-in { min-height: 60px; gap: 12px; }
 }
 @media (max-width: 380px) { .top-status { display: none; } }
+@media (max-width: 560px) { html { scroll-padding-top: 62px; } }
 
 /* ==========================================================================
    Poster shell — each section is a printed sheet pasted edge to edge
@@ -355,7 +356,7 @@ button { font: inherit; color: inherit; }
 .it-extras .pr { font-size: 1.15rem; }
 .it.is-sig .it-name { color: var(--red); }
 .it.is-sig .pr { color: var(--red); }
-.it .tag { display: block; width: fit-content; margin-top: 2px; font: 400 1.05rem/1 var(--slab); text-transform: uppercase; color: var(--red); transform: rotate(-1.6deg); border: 3px solid var(--red); padding: 6px 9px 4px; }
+.it .tag { display: block; width: fit-content; margin-top: 2px; font: 400 1.2rem/1.05 var(--slab); text-transform: uppercase; color: var(--red); transform: rotate(-1.6deg); border: 3px solid var(--red); padding: 6px 9px 4px; }
 .items.is-drinks .it-name { font-size: 1.45rem; }
 .items.is-drinks .pr { font-size: 1.55rem; }
 .items.is-drinks .it-desc { font: 400 1rem/1 var(--goth); text-transform: uppercase; letter-spacing: .14em; }
@@ -403,7 +404,7 @@ button { font: inherit; color: inherit; }
 
 .hours { background: var(--mustard); color: var(--ink); padding: clamp(22px, 2.8vw, 34px); position: relative; box-shadow: 10px 10px 0 var(--red); }
 .hours::before { content: ""; position: absolute; inset: 8px; border: 2px solid var(--ink); pointer-events: none; }
-.hours h3 { font: 400 clamp(1.9rem, 3vw, 2.6rem)/1 var(--slab); text-transform: uppercase; text-align: center; }
+.hours h3 { font: 400 clamp(1.5rem, 2.6vw, 2.6rem)/1 var(--slab); text-transform: uppercase; text-align: center; }
 .hours .status { margin: 10px auto 0; display: flex; align-items: center; justify-content: center; gap: 10px; font: 400 1.4rem/1.05 var(--goth); text-transform: uppercase; letter-spacing: .07em; text-align: center; }
 .hours .status::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--red); flex: 0 0 auto; }
 .hours .status.is-open::before { background: #1f7a3a; box-shadow: 0 0 0 3px rgba(31,122,58,.25); }
@@ -417,7 +418,7 @@ button { font: inherit; color: inherit; }
 .week .today { font: 400 .95rem/1 var(--goth); letter-spacing: .12em; background: var(--red); color: var(--paper); padding: 4px 6px 2px; }
 .sundays { margin-top: 16px; font-size: .98rem; text-align: center; }
 .sundays b { font: 400 1.25rem/1 var(--goth); text-transform: uppercase; letter-spacing: .1em; display: block; margin-bottom: 4px; }
-@media (max-width: 900px) { .res-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 900px) { .res-grid { grid-template-columns: minmax(0, 1fr); } .hours h3 { font-size: clamp(1.3rem, 6.4vw, 2.6rem); } }
 @media (max-width: 560px) {
   .week li { grid-template-columns: minmax(0, 1fr); padding: 9px 4px 7px; }
   .week .h { text-align: left; }
@@ -579,8 +580,8 @@ button { font: inherit; color: inherit; }
 }
 @media (max-width: 560px) {
   .tabs { flex-wrap: nowrap; }
-  .tab { flex: 1 1 auto; padding: 12px 6px 9px; }
-  .tab .tl { font-size: 1.25rem; }
+  .tab { flex: 1 1 auto; min-width: 0; padding: 12px 6px 9px; }
+  .tab .tl { font-size: clamp(1rem, 5.3vw, 1.25rem); }
   .bill-card h3 { font-size: clamp(1.45rem, 6.6vw, 2.2rem); }
 }
 
@@ -720,7 +721,7 @@ button { font: inherit; color: inherit; }
         <h3 id="hb-title">Sinds 1991 aan de Arnhemsestraat</h3>
         <p class="sub">Twee monumentale panden · één lange bar</p>
         <div class="intro" id="intro"></div>
-        <p class="houseRule"><b aria-hidden="true">!</b><strong>Huisregel</strong><span>Geen Top 40 achter de bar. Wordt een gezelschap al te luidruchtig, dan gaat er stevige jazz op. Meestal is het binnen tien minuten weer heerlijk rustig.</span></p>
+        <p class="houseRule"><b aria-hidden="true">!</b><strong>Huisregel</strong><span>Geen Top 40 achter de bar. Hier draaien jazz, blues en soul: rustig bij de lunch en het diner, met meer vaart bij de borrel en na tienen.</span></p>
       </article>
     </div>
   </div>
